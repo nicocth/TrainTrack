@@ -4,22 +4,29 @@ class AppTheme {
 
   ThemeData getTheme() => ThemeData(
     brightness: Brightness.dark,
-        // This is the theme of your application.
-    //
-    // TRY THIS: Try running your application with "flutter run". You'll see
-    // the application has a purple toolbar. Then, without quitting the app,
-    // try changing the seedColor in the colorScheme below to Colors.green
-    // and then invoke "hot reload" (save your changes or press the "hot
-    // reload" button in a Flutter-supported IDE, or press "r" if you used
-    // the command line to start the app).
-    //
-    // Notice that the counter didn't reset back to zero; the application
-    // state is not lost during the reload. To reset the state, use hot
-    // restart instead.
-    //
-    // This works for code too, not just values: Most code changes can be
-    // tested with just a hot reload.
-    useMaterial3: true,
-  );
+    primaryColor: Colors.orange[800],
+    scaffoldBackgroundColor: Colors.black,
+    appBarTheme: AppBarTheme(
+      backgroundColor: Colors.orange[900],
+      foregroundColor: Colors.white,
+    ),
+  colorScheme: ColorScheme.dark(
+    primary: Colors.orange[800]!,
+    secondary: Colors.orange[600]!,
+    background: Colors.black,
+    surface: Colors.grey[900]!,
+  ),
+  buttonTheme: ButtonThemeData(
+    buttonColor: Colors.orange[700],
+    textTheme: ButtonTextTheme.primary,
+  ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Colors.orange[700],
+      foregroundColor: Colors.white,
+    ),
+  ),
+  useMaterial3: true,
+);
   
 }
