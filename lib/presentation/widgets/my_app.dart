@@ -4,7 +4,7 @@ import 'package:train_track/config/theme/app_theme.dart';
 import 'package:train_track/presentation/screens/home/home_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:train_track/presentation/screens/auth/login_screen.dart';
-import 'package:train_track/shared/providers/auth_provider.dart';
+import 'package:train_track/presentation/providers/auth_provider.dart';
 
 class MyApp extends ConsumerWidget {
   const MyApp({super.key});

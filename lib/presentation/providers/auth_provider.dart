@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:train_track/shared/services/auth_storage.dart';  
+import 'package:train_track/infraestructure/auth_firebase/auth_storage.dart';  
 
 final authProvider = StateNotifierProvider<AuthNotifier, User?>((ref) {
   return AuthNotifier();

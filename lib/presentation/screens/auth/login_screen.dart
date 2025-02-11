@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:train_track/presentation/screens/home/home_screen.dart';
-import 'package:train_track/shared/providers/auth_provider.dart';
-import 'package:train_track/shared/services/auth_service.dart';
+import 'package:train_track/presentation/providers/auth_provider.dart';
+import 'package:train_track/infraestructure/auth_firebase/auth_service.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
