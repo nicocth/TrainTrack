@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:train_track/config/theme/app_theme.dart';
+import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/presentation/screens/home/home_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:train_track/presentation/screens/auth/login_screen.dart';
@@ -18,6 +20,16 @@ class MyApp extends ConsumerWidget {
       title: 'TrainTrack',
       debugShowCheckedModeBanner: false,
       theme: AppTheme().getTheme(),
+      localizationsDelegates: [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('es'), // Spanish
+        Locale('en'), // English
+      ],
       //verificamos si el usuario esta logueado
       home: authState == null ? const LoginScreen() :  const HomeScreen(),
     );

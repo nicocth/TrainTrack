@@ -1,0 +1,5 @@
+{
+    "helloToUser": "Hello {name}",
+    "login": "Login",
+    "access_register": "Register now"
+}

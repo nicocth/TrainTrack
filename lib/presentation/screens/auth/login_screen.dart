@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/presentation/screens/auth/register_screen.dart';
 import 'package:train_track/presentation/screens/home/home_screen.dart';
 import 'package:train_track/presentation/providers/auth_provider.dart';
@@ -105,7 +106,7 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
                   );
                 }
               },
-              child: const Text('Login'),
+              child: Text(S.current.login),
             ),
             const SizedBox(height: 10),
             GestureDetector(
@@ -115,9 +116,9 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
                   MaterialPageRoute(builder: (context) => RegisterScreen()),
                 );
               },
-              child: const Text(
-                '¿Aún no tienes una cuenta?',
-                style: TextStyle(
+              child: Text(
+                S.current.access_register,
+                style: const TextStyle(
                   decoration: TextDecoration.underline,
                   color: Colors.blue,
                 ),
