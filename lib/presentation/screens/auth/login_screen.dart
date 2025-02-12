@@ -33,8 +33,8 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
           (route) => false);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Invalid email or password'),
+        SnackBar(
+          content: Text(S.current.login_failed),
         ),
       );
     }
@@ -43,20 +43,17 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login'),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             TextField(
               controller: _emailController,
-              decoration: const InputDecoration(labelText: 'Email'),
+              decoration: InputDecoration(labelText: S.current.email),
             ),
             TextField(
               controller: _passwordController,
-              decoration: const InputDecoration(labelText: 'Password'),
+              decoration: InputDecoration(labelText: S.current.password),
             ),
             const SizedBox(height: 10),
             ElevatedButton(
@@ -76,24 +73,24 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
                     );
                   }
                 } catch (e) {
-                  String errorMessage = 'Ocurrio un error durante el inicio de sesion';
+                  String errorMessage = S.current.login_failed;;
 
                   if (e is FirebaseAuthException) {
                     switch (e.code) {
                       case 'user-not-found':
-                        errorMessage = 'Usuario no encontrado';
+                        errorMessage = S.current.user_not_found;
                         break;
                       case 'wrong-password':
-                        errorMessage = 'Contraseña incorrecta';
+                        errorMessage = S.current.wrong_password;
                         break;
                       case 'invalid-email':
-                        errorMessage = 'Correo electronico invalido';
+                        errorMessage = S.current.invalid_email;
                         break;
                       case 'user-disabled':
-                        errorMessage = 'Usuario deshabilitado';
+                        errorMessage = S.current.user_disabled;
                         break;
                       default:
-                        errorMessage = 'Error de autenticacion, el usuario o la contraseña no coinciden';	
+                        errorMessage = S.current.login_failed;	
                     }
                   }
 

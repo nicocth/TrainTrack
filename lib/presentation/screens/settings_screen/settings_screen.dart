@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/presentation/providers/auth_provider.dart';
 import 'package:train_track/presentation/screens/auth/login_screen.dart';
 
@@ -23,19 +24,75 @@ class SettingsScreen extends ConsumerWidget {
         );
       }
     });
-
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Config'),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.logout),
-            onPressed: () => _logout(context, ref),
-          )
-        ],
+        title: Text(S.current.app_bar_settings),
       ),
-      body: const Center(
-        child: Text('Bienvenido a Settings Screen'),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(S.current.account),
+            ListTile(
+              leading: const Icon(Icons.show_chart),
+              title: Text(S.current.statistics),
+              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+              onTap: () {
+                //TODO Navegar a pantalla de perfil
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.person),
+              title: Text(S.current.account),
+              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+              onTap: () {
+                //TODO Navegar a pantalla de notificaciones
+              },
+            ),
+            SizedBox(height: 20),
+            Text(S.current.preferences),
+            ListTile(
+              leading: const Icon(Icons.translate),
+              title: Text(S.current.language),
+              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+              onTap: () {
+                //TODO Navegar a pantalla de privacidad
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.brightness_6 ),
+              title: Text(S.current.mode),
+              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+              onTap: () {
+                //TODO Navegar a pantalla de privacidad
+              },
+            ),
+            SizedBox(height: 20),
+            Text(S.current.help),
+            ListTile(
+              leading: const Icon(Icons.help),
+              title: Text(S.current.help),
+              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+              onTap: () {
+                //TODO Navegar a pantalla de ayuda
+              },
+            ),
+            SizedBox(height: 20),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.red,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                ),
+                onPressed: () => _logout(context, ref),
+                child: Text(S.current.logout),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -45,8 +102,8 @@ class SettingsScreen extends ConsumerWidget {
       await ref.read(authProvider.notifier).signOut();
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Error al cerrar sesión'),
+        SnackBar(
+          content: Text(S.current.logout_failed),
         ),
       );
     }

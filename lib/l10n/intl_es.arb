@@ -1,5 +1,22 @@
 {
     "helloToUser": "Hola {name}",
     "login": "Iniciar sesión",
-    "access_register": "¿Aún no tienes una cuenta?"
+    "access_register": "¿Aún no tienes una cuenta?",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "user_not_found": "Usuario no encontrado",
+    "wrong_password": "Contraseña incorrecta",
+    "invalid_email": "Correo electrónico inválido",
+    "user_disabled": "Usuario deshabilitado",
+    "login_failed": "Error al iniciar sesión, el usuario o la contraseña no coinciden",
+    "app_bar_settings": "Configuración",
+    "logout": "Cerrar sesión",
+    "logout_failed": "Error al cerrar sesión",
+    "account": "Cuenta",
+    "statistics": "Estadisticas",
+    "preferences": "Preferencias",
+    "help": "Ayuda",
+    "language": "Idioma",
+    "mode": "Modo",
+    "home": "Home"
 }

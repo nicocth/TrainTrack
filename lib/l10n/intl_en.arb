@@ -1,5 +1,22 @@
 {
     "helloToUser": "Hello {name}",
     "login": "Login",
-    "access_register": "Register now"
+    "access_register": "Register now",
+    "email": "Email",
+    "password": "Password",
+    "user_not_found": "User not found",
+    "wrong_password": "Wrong password",
+    "invalid_email": "Invalid email",
+    "user_disabled": "User disabled",
+    "login_failed": "Login failed, user or password do not match",
+    "app_bar_settings": "Settings",
+    "logout": "Logout",
+    "logout_failed": "Logout failed",
+    "account": "Account",
+    "statistics": "Statistics",
+    "preferences": "Preferences",
+    "help": "Help",
+    "language": "Language",
+    "mode": "Mode",
+    "home": "Home"
 }

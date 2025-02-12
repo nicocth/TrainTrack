@@ -27,7 +27,36 @@ class MessageLookup extends MessageLookupByLibrary {
     "access_register": MessageLookupByLibrary.simpleMessage(
       "¿Aún no tienes una cuenta?",
     ),
+    "account": MessageLookupByLibrary.simpleMessage("Cuenta"),
+    "app_bar_settings": MessageLookupByLibrary.simpleMessage("Configuración"),
+    "email": MessageLookupByLibrary.simpleMessage("Correo electrónico"),
     "helloToUser": m0,
+    "help": MessageLookupByLibrary.simpleMessage("Ayuda"),
+    "home": MessageLookupByLibrary.simpleMessage("Home"),
+    "invalid_email": MessageLookupByLibrary.simpleMessage(
+      "Correo electrónico inválido",
+    ),
+    "language": MessageLookupByLibrary.simpleMessage("Idioma"),
     "login": MessageLookupByLibrary.simpleMessage("Iniciar sesión"),
+    "login_failed": MessageLookupByLibrary.simpleMessage(
+      "Error al iniciar sesión, el usuario o la contraseña no coinciden",
+    ),
+    "logout": MessageLookupByLibrary.simpleMessage("Cerrar sesión"),
+    "logout_failed": MessageLookupByLibrary.simpleMessage(
+      "Error al cerrar sesión",
+    ),
+    "mode": MessageLookupByLibrary.simpleMessage("Modo"),
+    "password": MessageLookupByLibrary.simpleMessage("Contraseña"),
+    "preferences": MessageLookupByLibrary.simpleMessage("Preferencias"),
+    "statistics": MessageLookupByLibrary.simpleMessage("Estadisticas"),
+    "user_disabled": MessageLookupByLibrary.simpleMessage(
+      "Usuario deshabilitado",
+    ),
+    "user_not_found": MessageLookupByLibrary.simpleMessage(
+      "Usuario no encontrado",
+    ),
+    "wrong_password": MessageLookupByLibrary.simpleMessage(
+      "Contraseña incorrecta",
+    ),
   };
 }

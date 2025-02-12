@@ -25,7 +25,26 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "access_register": MessageLookupByLibrary.simpleMessage("Register now"),
+    "account": MessageLookupByLibrary.simpleMessage("Account"),
+    "app_bar_settings": MessageLookupByLibrary.simpleMessage("Settings"),
+    "email": MessageLookupByLibrary.simpleMessage("Email"),
     "helloToUser": m0,
+    "help": MessageLookupByLibrary.simpleMessage("Help"),
+    "home": MessageLookupByLibrary.simpleMessage("Home"),
+    "invalid_email": MessageLookupByLibrary.simpleMessage("Invalid email"),
+    "language": MessageLookupByLibrary.simpleMessage("Language"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "login_failed": MessageLookupByLibrary.simpleMessage(
+      "Login failed, user or password do not match",
+    ),
+    "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "logout_failed": MessageLookupByLibrary.simpleMessage("Logout failed"),
+    "mode": MessageLookupByLibrary.simpleMessage("Mode"),
+    "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "preferences": MessageLookupByLibrary.simpleMessage("Preferences"),
+    "statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
+    "user_disabled": MessageLookupByLibrary.simpleMessage("User disabled"),
+    "user_not_found": MessageLookupByLibrary.simpleMessage("User not found"),
+    "wrong_password": MessageLookupByLibrary.simpleMessage("Wrong password"),
   };
 }

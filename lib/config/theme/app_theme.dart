@@ -7,7 +7,8 @@ class AppTheme {
     primaryColor: Colors.orange[800],
     scaffoldBackgroundColor: Colors.black,
     appBarTheme: AppBarTheme(
-      backgroundColor: Colors.orange[900],
+      centerTitle: true,
+      backgroundColor: Colors.black,
       foregroundColor: Colors.white,
     ),
   colorScheme: ColorScheme.dark(
