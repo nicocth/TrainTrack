@@ -9,16 +9,17 @@ class SettingsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
 
-    //comprobar si el usuario esta logueado
-    final user = ref.watch(authProvider); // Observa cambios en el usuario
+    // check if user is logged in
+    // only perform the check on this screen since it is the only one with the logout function.
+    final user = ref.watch(authProvider); 
 
-    // Si el usuario es null, lo redirige al login
+    // if user is null, redirect to login screen
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (user == null) {
         Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(builder: (context) => const LoginScreen()),
-          (route) => false, // Esto elimina todas las rutas anteriores
+          (route) => false, // delete all routes
         );
       }
     });

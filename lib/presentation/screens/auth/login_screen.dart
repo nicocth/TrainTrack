@@ -27,7 +27,8 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
       // login success
       Navigator.pushAndRemoveUntil(
           context, 
-          MaterialPageRoute(builder: (context) => HomeScreen()), (route) => false);
+          MaterialPageRoute(builder: (context) => HomeScreen()), 
+          (route) => false);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
