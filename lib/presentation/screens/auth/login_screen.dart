@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:train_track/presentation/screens/auth/register_screen.dart';
 import 'package:train_track/presentation/screens/home/home_screen.dart';
 import 'package:train_track/presentation/providers/auth_provider.dart';
 import 'package:train_track/infraestructure/auth_firebase/auth_service.dart';
@@ -56,6 +57,7 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
               controller: _passwordController,
               decoration: const InputDecoration(labelText: 'Password'),
             ),
+            const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () async {
                 try {
@@ -105,6 +107,22 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
               },
               child: const Text('Login'),
             ),
+            const SizedBox(height: 10),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RegisterScreen()),
+                );
+              },
+              child: const Text(
+                '¿Aún no tienes una cuenta?',
+                style: TextStyle(
+                  decoration: TextDecoration.underline,
+                  color: Colors.blue,
+                ),
+              ),
+            )
           ],
         ),
       ),
