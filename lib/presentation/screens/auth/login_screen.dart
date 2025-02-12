@@ -25,9 +25,9 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
 
     if (userCredential != null) {
       // login success
-      Navigator.push(
+      Navigator.pushAndRemoveUntil(
           context, 
-          MaterialPageRoute(builder: (context) => HomeScreen()));
+          MaterialPageRoute(builder: (context) => HomeScreen()), (route) => false);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -63,11 +63,12 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
                     _passwordController.text,
                   );
                   if (mounted) {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => HomeScreen(),
                       ),
+                      (route) => false,
                     );
                   }
                 } catch (e) {
@@ -88,10 +89,9 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
                         errorMessage = 'Usuario deshabilitado';
                         break;
                       default:
-                        errorMessage = 'Error de autenticacion: ${e.message}';	
+                        errorMessage = 'Error de autenticacion, el usuario o la contraseña no coinciden';	
                     }
                   }
-              
 
                   // mostrar el mensaje de error
                   ScaffoldMessenger.of(context).showSnackBar(

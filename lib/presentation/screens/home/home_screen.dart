@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:train_track/presentation/providers/auth_provider.dart';
+import 'package:train_track/presentation/screens/settings_screen/settings_screen.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -12,8 +12,10 @@ class HomeScreen extends ConsumerWidget {
         title: const Text('Home'),
         actions: <Widget>[
           IconButton(
-            icon: const Icon(Icons.logout),
-            onPressed: () => _logout(context, ref),
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => SettingsScreen()));
+            }     
           )
         ],
       ),
@@ -21,17 +23,5 @@ class HomeScreen extends ConsumerWidget {
         child: Text('Bienvenido a Home Screen'),
       ),
     );
-  }
-
-  void _logout(BuildContext context, WidgetRef ref) async {
-    try{
-      await ref.read(authProvider.notifier).signOut();
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Error al cerrar sesión'),
-        ),
-      );
-    }
   }
 }

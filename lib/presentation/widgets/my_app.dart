@@ -14,13 +14,11 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final authState = ref.watch(authProvider);
 
-
-
-
     return MaterialApp(
       title: 'TrainTrack',
       debugShowCheckedModeBanner: false,
       theme: AppTheme().getTheme(),
+      //verificamos si el usuario esta logueado
       home: authState == null ? const LoginScreen() :  const HomeScreen(),
     );
   }
