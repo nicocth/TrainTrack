@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:train_track/presentation/widgets/my_app.dart';
+import 'package:train_track/presentation/my_app.dart';
 import 'config/firebase/firebase_options.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
