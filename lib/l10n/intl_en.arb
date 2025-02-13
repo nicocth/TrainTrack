@@ -25,5 +25,7 @@
     "email_already_in_use": "Email already in use",
     "weak_password": "Password must be at least 6 characters",
     "register": "Register",
-    "already_have_account": "Already have an account?"
+    "already_have_account": "Already have an account?",
+    "create_training": "Create training",
+    "my_trainings": "My trainings"
 }

@@ -264,6 +264,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Create training`
+  String get create_training {
+    return Intl.message(
+      'Create training',
+      name: 'create_training',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My trainings`
+  String get my_trainings {
+    return Intl.message(
+      'My trainings',
+      name: 'my_trainings',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

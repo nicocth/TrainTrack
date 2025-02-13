@@ -33,7 +33,7 @@ class SettingsScreen extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(S.current.account),
+            Text(S.current.account, style: Theme.of(context).textTheme.bodyLarge),
             ListTile(
               leading: const Icon(Icons.show_chart),
               title: Text(S.current.statistics),
@@ -51,7 +51,7 @@ class SettingsScreen extends ConsumerWidget {
               },
             ),
             SizedBox(height: 20),
-            Text(S.current.preferences),
+            Text(S.current.preferences, style: Theme.of(context).textTheme.bodyLarge),
             ListTile(
               leading: const Icon(Icons.translate),
               title: Text(S.current.language),
@@ -69,7 +69,7 @@ class SettingsScreen extends ConsumerWidget {
               },
             ),
             SizedBox(height: 20),
-            Text(S.current.help),
+            Text(S.current.help, style: Theme.of(context).textTheme.bodyLarge),
             ListTile(
               leading: const Icon(Icons.help),
               title: Text(S.current.help),

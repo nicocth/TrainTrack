@@ -25,5 +25,7 @@
     "email_already_in_use": "El correo electrónico ya está en uso",
     "weak_password": "La contraseña debe tener al menos 6 caracteres",
     "register": "Registrarse",
-    "already_have_account": "¿Ya tienes una cuenta?"
+    "already_have_account": "¿Ya tienes una cuenta?",
+    "create_training": "Crear entrenamiento",
+    "my_trainings": "Mis entrenamientos"
 }

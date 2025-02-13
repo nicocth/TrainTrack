@@ -35,6 +35,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirmar contraseña",
     ),
+    "create_training": MessageLookupByLibrary.simpleMessage(
+      "Crear entrenamiento",
+    ),
     "email": MessageLookupByLibrary.simpleMessage("Correo electrónico"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "El correo electrónico ya está en uso",
@@ -55,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Error al cerrar sesión",
     ),
     "mode": MessageLookupByLibrary.simpleMessage("Modo"),
+    "my_trainings": MessageLookupByLibrary.simpleMessage("Mis entrenamientos"),
     "password": MessageLookupByLibrary.simpleMessage("Contraseña"),
     "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
       "Las contraseñas no coinciden",

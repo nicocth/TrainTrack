@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirm password",
     ),
+    "create_training": MessageLookupByLibrary.simpleMessage("Create training"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "Email already in use",
@@ -49,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "logout_failed": MessageLookupByLibrary.simpleMessage("Logout failed"),
     "mode": MessageLookupByLibrary.simpleMessage("Mode"),
+    "my_trainings": MessageLookupByLibrary.simpleMessage("My trainings"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
       "passwords do not match",
