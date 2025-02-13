@@ -28,8 +28,17 @@ class MessageLookup extends MessageLookupByLibrary {
       "¿Aún no tienes una cuenta?",
     ),
     "account": MessageLookupByLibrary.simpleMessage("Cuenta"),
+    "already_have_account": MessageLookupByLibrary.simpleMessage(
+      "¿Ya tienes una cuenta?",
+    ),
     "app_bar_settings": MessageLookupByLibrary.simpleMessage("Configuración"),
+    "confirm_password": MessageLookupByLibrary.simpleMessage(
+      "Confirmar contraseña",
+    ),
     "email": MessageLookupByLibrary.simpleMessage("Correo electrónico"),
+    "email_already_in_use": MessageLookupByLibrary.simpleMessage(
+      "El correo electrónico ya está en uso",
+    ),
     "helloToUser": m0,
     "help": MessageLookupByLibrary.simpleMessage("Ayuda"),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
@@ -47,13 +56,23 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "mode": MessageLookupByLibrary.simpleMessage("Modo"),
     "password": MessageLookupByLibrary.simpleMessage("Contraseña"),
+    "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
+      "Las contraseñas no coinciden",
+    ),
     "preferences": MessageLookupByLibrary.simpleMessage("Preferencias"),
+    "register": MessageLookupByLibrary.simpleMessage("Registrarse"),
+    "registration_failed": MessageLookupByLibrary.simpleMessage(
+      "Error al registrar el usuario",
+    ),
     "statistics": MessageLookupByLibrary.simpleMessage("Estadisticas"),
     "user_disabled": MessageLookupByLibrary.simpleMessage(
       "Usuario deshabilitado",
     ),
     "user_not_found": MessageLookupByLibrary.simpleMessage(
       "Usuario no encontrado",
+    ),
+    "weak_password": MessageLookupByLibrary.simpleMessage(
+      "La contraseña debe tener al menos 6 caracteres",
     ),
     "wrong_password": MessageLookupByLibrary.simpleMessage(
       "Contraseña incorrecta",

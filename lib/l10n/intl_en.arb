@@ -4,6 +4,7 @@
     "access_register": "Register now",
     "email": "Email",
     "password": "Password",
+    "confirm_password": "Confirm password",
     "user_not_found": "User not found",
     "wrong_password": "Wrong password",
     "invalid_email": "Invalid email",
@@ -18,5 +19,11 @@
     "help": "Help",
     "language": "Language",
     "mode": "Mode",
-    "home": "Home"
+    "home": "Home",
+    "passwords_do_not_match": "passwords do not match",
+    "registration_failed": "Error registering user",
+    "email_already_in_use": "Email already in use",
+    "weak_password": "Password must be at least 6 characters",
+    "register": "Register",
+    "already_have_account": "Already have an account?"
 }

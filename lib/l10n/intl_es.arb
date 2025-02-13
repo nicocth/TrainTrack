@@ -4,6 +4,7 @@
     "access_register": "¿Aún no tienes una cuenta?",
     "email": "Correo electrónico",
     "password": "Contraseña",
+    "confirm_password": "Confirmar contraseña",
     "user_not_found": "Usuario no encontrado",
     "wrong_password": "Contraseña incorrecta",
     "invalid_email": "Correo electrónico inválido",
@@ -18,5 +19,11 @@
     "help": "Ayuda",
     "language": "Idioma",
     "mode": "Modo",
-    "home": "Home"
+    "home": "Home",
+    "passwords_do_not_match": "Las contraseñas no coinciden",
+    "registration_failed": "Error al registrar el usuario",
+    "email_already_in_use": "El correo electrónico ya está en uso",
+    "weak_password": "La contraseña debe tener al menos 6 caracteres",
+    "register": "Registrarse",
+    "already_have_account": "¿Ya tienes una cuenta?"
 }

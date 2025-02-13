@@ -90,6 +90,16 @@ class S {
     return Intl.message('Password', name: 'password', desc: '', args: []);
   }
 
+  /// `Confirm password`
+  String get confirm_password {
+    return Intl.message(
+      'Confirm password',
+      name: 'confirm_password',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `User not found`
   String get user_not_found {
     return Intl.message(
@@ -198,6 +208,61 @@ class S {
   /// `Home`
   String get home {
     return Intl.message('Home', name: 'home', desc: '', args: []);
+  }
+
+  /// `passwords do not match`
+  String get passwords_do_not_match {
+    return Intl.message(
+      'passwords do not match',
+      name: 'passwords_do_not_match',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error registering user`
+  String get registration_failed {
+    return Intl.message(
+      'Error registering user',
+      name: 'registration_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email already in use`
+  String get email_already_in_use {
+    return Intl.message(
+      'Email already in use',
+      name: 'email_already_in_use',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least 6 characters`
+  String get weak_password {
+    return Intl.message(
+      'Password must be at least 6 characters',
+      name: 'weak_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register`
+  String get register {
+    return Intl.message('Register', name: 'register', desc: '', args: []);
+  }
+
+  /// `Already have an account?`
+  String get already_have_account {
+    return Intl.message(
+      'Already have an account?',
+      name: 'already_have_account',
+      desc: '',
+      args: [],
+    );
   }
 }
 

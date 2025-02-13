@@ -10,6 +10,11 @@ class AppTheme {
       centerTitle: true,
       backgroundColor: Colors.black,
       foregroundColor: Colors.white,
+      titleTextStyle: TextStyle(
+        color: Colors.white,
+        fontSize: 35,
+        fontWeight: FontWeight.bold,
+      ),
     ),
   colorScheme: ColorScheme.dark(
     primary: Colors.orange[800]!,

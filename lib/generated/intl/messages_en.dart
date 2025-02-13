@@ -26,8 +26,17 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "access_register": MessageLookupByLibrary.simpleMessage("Register now"),
     "account": MessageLookupByLibrary.simpleMessage("Account"),
+    "already_have_account": MessageLookupByLibrary.simpleMessage(
+      "Already have an account?",
+    ),
     "app_bar_settings": MessageLookupByLibrary.simpleMessage("Settings"),
+    "confirm_password": MessageLookupByLibrary.simpleMessage(
+      "Confirm password",
+    ),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "email_already_in_use": MessageLookupByLibrary.simpleMessage(
+      "Email already in use",
+    ),
     "helloToUser": m0,
     "help": MessageLookupByLibrary.simpleMessage("Help"),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
@@ -41,10 +50,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "logout_failed": MessageLookupByLibrary.simpleMessage("Logout failed"),
     "mode": MessageLookupByLibrary.simpleMessage("Mode"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
+      "passwords do not match",
+    ),
     "preferences": MessageLookupByLibrary.simpleMessage("Preferences"),
+    "register": MessageLookupByLibrary.simpleMessage("Register"),
+    "registration_failed": MessageLookupByLibrary.simpleMessage(
+      "Error registering user",
+    ),
     "statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
     "user_disabled": MessageLookupByLibrary.simpleMessage("User disabled"),
     "user_not_found": MessageLookupByLibrary.simpleMessage("User not found"),
+    "weak_password": MessageLookupByLibrary.simpleMessage(
+      "Password must be at least 6 characters",
+    ),
     "wrong_password": MessageLookupByLibrary.simpleMessage("Wrong password"),
   };
 }
