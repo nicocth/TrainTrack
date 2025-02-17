@@ -46,8 +46,8 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
         children: [
           // Imagen de fondo
           Positioned.fill(
-            child: Image.network(
-              'https://res.cloudinary.com/dpjnvpnv3/image/upload/v1739398714/background_login_mea8vs.jpg',
+            child: Image.asset(
+              'assets/images/background_login.jpeg',
               fit: BoxFit.cover,
             ),
           ),
