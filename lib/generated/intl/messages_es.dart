@@ -42,6 +42,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "El correo electrónico ya está en uso",
     ),
+    "empty_password": MessageLookupByLibrary.simpleMessage(
+      "La contraseña es obligatoria",
+    ),
+    "fill_all_fields": MessageLookupByLibrary.simpleMessage(
+      "Por favor, rellene todos los campos",
+    ),
     "helloToUser": m0,
     "help": MessageLookupByLibrary.simpleMessage("Ayuda"),
     "home": MessageLookupByLibrary.simpleMessage("Home"),

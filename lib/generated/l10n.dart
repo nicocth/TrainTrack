@@ -100,6 +100,16 @@ class S {
     );
   }
 
+  /// `Password is required`
+  String get empty_password {
+    return Intl.message(
+      'Password is required',
+      name: 'empty_password',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `User not found`
   String get user_not_found {
     return Intl.message(
@@ -145,6 +155,16 @@ class S {
     return Intl.message(
       'Login failed, user or password do not match',
       name: 'login_failed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please fill all fields`
+  String get fill_all_fields {
+    return Intl.message(
+      'Please fill all fields',
+      name: 'fill_all_fields',
       desc: '',
       args: [],
     );

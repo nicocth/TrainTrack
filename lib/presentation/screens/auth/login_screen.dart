@@ -6,6 +6,7 @@ import 'package:train_track/presentation/screens/auth/register_screen.dart';
 import 'package:train_track/presentation/screens/home/home_screen.dart';
 import 'package:train_track/presentation/providers/auth_provider.dart';
 import 'package:train_track/infraestructure/auth_firebase/auth_service.dart';
+import 'package:train_track/shared/utils/validators.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
@@ -19,22 +20,73 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
   final TextEditingController _passwordController = TextEditingController();
   final AuthService _authService = AuthService();
 
-  void login(BuildContext context) async {
-    final userCredential = await _authService.signInWithEmailAndPassword(
-      _emailController.text,
-      _passwordController.text,
-    );
+  bool _obscurePassword = true;
 
-    if (userCredential != null) {
-      Navigator.pushAndRemoveUntil(
-          context, 
-          MaterialPageRoute(builder: (context) => HomeScreen()), 
-          (route) => false);
-    } else {
+  void _togglePasswordVisibility() {
+    setState(() {
+      _obscurePassword = !_obscurePassword;
+    });
+  }
+
+  void login(BuildContext context) async {
+    final email = _emailController.text.trim();
+    final password = _passwordController.text;
+
+
+    if (!Validators.emptyfields(email, password)) {	
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(S.current.login_failed),
-        ),
+        SnackBar(content: Text(S.current.fill_all_fields), backgroundColor: Colors.red),
+      );
+      return;
+    }
+
+    if (!Validators.validateEmail(email)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(S.current.invalid_email), backgroundColor: Colors.red),
+      );
+      return;
+    }
+
+    if (!Validators.validatePassword(password)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(S.current.weak_password), backgroundColor: Colors.red),
+      );
+      return;
+    }
+
+    try {
+      await ref.read(authProvider.notifier).signIn(email, password);
+      if (mounted) {
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => HomeScreen()),
+          (route) => false,
+        );
+      }
+    } catch (e) {
+      String errorMessage = S.current.login_failed;
+
+      if (e is FirebaseAuthException) {
+        switch (e.code) {
+          case 'user-not-found':
+            errorMessage = S.current.user_not_found;
+            break;
+          case 'wrong-password':
+            errorMessage = S.current.wrong_password;
+            break;
+          case 'invalid-email':
+            errorMessage = S.current.invalid_email;
+            break;
+          case 'user-disabled':
+            errorMessage = S.current.user_disabled;
+            break;
+          default:
+            errorMessage = S.current.login_failed;
+        }
+      }
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(errorMessage), backgroundColor: Colors.red),
       );
     }
   }
@@ -44,21 +96,19 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
     return Scaffold(
       body: Stack(
         children: [
-          // Imagen de fondo
           Positioned.fill(
             child: Image.asset(
               'assets/images/background_login.jpeg',
               fit: BoxFit.cover,
             ),
           ),
-          // Contenedor opaco que cubre toda la parte superior
           Positioned(
             top: 0,
             left: 0,
             right: 0,
             child: Container(
-              height: 180, // Ajusta la altura según lo necesites
-              color: Colors.black.withOpacity(0.4), // Fondo oscuro con opacidad
+              height: 180,
+              color: Colors.black.withOpacity(0.4),
               alignment: Alignment.center,
               child: Text(
                 'TrainTrack',
@@ -77,7 +127,6 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
               ),
             ),
           ),
-          // Contenedor con los campos de inicio de sesión
           Positioned(
             bottom: 0,
             left: 0,
@@ -96,62 +145,28 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
                 children: [
                   TextField(
                     controller: _emailController,
+                    keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                      labelText: S.current.email),
+                      labelText: S.current.email,
+                      prefixIcon: Icon(Icons.email),
+                    ),
                   ),
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 20),
                   TextField(
                     controller: _passwordController,
+                    obscureText: _obscurePassword,
                     decoration: InputDecoration(
-                      labelText: S.current.password),
+                      labelText: S.current.password,
+                      prefixIcon: Icon(Icons.lock),
+                      suffixIcon: IconButton(
+                        icon: Icon(_obscurePassword ? Icons.visibility : Icons.visibility_off),
+                        onPressed: _togglePasswordVisibility,
+                      ),
+                    ),
                   ),
                   const SizedBox(height: 30),
                   ElevatedButton(
-                    onPressed: () async {
-                      try {
-                        await ref.read(authProvider.notifier).signIn(
-                          _emailController.text,
-                          _passwordController.text,
-                        );
-                        if (mounted) {
-                          Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => HomeScreen(),
-                            ),
-                            (route) => false,
-                          );
-                        }
-                      } catch (e) {
-                        String errorMessage = S.current.login_failed;
-
-                        if (e is FirebaseAuthException) {
-                          switch (e.code) {
-                            case 'user-not-found':
-                              errorMessage = S.current.user_not_found;
-                              break;
-                            case 'wrong-password':
-                              errorMessage = S.current.wrong_password;
-                              break;
-                            case 'invalid-email':
-                              errorMessage = S.current.invalid_email;
-                              break;
-                            case 'user-disabled':
-                              errorMessage = S.current.user_disabled;
-                              break;
-                            default:
-                              errorMessage = S.current.login_failed; 
-                          }
-                        }
-
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text(errorMessage),
-                            backgroundColor: Colors.red,
-                          ),
-                        );
-                      }
-                    },
+                    onPressed: () => login(context),
                     child: Text(S.current.login),
                   ),
                   const SizedBox(height: 20),
@@ -164,9 +179,7 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
                     },
                     child: Text(
                       S.current.access_register,
-                      style: const TextStyle(
-                        color: Colors.blue,
-                      ),
+                      style: const TextStyle(color: Colors.blue),
                     ),
                   )
                 ],

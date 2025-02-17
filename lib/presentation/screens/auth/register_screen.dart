@@ -5,6 +5,7 @@ import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/presentation/screens/home/home_screen.dart';
 import 'package:train_track/presentation/screens/auth/login_screen.dart';
 import 'package:train_track/presentation/providers/auth_provider.dart';
+import 'package:train_track/shared/utils/validators.dart';
 
 class RegisterScreen extends ConsumerStatefulWidget {
   const RegisterScreen({super.key});
@@ -18,56 +19,12 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmPasswordController = TextEditingController();
 
-  void register(BuildContext context) async {
-    if (_passwordController.text != _confirmPasswordController.text) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(S.current.passwords_do_not_match),
-          backgroundColor: Colors.red,
-        ),
-      );
-      return;
-    }
+  bool _obscurePassword = true;
 
-    try {
-      await ref.read(authProvider.notifier).signUp(
-        _emailController.text,
-        _passwordController.text,
-      );
-
-      if (mounted) {
-        Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (context) => HomeScreen()),
-          (route) => false,
-        );
-      }
-    } catch (e) {
-      String errorMessage = S.current.registration_failed;
-
-      if (e is FirebaseAuthException) {
-        switch (e.code) {
-          case 'email-already-in-use':
-            errorMessage = S.current.email_already_in_use;
-            break;
-          case 'invalid-email':
-            errorMessage = S.current.invalid_email;
-            break;
-          case 'weak-password':
-            errorMessage = S.current.weak_password;
-            break;
-          default:
-            errorMessage = S.current.registration_failed;
-        }
-      }
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(errorMessage),
-          backgroundColor: Colors.red,
-        ),
-      );
-    }
+  void _togglePasswordVisibility() {
+    setState(() {
+      _obscurePassword = !_obscurePassword;
+    });
   }
 
   @override
@@ -131,18 +88,28 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
                   const SizedBox(height: 30),
                   TextField(
                     controller: _passwordController,
+                    obscureText: _obscurePassword,
                     decoration: InputDecoration(
                       labelText: S.current.password,
+                      prefixIcon: Icon(Icons.lock),
+                      suffixIcon: IconButton(
+                        icon: Icon(_obscurePassword ? Icons.visibility : Icons.visibility_off),
+                        onPressed: _togglePasswordVisibility,
+                      ),
                     ),
-                    obscureText: true,
                   ),
                   const SizedBox(height: 30),
                   TextField(
                     controller: _confirmPasswordController,
+                    obscureText: _obscurePassword,
                     decoration: InputDecoration(
                       labelText: S.current.confirm_password,
+                      prefixIcon: Icon(Icons.lock),
+                      suffixIcon: IconButton(
+                        icon: Icon(_obscurePassword ? Icons.visibility : Icons.visibility_off),
+                        onPressed: _togglePasswordVisibility,
+                      ),
                     ),
-                    obscureText: true,
                   ),
                   const SizedBox(height: 30),
                   ElevatedButton(
@@ -171,5 +138,70 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
         ],
       ),
     );
+  }
+
+    void register(BuildContext context) async {
+    final email = _emailController.text.trim();
+    final password = _passwordController.text;
+    final confirmPassword = _confirmPasswordController.text;
+
+    if (!Validators.emptyfieldsRegister(email, password, confirmPassword)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(S.current.fill_all_fields), backgroundColor: Colors.red),
+      );
+      return;
+    }
+
+    if (!Validators.validateEmail(email)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(S.current.invalid_email), backgroundColor: Colors.red),
+      );
+      return;
+    }
+
+    if (!Validators.validatePassword(password)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(S.current.weak_password), backgroundColor: Colors.red),
+      );
+      return;
+    }
+
+    if (password != confirmPassword) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(S.current.passwords_do_not_match), backgroundColor: Colors.red),
+      );
+      return;
+    }
+
+    try {
+      await ref.read(authProvider.notifier).signUp(email, password);
+      if (mounted) {
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => HomeScreen()),
+          (route) => false,
+        );
+      }
+    } catch (e) {
+      String errorMessage = S.current.registration_failed;
+      if (e is FirebaseAuthException) {
+        switch (e.code) {
+          case 'email-already-in-use':
+            errorMessage = S.current.email_already_in_use;
+            break;
+          case 'invalid-email':
+            errorMessage = S.current.invalid_email;
+            break;
+          case 'weak-password':
+            errorMessage = S.current.weak_password;
+            break;
+          default:
+            errorMessage = S.current.registration_failed;
+        }
+      }
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(errorMessage), backgroundColor: Colors.red),
+      );
+    }
   }
 }

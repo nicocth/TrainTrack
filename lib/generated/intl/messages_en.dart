@@ -38,6 +38,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "Email already in use",
     ),
+    "empty_password": MessageLookupByLibrary.simpleMessage(
+      "Password is required",
+    ),
+    "fill_all_fields": MessageLookupByLibrary.simpleMessage(
+      "Please fill all fields",
+    ),
     "helloToUser": m0,
     "help": MessageLookupByLibrary.simpleMessage("Help"),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
