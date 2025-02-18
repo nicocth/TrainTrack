@@ -5,6 +5,5 @@ enum GrupoMuscular {
   triceps,
   abdomen,
   hombros,
-  piernas,
-
+  piernas
 }

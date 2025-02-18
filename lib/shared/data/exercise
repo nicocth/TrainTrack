@@ -7,10 +7,24 @@
     "imagen": "https://..."
   },
   {
-    "id": "press_banca",
-    "nombre": "Press de Banca",
-    "descripcion": "Ejercicio para el pecho",
-    "grupo_muscular": "Pecho",
-    "imagen": "https://..."
+    "id": "press_banca_barra",
+    "nombre": "Press de banca con barra",
+    "descripcion": "Recostado sobre un banco horizontal, los brazos estirados verticalmente, con la barra cargada en las manos, el movimiento consiste en bajar la barra hasta que toque el torso (fase excéntrica) y luego subir (fase concéntrica) hasta la posición inicial.",
+    "grupo_muscular": "pecho",
+    "imagen": "assets/images/press_banca.jpg"
+  },
+  {
+    "id": "press_banca_inclinado_barra",
+    "nombre": "Press de banca inclinado con barra",
+    "descripcion": "Recostado sobre un banco a 30 o 45 grados, los brazos estirados verticalmente, con la barra cargada en las manos, el movimiento consiste en bajar la barra hasta que toque el torso (fase excéntrica) y luego subir (fase concéntrica) hasta la posición inicial.",
+    "grupo_muscular": "pecho",
+    "imagen": "assets/images/press_banca_inclinado_barra.jpg"
+  },
+  {
+    "id": "press_pecho_maquina_vertical",
+    "nombre": "Press de pecho en máquina vertical",
+    "descripcion": "Siéntate en la máquina con la espalda recta y los pies firmes en el suelo. Agarra las asas de la máquina y comienza a empujar hacia adelante, manteniendo los codos ligeramente flexionados. Lleva las asas hacia tu pecho y luego extiende los brazos para volver a la posición inicial",
+    "grupo_muscular": "pecho",
+    "imagen": "assets/images/press_pecho_maquina_vertical.jpg"
   }
 ]
