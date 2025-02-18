@@ -13,7 +13,6 @@ class CreateTrainingScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final newTraining = ref.watch(trainingProvider);
     final trainingNotifier = ref.read(trainingProvider.notifier);
-    final TextEditingController titleController = TextEditingController(text: newTraining.title);
 
     return Scaffold(
       appBar: AppBar(
@@ -33,7 +32,7 @@ class CreateTrainingScreen extends ConsumerWidget {
           children: [
             // Input para el título de la rutina
             TextField(
-              controller: titleController,
+              controller: newTraining.titleController,
               decoration: InputDecoration(labelText: S.current.routine_title),
               onChanged: (value) => trainingNotifier.setTitle(value),
             ),
@@ -74,7 +73,7 @@ class CreateTrainingScreen extends ConsumerWidget {
             // Botón para guardar la rutina
             ElevatedButton(
               onPressed: () {
-                if (newTraining.title.isEmpty) {
+                if (newTraining.titleController.text.isEmpty) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text(S.current.empty_title)),
                   );
