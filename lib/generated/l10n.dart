@@ -304,6 +304,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Uknown error`
+  String get uknown_error {
+    return Intl.message(
+      'Uknown error',
+      name: 'uknown_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Routine title`
+  String get routine_title {
+    return Intl.message(
+      'Routine title',
+      name: 'routine_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save routine`
+  String get save_routine {
+    return Intl.message(
+      'Save routine',
+      name: 'save_routine',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Routine saved`
+  String get routine_saved {
+    return Intl.message(
+      'Routine saved',
+      name: 'routine_saved',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a title`
+  String get empty_title {
+    return Intl.message(
+      'Please enter a title',
+      name: 'empty_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please add at least one exercise`
+  String get empty_exercises_list {
+    return Intl.message(
+      'Please add at least one exercise',
+      name: 'empty_exercises_list',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

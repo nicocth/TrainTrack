@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../../domain/models/ejercicio.dart';
+import '../../../domain/models/ejercicio.dart';
 
 class EjercicioMapper {
   static Ejercicio fromFirestore(DocumentSnapshot doc) {

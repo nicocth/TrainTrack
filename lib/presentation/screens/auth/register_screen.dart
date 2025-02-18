@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:train_track/generated/l10n.dart';
+import 'package:train_track/infraestructure/firestore/services/firestore_services.dart';
 import 'package:train_track/presentation/screens/home/home_screen.dart';
 import 'package:train_track/presentation/screens/auth/login_screen.dart';
 import 'package:train_track/presentation/providers/auth_provider.dart';
 import 'package:train_track/shared/utils/validators.dart';
+
 
 class RegisterScreen extends ConsumerStatefulWidget {
   const RegisterScreen({super.key});
@@ -17,7 +19,8 @@ class RegisterScreen extends ConsumerStatefulWidget {
 class RegisterScreenState extends ConsumerState<RegisterScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
 
   bool _obscurePassword = true;
   bool _obscurePasswordConfirmation = true;
@@ -28,7 +31,7 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
     });
   }
 
-    void _togglePasswordConfirmationVisibility() {
+  void _togglePasswordConfirmationVisibility() {
     setState(() {
       _obscurePasswordConfirmation = !_obscurePasswordConfirmation;
     });
@@ -100,7 +103,9 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
                       labelText: S.current.password,
                       prefixIcon: Icon(Icons.lock),
                       suffixIcon: IconButton(
-                        icon: Icon(_obscurePassword ? Icons.visibility : Icons.visibility_off),
+                        icon: Icon(_obscurePassword
+                            ? Icons.visibility
+                            : Icons.visibility_off),
                         onPressed: _togglePasswordVisibility,
                       ),
                     ),
@@ -113,7 +118,9 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
                       labelText: S.current.confirm_password,
                       prefixIcon: Icon(Icons.lock),
                       suffixIcon: IconButton(
-                        icon: Icon(_obscurePasswordConfirmation ? Icons.visibility : Icons.visibility_off),
+                        icon: Icon(_obscurePasswordConfirmation
+                            ? Icons.visibility
+                            : Icons.visibility_off),
                         onPressed: _togglePasswordConfirmationVisibility,
                       ),
                     ),
@@ -147,41 +154,65 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
     );
   }
 
-    void register(BuildContext context) async {
+  void register(BuildContext context) async {
     final email = _emailController.text.trim();
     final password = _passwordController.text;
     final confirmPassword = _confirmPasswordController.text;
 
     if (!Validators.emptyfieldsRegister(email, password, confirmPassword)) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(S.current.fill_all_fields), backgroundColor: Colors.red),
+        SnackBar(
+            content: Text(S.current.fill_all_fields),
+            backgroundColor: Colors.red),
       );
       return;
     }
 
     if (!Validators.validateEmail(email)) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(S.current.invalid_email), backgroundColor: Colors.red),
+        SnackBar(
+            content: Text(S.current.invalid_email),
+            backgroundColor: Colors.red),
       );
       return;
     }
 
     if (!Validators.validatePassword(password)) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(S.current.weak_password), backgroundColor: Colors.red),
+        SnackBar(
+            content: Text(S.current.weak_password),
+            backgroundColor: Colors.red),
       );
       return;
     }
 
-    if (password != confirmPassword) {
+    if (!Validators.comparePassword(password, confirmPassword)) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(S.current.passwords_do_not_match), backgroundColor: Colors.red),
+        SnackBar(
+            content: Text(S.current.passwords_do_not_match),
+            backgroundColor: Colors.red),
       );
       return;
     }
 
     try {
-      await ref.read(authProvider.notifier).signUp(email, password);
+      final user = await ref.read(authProvider.notifier).signUp(email, password);
+
+      if (user == null) {
+        throw FirebaseAuthException(code: 'user-creation-failed');
+      }
+
+      // Llamar al servicio Firestore para crear el usuario en Firestore y sus subcolecciones
+      final result = await FirestoreService().createUserInFirestore(email, user.uid);
+
+      if (result.isFailure) {
+        // Si falló, muestra el mensaje de error
+        ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(result.errorMessage ?? S.current.uknown_error), backgroundColor: Colors.red),
+      );
+        return;
+      }
+
       if (mounted) {
         Navigator.pushAndRemoveUntil(
           context,

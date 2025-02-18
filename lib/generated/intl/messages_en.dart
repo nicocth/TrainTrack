@@ -38,9 +38,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "Email already in use",
     ),
+    "empty_exercises_list": MessageLookupByLibrary.simpleMessage(
+      "Please add at least one exercise",
+    ),
     "empty_password": MessageLookupByLibrary.simpleMessage(
       "Password is required",
     ),
+    "empty_title": MessageLookupByLibrary.simpleMessage("Please enter a title"),
     "fill_all_fields": MessageLookupByLibrary.simpleMessage(
       "Please fill all fields",
     ),
@@ -66,7 +70,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "registration_failed": MessageLookupByLibrary.simpleMessage(
       "Error registering user",
     ),
+    "routine_saved": MessageLookupByLibrary.simpleMessage("Routine saved"),
+    "routine_title": MessageLookupByLibrary.simpleMessage("Routine title"),
+    "save_routine": MessageLookupByLibrary.simpleMessage("Save routine"),
     "statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
+    "uknown_error": MessageLookupByLibrary.simpleMessage("Uknown error"),
     "user_disabled": MessageLookupByLibrary.simpleMessage("User disabled"),
     "user_not_found": MessageLookupByLibrary.simpleMessage("User not found"),
     "weak_password": MessageLookupByLibrary.simpleMessage(

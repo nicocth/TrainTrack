@@ -5,7 +5,6 @@ import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/presentation/screens/auth/register_screen.dart';
 import 'package:train_track/presentation/screens/home/home_screen.dart';
 import 'package:train_track/presentation/providers/auth_provider.dart';
-import 'package:train_track/infraestructure/auth_firebase/auth_service.dart';
 import 'package:train_track/shared/utils/validators.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
@@ -18,7 +17,6 @@ class LoginScreen extends ConsumerStatefulWidget {
 class LoginScreenState extends ConsumerState<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final AuthService _authService = AuthService();
 
   bool _obscurePassword = true;
 

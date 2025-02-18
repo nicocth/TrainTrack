@@ -42,8 +42,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "El correo electrónico ya está en uso",
     ),
+    "empty_exercises_list": MessageLookupByLibrary.simpleMessage(
+      "Por favor, añade al menos un ejercicio",
+    ),
     "empty_password": MessageLookupByLibrary.simpleMessage(
       "La contraseña es obligatoria",
+    ),
+    "empty_title": MessageLookupByLibrary.simpleMessage(
+      "Por favor, ingresa un título",
     ),
     "fill_all_fields": MessageLookupByLibrary.simpleMessage(
       "Por favor, rellene todos los campos",
@@ -74,7 +80,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "registration_failed": MessageLookupByLibrary.simpleMessage(
       "Error al registrar el usuario",
     ),
+    "routine_saved": MessageLookupByLibrary.simpleMessage("Rutina guardada"),
+    "routine_title": MessageLookupByLibrary.simpleMessage(
+      "Título de la rutina",
+    ),
+    "save_routine": MessageLookupByLibrary.simpleMessage("Guardar rutina"),
     "statistics": MessageLookupByLibrary.simpleMessage("Estadisticas"),
+    "uknown_error": MessageLookupByLibrary.simpleMessage("Error desconocido"),
     "user_disabled": MessageLookupByLibrary.simpleMessage(
       "Usuario deshabilitado",
     ),

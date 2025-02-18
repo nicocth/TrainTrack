@@ -45,6 +45,7 @@ dependencies:
   go_router: ^14.8.0
   flutter_launcher_icons: ^0.14.3
   cloud_firestore: ^5.6.3
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:

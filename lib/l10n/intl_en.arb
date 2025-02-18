@@ -29,5 +29,11 @@
     "register": "Register",
     "already_have_account": "Already have an account?",
     "create_training": "Create training",
-    "my_trainings": "My trainings"
+    "my_trainings": "My trainings",
+    "uknown_error": "Uknown error",
+    "routine_title": "Routine title",
+    "save_routine": "Save routine",
+    "routine_saved": "Routine saved",
+    "empty_title": "Please enter a title",
+    "empty_exercises_list": "Please add at least one exercise"
 }
