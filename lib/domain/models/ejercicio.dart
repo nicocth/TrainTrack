@@ -1,9 +1,11 @@
+import 'package:train_track/domain/models/enum/grupo_muscular.dart';
+
 class Ejercicio {
   final String id;
   final String nombre;
   final String descripcion;
   final String imagen;
-  final String grupoMuscular;
+  final GrupoMuscular grupoMuscular;
 
   Ejercicio({
     required this.id,

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "sentadilla",
+    "nombre": "Sentadilla",
+    "descripcion": "Ejercicio compuesto para piernas",
+    "grupo_muscular": "Piernas",
+    "imagen": "https://..."
+  },
+  {
+    "id": "press_banca",
+    "nombre": "Press de Banca",
+    "descripcion": "Ejercicio para el pecho",
+    "grupo_muscular": "Pecho",
+    "imagen": "https://..."
+  }
+]
