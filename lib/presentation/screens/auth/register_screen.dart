@@ -20,10 +20,17 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
   final TextEditingController _confirmPasswordController = TextEditingController();
 
   bool _obscurePassword = true;
+  bool _obscurePasswordConfirmation = true;
 
   void _togglePasswordVisibility() {
     setState(() {
       _obscurePassword = !_obscurePassword;
+    });
+  }
+
+    void _togglePasswordConfirmationVisibility() {
+    setState(() {
+      _obscurePasswordConfirmation = !_obscurePasswordConfirmation;
     });
   }
 
@@ -101,13 +108,13 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
                   const SizedBox(height: 30),
                   TextField(
                     controller: _confirmPasswordController,
-                    obscureText: _obscurePassword,
+                    obscureText: _obscurePasswordConfirmation,
                     decoration: InputDecoration(
                       labelText: S.current.confirm_password,
                       prefixIcon: Icon(Icons.lock),
                       suffixIcon: IconButton(
-                        icon: Icon(_obscurePassword ? Icons.visibility : Icons.visibility_off),
-                        onPressed: _togglePasswordVisibility,
+                        icon: Icon(_obscurePasswordConfirmation ? Icons.visibility : Icons.visibility_off),
+                        onPressed: _togglePasswordConfirmationVisibility,
                       ),
                     ),
                   ),
