@@ -35,5 +35,7 @@
     "save_routine": "Save routine",
     "routine_saved": "Routine saved",
     "empty_title": "Please enter a title",
-    "empty_exercises_list": "Please add at least one exercise"
+    "empty_exercises_list": "Please add at least one exercise",
+    "add_exercise": "Add exercise",
+    "add_selected": "Add selected"
 }

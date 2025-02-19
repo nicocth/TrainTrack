@@ -364,6 +364,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Add exercise`
+  String get add_exercise {
+    return Intl.message(
+      'Add exercise',
+      name: 'add_exercise',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add selected`
+  String get add_selected {
+    return Intl.message(
+      'Add selected',
+      name: 'add_selected',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

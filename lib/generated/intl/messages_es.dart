@@ -28,6 +28,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "¿Aún no tienes una cuenta?",
     ),
     "account": MessageLookupByLibrary.simpleMessage("Cuenta"),
+    "add_exercise": MessageLookupByLibrary.simpleMessage("Añadir ejercicio"),
+    "add_selected": MessageLookupByLibrary.simpleMessage(
+      "Añadir seleccionados",
+    ),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "¿Ya tienes una cuenta?",
     ),

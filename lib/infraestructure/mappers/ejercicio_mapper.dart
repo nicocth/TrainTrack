@@ -1,4 +1,6 @@
 import 'dart:convert';
+import 'package:train_track/domain/models/enum/grupo_muscular.dart';
+
 import '../../domain/models/ejercicio.dart';
 
 class EjercicioMapper {
@@ -9,7 +11,9 @@ class EjercicioMapper {
       nombre: json['nombre'] ?? '',
       descripcion: json['descripcion'] ?? '',
       imagen: json['imagen'] ?? '',
-      grupoMuscular: json['grupo_muscular'] ?? '',
+      grupoMuscular: GrupoMuscular.values.firstWhere(
+        (e) => e.name == json['grupo_muscular'], // Convierte string a enum
+      ),
     );
   }
 

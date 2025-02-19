@@ -45,7 +45,7 @@ class CreateTrainingScreen extends ConsumerWidget {
                 itemBuilder: (context, index) {
                   return Card(
                     child: ListTile(
-                      title: Text(newTraining.exercises[index]),
+                      title: Text(newTraining.exercises[index].nombre),
                       trailing: IconButton(
                         icon: const Icon(Icons.delete, color: Colors.red),
                         onPressed: () => trainingNotifier.removeExercise(index),
