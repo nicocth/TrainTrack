@@ -16,22 +16,28 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final authState = ref.watch(authProvider);
 
-    return MaterialApp(
-      title: 'TrainTrack',
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme().getTheme(),
-      localizationsDelegates: [
-        S.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: [
-        Locale('es'), // Spanish
-        Locale('en'), // English
-      ],
-      //verificamos si el usuario esta logueado
-      home: authState == null ? const LoginScreen() :  const HomeScreen(),
+    return GestureDetector(
+      onTap: () {
+        // Close the keyboard anywhere in the app when tapped outside the text field
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: MaterialApp(
+        title: 'TrainTrack',
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme().getTheme(),
+        localizationsDelegates: [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: [
+          Locale('es'), // Spanish
+          Locale('en'), // English
+        ],
+        // Check if the user is authenticated to show the correct screen
+        home: authState == null ? const LoginScreen() :  const HomeScreen(),
+      ),
     );
   }
 }

@@ -45,36 +45,54 @@ class _AddExerciseScreenState extends ConsumerState<AddExerciseScreen> {
                 final exercise = availableExercises[index];
                 final isSelected = selectedExercises.contains(exercise);
 
-                return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5.0), // Espaciado entre elementos
-                  child: Center(
-                    child: ListTile( // Espaciado interno
-                      title: SizedBox(height: 60, child: Text(exercise.nombre), ),
-                      leading: ClipRRect(
-                          borderRadius: BorderRadius.circular(100), // Redondear imagen
-                          child: Image.asset(
-                            exercise.imagen,
-                            width: 60, 
-                            height: 100,
-                            fit: BoxFit.contain, // Asegurar que la imagen se ajuste
-                          ),
-                        ),                         
-                      trailing: Icon(
-                        isSelected ? Icons.check_circle : Icons.circle_outlined,
-                        color: isSelected ? Colors.green : null,
-                      ),
-                      onTap: () {
-                        setState(() {
-                          if (isSelected) {
-                            selectedExercises.remove(exercise);
-                          } else {
-                            selectedExercises.add(exercise);
-                          }
-                        });
-                      },
-                    ),
-                  ),
-                );
+return Padding(
+  padding: const EdgeInsets.symmetric(vertical: 5.0), // Espaciado entre elementos
+  child: Center(
+    child: ListTile(
+      title: SizedBox(height: 60, child: Text(exercise.nombre)),
+      leading: GestureDetector(
+        onTap: () {
+          showDialog(
+            context: context,
+            builder: (context) => Dialog(
+              backgroundColor: Colors.transparent,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10), // Opcional: redondear la imagen en el zoom
+                child: Image.asset(
+                  exercise.imagen,
+                  fit: BoxFit.contain, // Asegurar que la imagen se vea bien
+                ),
+              ),
+            ),
+          );
+        },
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(100), // Redondear imagen
+          child: Image.asset(
+            exercise.imagen,
+            width: 60,
+            height: 100,
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+      trailing: Icon(
+        isSelected ? Icons.check_circle : Icons.circle_outlined,
+        color: isSelected ? Colors.green : null,
+      ),
+      onTap: () {
+        setState(() {
+          if (isSelected) {
+            selectedExercises.remove(exercise);
+          } else {
+            selectedExercises.add(exercise);
+          }
+        });
+      },
+    ),
+  ),
+);
+
               },
             ),
 
