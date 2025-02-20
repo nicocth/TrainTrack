@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:train_track/domain/models/ejercicio.dart';
 import 'package:train_track/generated/l10n.dart';
@@ -17,17 +16,17 @@ class _AddExerciseScreenState extends ConsumerState<AddExerciseScreen> {
   final Set<Ejercicio> selectedExercises = {};
   List<Ejercicio> availableExercises = [];
 
-  Future<void> cargarEjerciciosDesdeJson() async {
-  final String jsonString = await rootBundle.loadString('lib/shared/data/exercise.json');
+  Future<void> loadExerciseFromJson() async {
+  List<Ejercicio> exerciseList = await EjercicioMapper.fromJsonList(); 
   setState(() {
-    availableExercises = EjercicioMapper.fromJsonList(jsonString);
+    availableExercises = exerciseList;
   });
   }
 
   @override
   void initState() {
     super.initState();
-    cargarEjerciciosDesdeJson();
+    loadExerciseFromJson();
   }
 
   @override

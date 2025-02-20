@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/services.dart';
 import 'package:train_track/domain/models/enum/grupo_muscular.dart';
 
 import '../../domain/models/ejercicio.dart';
@@ -28,8 +29,9 @@ class EjercicioMapper {
     };
   }
 
-  /// Convierte una lista de JSON en una lista de objetos `Ejercicio`
-  static List<Ejercicio> fromJsonList(String jsonString) {
+  /// Convierte la lista de exercise.json en una lista de objetos `Ejercicio`
+  static Future<List<Ejercicio>> fromJsonList() async {
+    final String jsonString = await rootBundle.loadString('lib/shared/data/exercise.json');
     final List<dynamic> jsonList = json.decode(jsonString);
     return jsonList.map((json) => fromJson(json)).toList();
   }
