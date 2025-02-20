@@ -39,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirmar contraseña",
     ),
+    "create_routine": MessageLookupByLibrary.simpleMessage("Crear rutina"),
     "create_training": MessageLookupByLibrary.simpleMessage(
       "Crear entrenamiento",
     ),

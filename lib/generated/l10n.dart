@@ -384,6 +384,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Create routine`
+  String get create_routine {
+    return Intl.message(
+      'Create routine',
+      name: 'create_routine',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

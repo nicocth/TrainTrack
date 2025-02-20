@@ -37,5 +37,6 @@
     "empty_title": "Please enter a title",
     "empty_exercises_list": "Please add at least one exercise",
     "add_exercise": "Add exercise",
-    "add_selected": "Add selected"
+    "add_selected": "Add selected",
+    "create_routine": "Create routine"
 }

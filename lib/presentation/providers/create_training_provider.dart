@@ -37,7 +37,23 @@ class TrainingNotifier extends StateNotifier<Training> {
       exercises: updatedExercises,
     );
   }
+
+  void reorderExercise(int oldIndex, int newIndex) {
+    if (oldIndex < newIndex) {
+      newIndex -= 1;
+    }
+
+    final updatedExercises = List<Ejercicio>.from(state.exercises);
+    final movedExercise = updatedExercises.removeAt(oldIndex);
+    updatedExercises.insert(newIndex, movedExercise);
+
+    state = Training(
+      titleController: state.titleController,
+      exercises: updatedExercises,
+    );
+  }
 }
+
 
 final trainingProvider = StateNotifierProvider<TrainingNotifier, Training>((ref) {
   return TrainingNotifier();
