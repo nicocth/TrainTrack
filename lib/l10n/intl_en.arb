@@ -37,6 +37,12 @@
     "empty_title": "Please enter a title",
     "empty_exercises_list": "Please add at least one exercise",
     "add_exercise": "Add exercise",
+    "add_series": "Add series",
     "add_selected": "Add selected",
-    "create_routine": "Create routine"
+    "create_routine": "Create routine",
+    "delete": "Delete",
+    "notes": "Notes",
+    "series": "Series",
+    "kg": "Kg",
+    "reps": "Reps"
 }

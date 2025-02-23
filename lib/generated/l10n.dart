@@ -375,6 +375,11 @@ class S {
     );
   }
 
+  /// `Add series`
+  String get add_series {
+    return Intl.message('Add series', name: 'add_series', desc: '', args: []);
+  }
+
   /// `Add selected`
   String get add_selected {
     return Intl.message(
@@ -393,6 +398,31 @@ class S {
       desc: '',
       args: [],
     );
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message('Delete', name: 'delete', desc: '', args: []);
+  }
+
+  /// `Notes`
+  String get notes {
+    return Intl.message('Notes', name: 'notes', desc: '', args: []);
+  }
+
+  /// `Series`
+  String get series {
+    return Intl.message('Series', name: 'series', desc: '', args: []);
+  }
+
+  /// `Kg`
+  String get kg {
+    return Intl.message('Kg', name: 'kg', desc: '', args: []);
+  }
+
+  /// `Reps`
+  String get reps {
+    return Intl.message('Reps', name: 'reps', desc: '', args: []);
   }
 }
 

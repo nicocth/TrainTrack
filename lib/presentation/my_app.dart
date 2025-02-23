@@ -22,7 +22,7 @@ class MyApp extends ConsumerWidget {
         FocusManager.instance.primaryFocus?.unfocus();
       },
       child: MaterialApp(
-        title: 'TrainTrack',
+        title: 'Train Track',
         debugShowCheckedModeBanner: false,
         theme: AppTheme().getTheme(),
         localizationsDelegates: [

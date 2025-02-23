@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "account": MessageLookupByLibrary.simpleMessage("Account"),
     "add_exercise": MessageLookupByLibrary.simpleMessage("Add exercise"),
     "add_selected": MessageLookupByLibrary.simpleMessage("Add selected"),
+    "add_series": MessageLookupByLibrary.simpleMessage("Add series"),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "Already have an account?",
     ),
@@ -37,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "create_routine": MessageLookupByLibrary.simpleMessage("Create routine"),
     "create_training": MessageLookupByLibrary.simpleMessage("Create training"),
+    "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "Email already in use",
@@ -55,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "help": MessageLookupByLibrary.simpleMessage("Help"),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "invalid_email": MessageLookupByLibrary.simpleMessage("Invalid email"),
+    "kg": MessageLookupByLibrary.simpleMessage("Kg"),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "login_failed": MessageLookupByLibrary.simpleMessage(
@@ -64,6 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "logout_failed": MessageLookupByLibrary.simpleMessage("Logout failed"),
     "mode": MessageLookupByLibrary.simpleMessage("Mode"),
     "my_trainings": MessageLookupByLibrary.simpleMessage("My trainings"),
+    "notes": MessageLookupByLibrary.simpleMessage("Notes"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
       "passwords do not match",
@@ -73,9 +77,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "registration_failed": MessageLookupByLibrary.simpleMessage(
       "Error registering user",
     ),
+    "reps": MessageLookupByLibrary.simpleMessage("Reps"),
     "routine_saved": MessageLookupByLibrary.simpleMessage("Routine saved"),
     "routine_title": MessageLookupByLibrary.simpleMessage("Routine title"),
     "save_routine": MessageLookupByLibrary.simpleMessage("Save routine"),
+    "series": MessageLookupByLibrary.simpleMessage("Series"),
     "statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
     "uknown_error": MessageLookupByLibrary.simpleMessage("Uknown error"),
     "user_disabled": MessageLookupByLibrary.simpleMessage("User disabled"),

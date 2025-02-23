@@ -32,6 +32,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "add_selected": MessageLookupByLibrary.simpleMessage(
       "Añadir seleccionados",
     ),
+    "add_series": MessageLookupByLibrary.simpleMessage("Añadir serie"),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "¿Ya tienes una cuenta?",
     ),
@@ -43,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "create_training": MessageLookupByLibrary.simpleMessage(
       "Crear entrenamiento",
     ),
+    "delete": MessageLookupByLibrary.simpleMessage("Eliminar"),
     "email": MessageLookupByLibrary.simpleMessage("Correo electrónico"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "El correo electrónico ya está en uso",
@@ -65,6 +67,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "Correo electrónico inválido",
     ),
+    "kg": MessageLookupByLibrary.simpleMessage("Kg"),
     "language": MessageLookupByLibrary.simpleMessage("Idioma"),
     "login": MessageLookupByLibrary.simpleMessage("Iniciar sesión"),
     "login_failed": MessageLookupByLibrary.simpleMessage(
@@ -76,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "mode": MessageLookupByLibrary.simpleMessage("Modo"),
     "my_trainings": MessageLookupByLibrary.simpleMessage("Mis entrenamientos"),
+    "notes": MessageLookupByLibrary.simpleMessage("Notas"),
     "password": MessageLookupByLibrary.simpleMessage("Contraseña"),
     "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
       "Las contraseñas no coinciden",
@@ -85,11 +89,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "registration_failed": MessageLookupByLibrary.simpleMessage(
       "Error al registrar el usuario",
     ),
+    "reps": MessageLookupByLibrary.simpleMessage("Reps"),
     "routine_saved": MessageLookupByLibrary.simpleMessage("Rutina guardada"),
     "routine_title": MessageLookupByLibrary.simpleMessage(
       "Título de la rutina",
     ),
     "save_routine": MessageLookupByLibrary.simpleMessage("Guardar rutina"),
+    "series": MessageLookupByLibrary.simpleMessage("Series"),
     "statistics": MessageLookupByLibrary.simpleMessage("Estadisticas"),
     "uknown_error": MessageLookupByLibrary.simpleMessage("Error desconocido"),
     "user_disabled": MessageLookupByLibrary.simpleMessage(
