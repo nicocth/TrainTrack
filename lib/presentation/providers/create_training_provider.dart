@@ -1,60 +1,96 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:train_track/domain/models/ejercicio.dart';
+import 'package:flutter/material.dart';
+import 'package:train_track/domain/models/custom_exercise.dart';
+import 'package:train_track/domain/models/exercise.dart';
+import 'package:train_track/domain/models/sets.dart';
 
-class Training {
+class TrainingState {
   final TextEditingController titleController;
-  final List<Ejercicio> exercises;
+  final List<CustomExercise> customExercises;
 
-  Training({required this.titleController, required this.exercises});
+  TrainingState({
+    required this.titleController,
+    required this.customExercises,
+  });
+
+  TrainingState copyWith({
+    TextEditingController? titleController,
+    List<CustomExercise>? customExercises,
+  }) {
+    return TrainingState(
+      titleController: titleController ?? this.titleController,
+      customExercises: customExercises ?? this.customExercises,
+    );
+  }
 }
 
-class TrainingNotifier extends StateNotifier<Training> {
-  TrainingNotifier() : super(Training(titleController: TextEditingController(), exercises: []));
+class TrainingNotifier extends StateNotifier<TrainingState> {
+  TrainingNotifier()
+      : super(TrainingState(
+          titleController: TextEditingController(),
+          customExercises: [],
+        ));
 
+  // Agregar un ejercicio como CustomExercise con sets vacíos
+  void addExercise(Exercise exercise) {
+    final newCustomExercise = CustomExercise(exercise: exercise, sets: []);
+    state = state.copyWith(customExercises: [...state.customExercises, newCustomExercise]);
+  }
+
+  // Agregar una lista de ejercicios como CustomExercise con un set vacío
+  void addExercises(List<Exercise> exercises) {
+    final newCustomExercises = exercises.map((exercise) => 
+      CustomExercise(
+        exercise: exercise,
+        sets: [Sets(reps: 0, weight: 0)], // Un único set inicializado
+      )
+    ).toList();
+
+    state = state.copyWith(customExercises: [...state.customExercises, ...newCustomExercises]);
+  }
+
+  // Eliminar un ejercicio de la lista
+  void removeExercise(int index) {
+    final updatedExercises = [...state.customExercises]..removeAt(index);
+    state = state.copyWith(customExercises: updatedExercises);
+  }
+
+  // Reordenar ejercicios
+  void reorderExercise(int oldIndex, int newIndex) {
+    final updatedExercises = [...state.customExercises];
+    if (newIndex > oldIndex) newIndex--;
+    final item = updatedExercises.removeAt(oldIndex);
+    updatedExercises.insert(newIndex, item);
+    state = state.copyWith(customExercises: updatedExercises);
+  }
+
+  // Actualizar el título
   void setTitle(String title) {
     state.titleController.text = title;
   }
 
-  void addExercise(Ejercicio exercise) {
-    state = Training(
-      titleController: state.titleController,
-      exercises: [...state.exercises, exercise],
+  // Agregar una serie a un ejercicio específico
+  // void addSetToExercise(int exerciseIndex, Set set) {
+  //   final updatedExercises = [...state.exercises];
+  //   updatedExercises[exerciseIndex] = CustomExercise(
+  //     exercise: updatedExercises[exerciseIndex].exercise,
+  //     sets: [...updatedExercises[exerciseIndex].sets, set],
+  //   );
+  //   state = state.copyWith(exercises: updatedExercises);
+  // }
+
+  // Eliminar una serie de un ejercicio específico
+  void removeSetFromExercise(int exerciseIndex, int setIndex) {
+    final updatedExercises = [...state.customExercises];
+    final updatedSets = [...updatedExercises[exerciseIndex].sets]..removeAt(setIndex);
+    updatedExercises[exerciseIndex] = CustomExercise(
+      exercise: updatedExercises[exerciseIndex].exercise,
+      sets: updatedSets,
     );
-  }
-
-  void addExercises(List<Ejercicio> newExercises) {
-    state = Training(
-      titleController: state.titleController,
-      exercises: [...state.exercises, ...newExercises],
-    );
-  }
-
-  void removeExercise(int index) {
-    final updatedExercises = List<Ejercicio>.from(state.exercises)..removeAt(index);
-    state = Training(
-      titleController: state.titleController,
-      exercises: updatedExercises,
-    );
-  }
-
-  void reorderExercise(int oldIndex, int newIndex) {
-    if (oldIndex < newIndex) {
-      newIndex -= 1;
-    }
-
-    final updatedExercises = List<Ejercicio>.from(state.exercises);
-    final movedExercise = updatedExercises.removeAt(oldIndex);
-    updatedExercises.insert(newIndex, movedExercise);
-
-    state = Training(
-      titleController: state.titleController,
-      exercises: updatedExercises,
-    );
+    state = state.copyWith(customExercises: updatedExercises);
   }
 }
 
-
-final trainingProvider = StateNotifierProvider<TrainingNotifier, Training>((ref) {
-  return TrainingNotifier();
-});
+final trainingProvider = StateNotifierProvider<TrainingNotifier, TrainingState>(
+  (ref) => TrainingNotifier(),
+);

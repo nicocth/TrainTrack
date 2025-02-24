@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:train_track/domain/models/ejercicio.dart';
+import 'package:train_track/domain/models/exercise.dart';
 import 'package:train_track/generated/l10n.dart';
-import 'package:train_track/infraestructure/mappers/ejercicio_mapper.dart';
+import 'package:train_track/infraestructure/mappers/exercise_mapper.dart';
 import 'package:train_track/presentation/providers/create_training_provider.dart';
 
 class AddExerciseScreen extends ConsumerStatefulWidget {
@@ -13,11 +13,11 @@ class AddExerciseScreen extends ConsumerStatefulWidget {
 }
 
 class _AddExerciseScreenState extends ConsumerState<AddExerciseScreen> {
-  final Set<Ejercicio> selectedExercises = {};
-  List<Ejercicio> availableExercises = [];
+  final Set<Exercise> selectedExercises = {};
+  List<Exercise> availableExercises = [];
 
   Future<void> loadExerciseFromJson() async {
-  List<Ejercicio> exerciseList = await EjercicioMapper.fromJsonList(); 
+  List<Exercise> exerciseList = await ExerciseMapper.fromJsonList(); 
   setState(() {
     availableExercises = exerciseList;
   });
@@ -48,7 +48,7 @@ return Padding(
   padding: const EdgeInsets.symmetric(vertical: 5.0), // Espaciado entre elementos
   child: Center(
     child: ListTile(
-      title: SizedBox(height: 60, child: Text(exercise.nombre)),
+      title: SizedBox(height: 60, child: Text(exercise.name)),
       leading: GestureDetector(
         onTap: () {
           showDialog(
@@ -58,7 +58,7 @@ return Padding(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10), // Opcional: redondear la imagen en el zoom
                 child: Image.asset(
-                  exercise.imagen,
+                  exercise.image,
                   fit: BoxFit.contain, // Asegurar que la imagen se vea bien
                 ),
               ),
@@ -68,7 +68,7 @@ return Padding(
         child: ClipRRect(
           borderRadius: BorderRadius.circular(100), // Redondear imagen
           child: Image.asset(
-            exercise.imagen,
+            exercise.image,
             width: 60,
             height: 100,
             fit: BoxFit.cover,

@@ -1,12 +1,66 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:train_track/generated/l10n.dart';
+import 'package:train_track/presentation/providers/auth_provider.dart';
 import 'package:train_track/presentation/providers/create_training_provider.dart';
 import 'package:train_track/presentation/widgets/shared/exercise_card_edit.dart';
 import 'add_exercise_screen.dart';
 
 class CreateTrainingScreen extends ConsumerWidget {
   const CreateTrainingScreen({super.key});
+
+  Future<void> _saveTraining(BuildContext context, WidgetRef ref) async {
+    final authNotifier = ref.read(authProvider.notifier);
+    final newTraining = ref.watch(trainingProvider);
+    final userId = authNotifier.getUserId();
+
+    if (newTraining.titleController.text.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(S.current.empty_title)),
+      );
+      return;
+    }
+
+    if (newTraining.customExercises.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(S.current.empty_exercises_list)),
+      );
+      return;
+    }
+
+    try {
+      final userRef = FirebaseFirestore.instance.collection('usuarios').doc(userId);
+      final routinesRef = userRef.collection('rutinas');
+
+      // Crear nueva rutina
+      final routineDoc = await routinesRef.add({
+        'nombre': newTraining.titleController.text,
+        'fecha_creacion': Timestamp.now(),
+        'ultima_actualizacion': Timestamp.now(),
+      });
+
+      // Agregar ejercicios dentro de la rutina
+      for (var customExercise in newTraining.customExercises) {
+        await routineDoc.collection('ejercicios').add({
+          'ejercicio': customExercise.exercise.id,
+          'nombre': customExercise.exercise.name, 
+          'series': customExercise.sets.map((set) => {
+            'peso': set.weight,
+            'repeticiones': set.reps,
+          }).toList(),
+        });
+      }
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(S.current.routine_saved)),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(S.current.error_saving_routine)),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -19,23 +73,7 @@ class CreateTrainingScreen extends ConsumerWidget {
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.save),
-            onPressed: () {
-              if (newTraining.titleController.text.isEmpty) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(S.current.empty_title)),
-                );
-                return;
-              }
-              if (newTraining.exercises.isEmpty) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(S.current.empty_exercises_list)),
-                );
-                return;
-              }
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(S.current.routine_saved)),
-              );
-            },
+            onPressed: () => _saveTraining(context, ref),
           ),
         ],
       ),
@@ -58,16 +96,16 @@ class CreateTrainingScreen extends ConsumerWidget {
                   trainingNotifier.reorderExercise(oldIndex, newIndex);
                 },
                 children: [
-                  for (int index = 0; index < newTraining.exercises.length; index++)
+                  for (int index = 0; index < newTraining.customExercises.length; index++)
                     ExerciseCard(
-                      key: ValueKey(newTraining.exercises[index]), 
-                      exercise: newTraining.exercises[index], 
+                      key: ValueKey(newTraining.customExercises[index]),
+                      customExercise: newTraining.customExercises[index],
                       onDelete: () => trainingNotifier.removeExercise(index),
                     ),
                 ],
               ),
             ),
-            // Botón para agregar ejercicio, solo si hay ejercicios en la lista
+            // Botón para agregar ejercicio
             ElevatedButton.icon(
               icon: const Icon(Icons.add),
               label: Text(S.current.add_exercise),
@@ -77,7 +115,7 @@ class CreateTrainingScreen extends ConsumerWidget {
                   MaterialPageRoute(builder: (context) => const AddExerciseScreen()),
                 );
               },
-            ),     
+            ),
           ],
         ),
       ),

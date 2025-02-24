@@ -1,44 +1,44 @@
 [
   {
     "id": "press_banca_barra",
-    "nombre": "Press de banca con barra",
-    "descripcion": "Recostado sobre un banco horizontal, los brazos estirados verticalmente, con la barra cargada en las manos, el movimiento consiste en bajar la barra hasta que toque el torso (fase excéntrica) y luego subir (fase concéntrica) hasta la posición inicial.",
-    "grupo_muscular": "pectoral",
-    "imagen": "assets/images/press_banca.jpg"
+    "name": "Press de banca con barra",
+    "description": "Recostado sobre un banco horizontal, los brazos estirados verticalmente, con la barra cargada en las manos, el movimiento consiste en bajar la barra hasta que toque el torso (fase excéntrica) y luego subir (fase concéntrica) hasta la posición inicial.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/press_banca.jpg"
   },
   {
     "id": "press_banca_inclinado_barra",
-    "nombre": "Press de banca inclinado con barra",
-    "descripcion": "Recostado sobre un banco a 30 o 45 grados, los brazos estirados verticalmente, con la barra cargada en las manos, el movimiento consiste en bajar la barra hasta que toque el torso (fase excéntrica) y luego subir (fase concéntrica) hasta la posición inicial.",
-    "grupo_muscular": "pectoral",
-    "imagen": "assets/images/press_banca_inclinado_barra.jpg"
+    "name": "Press de banca inclinado con barra",
+    "description": "Recostado sobre un banco a 30 o 45 grados, los brazos estirados verticalmente, con la barra cargada en las manos, el movimiento consiste en bajar la barra hasta que toque el torso (fase excéntrica) y luego subir (fase concéntrica) hasta la posición inicial.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/press_banca_inclinado_barra.jpg"
   },
   {
     "id": "press_pecho_maquina_vertical",
-    "nombre": "Press de pecho en máquina vertical",
-    "descripcion": "Siéntate en la máquina con la espalda recta y los pies firmes en el suelo. Agarra las asas de la máquina y comienza a empujar hacia adelante, manteniendo los codos ligeramente flexionados. Lleva las asas hacia tu pecho y luego extiende los brazos para volver a la posición inicial",
-    "grupo_muscular": "pectoral",
-    "imagen": "assets/images/press_pecho_maquina_vertical.jpg"
+    "name": "Press de pecho en máquina vertical",
+    "description": "Siéntate en la máquina con la espalda recta y los pies firmes en el suelo. Agarra las asas de la máquina y comienza a empujar hacia adelante, manteniendo los codos ligeramente flexionados. Lleva las asas hacia tu pecho y luego extiende los brazos para volver a la posición inicial",
+    "muscular_group": "pectoral",
+    "image": "assets/images/press_pecho_maquina_vertical.jpg"
   },
   {
     "id": "sentadilla_mutipower",
-    "nombre": "Sentadilla en máquina multipower",
-    "descripcion": "Coloque la barra del multipower sobre los músculos de la parte superior de la espalda. Asegúrese de que sus manos están equidistantes de cada extremo de la barra. Coloque los pies por delante del eje de su cuerpo. Levante la barra del bastidor y gírela para soltar los enganches de seguridad. Descienda lentamente, flexionando las caderas, rodillas y tobillos. Baje las caderas hasta que los cuádriceps estén aproximadamente paralelos al suelo. Mantenga la espalda recta con los glúteos hacia atrás. Pare contando uno y, a continuación, vuelva a la posición inicial elevándose siguiendo el eje de sustentación o incluso el de apoyo de los talones. No extienda demasiado las rodillas en la parte alta del movimiento y en ningún caso llegue a bloquear las rodillas.",
-    "grupo_muscular": "piernas",
-    "imagen": "assets/images/sentadilla_multipower.jpg"
+    "name": "Sentadilla en máquina multipower",
+    "description": "Coloque la barra del multipower sobre los músculos de la parte superior de la espalda. Asegúrese de que sus manos están equidistantes de cada extremo de la barra. Coloque los pies por delante del eje de su cuerpo. Levante la barra del bastidor y gírela para soltar los enganches de seguridad. Descienda lentamente, flexionando las caderas, rodillas y tobillos. Baje las caderas hasta que los cuádriceps estén aproximadamente paralelos al suelo. Mantenga la espalda recta con los glúteos hacia atrás. Pare contando uno y, a continuación, vuelva a la posición inicial elevándose siguiendo el eje de sustentación o incluso el de apoyo de los talones. No extienda demasiado las rodillas en la parte alta del movimiento y en ningún caso llegue a bloquear las rodillas.",
+    "muscular_group": "legs",
+    "image": "assets/images/sentadilla_multipower.jpg"
   },
   {
     "id": "sentadilla_barra_libre",
-    "nombre": "Sentadilla con barra libre",
-    "descripcion": "Se inicia de pie, mirando al frente y con la espalda recta, mientras los pies se separan del ancho de los hombros. La barra utilizada debe situarse justo encima de los trapecios, no debe apoyarse en el cuello. Siempre mirando al frente y sin curvar la espalda, debemos descender los glúteos flexionando la rodilla y la cadera, y cuidando que la rodilla no pase de la punta del pie ni sobrepase los 90 grados de flexión. Descendemos hasta que los muslos quedan paralelos al suelo y desde allí debemos elevarnos lentamente mientras exhalamos el aire inhalado al comenzar el descenso del cuerpo.",
-    "grupo_muscular": "piernas",
-    "imagen": "assets/images/sentadilla_multipower.jpg"
+    "name": "Sentadilla con barra libre",
+    "description": "Se inicia de pie, mirando al frente y con la espalda recta, mientras los pies se separan del ancho de los hombros. La barra utilizada debe situarse justo encima de los trapecios, no debe apoyarse en el cuello. Siempre mirando al frente y sin curvar la espalda, debemos descender los glúteos flexionando la rodilla y la cadera, y cuidando que la rodilla no pase de la punta del pie ni sobrepase los 90 grados de flexión. Descendemos hasta que los muslos quedan paralelos al suelo y desde allí debemos elevarnos lentamente mientras exhalamos el aire inhalado al comenzar el descenso del cuerpo.",
+    "muscular_group": "legs",
+    "image": "assets/images/sentadilla_multipower.jpg"
   },
   {
     "id": "prensa_inclinada",
-    "nombre": "Prensa inclinada",
-    "descripcion": "Siéntese en la prensa de piernas con la espalda y la cabeza apoyadas cómodamente en el soporte acolchado. Coloca los pies en la plataforma a la anchura de la cadera, asegurándote de que los talones estén planos. El trasero debe ser plano contra el asiento en lugar de estar levantado. Las piernas deben formar un ángulo de aproximadamente 90 grados en las rodillas. Las rodillas deben estar alineadas con los pies y no deben doblarse ni hacia adentro ni hacia afuera. Sujete los mangos de asistencia para proporcionar apoyo y mantener la columna vertebral y la cabeza en su lugar.",
-    "grupo_muscular": "piernas",
-    "imagen": "assets/images/prensa_inclinada.jpg"
+    "name": "Prensa inclinada",
+    "description": "Siéntese en la prensa de piernas con la espalda y la cabeza apoyadas cómodamente en el soporte acolchado. Coloca los pies en la plataforma a la anchura de la cadera, asegurándote de que los talones estén planos. El trasero debe ser plano contra el asiento en lugar de estar levantado. Las piernas deben formar un ángulo de aproximadamente 90 grados en las rodillas. Las rodillas deben estar alineadas con los pies y no deben doblarse ni hacia adentro ni hacia afuera. Sujete los mangos de asistencia para proporcionar apoyo y mantener la columna vertebral y la cabeza en su lugar.",
+    "muscular_group": "legs",
+    "image": "assets/images/prensa_inclinada.jpg"
   }
 ]

@@ -50,6 +50,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Password is required",
     ),
     "empty_title": MessageLookupByLibrary.simpleMessage("Please enter a title"),
+    "error_saving_routine": MessageLookupByLibrary.simpleMessage(
+      "Error saving routine",
+    ),
     "fill_all_fields": MessageLookupByLibrary.simpleMessage(
       "Please fill all fields",
     ),

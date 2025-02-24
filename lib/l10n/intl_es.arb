@@ -34,6 +34,7 @@
     "routine_title": "Título de la rutina",
     "save_routine": "Guardar rutina",
     "routine_saved": "Rutina guardada",
+    "error_saving_routine": "Error al guardar la rutina",
     "empty_title": "Por favor, ingresa un título",
     "empty_exercises_list": "Por favor, añade al menos un ejercicio",
     "add_exercise": "Añadir ejercicio",

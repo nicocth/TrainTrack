@@ -1,14 +1,14 @@
 // Tarjeta personalizada para cada ejercicio
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:train_track/domain/models/custom_exercise.dart';
 import 'package:train_track/generated/l10n.dart';
 
 class ExerciseCard extends StatefulWidget {
-  final dynamic exercise;
+  final CustomExercise customExercise;
   final VoidCallback onDelete;
 
-  const ExerciseCard({Key? key, required this.exercise, required this.onDelete}) : super(key: key);
+  const ExerciseCard({Key? key, required this.customExercise, required this.onDelete}) : super(key: key);
 
   @override
   _ExerciseCardState createState() => _ExerciseCardState();
@@ -39,19 +39,19 @@ class _ExerciseCardState extends State<ExerciseCard> {
                       builder: (context) => Dialog(
                         backgroundColor: Colors.transparent,
                         child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10), // Opcional: redondear la imagen en el zoom
+                          borderRadius: BorderRadius.circular(10), 
                           child: Image.asset(
-                            widget.exercise.imagen,
-                            fit: BoxFit.contain, // Asegurar que la imagen se vea bien
+                            widget.customExercise.exercise.image,
+                            fit: BoxFit.contain, 
                           ),
                         ),
                       ),
                     );
                   },
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(100), // Redondear imagen
+                    borderRadius: BorderRadius.circular(100), 
                     child: Image.asset(
-                      widget.exercise.imagen,
+                      widget.customExercise.exercise.image,
                       width: 60,
                       height: 60,
                       fit: BoxFit.cover,
@@ -61,7 +61,7 @@ class _ExerciseCardState extends State<ExerciseCard> {
                 const SizedBox(width: 20),
                 Expanded(
                   child: Text(
-                    widget.exercise.nombre,
+                    widget.customExercise.exercise.name,
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),

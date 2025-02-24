@@ -345,6 +345,16 @@ class S {
     );
   }
 
+  /// `Error saving routine`
+  String get error_saving_routine {
+    return Intl.message(
+      'Error saving routine',
+      name: 'error_saving_routine',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Please enter a title`
   String get empty_title {
     return Intl.message(

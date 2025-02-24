@@ -58,6 +58,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "empty_title": MessageLookupByLibrary.simpleMessage(
       "Por favor, ingresa un título",
     ),
+    "error_saving_routine": MessageLookupByLibrary.simpleMessage(
+      "Error al guardar la rutina",
+    ),
     "fill_all_fields": MessageLookupByLibrary.simpleMessage(
       "Por favor, rellene todos los campos",
     ),

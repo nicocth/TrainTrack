@@ -34,6 +34,7 @@
     "routine_title": "Routine title",
     "save_routine": "Save routine",
     "routine_saved": "Routine saved",
+    "error_saving_routine": "Error saving routine",
     "empty_title": "Please enter a title",
     "empty_exercises_list": "Please add at least one exercise",
     "add_exercise": "Add exercise",

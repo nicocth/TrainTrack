@@ -21,7 +21,7 @@ class AuthNotifier extends StateNotifier<User?> {
         user.getIdToken().then((token) {
           _storage.saveToken(token!);
         });
-      }else {
+      } else {
         _storage.deleteToken();
       }
     });
@@ -53,5 +53,10 @@ class AuthNotifier extends StateNotifier<User?> {
     } catch (e) {
       rethrow;
     }
+  }
+
+  // método para obtener el UID del usuario autenticado
+  String? getUserId() {
+    return _auth.currentUser?.uid;
   }
 }
