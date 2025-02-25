@@ -45,5 +45,6 @@
     "notes": "Notes",
     "series": "Series",
     "kg": "Kg",
-    "reps": "Reps"
+    "reps": "Reps",
+    "number_value_error": "Wrong value. Please introduce a number."
 }

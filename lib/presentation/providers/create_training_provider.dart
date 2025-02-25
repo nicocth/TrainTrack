@@ -71,19 +71,57 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
   }
 
   // Agregar una serie a un ejercicio específico
-  // void addSetToExercise(int exerciseIndex, Set set) {
-  //   final updatedExercises = [...state.exercises];
-  //   updatedExercises[exerciseIndex] = CustomExercise(
-  //     exercise: updatedExercises[exerciseIndex].exercise,
-  //     sets: [...updatedExercises[exerciseIndex].sets, set],
-  //   );
-  //   state = state.copyWith(exercises: updatedExercises);
-  // }
+  void addSetToExercise(int exerciseIndex, Sets sets) {
+    final updatedExercises = [...state.customExercises];
+    updatedExercises[exerciseIndex] = CustomExercise(
+      notes: updatedExercises[exerciseIndex].notes,
+      exercise: updatedExercises[exerciseIndex].exercise,
+      sets: [...updatedExercises[exerciseIndex].sets, sets],
+    );
+    state = state.copyWith(customExercises: updatedExercises);
+  }
 
   // Eliminar una serie de un ejercicio específico
   void removeSetFromExercise(int exerciseIndex, int setIndex) {
     final updatedExercises = [...state.customExercises];
     final updatedSets = [...updatedExercises[exerciseIndex].sets]..removeAt(setIndex);
+    updatedExercises[exerciseIndex] = CustomExercise(
+      exercise: updatedExercises[exerciseIndex].exercise,
+      notes: updatedExercises[exerciseIndex].notes,
+      sets: updatedSets,
+    );
+    state = state.copyWith(customExercises: updatedExercises);
+  }
+
+  // Actualizar notas de un ejercicio específico
+  void updateExerciseNotes(int exerciseIndex, String notes) {
+    final updatedExercises = [...state.customExercises];
+    updatedExercises[exerciseIndex] = CustomExercise(
+      exercise: updatedExercises[exerciseIndex].exercise,
+      notes: notes,
+      sets: updatedExercises[exerciseIndex].sets,
+    );
+    state = state.copyWith(customExercises: updatedExercises);
+  }
+
+    // Actualizar reps de un set específico
+  void updateSetReps(int exerciseIndex, int setIndex, int reps) {
+    final updatedExercises = [...state.customExercises];
+    final updatedSets = [...updatedExercises[exerciseIndex].sets];
+    updatedSets[setIndex] = Sets(reps: reps, weight: updatedSets[setIndex].weight);
+    updatedExercises[exerciseIndex] = CustomExercise(
+      exercise: updatedExercises[exerciseIndex].exercise,
+      notes: updatedExercises[exerciseIndex].notes,
+      sets: updatedSets,
+    );
+    state = state.copyWith(customExercises: updatedExercises);
+  }
+
+  // Actualizar weight de un set específico
+  void updateSetWeight(int exerciseIndex, int setIndex, double weight) {
+    final updatedExercises = [...state.customExercises];
+    final updatedSets = [...updatedExercises[exerciseIndex].sets];
+    updatedSets[setIndex] = Sets(reps: updatedSets[setIndex].reps, weight: weight);
     updatedExercises[exerciseIndex] = CustomExercise(
       exercise: updatedExercises[exerciseIndex].exercise,
       notes: updatedExercises[exerciseIndex].notes,

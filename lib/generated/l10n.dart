@@ -434,6 +434,16 @@ class S {
   String get reps {
     return Intl.message('Reps', name: 'reps', desc: '', args: []);
   }
+
+  /// `Wrong value. Please introduce a number.`
+  String get number_value_error {
+    return Intl.message(
+      'Wrong value. Please introduce a number.',
+      name: 'number_value_error',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

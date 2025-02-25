@@ -1,6 +1,6 @@
 class Sets {
   final int reps;
-  final int weight;
+  final double weight;
 
   Sets({required this.reps, required this.weight});
   

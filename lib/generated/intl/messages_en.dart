@@ -71,6 +71,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "mode": MessageLookupByLibrary.simpleMessage("Mode"),
     "my_trainings": MessageLookupByLibrary.simpleMessage("My trainings"),
     "notes": MessageLookupByLibrary.simpleMessage("Notes"),
+    "number_value_error": MessageLookupByLibrary.simpleMessage(
+      "Wrong value. Please introduce a number.",
+    ),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
       "passwords do not match",

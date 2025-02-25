@@ -10,13 +10,13 @@ class FirestoreService {
 
     try {
       // Crear el documento en Firestore con los datos básicos
-      await _firestore.collection('usuarios').doc(userId).set({
+      await _firestore.collection('users').doc(userId).set({
         'userId': userId,
         'email': email,
-        'fecha_creacion': creationDate,
-        'foto_perfil': '', // URL vacía por defecto
+        'creation_date': creationDate,
+        'profile_image': '', // URL vacía por defecto
         'nickname': '', // Se puede llenar después
-        'ultimo_acceso': creationDate,
+        'last_access': creationDate,
       });
 
       // Inicializar las subcolecciones
@@ -30,10 +30,10 @@ class FirestoreService {
 
   // Método privado para inicializar las subcolecciones
   Future<void> _initializeSubcollections(String userId) async {
-    const subcollections = ['rutinas', 'historial', 'prs'];
+    const subcollections = ['trainings', 'record', 'prs'];
 
     for (var collection in subcollections) {
-      await _firestore.collection('usuarios')
+      await _firestore.collection('users')
       .doc(userId)
       .collection(collection)
       .add({});

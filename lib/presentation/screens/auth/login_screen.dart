@@ -26,69 +26,6 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
     });
   }
 
-  void login(BuildContext context) async {
-    final email = _emailController.text.trim();
-    final password = _passwordController.text;
-
-
-    if (!Validators.emptyfields(email, password)) {	
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(S.current.fill_all_fields), backgroundColor: Colors.red),
-      );
-      return;
-    }
-
-    if (!Validators.validateEmail(email)) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(S.current.invalid_email), backgroundColor: Colors.red),
-      );
-      return;
-    }
-
-    if (!Validators.validatePassword(password)) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(S.current.weak_password), backgroundColor: Colors.red),
-      );
-      return;
-    }
-
-    try {
-      await ref.read(authProvider.notifier).signIn(email, password);
-      if (mounted) {
-        Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (context) => HomeScreen()),
-          (route) => false,
-        );
-      }
-    } catch (e) {
-      String errorMessage = S.current.login_failed;
-
-      if (e is FirebaseAuthException) {
-        switch (e.code) {
-          case 'user-not-found':
-            errorMessage = S.current.user_not_found;
-            break;
-          case 'wrong-password':
-            errorMessage = S.current.wrong_password;
-            break;
-          case 'invalid-email':
-            errorMessage = S.current.invalid_email;
-            break;
-          case 'user-disabled':
-            errorMessage = S.current.user_disabled;
-            break;
-          default:
-            errorMessage = S.current.login_failed;
-        }
-      }
-
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(errorMessage), backgroundColor: Colors.red),
-      );
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -187,5 +124,69 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
         ],
       ),
     );
+  }
+
+  // Login method
+  void login(BuildContext context) async {
+    final email = _emailController.text.trim();
+    final password = _passwordController.text;
+
+
+    if (!Validators.emptyfields(email, password)) {	
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(S.current.fill_all_fields), backgroundColor: Colors.red),
+      );
+      return;
+    }
+
+    if (!Validators.validateEmail(email)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(S.current.invalid_email), backgroundColor: Colors.red),
+      );
+      return;
+    }
+
+    if (!Validators.validatePassword(password)) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(S.current.weak_password), backgroundColor: Colors.red),
+      );
+      return;
+    }
+
+    try {
+      await ref.read(authProvider.notifier).signIn(email, password);
+      if (mounted) {
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => HomeScreen()),
+          (route) => false,
+        );
+      }
+    } catch (e) {
+      String errorMessage = S.current.login_failed;
+
+      if (e is FirebaseAuthException) {
+        switch (e.code) {
+          case 'user-not-found':
+            errorMessage = S.current.user_not_found;
+            break;
+          case 'wrong-password':
+            errorMessage = S.current.wrong_password;
+            break;
+          case 'invalid-email':
+            errorMessage = S.current.invalid_email;
+            break;
+          case 'user-disabled':
+            errorMessage = S.current.user_disabled;
+            break;
+          default:
+            errorMessage = S.current.login_failed;
+        }
+      }
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(errorMessage), backgroundColor: Colors.red),
+      );
+    }
   }
 }

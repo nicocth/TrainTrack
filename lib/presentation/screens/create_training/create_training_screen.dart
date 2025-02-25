@@ -12,7 +12,7 @@ class CreateTrainingScreen extends ConsumerWidget {
 
   Future<void> _saveTraining(BuildContext context, WidgetRef ref) async {
     final authNotifier = ref.read(authProvider.notifier);
-    final newTraining = ref.watch(trainingProvider);
+    final newTraining = ref.read(trainingProvider);
     final userId = authNotifier.getUserId();
 
     if (newTraining.titleController.text.isEmpty) {
@@ -30,25 +30,25 @@ class CreateTrainingScreen extends ConsumerWidget {
     }
 
     try {
-      final userRef = FirebaseFirestore.instance.collection('usuarios').doc(userId);
-      final routinesRef = userRef.collection('rutinas');
+      final userRef = FirebaseFirestore.instance.collection('users').doc(userId);
+      final routinesRef = userRef.collection('trainings');
 
       // Crear nueva rutina
       final routineDoc = await routinesRef.add({
-        'nombre': newTraining.titleController.text,
-        'fecha_creacion': Timestamp.now(),
-        'ultima_actualizacion': Timestamp.now(),
+        'title': newTraining.titleController.text,
+        'date_created': Timestamp.now(),
+        'date_updated': Timestamp.now(),
       });
 
       // Agregar ejercicios dentro de la rutina
       for (var customExercise in newTraining.customExercises) {
-        await routineDoc.collection('ejercicios').add({
-          'ejercicio': customExercise.exercise.id,
-          'nombre': customExercise.exercise.name, 
-          'notas': customExercise.notes,
-          'series': customExercise.sets.map((set) => {
-            'peso': set.weight,
-            'repeticiones': set.reps,
+        await routineDoc.collection('exercises').add({
+          'exercise': customExercise.exercise.id,
+          'name': customExercise.exercise.name, 
+          'notes': customExercise.notes,
+          'sets': customExercise.sets.map((set) => {
+            'weight': set.weight,
+            'reps': set.reps,
           }).toList(),
         });
       }
@@ -100,6 +100,7 @@ class CreateTrainingScreen extends ConsumerWidget {
                   for (int index = 0; index < newTraining.customExercises.length; index++)
                     ExerciseCard(
                       key: ValueKey(newTraining.customExercises[index]),
+                      exerciseIndex: index,
                       customExercise: newTraining.customExercises[index],
                       onDelete: () => trainingNotifier.removeExercise(index),
                     ),
