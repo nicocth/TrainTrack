@@ -45,6 +45,7 @@ class CreateTrainingScreen extends ConsumerWidget {
         await routineDoc.collection('ejercicios').add({
           'ejercicio': customExercise.exercise.id,
           'nombre': customExercise.exercise.name, 
+          'notas': customExercise.notes,
           'series': customExercise.sets.map((set) => {
             'peso': set.weight,
             'repeticiones': set.reps,

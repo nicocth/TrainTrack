@@ -33,7 +33,7 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
 
   // Agregar un ejercicio como CustomExercise con sets vacíos
   void addExercise(Exercise exercise) {
-    final newCustomExercise = CustomExercise(exercise: exercise, sets: []);
+    final newCustomExercise = CustomExercise(exercise: exercise,notes: "", sets: []);
     state = state.copyWith(customExercises: [...state.customExercises, newCustomExercise]);
   }
 
@@ -42,6 +42,7 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
     final newCustomExercises = exercises.map((exercise) => 
       CustomExercise(
         exercise: exercise,
+        notes: "",
         sets: [Sets(reps: 0, weight: 0)], // Un único set inicializado
       )
     ).toList();
@@ -85,6 +86,7 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
     final updatedSets = [...updatedExercises[exerciseIndex].sets]..removeAt(setIndex);
     updatedExercises[exerciseIndex] = CustomExercise(
       exercise: updatedExercises[exerciseIndex].exercise,
+      notes: updatedExercises[exerciseIndex].notes,
       sets: updatedSets,
     );
     state = state.copyWith(customExercises: updatedExercises);
