@@ -33,21 +33,24 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
 
   // Agregar un ejercicio como CustomExercise con sets vacíos
   void addExercise(Exercise exercise) {
-    final newCustomExercise = CustomExercise(exercise: exercise,notes: "", sets: []);
-    state = state.copyWith(customExercises: [...state.customExercises, newCustomExercise]);
+    final newCustomExercise =
+        CustomExercise(exercise: exercise, notes: "", sets: []);
+    state = state.copyWith(
+        customExercises: [...state.customExercises, newCustomExercise]);
   }
 
   // Agregar una lista de ejercicios como CustomExercise con un set vacío
   void addExercises(List<Exercise> exercises) {
-    final newCustomExercises = exercises.map((exercise) => 
-      CustomExercise(
-        exercise: exercise,
-        notes: "",
-        sets: [Sets(reps: 0, weight: 0)], // Un único set inicializado
-      )
-    ).toList();
+    final newCustomExercises = exercises
+        .map((exercise) => CustomExercise(
+              exercise: exercise,
+              notes: "",
+              sets: [Sets(reps: 0, weight: 0)], // Un único set inicializado
+            ))
+        .toList();
 
-    state = state.copyWith(customExercises: [...state.customExercises, ...newCustomExercises]);
+    state = state.copyWith(
+        customExercises: [...state.customExercises, ...newCustomExercises]);
   }
 
   // Eliminar un ejercicio de la lista
@@ -84,7 +87,8 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
   // Eliminar una serie de un ejercicio específico
   void removeSetFromExercise(int exerciseIndex, int setIndex) {
     final updatedExercises = [...state.customExercises];
-    final updatedSets = [...updatedExercises[exerciseIndex].sets]..removeAt(setIndex);
+    final updatedSets = [...updatedExercises[exerciseIndex].sets]
+      ..removeAt(setIndex);
     updatedExercises[exerciseIndex] = CustomExercise(
       exercise: updatedExercises[exerciseIndex].exercise,
       notes: updatedExercises[exerciseIndex].notes,
@@ -104,11 +108,12 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
     state = state.copyWith(customExercises: updatedExercises);
   }
 
-    // Actualizar reps de un set específico
+  // Actualizar reps de un set específico
   void updateSetReps(int exerciseIndex, int setIndex, int reps) {
     final updatedExercises = [...state.customExercises];
     final updatedSets = [...updatedExercises[exerciseIndex].sets];
-    updatedSets[setIndex] = Sets(reps: reps, weight: updatedSets[setIndex].weight);
+    updatedSets[setIndex] =
+        Sets(reps: reps, weight: updatedSets[setIndex].weight);
     updatedExercises[exerciseIndex] = CustomExercise(
       exercise: updatedExercises[exerciseIndex].exercise,
       notes: updatedExercises[exerciseIndex].notes,
@@ -121,13 +126,35 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
   void updateSetWeight(int exerciseIndex, int setIndex, double weight) {
     final updatedExercises = [...state.customExercises];
     final updatedSets = [...updatedExercises[exerciseIndex].sets];
-    updatedSets[setIndex] = Sets(reps: updatedSets[setIndex].reps, weight: weight);
+    updatedSets[setIndex] =
+        Sets(reps: updatedSets[setIndex].reps, weight: weight);
     updatedExercises[exerciseIndex] = CustomExercise(
       exercise: updatedExercises[exerciseIndex].exercise,
       notes: updatedExercises[exerciseIndex].notes,
       sets: updatedSets,
     );
     state = state.copyWith(customExercises: updatedExercises);
+  }
+
+  void updateTrainingProperties({
+    String? title,
+    List<CustomExercise>? customExercises,
+  }) {
+    state = state.copyWith(
+      titleController: title != null
+          ? TextEditingController(text: title)
+          : state.titleController,
+      customExercises: customExercises ?? state.customExercises,
+    );
+  }
+
+  // Método para resetear el estado
+  void reset() {
+    state = TrainingState(
+      titleController:
+          TextEditingController(), // reinicia el controlador del título
+      customExercises: [], // reinicia la lista de ejercicios
+    );
   }
 }
 
