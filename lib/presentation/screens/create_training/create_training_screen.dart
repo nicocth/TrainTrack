@@ -128,7 +128,7 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
               icon: const Icon(Icons.add),
               label: Text(S.current.add_exercise),
               onPressed: () {
-                _saveDataInProvider();
+                
                 Navigator.push(
                   context,
                   MaterialPageRoute(

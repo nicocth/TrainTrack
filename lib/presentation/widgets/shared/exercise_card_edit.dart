@@ -163,7 +163,6 @@ class ExerciseCard extends ConsumerWidget {
                         IconButton(
                           icon: const Icon(Icons.delete, color: Colors.red),
                           onPressed: () {
-                            FocusScope.of(context).unfocus();
                             trainingNotifier.removeSetFromExercise(
                                 exerciseIndex, index);
                           },
@@ -178,7 +177,6 @@ class ExerciseCard extends ConsumerWidget {
             // Botón para agregar series
             TextButton.icon(
               onPressed: () {
-                FocusScope.of(context).unfocus();
                 trainingNotifier.addSetToExercise(
                     exerciseIndex, Sets(reps: 0, weight: 0));
               },
