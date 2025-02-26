@@ -26,6 +26,8 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
 
   @override
   void dispose() {
+    _saveDataInProvider();
+
     for (var controller in notesControllers) {
       controller.dispose();
     }
@@ -56,7 +58,7 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
   @override
   Widget build(BuildContext context) {
     _updateValuesFromProvider();
-
+    final newTraining = ref.watch(trainingProvider);
     final trainingNotifier = ref.read(trainingProvider.notifier);
 
     return Scaffold(
@@ -75,7 +77,7 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
           children: [
             // Input para el título de la rutina
             TextField(
-              controller: titleController,
+              controller: newTraining.titleController,
               decoration: InputDecoration(labelText: S.current.routine_title),
               onChanged: (value) => trainingNotifier.setTitle(value),
             ),
@@ -100,21 +102,21 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
                 children: [
                   for (int index = 0; index < customExercises.length; index++)
                     ExerciseCard(
-                      key: ValueKey(customExercises[index]),
+                      key: ValueKey(newTraining.customExercises[index]),
                       exerciseIndex: index,
-                      customExercise: customExercises[index],
-                      notesController: notesControllers[index],
-                      repsControllers: repsControllers[index],
-                      weightControllers: weightControllers[index],
+                      customExercise: newTraining.customExercises[index],
+                      notesController: newTraining.notesControllers[index],
+                      repsControllers: newTraining.repsControllers[index],
+                      weightControllers: newTraining.weightControllers[index],
                       onDelete: () {
                         setState(() {
-                          customExercises.removeAt(index);
-                          notesControllers[index].dispose();
-                          notesControllers.removeAt(index);
-                          repsControllers[index].forEach((c) => c.dispose());
-                          repsControllers.removeAt(index);
-                          weightControllers[index].forEach((c) => c.dispose());
-                          weightControllers.removeAt(index);
+                          newTraining.customExercises.removeAt(index);
+                          newTraining.notesControllers[index].dispose();
+                          newTraining.notesControllers.removeAt(index);
+                          newTraining.repsControllers[index].forEach((c) => c.dispose());
+                          newTraining.repsControllers.removeAt(index);
+                          newTraining.weightControllers[index].forEach((c) => c.dispose());
+                          newTraining.weightControllers.removeAt(index);
                         });
                       },
                     ),
@@ -196,7 +198,7 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
     });
 
     // Llamar al reset del provider
-    trainingNotifier.reset();  
+    trainingNotifier.reset();
   }
 
   void _saveDataInProvider() {
@@ -234,7 +236,10 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
     final authNotifier = ref.read(authProvider.notifier);
     final userId = authNotifier.getUserId();
 
-    if (titleController.text.isEmpty) {
+    final newTraining = ref.read(trainingProvider);
+    final trainingNotifier = ref.read(trainingProvider.notifier);
+    
+    if (newTraining.titleController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(S.current.empty_title)),
       );
@@ -254,20 +259,20 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
       final routinesRef = userRef.collection('trainings');
 
       final routineDoc = await routinesRef.add({
-        'title': titleController.text,
+        'title': newTraining.titleController.text,
         'date_created': Timestamp.now(),
         'date_updated': Timestamp.now(),
       });
 
       for (int i = 0; i < customExercises.length; i++) {
         await routineDoc.collection('exercises').add({
-          'exercise': customExercises[i].exercise.id,
-          'name': customExercises[i].exercise.name,
-          'notes': notesControllers[i].text,
-          'sets': List.generate(customExercises[i].sets.length, (j) {
+          'exercise': newTraining.customExercises[i].exercise.id,
+          'name': newTraining.customExercises[i].exercise.name,
+          'notes': newTraining.notesControllers[i].text,
+          'sets': List.generate(newTraining.customExercises[i].sets.length, (j) {
             return {
-              'weight': double.tryParse(weightControllers[i][j].text) ?? 0.0,
-              'reps': int.tryParse(repsControllers[i][j].text) ?? 0,
+              'weight': double.tryParse(newTraining.weightControllers[i][j].text) ?? 0.0,
+              'reps': int.tryParse(newTraining.repsControllers[i][j].text) ?? 0,
             };
           }),
         });
@@ -278,7 +283,6 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
       );
 
       _clearDataAndRefresh();
-
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(S.current.error_saving_routine)),

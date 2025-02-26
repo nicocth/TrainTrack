@@ -7,19 +7,31 @@ import 'package:train_track/domain/models/sets.dart';
 class TrainingState {
   final TextEditingController titleController;
   final List<CustomExercise> customExercises;
+  final List<TextEditingController> notesControllers;
+  final List<List<TextEditingController>> repsControllers;
+  final List<List<TextEditingController>> weightControllers;
 
   TrainingState({
     required this.titleController,
     required this.customExercises,
+    required this.notesControllers,
+    required this.repsControllers,
+    required this.weightControllers,
   });
 
   TrainingState copyWith({
     TextEditingController? titleController,
     List<CustomExercise>? customExercises,
+    List<TextEditingController>? notesControllers,
+    List<List<TextEditingController>>? repsControllers,
+    List<List<TextEditingController>>? weightControllers,
   }) {
     return TrainingState(
       titleController: titleController ?? this.titleController,
       customExercises: customExercises ?? this.customExercises,
+      notesControllers: notesControllers ?? this.notesControllers,
+      repsControllers: repsControllers ?? this.repsControllers,
+      weightControllers: weightControllers ?? this.weightControllers,
     );
   }
 }
@@ -29,12 +41,20 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
       : super(TrainingState(
           titleController: TextEditingController(),
           customExercises: [],
+          notesControllers: [],
+          repsControllers: [],
+          weightControllers: [],
         ));
 
   // Agregar un ejercicio como CustomExercise con sets vacíos
   void addExercise(Exercise exercise) {
     final newCustomExercise =
         CustomExercise(exercise: exercise, notes: "", sets: []);
+    
+    state.notesControllers.add(TextEditingController(text: ""));
+    state.repsControllers.add([TextEditingController(text: "0")]);
+    state.weightControllers.add([TextEditingController(text: "0.0")]);
+
     state = state.copyWith(
         customExercises: [...state.customExercises, newCustomExercise]);
   }
@@ -49,6 +69,23 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
             ))
         .toList();
 
+    final newNotesControllers = List.generate(
+      exercises.length,
+      (_) => TextEditingController(text: ""),
+    );
+    final newRepsControllers = List.generate(
+      exercises.length,
+      (_) => [TextEditingController(text: "0")],
+    );
+    final newWeightControllers = List.generate(
+      exercises.length,
+      (_) => [TextEditingController(text: "0.0")],
+    );
+
+    state.notesControllers.addAll(newNotesControllers);
+    state.repsControllers.addAll(newRepsControllers);
+    state.weightControllers.addAll(newWeightControllers);
+
     state = state.copyWith(
         customExercises: [...state.customExercises, ...newCustomExercises]);
   }
@@ -56,16 +93,43 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
   // Eliminar un ejercicio de la lista
   void removeExercise(int index) {
     final updatedExercises = [...state.customExercises]..removeAt(index);
-    state = state.copyWith(customExercises: updatedExercises);
+    final updatedNotesControllers = [...state.notesControllers]..removeAt(index);
+    final updatedRepsControllers = [...state.repsControllers]..removeAt(index);
+    final updatedWeightControllers = [...state.weightControllers]..removeAt(index);
+
+    state = state.copyWith(
+      customExercises: updatedExercises,
+      notesControllers: updatedNotesControllers,
+      repsControllers: updatedRepsControllers,
+      weightControllers: updatedWeightControllers,
+    );
   }
 
   // Reordenar ejercicios
   void reorderExercise(int oldIndex, int newIndex) {
     final updatedExercises = [...state.customExercises];
+    final updatedNotesControllers = [...state.notesControllers];
+    final updatedRepsControllers = [...state.repsControllers];
+    final updatedWeightControllers = [...state.weightControllers];
+
     if (newIndex > oldIndex) newIndex--;
-    final item = updatedExercises.removeAt(oldIndex);
-    updatedExercises.insert(newIndex, item);
-    state = state.copyWith(customExercises: updatedExercises);
+
+    final exercise = updatedExercises.removeAt(oldIndex);
+    final noteController = updatedNotesControllers.removeAt(oldIndex);
+    final repsController = updatedRepsControllers.removeAt(oldIndex);
+    final weightController = updatedWeightControllers.removeAt(oldIndex);
+
+    updatedExercises.insert(newIndex, exercise);
+    updatedNotesControllers.insert(newIndex, noteController);
+    updatedRepsControllers.insert(newIndex, repsController);
+    updatedWeightControllers.insert(newIndex, weightController);
+
+    state = state.copyWith(
+      customExercises: updatedExercises,
+      notesControllers: updatedNotesControllers,
+      repsControllers: updatedRepsControllers,
+      weightControllers: updatedWeightControllers,
+    );
   }
 
   // Actualizar el título
@@ -81,6 +145,8 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
       exercise: updatedExercises[exerciseIndex].exercise,
       sets: [...updatedExercises[exerciseIndex].sets, sets],
     );
+    state.repsControllers[exerciseIndex].add(TextEditingController(text: "0"));
+    state.weightControllers[exerciseIndex].add(TextEditingController(text: "0.0"));
     state = state.copyWith(customExercises: updatedExercises);
   }
 
@@ -94,6 +160,8 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
       notes: updatedExercises[exerciseIndex].notes,
       sets: updatedSets,
     );
+    state.repsControllers[exerciseIndex].removeAt(setIndex);
+    state.weightControllers[exerciseIndex].removeAt(setIndex);
     state = state.copyWith(customExercises: updatedExercises);
   }
 
@@ -154,6 +222,9 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
       titleController:
           TextEditingController(), // reinicia el controlador del título
       customExercises: [], // reinicia la lista de ejercicios
+      notesControllers: [],
+      repsControllers: [],
+      weightControllers: [],
     );
   }
 }
