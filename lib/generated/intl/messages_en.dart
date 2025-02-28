@@ -20,8 +20,6 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
-  static String m0(name) => "Hello ${name}";
-
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "access_register": MessageLookupByLibrary.simpleMessage("Register now"),
@@ -56,11 +54,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "fill_all_fields": MessageLookupByLibrary.simpleMessage(
       "Please fill all fields",
     ),
-    "helloToUser": m0,
     "help": MessageLookupByLibrary.simpleMessage("Help"),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "invalid_email": MessageLookupByLibrary.simpleMessage("Invalid email"),
-    "kg": MessageLookupByLibrary.simpleMessage("Kg"),
+    "kg": MessageLookupByLibrary.simpleMessage("0.0"),
+    "kg_text": MessageLookupByLibrary.simpleMessage("Kg"),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "login_failed": MessageLookupByLibrary.simpleMessage(
@@ -83,7 +81,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "registration_failed": MessageLookupByLibrary.simpleMessage(
       "Error registering user",
     ),
-    "reps": MessageLookupByLibrary.simpleMessage("Reps"),
+    "reps": MessageLookupByLibrary.simpleMessage("0"),
+    "reps_text": MessageLookupByLibrary.simpleMessage("Reps"),
+    "request_timeout": MessageLookupByLibrary.simpleMessage(
+      "The request has taken too long, check your connection",
+    ),
     "routine_saved": MessageLookupByLibrary.simpleMessage("Routine saved"),
     "routine_title": MessageLookupByLibrary.simpleMessage("Routine title"),
     "save_routine": MessageLookupByLibrary.simpleMessage("Save routine"),

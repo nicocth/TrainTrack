@@ -20,8 +20,6 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'es';
 
-  static String m0(name) => "Hola ${name}";
-
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "access_register": MessageLookupByLibrary.simpleMessage(
@@ -64,13 +62,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "fill_all_fields": MessageLookupByLibrary.simpleMessage(
       "Por favor, rellene todos los campos",
     ),
-    "helloToUser": m0,
     "help": MessageLookupByLibrary.simpleMessage("Ayuda"),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "Correo electrónico inválido",
     ),
-    "kg": MessageLookupByLibrary.simpleMessage("Kg"),
+    "kg": MessageLookupByLibrary.simpleMessage("0.0"),
+    "kg_text": MessageLookupByLibrary.simpleMessage("Kg"),
     "language": MessageLookupByLibrary.simpleMessage("Idioma"),
     "login": MessageLookupByLibrary.simpleMessage("Iniciar sesión"),
     "login_failed": MessageLookupByLibrary.simpleMessage(
@@ -84,7 +82,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "my_trainings": MessageLookupByLibrary.simpleMessage("Mis entrenamientos"),
     "notes": MessageLookupByLibrary.simpleMessage("Notas"),
     "number_value_error": MessageLookupByLibrary.simpleMessage(
-      "Valor incorrecto, Introduzca un numero",
+      "Valor incorrecto, Introduzca un número",
     ),
     "password": MessageLookupByLibrary.simpleMessage("Contraseña"),
     "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
@@ -95,7 +93,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "registration_failed": MessageLookupByLibrary.simpleMessage(
       "Error al registrar el usuario",
     ),
-    "reps": MessageLookupByLibrary.simpleMessage("Reps"),
+    "reps": MessageLookupByLibrary.simpleMessage("0"),
+    "reps_text": MessageLookupByLibrary.simpleMessage("Reps"),
+    "request_timeout": MessageLookupByLibrary.simpleMessage(
+      "La peticion ha tardado demasiado tiempo revise su conexión",
+    ),
     "routine_saved": MessageLookupByLibrary.simpleMessage("Rutina guardada"),
     "routine_title": MessageLookupByLibrary.simpleMessage(
       "Título de la rutina",

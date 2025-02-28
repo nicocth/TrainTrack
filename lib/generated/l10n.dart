@@ -55,16 +55,6 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Hello {name}`
-  String helloToUser(Object name) {
-    return Intl.message(
-      'Hello $name',
-      name: 'helloToUser',
-      desc: '',
-      args: [name],
-    );
-  }
-
   /// `Login`
   String get login {
     return Intl.message('Login', name: 'login', desc: '', args: []);
@@ -426,13 +416,23 @@ class S {
   }
 
   /// `Kg`
+  String get kg_text {
+    return Intl.message('Kg', name: 'kg_text', desc: '', args: []);
+  }
+
+  /// `0.0`
   String get kg {
-    return Intl.message('Kg', name: 'kg', desc: '', args: []);
+    return Intl.message('0.0', name: 'kg', desc: '', args: []);
   }
 
   /// `Reps`
+  String get reps_text {
+    return Intl.message('Reps', name: 'reps_text', desc: '', args: []);
+  }
+
+  /// `0`
   String get reps {
-    return Intl.message('Reps', name: 'reps', desc: '', args: []);
+    return Intl.message('0', name: 'reps', desc: '', args: []);
   }
 
   /// `Wrong value. Please introduce a number.`
@@ -440,6 +440,16 @@ class S {
     return Intl.message(
       'Wrong value. Please introduce a number.',
       name: 'number_value_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The request has taken too long, check your connection`
+  String get request_timeout {
+    return Intl.message(
+      'The request has taken too long, check your connection',
+      name: 'request_timeout',
       desc: '',
       args: [],
     );

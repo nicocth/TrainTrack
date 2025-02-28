@@ -1,5 +1,4 @@
 {
-    "helloToUser": "Hello {name}",
     "login": "Login",
     "access_register": "Register now",
     "email": "Email",
@@ -44,7 +43,10 @@
     "delete": "Delete",
     "notes": "Notes",
     "series": "Series",
-    "kg": "Kg",
-    "reps": "Reps",
-    "number_value_error": "Wrong value. Please introduce a number."
+    "kg_text": "Kg",
+    "kg": "0.0",
+    "reps_text": "Reps",
+    "reps": "0",
+    "number_value_error": "Wrong value. Please introduce a number.",
+    "request_timeout": "The request has taken too long, check your connection"
 }

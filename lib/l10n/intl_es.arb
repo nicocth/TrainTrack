@@ -1,5 +1,4 @@
 {
-    "helloToUser": "Hola {name}",
     "login": "Iniciar sesión",
     "access_register": "¿Aún no tienes una cuenta?",
     "email": "Correo electrónico",
@@ -44,7 +43,10 @@
     "delete": "Eliminar",
     "notes": "Notas",
     "series": "Series",
-    "kg": "Kg",
-    "reps": "Reps",
-    "number_value_error": "Valor incorrecto, Introduzca un numero"
+    "kg_text": "Kg",
+    "kg": "0.0",
+    "reps_text": "Reps",
+    "reps": "0",
+    "number_value_error": "Valor incorrecto, Introduzca un número",
+    "request_timeout": "La peticion ha tardado demasiado tiempo revise su conexión"
 }

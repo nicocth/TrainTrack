@@ -46,26 +46,26 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
           weightControllers: [],
         ));
 
-  // Agregar un ejercicio como CustomExercise con sets vacíos
+  // Add an exercise with empty sets
   void addExercise(Exercise exercise) {
     final newCustomExercise =
         CustomExercise(exercise: exercise, notes: "", sets: []);
     
     state.notesControllers.add(TextEditingController(text: ""));
-    state.repsControllers.add([TextEditingController(text: "0")]);
-    state.weightControllers.add([TextEditingController(text: "0.0")]);
+    state.repsControllers.add([TextEditingController(text: "")]);
+    state.weightControllers.add([TextEditingController(text: "")]);
 
     state = state.copyWith(
         customExercises: [...state.customExercises, newCustomExercise]);
   }
 
-  // Agregar una lista de ejercicios como CustomExercise con un set vacío
+  // Add a list of exercises with empty sets
   void addExercises(List<Exercise> exercises) {
     final newCustomExercises = exercises
         .map((exercise) => CustomExercise(
               exercise: exercise,
               notes: "",
-              sets: [Sets(reps: 0, weight: 0)], // Un único set inicializado
+              sets: [Sets(reps: 0, weight: 0)],
             ))
         .toList();
 
@@ -75,11 +75,11 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
     );
     final newRepsControllers = List.generate(
       exercises.length,
-      (_) => [TextEditingController(text: "0")],
+      (_) => [TextEditingController(text: "")],
     );
     final newWeightControllers = List.generate(
       exercises.length,
-      (_) => [TextEditingController(text: "0.0")],
+      (_) => [TextEditingController(text: "")],
     );
 
     state.notesControllers.addAll(newNotesControllers);
@@ -90,8 +90,18 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
         customExercises: [...state.customExercises, ...newCustomExercises]);
   }
 
-  // Eliminar un ejercicio de la lista
+  // Remove an exercise from the list
   void removeExercise(int index) {
+    // Release resources from drivers before deleting them
+    state.notesControllers[index].dispose();
+    for (var controller in state.repsControllers[index]) {
+      controller.dispose();
+    }
+    for (var controller in state.weightControllers[index]) {
+      controller.dispose();
+    }
+
+    // Create new lists without the element at the indicated index
     final updatedExercises = [...state.customExercises]..removeAt(index);
     final updatedNotesControllers = [...state.notesControllers]..removeAt(index);
     final updatedRepsControllers = [...state.repsControllers]..removeAt(index);
@@ -105,7 +115,7 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
     );
   }
 
-  // Reordenar ejercicios
+  // Reorder exercises
   void reorderExercise(int oldIndex, int newIndex) {
     final updatedExercises = [...state.customExercises];
     final updatedNotesControllers = [...state.notesControllers];
@@ -132,12 +142,7 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
     );
   }
 
-  // Actualizar el título
-  void setTitle(String title) {
-    state.titleController.text = title;
-  }
-
-  // Agregar una serie a un ejercicio específico
+  // Add a set to a specific exercise
   void addSetToExercise(int exerciseIndex, Sets sets) {
     final updatedExercises = [...state.customExercises];
     updatedExercises[exerciseIndex] = CustomExercise(
@@ -145,12 +150,12 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
       exercise: updatedExercises[exerciseIndex].exercise,
       sets: [...updatedExercises[exerciseIndex].sets, sets],
     );
-    state.repsControllers[exerciseIndex].add(TextEditingController(text: "0"));
-    state.weightControllers[exerciseIndex].add(TextEditingController(text: "0.0"));
+    state.repsControllers[exerciseIndex].add(TextEditingController(text: ""));
+    state.weightControllers[exerciseIndex].add(TextEditingController(text: ""));
     state = state.copyWith(customExercises: updatedExercises);
   }
 
-  // Eliminar una serie de un ejercicio específico
+  // Remove a set to a specific exercise
   void removeSetFromExercise(int exerciseIndex, int setIndex) {
     final updatedExercises = [...state.customExercises];
     final updatedSets = [...updatedExercises[exerciseIndex].sets]
@@ -165,63 +170,12 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
     state = state.copyWith(customExercises: updatedExercises);
   }
 
-  // Actualizar notas de un ejercicio específico
-  void updateExerciseNotes(int exerciseIndex, String notes) {
-    final updatedExercises = [...state.customExercises];
-    updatedExercises[exerciseIndex] = CustomExercise(
-      exercise: updatedExercises[exerciseIndex].exercise,
-      notes: notes,
-      sets: updatedExercises[exerciseIndex].sets,
-    );
-    state = state.copyWith(customExercises: updatedExercises);
-  }
-
-  // Actualizar reps de un set específico
-  void updateSetReps(int exerciseIndex, int setIndex, int reps) {
-    final updatedExercises = [...state.customExercises];
-    final updatedSets = [...updatedExercises[exerciseIndex].sets];
-    updatedSets[setIndex] =
-        Sets(reps: reps, weight: updatedSets[setIndex].weight);
-    updatedExercises[exerciseIndex] = CustomExercise(
-      exercise: updatedExercises[exerciseIndex].exercise,
-      notes: updatedExercises[exerciseIndex].notes,
-      sets: updatedSets,
-    );
-    state = state.copyWith(customExercises: updatedExercises);
-  }
-
-  // Actualizar weight de un set específico
-  void updateSetWeight(int exerciseIndex, int setIndex, double weight) {
-    final updatedExercises = [...state.customExercises];
-    final updatedSets = [...updatedExercises[exerciseIndex].sets];
-    updatedSets[setIndex] =
-        Sets(reps: updatedSets[setIndex].reps, weight: weight);
-    updatedExercises[exerciseIndex] = CustomExercise(
-      exercise: updatedExercises[exerciseIndex].exercise,
-      notes: updatedExercises[exerciseIndex].notes,
-      sets: updatedSets,
-    );
-    state = state.copyWith(customExercises: updatedExercises);
-  }
-
-  void updateTrainingProperties({
-    String? title,
-    List<CustomExercise>? customExercises,
-  }) {
-    state = state.copyWith(
-      titleController: title != null
-          ? TextEditingController(text: title)
-          : state.titleController,
-      customExercises: customExercises ?? state.customExercises,
-    );
-  }
-
-  // Método para resetear el estado
+  // Reset state
   void reset() {
     state = TrainingState(
       titleController:
-          TextEditingController(), // reinicia el controlador del título
-      customExercises: [], // reinicia la lista de ejercicios
+          TextEditingController(), 
+      customExercises: [], 
       notesControllers: [],
       repsControllers: [],
       weightControllers: [],

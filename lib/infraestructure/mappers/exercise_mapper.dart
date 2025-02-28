@@ -5,7 +5,7 @@ import 'package:train_track/domain/models/enum/muscular_group.dart';
 import '../../domain/models/exercise.dart';
 
 class ExerciseMapper {
-  /// Convierte un JSON en un objeto `Exercise`
+  /// Convert a JSON to an `Exercise` object
   static Exercise fromJson(Map<String, dynamic> json) {
     return Exercise(
       id: json['id'] ?? '',
@@ -18,7 +18,7 @@ class ExerciseMapper {
     );
   }
 
-  /// Convierte un objeto `Exercise` en un mapa JSON
+  /// Convert an `Exercise` object to a JSON map
   static Map<String, dynamic> toJson(Exercise exercise) {
     return {
       'id': exercise.id,
@@ -29,14 +29,14 @@ class ExerciseMapper {
     };
   }
 
-  /// Convierte la lista de exercise.json en una lista de objetos `Exercise`
+  /// Convert list from exercise.json to a list of `Exercise` objects
   static Future<List<Exercise>> fromJsonList() async {
-    final String jsonString = await rootBundle.loadString('lib/shared/data/exercise.json');
+    final String jsonString = await rootBundle.loadString('lib/core/data/exercise.json');
     final List<dynamic> jsonList = json.decode(jsonString);
     return jsonList.map((json) => fromJson(json)).toList();
   }
 
-  /// Convierte una lista de objetos `Exercise` en una lista JSON
+  /// Convert a list of `Exercise` objects to a JSON list
   static String toJsonList(List<Exercise> exercises) {
     final List<Map<String, dynamic>> jsonList = 
         exercises.map((exercise) => toJson(exercise)).toList();
