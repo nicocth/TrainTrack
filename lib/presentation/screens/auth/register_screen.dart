@@ -54,7 +54,7 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
             right: 0,
             child: Container(
               height: 180,
-              color: Colors.black.withOpacity(0.4),
+              color: Color.fromRGBO(0, 0, 0, 0.4),
               alignment: Alignment.center,
               child: Text(
                 'TrainTrack',
@@ -66,7 +66,7 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
                     Shadow(
                       offset: Offset(2, 2),
                       blurRadius: 3,
-                      color: Colors.black.withOpacity(0.7),
+                      color: Color.fromRGBO(0, 0, 0, 0.7),
                     ),
                   ],
                 ),
@@ -80,7 +80,7 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
             child: Container(
               padding: const EdgeInsets.all(40.0),
               decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.8),
+                color: Color.fromRGBO(0, 0, 0, 0.8),
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(50),
                   topRight: Radius.circular(50),
@@ -205,21 +205,24 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
       // Llamar al servicio Firestore para crear el usuario en Firestore y sus subcolecciones
       final result = await FirestoreService().createUserInFirestore(email, user.uid);
 
+      //check if widget is mounted before displaying snackbar
+      if (!context.mounted) return;
+      
+      // check if creation db is failure
       if (result.isFailure) {
-        // Si falló, muestra el mensaje de error
         ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(result.errorMessage ?? S.current.uknown_error), backgroundColor: Colors.red),
       );
         return;
       }
 
-      if (mounted) {
-        Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (context) => HomeScreen()),
-          (route) => false,
-        );
-      }
+      //if the result is success navegate to home
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => HomeScreen()),
+        (route) => false,
+      );
+      
     } catch (e) {
       String errorMessage = S.current.registration_failed;
       if (e is FirebaseAuthException) {

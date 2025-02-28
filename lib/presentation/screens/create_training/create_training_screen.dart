@@ -110,6 +110,9 @@ class CreateTrainingScreen extends ConsumerWidget {
         throw TimeoutException(S.current.request_timeout);
       });
 
+      //check if widget is mounted before displaying snackbar
+      if (!context.mounted) return;
+
       if (result.isFailure) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(S.current.error_saving_routine)),

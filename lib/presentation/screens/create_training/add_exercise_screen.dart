@@ -9,10 +9,10 @@ class AddExerciseScreen extends ConsumerStatefulWidget {
   const AddExerciseScreen({super.key});
 
   @override
-  _AddExerciseScreenState createState() => _AddExerciseScreenState();
+  AddExerciseScreenState createState() => AddExerciseScreenState();
 }
 
-class _AddExerciseScreenState extends ConsumerState<AddExerciseScreen> {
+class AddExerciseScreenState extends ConsumerState<AddExerciseScreen> {
   final Set<Exercise> selectedExercises = {};
   List<Exercise> availableExercises = [];
 

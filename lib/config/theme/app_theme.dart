@@ -53,7 +53,6 @@ class AppTheme {
     colorScheme: ColorScheme.dark(
       primary: Colors.orange[800]!,
       secondary: Colors.orange[600]!,
-      background: Colors.black,
       surface: Colors.grey[900]!,
     ),
     buttonTheme: ButtonThemeData(

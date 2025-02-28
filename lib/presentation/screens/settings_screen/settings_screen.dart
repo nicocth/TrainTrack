@@ -101,6 +101,7 @@ class SettingsScreen extends ConsumerWidget {
     try{
       await ref.read(authProvider.notifier).signOut();
     } catch (e) {
+      if (!context.mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(S.current.logout_failed),

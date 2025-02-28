@@ -43,7 +43,7 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
             right: 0,
             child: Container(
               height: 180,
-              color: Colors.black.withOpacity(0.4),
+              color: Color.fromRGBO(0, 0, 0, 0.4),
               alignment: Alignment.center,
               child: Text(
                 'TrainTrack',
@@ -55,7 +55,7 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
                     Shadow(
                       offset: Offset(2, 2),
                       blurRadius: 3,
-                      color: Colors.black.withOpacity(0.7),
+                      color: Color.fromRGBO(0, 0, 0, 0.7),
                     ),
                   ],
                 ),
@@ -69,7 +69,7 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
             child: Container(
               padding: const EdgeInsets.all(40.0),
               decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.8),
+                color: Color.fromRGBO(0, 0, 0, 0.8),
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(50),
                   topRight: Radius.circular(50),
@@ -155,6 +155,10 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
 
     try {
       await ref.read(authProvider.notifier).signIn(email, password);
+
+      //check if widget is mounted before displaying snackbar
+      if (!context.mounted) return;
+      
       if (mounted) {
         Navigator.pushAndRemoveUntil(
           context,
