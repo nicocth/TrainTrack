@@ -16,17 +16,10 @@ class _AddExerciseScreenState extends ConsumerState<AddExerciseScreen> {
   final Set<Exercise> selectedExercises = {};
   List<Exercise> availableExercises = [];
 
-  Future<void> loadExerciseFromJson() async {
-  List<Exercise> exerciseList = await ExerciseMapper.fromJsonList(); 
-  setState(() {
-    availableExercises = exerciseList;
-  });
-  }
-
   @override
   void initState() {
     super.initState();
-    loadExerciseFromJson();
+    _loadExerciseFromJson();
   }
 
   @override
@@ -38,65 +31,72 @@ class _AddExerciseScreenState extends ConsumerState<AddExerciseScreen> {
       body: Column(
         children: [
           Expanded(
+            //List of available exercise
             child: ListView.builder(
               itemCount: availableExercises.length,
               itemBuilder: (context, index) {
                 final exercise = availableExercises[index];
                 final isSelected = selectedExercises.contains(exercise);
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5.0),
+                  child: Center(
+                    child: ListTile(
+                      // Exercise image
+                      leading: GestureDetector(
+                        onTap: () {
+                          showDialog(
+                            context: context,
+                            builder: (context) => Dialog(
+                              backgroundColor: Colors.transparent,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(
+                                    10),
+                                child: Image.asset(
+                                  exercise.image,
+                                  fit: BoxFit
+                                      .contain, 
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                        child: ClipRRect(
+                          borderRadius:
+                              BorderRadius.circular(100), 
+                          child: Image.asset(
+                            exercise.image,
+                            width: 60,
+                            height: 100,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
 
-return Padding(
-  padding: const EdgeInsets.symmetric(vertical: 5.0), // Espaciado entre elementos
-  child: Center(
-    child: ListTile(
-      title: SizedBox(height: 60, child: Text(exercise.name)),
-      leading: GestureDetector(
-        onTap: () {
-          showDialog(
-            context: context,
-            builder: (context) => Dialog(
-              backgroundColor: Colors.transparent,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10), // Opcional: redondear la imagen en el zoom
-                child: Image.asset(
-                  exercise.image,
-                  fit: BoxFit.contain, // Asegurar que la imagen se vea bien
-                ),
-              ),
-            ),
-          );
-        },
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(100), // Redondear imagen
-          child: Image.asset(
-            exercise.image,
-            width: 60,
-            height: 100,
-            fit: BoxFit.cover,
-          ),
-        ),
-      ),
-      trailing: Icon(
-        isSelected ? Icons.check_circle : Icons.circle_outlined,
-        color: isSelected ? Colors.green : null,
-      ),
-      onTap: () {
-        setState(() {
-          if (isSelected) {
-            selectedExercises.remove(exercise);
-          } else {
-            selectedExercises.add(exercise);
-          }
-        });
-      },
-    ),
-  ),
-);
+                      // Exercise title
+                      title: SizedBox(height: 60, child: Text(exercise.name)),
 
+                      // Select icon
+                      trailing: Icon(
+                        isSelected ? Icons.check_circle : Icons.circle_outlined,
+                        color: isSelected ? Colors.green : null,
+                      ),
+                      onTap: () {
+                        setState(() {
+                          if (isSelected) {
+                            selectedExercises.remove(exercise);
+                          } else {
+                            selectedExercises.add(exercise);
+                          }
+                        });
+                      },
+                    ),
+                  ),
+                );
               },
             ),
-
           ),
-          // Botón para agregar ejercicios seleccionados
+
+          // Button to add selected exercises
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: ElevatedButton(
@@ -112,5 +112,12 @@ return Padding(
         ],
       ),
     );
+  }
+
+  Future<void> _loadExerciseFromJson() async {
+    List<Exercise> exerciseList = await ExerciseMapper.fromJsonList();
+    setState(() {
+      availableExercises = exerciseList;
+    });
   }
 }
