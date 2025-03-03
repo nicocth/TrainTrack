@@ -454,6 +454,26 @@ class S {
       args: [],
     );
   }
+
+  /// `There are no saved workouts`
+  String get empty_training_list {
+    return Intl.message(
+      'There are no saved workouts',
+      name: 'empty_training_list',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load trainings list.`
+  String get error_loading_training_list {
+    return Intl.message(
+      'Failed to load trainings list.',
+      name: 'error_loading_training_list',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

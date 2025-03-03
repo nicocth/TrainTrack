@@ -36,6 +36,21 @@ class ExerciseMapper {
     return jsonList.map((json) => fromJson(json)).toList();
   }
 
+static Future<Exercise> getExerciseById(String id) async {
+  final List<Exercise> exercises = await fromJsonList();
+  return exercises.firstWhere(
+    (exercise) => exercise.id == id,
+    orElse: () => Exercise(
+      id: 'not_found',
+      name: 'Unknown Exercise',
+      description: 'No description available',
+      image: '',
+      muscularGroup: MuscularGroup.pectoral, // Usa un valor por defecto
+    ),
+  );
+}
+
+
   /// Convert a list of `Exercise` objects to a JSON list
   static String toJsonList(List<Exercise> exercises) {
     final List<Map<String, dynamic>> jsonList = 

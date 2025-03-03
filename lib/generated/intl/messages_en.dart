@@ -48,6 +48,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "Password is required",
     ),
     "empty_title": MessageLookupByLibrary.simpleMessage("Please enter a title"),
+    "empty_training_list": MessageLookupByLibrary.simpleMessage(
+      "There are no saved workouts",
+    ),
+    "error_loading_training_list": MessageLookupByLibrary.simpleMessage(
+      "Failed to load trainings list.",
+    ),
     "error_saving_routine": MessageLookupByLibrary.simpleMessage(
       "Error saving routine",
     ),

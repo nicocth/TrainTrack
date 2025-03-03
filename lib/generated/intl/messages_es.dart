@@ -56,6 +56,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "empty_title": MessageLookupByLibrary.simpleMessage(
       "Por favor, ingresa un título",
     ),
+    "empty_training_list": MessageLookupByLibrary.simpleMessage(
+      "No hay entrenamientos guardados.",
+    ),
+    "error_loading_training_list": MessageLookupByLibrary.simpleMessage(
+      "No se ha podido cargar la lista de entrenamientos.",
+    ),
     "error_saving_routine": MessageLookupByLibrary.simpleMessage(
       "Error al guardar la rutina",
     ),

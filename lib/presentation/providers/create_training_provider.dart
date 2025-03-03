@@ -49,7 +49,7 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
   // Add an exercise with empty sets
   void addExercise(Exercise exercise) {
     final newCustomExercise =
-        CustomExercise(exercise: exercise, notes: "", sets: []);
+        CustomExercise(exercise: exercise, order: 0, notes: "", sets: []);
     
     state.notesControllers.add(TextEditingController(text: ""));
     state.repsControllers.add([TextEditingController(text: "")]);
@@ -64,6 +64,7 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
     final newCustomExercises = exercises
         .map((exercise) => CustomExercise(
               exercise: exercise,
+              order: 0,
               notes: "",
               sets: [Sets(reps: 0, weight: 0)],
             ))
@@ -147,6 +148,7 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
     final updatedExercises = [...state.customExercises];
     updatedExercises[exerciseIndex] = CustomExercise(
       notes: updatedExercises[exerciseIndex].notes,
+      order: updatedExercises[exerciseIndex].order,
       exercise: updatedExercises[exerciseIndex].exercise,
       sets: [...updatedExercises[exerciseIndex].sets, sets],
     );
@@ -162,6 +164,7 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
       ..removeAt(setIndex);
     updatedExercises[exerciseIndex] = CustomExercise(
       exercise: updatedExercises[exerciseIndex].exercise,
+      order: updatedExercises[exerciseIndex].order,
       notes: updatedExercises[exerciseIndex].notes,
       sets: updatedSets,
     );

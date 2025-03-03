@@ -48,5 +48,7 @@
     "reps_text": "Reps",
     "reps": "0",
     "number_value_error": "Valor incorrecto, Introduzca un número",
-    "request_timeout": "La peticion ha tardado demasiado tiempo revise su conexión"
+    "request_timeout": "La peticion ha tardado demasiado tiempo revise su conexión",
+    "empty_training_list": "No hay entrenamientos guardados.",
+    "error_loading_training_list": "No se ha podido cargar la lista de entrenamientos."
 }

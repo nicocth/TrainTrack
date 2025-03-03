@@ -1,6 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
+import 'package:train_track/domain/models/custom_exercise.dart';
+import 'package:train_track/domain/models/training.dart';
+import 'package:train_track/infraestructure/mappers/custom_exercise_mapper.dart';
+import 'package:train_track/infraestructure/mappers/training_mapper.dart';
 import 'package:train_track/presentation/providers/auth_provider.dart';
 import 'package:train_track/presentation/providers/create_training_provider.dart';
 
@@ -88,6 +92,25 @@ class FirestoreService {
       return Result.success();
     } catch (e) {
       return Result.failure(e.toString());
+    }
+  }
+
+  // Method to fetch CustomExercise list
+ Future<List<Training>> getAllTrainings(String? userId) async {
+    try {
+      final trainingsSnapshot = await _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('trainings')
+          .get();
+
+      List<Training> trainings = await Future.wait(
+        trainingsSnapshot.docs.map((doc) => TrainingMapper.fromFirestore(doc, userId)),
+      );
+
+      return trainings;
+    } catch (e) {
+      throw Exception('Error fetching trainings: $e');
     }
   }
 }
