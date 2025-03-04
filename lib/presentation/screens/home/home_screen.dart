@@ -16,13 +16,13 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    // Se asegura de escuchar cuando regresa a esta pantalla y refrescar la lista
-    Future.microtask(() => ref.refresh(trainingsProvider));
+    // Makes sure to listen when you return to this screen and refresh the list
+    ref.read(trainingsProvider.notifier).loadTrainings(ref);
   }
 
   @override
   Widget build(BuildContext context) {
-    final trainings = ref.watch(trainingsProvider);
+    final trainingsState = ref.watch(trainingsProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -47,14 +47,17 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             title: Text(S.current.create_training),
             trailing: const Icon(Icons.add),
             onTap: () async {
-              await Navigator.push(
+              final result = await Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => const CreateTrainingScreen(),
                 ),
               );
-              // Refrescar la lista de entrenamientos cuando regresa
-              ref.invalidate(trainingsProvider);
+
+              // Only refresh if the new training is saved
+              if (result == true) {
+                ref.read(trainingsProvider.notifier).loadTrainings(ref);
+              }
             },
           ),
 
@@ -71,85 +74,133 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
           ),
 
           // Trainings list
-          Expanded(
-            child: trainings.when(
-              data: (trainingsList) => trainingsList.isEmpty
-                  ? Center(child: Text(S.current.empty_exercises_list))
-                  : ListView.builder(
-                      itemCount: trainingsList.length,
-                      itemBuilder: (context, index) {
-                        final training = trainingsList[index];
+        Expanded(
+          child: trainingsState.isLoading
+              ? const Center(child: CircularProgressIndicator())
+              : trainingsState.errorMessage != null
+                  ? Center(child: Text(S.current.error_loading_training_list))
+                  : trainingsState.trainings.isEmpty
+                      ? Center(child: Text(S.current.empty_exercises_list))
+                      : ListView.builder(
+                          itemCount: trainingsState.trainings.length,
+                          itemBuilder: (context, index) {
+                            final training = trainingsState.trainings[index];
 
-                        // Find the image with order == 0
-                        final customExerciseImage = training.exercises
-                            .firstWhere(
-                              (exercise) => exercise.order == 0,
-                              orElse: () => training.exercises.first,
-                            )
-                            .exercise
-                            .image;
+                            // Find the image with order == 0
+                            final customExerciseImage = training.exercises
+                                .firstWhere(
+                                  (exercise) => exercise.order == 0,
+                                  orElse: () => training.exercises.first,
+                                )
+                                .exercise
+                                .image;
 
-return Card(
-  margin: const EdgeInsets.all(10),
-  elevation: 5,
-  shape: RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(15),
-  ),
-  child: Container(
-    height: 200,
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(15),
-    ),
-    child: Stack(
-      children: [
-        // Imagen de fondo
-        Positioned.fill(
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(15),
-            child: Image.asset(
-              customExerciseImage,
-              fit: BoxFit.cover,
-            ),
-          ),
+                            return Card(
+                              margin: const EdgeInsets.all(10),
+                              elevation: 5,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: Container(
+                                height: 200,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                child: Stack(
+                                  children: [
+                                    // Background image
+                                    Positioned.fill(
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(15),
+                                        child: Image.asset(
+                                          customExerciseImage,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+
+                                    // Opacity layer
+                                    Positioned.fill(
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(15),
+                                          color: Color.fromRGBO(0, 0, 0, 0.3),
+                                        ),
+                                      ),
+                                    ),
+
+                                    // Options icon in top right corner
+                                    Positioned(
+                                      top: 8,
+                                      right: 8,
+                                      child: PopupMenuButton<String>(
+                                        icon: const Icon(Icons.more_vert, color: Colors.white),
+                                        onSelected: (String value) {
+                                          if (value == 'edit') {
+                                            // TODO: Handle edit action
+                                          } else if (value == 'delete') {
+                                            _showDeleteConfirmationDialog(context, training.id);
+                                          }
+                                        },
+                                        itemBuilder: (BuildContext context) => [
+                                          PopupMenuItem(
+                                            value: 'edit',
+                                            child: Text(S.current.edit),
+                                          ),
+                                          PopupMenuItem(
+                                            value: 'delete',
+                                            child: Text(S.current.delete),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+
+                                    // Training name
+                                    Padding(
+                                      padding: const EdgeInsets.all(15),
+                                      child: Align(
+                                        alignment: Alignment.bottomLeft,
+                                        child: Text(training.name,
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .headlineLarge),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        ),
         ),
-
-        // Capa de opacidad (oscurecer imagen)
-        Positioned.fill(
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: Color.fromRGBO(0, 0, 0, 0.3),
-            ),
-          ),
-        ),
-
-        // Texto del entrenamiento
-        Padding(
-          padding: const EdgeInsets.all(15),
-          child: Align(
-            alignment: Alignment.bottomLeft,
-            child: Text(
-              training.name,
-              style: Theme.of(context)
-                  .textTheme
-                  .headlineLarge
-            ),
-          ),
-        ),
-      ],
-    ),
-  ),
-);
-
-                      },
-                    ),
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (error, _) =>
-                  Center(child: Text(S.current.error_loading_training_list)),
-            ),
-          )
         ],
       ),
     );
   }
+
+ void _showDeleteConfirmationDialog(BuildContext context, String trainingId) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(S.current.confirm_delete),
+        content: Text(S.current.confirm_delete_message),
+        actions: [
+          TextButton(
+            //Close popup
+            onPressed: () => Navigator.pop(context),
+            child: Text(S.current.cancel),
+          ),
+          TextButton(
+            onPressed: () {
+              //Close popup and delete training
+              Navigator.pop(context);
+              ref.read(trainingsProvider.notifier).deleteTraining(ref, trainingId);
+            },
+            child: Text(S.current.delete, style: const TextStyle(color: Colors.red)),
+          ),
+        ],
+      ),
+    );
+  }
+
 }

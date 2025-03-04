@@ -405,6 +405,16 @@ class S {
     return Intl.message('Delete', name: 'delete', desc: '', args: []);
   }
 
+  /// `Edit`
+  String get edit {
+    return Intl.message('Edit', name: 'edit', desc: '', args: []);
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  }
+
   /// `Notes`
   String get notes {
     return Intl.message('Notes', name: 'notes', desc: '', args: []);
@@ -470,6 +480,26 @@ class S {
     return Intl.message(
       'Failed to load trainings list.',
       name: 'error_loading_training_list',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirmación`
+  String get confirm_delete {
+    return Intl.message(
+      'Confirmación',
+      name: 'confirm_delete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `¿Estas seguro de borrar el entrenamiento?`
+  String get confirm_delete_message {
+    return Intl.message(
+      '¿Estas seguro de borrar el entrenamiento?',
+      name: 'confirm_delete_message',
       desc: '',
       args: [],
     );

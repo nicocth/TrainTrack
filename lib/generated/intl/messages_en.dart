@@ -31,12 +31,18 @@ class MessageLookup extends MessageLookupByLibrary {
       "Already have an account?",
     ),
     "app_bar_settings": MessageLookupByLibrary.simpleMessage("Settings"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "confirm_delete": MessageLookupByLibrary.simpleMessage("Confirmación"),
+    "confirm_delete_message": MessageLookupByLibrary.simpleMessage(
+      "¿Estas seguro de borrar el entrenamiento?",
+    ),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirm password",
     ),
     "create_routine": MessageLookupByLibrary.simpleMessage("Create routine"),
     "create_training": MessageLookupByLibrary.simpleMessage("Create training"),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
+    "edit": MessageLookupByLibrary.simpleMessage("Edit"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "Email already in use",

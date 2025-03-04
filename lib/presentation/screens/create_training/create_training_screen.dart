@@ -123,6 +123,10 @@ class CreateTrainingScreen extends ConsumerWidget {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(S.current.routine_saved)),
       );
+
+      // Return true if the training is success for refresh home
+      Navigator.pop(context, true); 
+
       
     } on TimeoutException {
       ScaffoldMessenger.of(context).showSnackBar(

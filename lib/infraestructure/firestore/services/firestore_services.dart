@@ -50,7 +50,7 @@ class FirestoreService {
   }
 
   // Method to save a Custom training
-  Future<Result> saveTraining( WidgetRef ref) async {
+  Future<Result> saveTraining(WidgetRef ref) async {
     final authNotifier = ref.read(authProvider.notifier);
     final userId = authNotifier.getUserId();
 
@@ -95,8 +95,39 @@ class FirestoreService {
     }
   }
 
+Future<Result> deleteTraining(String? userId, String trainingId) async {
+  try {
+    final trainingRef = _firestore
+        .collection('users')
+        .doc(userId)
+        .collection('trainings')
+        .doc(trainingId);
+
+    // Get the subcollection
+    final subcollections = ['exercises'];
+
+    for (final subcollection in subcollections) {
+      final subcollectionRef = trainingRef.collection(subcollection);
+      final querySnapshot = await subcollectionRef.get();
+
+      for (final doc in querySnapshot.docs) {
+        //Delete the subcollection
+        await doc.reference.delete();
+      }
+    }
+
+    // Delete main doc
+    await trainingRef.delete();
+
+    return Result.success();
+  } catch (e) {
+    return Result.failure('Error deleting training: $e');
+  }
+}
+
+
   // Method to fetch CustomExercise list
- Future<List<Training>> getAllTrainings(String? userId) async {
+  Future<List<Training>> getAllTrainings(String? userId) async {
     try {
       final trainingsSnapshot = await _firestore
           .collection('users')
@@ -105,7 +136,8 @@ class FirestoreService {
           .get();
 
       List<Training> trainings = await Future.wait(
-        trainingsSnapshot.docs.map((doc) => TrainingMapper.fromFirestore(doc, userId)),
+        trainingsSnapshot.docs
+            .map((doc) => TrainingMapper.fromFirestore(doc, userId)),
       );
 
       return trainings;

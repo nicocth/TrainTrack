@@ -41,6 +41,8 @@
     "add_selected": "Add selected",
     "create_routine": "Create routine",
     "delete": "Delete",
+    "edit": "Edit",
+    "cancel": "Cancel",
     "notes": "Notes",
     "series": "Series",
     "kg_text": "Kg",
@@ -50,5 +52,7 @@
     "number_value_error": "Wrong value. Please introduce a number.",
     "request_timeout": "The request has taken too long, check your connection",
     "empty_training_list": "There are no saved workouts",
-    "error_loading_training_list": "Failed to load trainings list."
+    "error_loading_training_list": "Failed to load trainings list.",
+    "confirm_delete": "Confirmación",
+    "confirm_delete_message": "¿Estas seguro de borrar el entrenamiento?"
 }

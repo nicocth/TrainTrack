@@ -41,6 +41,8 @@
     "add_selected": "Añadir seleccionados",
     "create_routine": "Crear rutina",
     "delete": "Eliminar",
+    "edit": "Editar",
+    "cancel": "Cancel",
     "notes": "Notas",
     "series": "Series",
     "kg_text": "Kg",
@@ -50,5 +52,7 @@
     "number_value_error": "Valor incorrecto, Introduzca un número",
     "request_timeout": "La peticion ha tardado demasiado tiempo revise su conexión",
     "empty_training_list": "No hay entrenamientos guardados.",
-    "error_loading_training_list": "No se ha podido cargar la lista de entrenamientos."
+    "error_loading_training_list": "No se ha podido cargar la lista de entrenamientos.",
+    "confirm_delete": "Confirmación de borrado",
+    "confirm_delete_message": "¿Estas seguro de borrar el entrenamiento?"
 }
