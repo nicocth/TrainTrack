@@ -4,14 +4,14 @@ import 'package:train_track/domain/models/custom_exercise.dart';
 import 'package:train_track/domain/models/exercise.dart';
 import 'package:train_track/domain/models/sets.dart';
 
-class TrainingState {
+class CreateTrainingState {
   final TextEditingController titleController;
   final List<CustomExercise> customExercises;
   final List<TextEditingController> notesControllers;
   final List<List<TextEditingController>> repsControllers;
   final List<List<TextEditingController>> weightControllers;
 
-  TrainingState({
+  CreateTrainingState({
     required this.titleController,
     required this.customExercises,
     required this.notesControllers,
@@ -19,14 +19,14 @@ class TrainingState {
     required this.weightControllers,
   });
 
-  TrainingState copyWith({
+  CreateTrainingState copyWith({
     TextEditingController? titleController,
     List<CustomExercise>? customExercises,
     List<TextEditingController>? notesControllers,
     List<List<TextEditingController>>? repsControllers,
     List<List<TextEditingController>>? weightControllers,
   }) {
-    return TrainingState(
+    return CreateTrainingState(
       titleController: titleController ?? this.titleController,
       customExercises: customExercises ?? this.customExercises,
       notesControllers: notesControllers ?? this.notesControllers,
@@ -36,9 +36,9 @@ class TrainingState {
   }
 }
 
-class TrainingNotifier extends StateNotifier<TrainingState> {
+class TrainingNotifier extends StateNotifier<CreateTrainingState> {
   TrainingNotifier()
-      : super(TrainingState(
+      : super(CreateTrainingState(
           titleController: TextEditingController(),
           customExercises: [],
           notesControllers: [],
@@ -175,7 +175,7 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
 
   // Reset state
   void reset() {
-    state = TrainingState(
+    state = CreateTrainingState(
       titleController:
           TextEditingController(), 
       customExercises: [], 
@@ -186,6 +186,6 @@ class TrainingNotifier extends StateNotifier<TrainingState> {
   }
 }
 
-final trainingProvider = StateNotifierProvider<TrainingNotifier, TrainingState>(
+final createTrainingProvider = StateNotifierProvider<TrainingNotifier, CreateTrainingState>(
   (ref) => TrainingNotifier(),
 );

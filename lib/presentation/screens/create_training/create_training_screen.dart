@@ -13,8 +13,8 @@ class CreateTrainingScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final newTraining = ref.watch(trainingProvider);
-    final trainingNotifier = ref.read(trainingProvider.notifier);
+    final newTraining = ref.watch(createTrainingProvider);
+    final trainingNotifier = ref.read(createTrainingProvider.notifier);
 
     return Scaffold(
       appBar: AppBar(
@@ -84,7 +84,7 @@ class CreateTrainingScreen extends ConsumerWidget {
   }
 
   Future<void> _saveTraining(BuildContext context, WidgetRef ref) async {
-    final newTraining = ref.read(trainingProvider);
+    final newTraining = ref.read(createTrainingProvider);
 
     // Check title is not empty
     if (newTraining.titleController.text.isEmpty) {

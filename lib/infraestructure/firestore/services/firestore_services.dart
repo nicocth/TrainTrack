@@ -54,8 +54,8 @@ class FirestoreService {
     final authNotifier = ref.read(authProvider.notifier);
     final userId = authNotifier.getUserId();
 
-    final newTraining = ref.read(trainingProvider);
-    final trainingNotifier = ref.read(trainingProvider.notifier);
+    final newTraining = ref.read(createTrainingProvider);
+    final trainingNotifier = ref.read(createTrainingProvider.notifier);
 
     try {
       final userRef =

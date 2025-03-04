@@ -26,7 +26,7 @@ class ExerciseCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final trainingNotifier = ref.read(trainingProvider.notifier);
+    final trainingNotifier = ref.read(createTrainingProvider.notifier);
 
     final List<String> headers = [
       S.current.series,

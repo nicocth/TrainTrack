@@ -24,7 +24,7 @@ class AddExerciseScreenState extends ConsumerState<AddExerciseScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final trainingNotifier = ref.read(trainingProvider.notifier);
+    final trainingNotifier = ref.read(createTrainingProvider.notifier);
 
     return Scaffold(
       appBar: AppBar(title: Text(S.current.add_exercise)),
