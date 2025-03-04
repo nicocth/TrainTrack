@@ -1,9 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:train_track/domain/models/custom_exercise.dart';
 import 'package:train_track/domain/models/training.dart';
-import 'package:train_track/infraestructure/mappers/custom_exercise_mapper.dart';
 import 'package:train_track/infraestructure/mappers/training_mapper.dart';
 import 'package:train_track/presentation/providers/auth_provider.dart';
 import 'package:train_track/presentation/providers/create_training_provider.dart';
@@ -95,36 +93,88 @@ class FirestoreService {
     }
   }
 
-Future<Result> deleteTraining(String? userId, String trainingId) async {
-  try {
-    final trainingRef = _firestore
-        .collection('users')
-        .doc(userId)
-        .collection('trainings')
-        .doc(trainingId);
+  Future<Result> updateTraining(WidgetRef ref, String trainingId) async {
+    final authNotifier = ref.read(authProvider.notifier);
+    final userId = authNotifier.getUserId();
 
-    // Get the subcollection
-    final subcollections = ['exercises'];
+    final updatedTraining = ref.read(createTrainingProvider);
+    final updatedTrainingNotifier = ref.read(createTrainingProvider.notifier);
 
-    for (final subcollection in subcollections) {
-      final subcollectionRef = trainingRef.collection(subcollection);
-      final querySnapshot = await subcollectionRef.get();
+    try {
+      final trainingRef = _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('trainings')
+          .doc(trainingId);
 
-      for (final doc in querySnapshot.docs) {
-        //Delete the subcollection
+      await trainingRef.update({
+        'title': updatedTraining.titleController.text,
+        'date_updated': Timestamp.now(),
+      });
+
+      final exercisesRef = trainingRef.collection('exercises');
+      final existingExercises = await exercisesRef.get();
+      for (final doc in existingExercises.docs) {
         await doc.reference.delete();
       }
+
+      for (int i = 0; i < updatedTraining.customExercises.length; i++) {
+        await exercisesRef.add({
+          'exercise': updatedTraining.customExercises[i].exercise.id,
+          'order': i,
+          'name': updatedTraining.customExercises[i].exercise.name,
+          'notes': updatedTraining.notesControllers[i].text,
+          'sets': List.generate(updatedTraining.customExercises[i].sets.length,
+              (j) {
+            return {
+              'weight': double.tryParse(
+                      updatedTraining.weightControllers[i][j].text) ??
+                  0.0,
+              'reps':
+                  int.tryParse(updatedTraining.repsControllers[i][j].text) ?? 0,
+            };
+          }),
+        });
+      }
+
+      //clear all data from provider
+      updatedTrainingNotifier.reset();
+
+      return Result.success();
+    } catch (e) {
+      return Result.failure('Error updating training: $e');
     }
-
-    // Delete main doc
-    await trainingRef.delete();
-
-    return Result.success();
-  } catch (e) {
-    return Result.failure('Error deleting training: $e');
   }
-}
 
+  Future<Result> deleteTraining(String? userId, String trainingId) async {
+    try {
+      final trainingRef = _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('trainings')
+          .doc(trainingId);
+
+      // Get the subcollection
+      final subcollections = ['exercises'];
+
+      for (final subcollection in subcollections) {
+        final subcollectionRef = trainingRef.collection(subcollection);
+        final querySnapshot = await subcollectionRef.get();
+
+        for (final doc in querySnapshot.docs) {
+          //Delete the subcollection
+          await doc.reference.delete();
+        }
+      }
+
+      // Delete main doc
+      await trainingRef.delete();
+
+      return Result.success();
+    } catch (e) {
+      return Result.failure('Error deleting training: $e');
+    }
+  }
 
   // Method to fetch CustomExercise list
   Future<List<Training>> getAllTrainings(String? userId) async {

@@ -400,6 +400,16 @@ class S {
     );
   }
 
+  /// `Edit routine`
+  String get edit_routine {
+    return Intl.message(
+      'Edit routine',
+      name: 'edit_routine',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Delete`
   String get delete {
     return Intl.message('Delete', name: 'delete', desc: '', args: []);

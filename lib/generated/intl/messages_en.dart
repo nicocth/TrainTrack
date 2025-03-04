@@ -43,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "create_training": MessageLookupByLibrary.simpleMessage("Create training"),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "edit": MessageLookupByLibrary.simpleMessage("Edit"),
+    "edit_routine": MessageLookupByLibrary.simpleMessage("Edit routine"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "Email already in use",

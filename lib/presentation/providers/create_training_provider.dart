@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:train_track/domain/models/custom_exercise.dart';
 import 'package:train_track/domain/models/exercise.dart';
 import 'package:train_track/domain/models/sets.dart';
+import 'package:train_track/domain/models/training.dart';
 
 class CreateTrainingState {
   final TextEditingController titleController;
@@ -46,11 +47,41 @@ class TrainingNotifier extends StateNotifier<CreateTrainingState> {
           weightControllers: [],
         ));
 
+// Load existing training into state
+  void loadTraining(Training training) {
+    //list is reordered since firebase returns it unordered and the provider does not have order property
+    final sortedExercises = List<CustomExercise>.from(training.exercises)
+      ..sort((a, b) => a.order.compareTo(b.order));
+
+    final titleController = TextEditingController(text: training.name);
+    final notesControllers = sortedExercises
+        .map((exercise) => TextEditingController(text: exercise.notes))
+        .toList();
+    final repsControllers = sortedExercises
+        .map((exercise) => exercise.sets
+            .map((set) => TextEditingController(text: set.reps.toString()))
+            .toList())
+        .toList();
+    final weightControllers = sortedExercises
+        .map((exercise) => exercise.sets
+            .map((set) => TextEditingController(text: set.weight.toString()))
+            .toList())
+        .toList();
+
+    state = CreateTrainingState(
+      titleController: titleController,
+      customExercises: sortedExercises,
+      notesControllers: notesControllers,
+      repsControllers: repsControllers,
+      weightControllers: weightControllers,
+    );
+  }
+
   // Add an exercise with empty sets
   void addExercise(Exercise exercise) {
     final newCustomExercise =
         CustomExercise(exercise: exercise, order: 0, notes: "", sets: []);
-    
+
     state.notesControllers.add(TextEditingController(text: ""));
     state.repsControllers.add([TextEditingController(text: "")]);
     state.weightControllers.add([TextEditingController(text: "")]);
@@ -104,9 +135,11 @@ class TrainingNotifier extends StateNotifier<CreateTrainingState> {
 
     // Create new lists without the element at the indicated index
     final updatedExercises = [...state.customExercises]..removeAt(index);
-    final updatedNotesControllers = [...state.notesControllers]..removeAt(index);
+    final updatedNotesControllers = [...state.notesControllers]
+      ..removeAt(index);
     final updatedRepsControllers = [...state.repsControllers]..removeAt(index);
-    final updatedWeightControllers = [...state.weightControllers]..removeAt(index);
+    final updatedWeightControllers = [...state.weightControllers]
+      ..removeAt(index);
 
     state = state.copyWith(
       customExercises: updatedExercises,
@@ -176,9 +209,8 @@ class TrainingNotifier extends StateNotifier<CreateTrainingState> {
   // Reset state
   void reset() {
     state = CreateTrainingState(
-      titleController:
-          TextEditingController(), 
-      customExercises: [], 
+      titleController: TextEditingController(),
+      customExercises: [],
       notesControllers: [],
       repsControllers: [],
       weightControllers: [],
@@ -186,6 +218,7 @@ class TrainingNotifier extends StateNotifier<CreateTrainingState> {
   }
 }
 
-final createTrainingProvider = StateNotifierProvider<TrainingNotifier, CreateTrainingState>(
+final createTrainingProvider =
+    StateNotifierProvider<TrainingNotifier, CreateTrainingState>(
   (ref) => TrainingNotifier(),
 );

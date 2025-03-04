@@ -51,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "delete": MessageLookupByLibrary.simpleMessage("Eliminar"),
     "edit": MessageLookupByLibrary.simpleMessage("Editar"),
+    "edit_routine": MessageLookupByLibrary.simpleMessage("Editar rutina"),
     "email": MessageLookupByLibrary.simpleMessage("Correo electrónico"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "El correo electrónico ya está en uso",

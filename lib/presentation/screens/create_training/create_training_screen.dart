@@ -9,16 +9,18 @@ import 'package:train_track/presentation/widgets/shared/exercise_card_edit.dart'
 import 'add_exercise_screen.dart';
 
 class CreateTrainingScreen extends ConsumerWidget {
-  const CreateTrainingScreen({super.key});
+  final String? trainingId; //optional parameter to edit
+
+  const CreateTrainingScreen({super.key, this.trainingId});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final newTraining = ref.watch(createTrainingProvider);
-    final trainingNotifier = ref.read(createTrainingProvider.notifier);
+    final newTrainingNotifier = ref.read(createTrainingProvider.notifier);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(S.current.create_routine),
+        title: Text(trainingId != null ? S.current.edit_routine : S.current.create_routine),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.save),
@@ -30,7 +32,6 @@ class CreateTrainingScreen extends ConsumerWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-
             //Training title
             TextField(
               controller: newTraining.titleController,
@@ -44,7 +45,7 @@ class CreateTrainingScreen extends ConsumerWidget {
             Expanded(
               child: ReorderableListView(
                 onReorder: (oldIndex, newIndex) {
-                  trainingNotifier.reorderExercise(oldIndex, newIndex);
+                  newTrainingNotifier.reorderExercise(oldIndex, newIndex);
                 },
                 children: [
                   for (int index = 0;
@@ -58,7 +59,7 @@ class CreateTrainingScreen extends ConsumerWidget {
                       repsControllers: newTraining.repsControllers[index],
                       weightControllers: newTraining.weightControllers[index],
                       onDelete: () {
-                        trainingNotifier.removeExercise(index);
+                        newTrainingNotifier.removeExercise(index);
                       },
                     ),
                 ],
@@ -103,12 +104,21 @@ class CreateTrainingScreen extends ConsumerWidget {
     }
 
     try {
-      // Add timeout in case the user is left without connection
-      final result = await FirestoreService()
-          .saveTraining(ref)
-          .timeout(Duration(seconds: 6), onTimeout: () {
-        throw TimeoutException(S.current.request_timeout);
-      });
+      final FirestoreService firestoreService = FirestoreService();
+      bool isEditing = trainingId != null;
+
+      final result = isEditing
+          ? await firestoreService
+              .updateTraining(ref, trainingId!)
+              .timeout(Duration(seconds: 6), onTimeout: () {
+              throw TimeoutException(S.current
+                  .request_timeout); // Add timeout in case the user is left without connection
+            }) // Editar
+          : await firestoreService
+              .saveTraining(ref)
+              .timeout(Duration(seconds: 6), onTimeout: () {
+              throw TimeoutException(S.current.request_timeout);
+            }); // Crear nuevo
 
       //check if widget is mounted before displaying snackbar
       if (!context.mounted) return;
@@ -125,13 +135,11 @@ class CreateTrainingScreen extends ConsumerWidget {
       );
 
       // Return true if the training is success for refresh home
-      Navigator.pop(context, true); 
-
-      
+      Navigator.pop(context, true);
     } on TimeoutException {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(S.current.request_timeout)),
       );
-    } 
+    }
   }
 }
