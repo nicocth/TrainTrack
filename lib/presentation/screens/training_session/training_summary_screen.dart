@@ -74,24 +74,23 @@ class TrainingSummaryScreen extends ConsumerWidget {
                     ],
                   );
                 }
-                
+
                 // If the current exercise has a matching alternative with the next one, group them
-                if (currentExercise.alternative != null) {
-                  if (currentExercise.alternative == nextExercise.alternative) {
-                    return Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            ExerciseBox(customExercise: currentExercise),
-                            SizedBox(width: 16),
-                            ExerciseBox(customExercise: nextExercise),
-                          ],
-                        ),
-                        ArrowDown(),
-                      ],
-                    );
-                  }
+                if (currentExercise.alternative != null &&
+                    currentExercise.alternative == nextExercise.alternative) {
+                  return Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ExerciseBox(customExercise: currentExercise),
+                          SizedBox(width: 16),
+                          ExerciseBox(customExercise: nextExercise),
+                        ],
+                      ),
+                      ArrowDown(),
+                    ],
+                  );
                 } else {
                   // If there's no matching alternative, show each one separately
                   return Column(
