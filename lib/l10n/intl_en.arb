@@ -55,5 +55,9 @@
     "empty_training_list": "There are no saved workouts",
     "error_loading_training_list": "Failed to load trainings list.",
     "confirm_delete": "Confirmación",
-    "confirm_delete_message": "¿Estas seguro de borrar el entrenamiento?"
+    "confirm_delete_message": "¿Estas seguro de borrar el entrenamiento?",
+    "exercises": "Exercises",
+    "summary": "Summary",
+    "training_chat_x_title": "Months",
+    "training_chat_y_title": "Times performed"
 }

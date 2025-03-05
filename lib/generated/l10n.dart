@@ -514,6 +514,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Exercises`
+  String get exercises {
+    return Intl.message('Exercises', name: 'exercises', desc: '', args: []);
+  }
+
+  /// `Summary`
+  String get summary {
+    return Intl.message('Summary', name: 'summary', desc: '', args: []);
+  }
+
+  /// `Months`
+  String get training_chat_x_title {
+    return Intl.message(
+      'Months',
+      name: 'training_chat_x_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Times performed`
+  String get training_chat_y_title {
+    return Intl.message(
+      'Times performed',
+      name: 'training_chat_y_title',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

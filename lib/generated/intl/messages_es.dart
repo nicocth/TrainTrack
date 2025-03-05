@@ -74,6 +74,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_saving_routine": MessageLookupByLibrary.simpleMessage(
       "Error al guardar la rutina",
     ),
+    "exercises": MessageLookupByLibrary.simpleMessage("Ejercicios"),
     "fill_all_fields": MessageLookupByLibrary.simpleMessage(
       "Por favor, rellene todos los campos",
     ),
@@ -120,6 +121,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "save_routine": MessageLookupByLibrary.simpleMessage("Guardar rutina"),
     "series": MessageLookupByLibrary.simpleMessage("Series"),
     "statistics": MessageLookupByLibrary.simpleMessage("Estadisticas"),
+    "summary": MessageLookupByLibrary.simpleMessage("Resumen"),
+    "training_chat_x_title": MessageLookupByLibrary.simpleMessage("Meses"),
+    "training_chat_y_title": MessageLookupByLibrary.simpleMessage(
+      "Veces realizado",
+    ),
     "uknown_error": MessageLookupByLibrary.simpleMessage("Error desconocido"),
     "user_disabled": MessageLookupByLibrary.simpleMessage(
       "Usuario deshabilitado",

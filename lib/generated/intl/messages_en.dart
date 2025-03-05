@@ -64,6 +64,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_saving_routine": MessageLookupByLibrary.simpleMessage(
       "Error saving routine",
     ),
+    "exercises": MessageLookupByLibrary.simpleMessage("Exercises"),
     "fill_all_fields": MessageLookupByLibrary.simpleMessage(
       "Please fill all fields",
     ),
@@ -104,6 +105,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "save_routine": MessageLookupByLibrary.simpleMessage("Save routine"),
     "series": MessageLookupByLibrary.simpleMessage("Series"),
     "statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
+    "summary": MessageLookupByLibrary.simpleMessage("Summary"),
+    "training_chat_x_title": MessageLookupByLibrary.simpleMessage("Months"),
+    "training_chat_y_title": MessageLookupByLibrary.simpleMessage(
+      "Times performed",
+    ),
     "uknown_error": MessageLookupByLibrary.simpleMessage("Uknown error"),
     "user_disabled": MessageLookupByLibrary.simpleMessage("User disabled"),
     "user_not_found": MessageLookupByLibrary.simpleMessage("User not found"),

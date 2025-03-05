@@ -5,6 +5,7 @@ import 'package:train_track/presentation/providers/create_training_provider.dart
 import 'package:train_track/presentation/providers/trainings_provider.dart';
 import 'package:train_track/presentation/screens/create_training/create_training_screen.dart';
 import 'package:train_track/presentation/screens/settings_screen/settings_screen.dart';
+import 'package:train_track/presentation/screens/training_session/training_summary_screen.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -96,101 +97,117 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                                   .exercise
                                   .image;
 
-                              return Card(
-                                margin: const EdgeInsets.all(10),
-                                elevation: 5,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                child: Container(
-                                  height: 200,
-                                  decoration: BoxDecoration(
+                              return GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          TrainingSummaryScreen(
+                                              training: training),
+                                    ),
+                                  );
+                                },
+                                child: Card(
+                                  margin: const EdgeInsets.all(10),
+                                  elevation: 5,
+                                  shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(15),
                                   ),
-                                  child: Stack(
-                                    children: [
-                                      // Background image
-                                      Positioned.fill(
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                          child: Image.asset(
-                                            customExerciseImage,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ),
-                                      ),
-
-                                      // Opacity layer
-                                      Positioned.fill(
-                                        child: Container(
-                                          decoration: BoxDecoration(
+                                  child: Container(
+                                    height: 200,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                    child: Stack(
+                                      children: [
+                                        // Background image
+                                        Positioned.fill(
+                                          child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(15),
-                                            color: Color.fromRGBO(0, 0, 0, 0.3),
+                                            child: Image.asset(
+                                              customExerciseImage,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
-                                      ),
 
-                                      // Options icon in top right corner
-                                      Positioned(
-                                        top: 8,
-                                        right: 8,
-                                        child: PopupMenuButton<String>(
-                                          icon: const Icon(Icons.more_vert,
-                                              color: Colors.white),
-                                          onSelected: (String value) {
-                                            if (value == 'edit') {
-                                              final newTrainingNotifier = ref.read(createTrainingProvider.notifier);
-                                              newTrainingNotifier.loadTraining(training);
-                                              
-                                              Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      CreateTrainingScreen(
-                                                          trainingId:
-                                                              training.id),
-                                                ),
-                                              ).then((result) {
-                                                if (result == true) {
-                                                  ref
-                                                      .read(trainingsProvider
-                                                          .notifier)
-                                                      .loadTrainings(ref);
-                                                }
-                                              });
-                                            } else if (value == 'delete') {
-                                              _showDeleteConfirmationDialog(
-                                                  context, training.id);
-                                            }
-                                          },
-                                          itemBuilder: (BuildContext context) =>
-                                              [
-                                            PopupMenuItem(
-                                              value: 'edit',
-                                              child: Text(S.current.edit),
+                                        // Opacity layer
+                                        Positioned.fill(
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(15),
+                                              color:
+                                                  Color.fromRGBO(0, 0, 0, 0.3),
                                             ),
-                                            PopupMenuItem(
-                                              value: 'delete',
-                                              child: Text(S.current.delete),
-                                            ),
-                                          ],
+                                          ),
                                         ),
-                                      ),
 
-                                      // Training name
-                                      Padding(
-                                        padding: const EdgeInsets.all(15),
-                                        child: Align(
-                                          alignment: Alignment.bottomLeft,
-                                          child: Text(training.name,
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .headlineLarge),
+                                        // Options icon in top right corner
+                                        Positioned(
+                                          top: 8,
+                                          right: 8,
+                                          child: PopupMenuButton<String>(
+                                            icon: const Icon(Icons.more_vert,
+                                                color: Colors.white),
+                                            onSelected: (String value) {
+                                              if (value == 'edit') {
+                                                final newTrainingNotifier = ref
+                                                    .read(createTrainingProvider
+                                                        .notifier);
+                                                newTrainingNotifier
+                                                    .loadTraining(training);
+
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        CreateTrainingScreen(
+                                                            trainingId:
+                                                                training.id),
+                                                  ),
+                                                ).then((result) {
+                                                  if (result == true) {
+                                                    ref
+                                                        .read(trainingsProvider
+                                                            .notifier)
+                                                        .loadTrainings(ref);
+                                                  }
+                                                });
+                                              } else if (value == 'delete') {
+                                                _showDeleteConfirmationDialog(
+                                                    context, training.id);
+                                              }
+                                            },
+                                            itemBuilder:
+                                                (BuildContext context) => [
+                                              PopupMenuItem(
+                                                value: 'edit',
+                                                child: Text(S.current.edit),
+                                              ),
+                                              PopupMenuItem(
+                                                value: 'delete',
+                                                child: Text(S.current.delete),
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ],
+
+                                        // Training name
+                                        Padding(
+                                          padding: const EdgeInsets.all(15),
+                                          child: Align(
+                                            alignment: Alignment.bottomLeft,
+                                            child: Text(training.name,
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .headlineLarge),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               );
