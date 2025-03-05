@@ -6,6 +6,7 @@ import 'package:train_track/domain/models/custom_exercise.dart';
 import 'package:train_track/domain/models/sets.dart';
 import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/presentation/providers/create_training_provider.dart';
+import 'package:train_track/presentation/widgets/shared/zoomable_image.dart';
 
 class ExerciseCard extends ConsumerWidget {
   final int exerciseIndex;
@@ -45,32 +46,7 @@ class ExerciseCard extends ConsumerWidget {
             // Upper section with image, name and delete button 
             Row(
               children: [
-                GestureDetector(
-                  onTap: () {
-                    showDialog(
-                      context: context,
-                      builder: (context) => Dialog(
-                        backgroundColor: Colors.transparent,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Image.asset(
-                            customExercise.exercise.image,
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(100),
-                    child: Image.asset(
-                      customExercise.exercise.image,
-                      width: 60,
-                      height: 60,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
+                ZoomableImage(image: customExercise.exercise.image),
                 const SizedBox(width: 20),
                 Expanded(
                   child: Text(

@@ -4,6 +4,7 @@ import 'package:train_track/domain/models/exercise.dart';
 import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/infraestructure/mappers/exercise_mapper.dart';
 import 'package:train_track/presentation/providers/create_training_provider.dart';
+import 'package:train_track/presentation/widgets/shared/zoomable_image.dart';
 
 class AddExerciseScreen extends ConsumerStatefulWidget {
   const AddExerciseScreen({super.key});
@@ -42,35 +43,7 @@ class AddExerciseScreenState extends ConsumerState<AddExerciseScreen> {
                   child: Center(
                     child: ListTile(
                       // Exercise image
-                      leading: GestureDetector(
-                        onTap: () {
-                          showDialog(
-                            context: context,
-                            builder: (context) => Dialog(
-                              backgroundColor: Colors.transparent,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(
-                                    10),
-                                child: Image.asset(
-                                  exercise.image,
-                                  fit: BoxFit
-                                      .contain, 
-                                ),
-                              ),
-                            ),
-                          );
-                        },
-                        child: ClipRRect(
-                          borderRadius:
-                              BorderRadius.circular(100), 
-                          child: Image.asset(
-                            exercise.image,
-                            width: 60,
-                            height: 100,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
+                      leading: ZoomableImage(image: exercise.image),
 
                       // Exercise title
                       title: SizedBox(height: 60, child: Text(exercise.name)),
