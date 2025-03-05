@@ -12,6 +12,7 @@ class CustomExerciseMapper {
       exercise: exerciseRef,
       notes: data['notes'] ?? '',
       order: data['order'] ?? 0,
+      alternative: data['alternative'],
       sets: (data['sets'] as List<dynamic>).map((set) {
         return Sets(
           reps: set['reps'] ?? 0,

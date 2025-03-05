@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:train_track/domain/models/training.dart';
 import 'package:train_track/generated/l10n.dart';
-import 'package:train_track/presentation/screens/create_training/create_training_screen.dart';
 import 'package:train_track/presentation/screens/settings_screen/settings_screen.dart';
+import 'package:train_track/presentation/widgets/shared/arrow_down.dart';
+import 'package:train_track/presentation/widgets/shared/exercise_box.dart';
 import 'package:train_track/presentation/widgets/shared/training_chart.dart';
 
 class TrainingSummaryScreen extends ConsumerWidget {
@@ -30,14 +31,13 @@ class TrainingSummaryScreen extends ConsumerWidget {
       ),
       body: Column(
         children: [
-          // Routine name 
-          Container( 
-            alignment: Alignment.centerLeft,
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Text(training.name, style: Theme.of(context).textTheme.headlineSmall)
-          ),
+          // Routine name
+          Container(
+              alignment: Alignment.centerLeft,
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Text(training.name,
+                  style: Theme.of(context).textTheme.headlineSmall)),
 
-          // TODO: add navigation statistics_screen and correct graphic data
           // Chart
           Padding(
             padding: const EdgeInsets.all(5.0),
@@ -56,63 +56,56 @@ class TrainingSummaryScreen extends ConsumerWidget {
             ),
           ),
 
-          // Trainings list
-          Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ExerciseBox("Press banca"),
-            ArrowDown(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ExerciseBox("Press inclinado"),
-                SizedBox(width: 16),
-                ExerciseBox("Press inclinado (Máquina)"),
-              ],
+          // Exercise list
+          Expanded(
+            child: ListView.builder(
+              itemCount: training.exercises.length,
+              itemBuilder: (context, index) {
+                final currentExercise = training.exercises[index];
+                final nextExercise = index + 1 < training.exercises.length
+                    ? training.exercises[index + 1]
+                    : null;
+
+                // If there is no next exercise we return the current one
+                if (nextExercise == null) {
+                  return Column(
+                    children: [
+                      ExerciseBox(customExercise: currentExercise),
+                    ],
+                  );
+                }
+                
+                // If the current exercise has a matching alternative with the next one, group them
+                if (currentExercise.alternative != null) {
+                  if (currentExercise.alternative == nextExercise.alternative) {
+                    return Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ExerciseBox(customExercise: currentExercise),
+                            SizedBox(width: 16),
+                            ExerciseBox(customExercise: nextExercise),
+                          ],
+                        ),
+                        ArrowDown(),
+                      ],
+                    );
+                  }
+                } else {
+                  // If there's no matching alternative, show each one separately
+                  return Column(
+                    children: [
+                      ExerciseBox(customExercise: currentExercise),
+                      ArrowDown(),
+                    ],
+                  );
+                }
+              },
             ),
-            ArrowDown(),
-            ExerciseBox("Aperturas pecho (Máquina)"),
-            ArrowDown(),
-            ExerciseBox("Pullover con mancuernas"),
-          ],
-        ),
-      ),
+          ),
         ],
       ),
     );
   }
 }
-
-
-  Widget ArrowDown() {
-    return Icon(Icons.arrow_downward, color: Colors.white, size: 30);
-  }
-
-  Widget ExerciseBox(String name) {
-    return Container(
-      padding: EdgeInsets.all(12),
-      margin: EdgeInsets.symmetric(vertical: 8),
-      decoration: BoxDecoration(
-        color: Colors.black,
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Colors.white),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          CircleAvatar(
-            backgroundColor: Colors.purple[300],
-            radius: 10,
-          ),
-          SizedBox(width: 8),
-          Text(
-            name,
-            style: TextStyle(color: Colors.white),
-          ),
-          SizedBox(width: 8),
-          Checkbox(value: true, onChanged: (value) {}),
-        ],
-      ),
-    );
-  }

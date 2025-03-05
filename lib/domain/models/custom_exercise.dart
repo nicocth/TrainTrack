@@ -5,6 +5,7 @@ class CustomExercise {
   final Exercise exercise;
   final String notes;
   final int order;
+  final int? alternative;
   final List<Sets> sets;
 
   CustomExercise({
@@ -12,5 +13,6 @@ class CustomExercise {
     required this.notes,
     required this.order,
     required this.sets,
+    this.alternative
   });
 }
