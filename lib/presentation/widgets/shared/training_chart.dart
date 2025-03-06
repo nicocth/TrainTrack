@@ -33,7 +33,7 @@ class TrainingChart extends ConsumerWidget {
 
             Expanded(
               child: SizedBox(
-                height: 180,
+                height: 130,
                 child: BarChart(
                   BarChartData(
                     alignment: BarChartAlignment.spaceAround,

@@ -80,7 +80,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "help": MessageLookupByLibrary.simpleMessage("Ayuda"),
     "hint_alternative_text": MessageLookupByLibrary.simpleMessage(
-      "Número de alternativa",
+      "Nº alternativa",
     ),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(

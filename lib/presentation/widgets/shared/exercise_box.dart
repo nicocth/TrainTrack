@@ -10,7 +10,7 @@ class ExerciseBox extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       padding: const EdgeInsets.all(12),
-      constraints: const BoxConstraints(minWidth: 100, maxWidth: 180), 
+      constraints: const BoxConstraints(minWidth: 100, maxWidth: 150), 
       decoration: BoxDecoration(
         color: Colors.black,
         borderRadius: BorderRadius.circular(10),
