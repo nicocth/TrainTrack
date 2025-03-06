@@ -224,7 +224,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(S.current.confirm_delete),
-        content: Text(S.current.confirm_delete_message),
+        content: Text(S.current.confirm_delete_message_training),
         actions: [
           TextButton(
             //Close popup

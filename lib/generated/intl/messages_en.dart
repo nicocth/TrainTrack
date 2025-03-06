@@ -32,9 +32,14 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "app_bar_settings": MessageLookupByLibrary.simpleMessage("Settings"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
-    "confirm_delete": MessageLookupByLibrary.simpleMessage("Confirmación"),
-    "confirm_delete_message": MessageLookupByLibrary.simpleMessage(
-      "¿Estas seguro de borrar el entrenamiento?",
+    "confirm_delete": MessageLookupByLibrary.simpleMessage(
+      "Deletion confirmation",
+    ),
+    "confirm_delete_message_exercise": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to delete the exercise?",
+    ),
+    "confirm_delete_message_training": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to delete the training?",
     ),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirm password",

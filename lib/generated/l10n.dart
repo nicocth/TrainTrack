@@ -495,21 +495,31 @@ class S {
     );
   }
 
-  /// `Confirmación`
+  /// `Deletion confirmation`
   String get confirm_delete {
     return Intl.message(
-      'Confirmación',
+      'Deletion confirmation',
       name: 'confirm_delete',
       desc: '',
       args: [],
     );
   }
 
-  /// `¿Estas seguro de borrar el entrenamiento?`
-  String get confirm_delete_message {
+  /// `Are you sure you want to delete the training?`
+  String get confirm_delete_message_training {
     return Intl.message(
-      '¿Estas seguro de borrar el entrenamiento?',
-      name: 'confirm_delete_message',
+      'Are you sure you want to delete the training?',
+      name: 'confirm_delete_message_training',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete the exercise?`
+  String get confirm_delete_message_exercise {
+    return Intl.message(
+      'Are you sure you want to delete the exercise?',
+      name: 'confirm_delete_message_exercise',
       desc: '',
       args: [],
     );

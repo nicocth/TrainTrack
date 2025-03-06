@@ -39,7 +39,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirm_delete": MessageLookupByLibrary.simpleMessage(
       "Confirmación de borrado",
     ),
-    "confirm_delete_message": MessageLookupByLibrary.simpleMessage(
+    "confirm_delete_message_exercise": MessageLookupByLibrary.simpleMessage(
+      "¿Estas seguro de borrar el ejercicio?",
+    ),
+    "confirm_delete_message_training": MessageLookupByLibrary.simpleMessage(
       "¿Estas seguro de borrar el entrenamiento?",
     ),
     "confirm_password": MessageLookupByLibrary.simpleMessage(

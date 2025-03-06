@@ -58,7 +58,7 @@ class ExerciseCard extends ConsumerWidget {
                 IconButton(
                   icon: Icon(Icons.delete, color: Colors.red),
                   onPressed: () {
-                    onDelete();
+                    _showDeleteConfirmationDialog(context);
                   },
                 ),
               ],
@@ -67,6 +67,7 @@ class ExerciseCard extends ConsumerWidget {
             //Spacer
             const SizedBox(height: 10),
 
+            // Alternative option
             Row(
               children: [
                 Expanded(
@@ -209,6 +210,32 @@ class ExerciseCard extends ConsumerWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  void _showDeleteConfirmationDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(S.current.confirm_delete),
+        content: Text(S.current.confirm_delete_message_exercise),
+        actions: [
+          TextButton(
+            //Close popup
+            onPressed: () => Navigator.pop(context),
+            child: Text(S.current.cancel),
+          ),
+          TextButton(
+            onPressed: () {
+              //Close popup and delete training
+              Navigator.pop(context);
+              onDelete();
+            },
+            child: Text(S.current.delete,
+                style: const TextStyle(color: Colors.red)),
+          ),
+        ],
       ),
     );
   }
