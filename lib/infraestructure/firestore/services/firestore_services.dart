@@ -53,7 +53,7 @@ class FirestoreService {
     final userId = authNotifier.getUserId();
 
     final newTraining = ref.read(createTrainingProvider);
-    final trainingNotifier = ref.read(createTrainingProvider.notifier);
+    final createTrainingNotifier = ref.read(createTrainingProvider.notifier);
 
     try {
       final userRef =
@@ -67,10 +67,11 @@ class FirestoreService {
       });
 
       for (int i = 0; i < newTraining.customExercises.length; i++) {
-        await routineDoc.collection('exercises').add({
+        final exerciseData = {
           'exercise': newTraining.customExercises[i].exercise.id,
           'order': i,
           'name': newTraining.customExercises[i].exercise.name,
+          'is_alternative': newTraining.customExercises[i].isAlternative,
           'notes': newTraining.notesControllers[i].text,
           'sets':
               List.generate(newTraining.customExercises[i].sets.length, (j) {
@@ -81,11 +82,19 @@ class FirestoreService {
               'reps': int.tryParse(newTraining.repsControllers[i][j].text) ?? 0,
             };
           }),
-        });
+        };
+
+        // Add 'alternative' only if isAlternative is true
+        if (newTraining.customExercises[i].isAlternative) {
+          exerciseData['alternative'] =
+              int.tryParse(newTraining.alternativeControllers[i].text) ?? 0;
+        }
+
+        await routineDoc.collection('exercises').add(exerciseData);
       }
 
       //clear all data from provider
-      trainingNotifier.reset();
+      createTrainingNotifier.reset();
 
       return Result.success();
     } catch (e) {
@@ -119,22 +128,30 @@ class FirestoreService {
       }
 
       for (int i = 0; i < updatedTraining.customExercises.length; i++) {
-        await exercisesRef.add({
+        final exerciseData = {
           'exercise': updatedTraining.customExercises[i].exercise.id,
           'order': i,
           'name': updatedTraining.customExercises[i].exercise.name,
+          'is_alternative': updatedTraining.customExercises[i].isAlternative,
           'notes': updatedTraining.notesControllers[i].text,
-          'sets': List.generate(updatedTraining.customExercises[i].sets.length,
-              (j) {
+          'sets':
+              List.generate(updatedTraining.customExercises[i].sets.length, (j) {
             return {
-              'weight': double.tryParse(
-                      updatedTraining.weightControllers[i][j].text) ??
-                  0.0,
-              'reps':
-                  int.tryParse(updatedTraining.repsControllers[i][j].text) ?? 0,
+              'weight':
+                  double.tryParse(updatedTraining.weightControllers[i][j].text) ??
+                      0.0,
+              'reps': int.tryParse(updatedTraining.repsControllers[i][j].text) ?? 0,
             };
           }),
-        });
+        };
+
+        // Add 'alternative' only if isAlternative is true
+        if (updatedTraining.customExercises[i].isAlternative) {
+          exerciseData['alternative'] =
+              int.tryParse(updatedTraining.alternativeControllers[i].text) ?? 0;
+        }
+
+        await exercisesRef.add(exerciseData);
       }
 
       //clear all data from provider

@@ -69,6 +69,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please fill all fields",
     ),
     "help": MessageLookupByLibrary.simpleMessage("Help"),
+    "hint_alternative_text": MessageLookupByLibrary.simpleMessage(
+      "Alternative number",
+    ),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "invalid_email": MessageLookupByLibrary.simpleMessage("Invalid email"),
     "kg": MessageLookupByLibrary.simpleMessage("0.0"),

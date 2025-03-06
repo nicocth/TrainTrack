@@ -59,5 +59,6 @@
     "exercises": "Exercises",
     "summary": "Summary",
     "training_chat_x_title": "Months",
-    "training_chat_y_title": "Times performed"
+    "training_chat_y_title": "Times performed",
+    "hint_alternative_text": "Alternative number"
 }

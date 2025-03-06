@@ -82,7 +82,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 : trainingsState.errorMessage != null
                     ? Center(child: Text(S.current.error_loading_training_list))
                     : trainingsState.trainings.isEmpty
-                        ? Center(child: Text(S.current.empty_exercises_list))
+                        ? Center(child: Text(S.current.empty_training_list))
                         : ListView.builder(
                             itemCount: trainingsState.trainings.length,
                             itemBuilder: (context, index) {

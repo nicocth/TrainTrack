@@ -544,6 +544,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Alternative number`
+  String get hint_alternative_text {
+    return Intl.message(
+      'Alternative number',
+      name: 'hint_alternative_text',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

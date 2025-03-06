@@ -11,6 +11,7 @@ import 'package:train_track/presentation/widgets/shared/zoomable_image.dart';
 class ExerciseCard extends ConsumerWidget {
   final int exerciseIndex;
   final CustomExercise customExercise;
+  final TextEditingController alternativeController;
   final TextEditingController notesController;
   final List<TextEditingController> repsControllers;
   final List<TextEditingController> weightControllers;
@@ -20,6 +21,7 @@ class ExerciseCard extends ConsumerWidget {
       {super.key,
       required this.exerciseIndex,
       required this.customExercise,
+      required this.alternativeController,
       required this.notesController,
       required this.repsControllers,
       required this.weightControllers,
@@ -27,7 +29,7 @@ class ExerciseCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final trainingNotifier = ref.read(createTrainingProvider.notifier);
+    final createTrainingNotifier = ref.read(createTrainingProvider.notifier);
 
     final List<String> headers = [
       S.current.series,
@@ -42,8 +44,7 @@ class ExerciseCard extends ConsumerWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
-            // Upper section with image, name and delete button 
+            // Upper section with image, name and delete button
             Row(
               children: [
                 ZoomableImage(image: customExercise.exercise.image),
@@ -65,6 +66,34 @@ class ExerciseCard extends ConsumerWidget {
 
             //Spacer
             const SizedBox(height: 10),
+
+            Row(
+              children: [
+                Switch(
+                  value: customExercise.isAlternative,
+                  onChanged: (bool value) {
+                    createTrainingNotifier.toggleAlternative(exerciseIndex);
+                    if (!value) {
+                      alternativeController.clear();
+                    }
+                  },
+                ),
+                SizedBox(width: 5),
+                Expanded(
+                  child: TextField(
+                    controller: alternativeController,
+                    keyboardType: TextInputType.number,
+                    enabled: customExercise.isAlternative,
+                    decoration: InputDecoration(
+                      hintText: S.current.hint_alternative_text,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+            //Spacer
+            const SizedBox(height: 5),
 
             //Notes field
             SizedBox(
@@ -89,7 +118,6 @@ class ExerciseCard extends ConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
-                  
                   children: List.generate(
                     headers.length,
                     (index) => SizedBox(
@@ -101,7 +129,8 @@ class ExerciseCard extends ConsumerWidget {
                         ),
                       ),
                     ),
-                  ).expand((widget) => [widget, SizedBox(width: 50)]).toList()..removeLast(),
+                  ).expand((widget) => [widget, SizedBox(width: 50)]).toList()
+                    ..removeLast(),
                 ),
 
                 //Spacer
@@ -112,13 +141,10 @@ class ExerciseCard extends ConsumerWidget {
                   children: List.generate(customExercise.sets.length, (index) {
                     return Row(
                       children: [
-
                         //Order
                         SizedBox(
                             width: 50,
-                            child: Center(
-                                child:                              
-                                  Text("${index + 1}"))),
+                            child: Center(child: Text("${index + 1}"))),
                         //Spacer
                         const SizedBox(width: 50),
 
@@ -135,7 +161,7 @@ class ExerciseCard extends ConsumerWidget {
                         ),
 
                         //Spacer
-                        SizedBox(width: 50), 
+                        SizedBox(width: 50),
 
                         //Field for Reps
                         SizedBox(
@@ -149,7 +175,7 @@ class ExerciseCard extends ConsumerWidget {
                             textAlign: TextAlign.center,
                           ),
                         ),
-                        
+
                         //Spacer
                         SizedBox(width: 5),
 
@@ -157,7 +183,7 @@ class ExerciseCard extends ConsumerWidget {
                         IconButton(
                           icon: const Icon(Icons.delete, color: Colors.red),
                           onPressed: () {
-                            trainingNotifier.removeSetFromExercise(
+                            createTrainingNotifier.removeSetFromExercise(
                                 exerciseIndex, index);
                           },
                         ),
@@ -171,7 +197,7 @@ class ExerciseCard extends ConsumerWidget {
             // Button to add sets
             TextButton.icon(
               onPressed: () {
-                trainingNotifier.addSetToExercise(
+                createTrainingNotifier.addSetToExercise(
                     exerciseIndex, Sets(reps: 0, weight: 0));
               },
               icon: const Icon(Icons.add),

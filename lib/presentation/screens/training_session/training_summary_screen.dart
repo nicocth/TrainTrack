@@ -58,48 +58,66 @@ class TrainingSummaryScreen extends ConsumerWidget {
 
           // Exercise list
           Expanded(
-            child: ListView.builder(
-              itemCount: training.exercises.length,
-              itemBuilder: (context, index) {
-                final currentExercise = training.exercises[index];
-                final nextExercise = index + 1 < training.exercises.length
-                    ? training.exercises[index + 1]
-                    : null;
+            child: Builder(
+              builder: (context) {
+                // We order the exercises before showing them
+                final sortedExercises = List.from(training.exercises)
+                  ..sort((a, b) => a.order.compareTo(b.order));
 
-                // If there is no next exercise we return the current one
-                if (nextExercise == null) {
-                  return Column(
-                    children: [
-                      ExerciseBox(customExercise: currentExercise),
-                    ],
-                  );
-                }
+                // Set to avoid duplication
+                final Set<int> skippedIndexes = {};
 
-                // If the current exercise has a matching alternative with the next one, group them
-                if (currentExercise.alternative != null &&
-                    currentExercise.alternative == nextExercise.alternative) {
-                  return Column(
-                    children: [
-                      Row(
+                return ListView.builder(
+                  itemCount: sortedExercises.length,
+                  itemBuilder: (context, index) {
+
+                    // Avoid rendering duplicates
+                    if (skippedIndexes.contains(index)) {
+                      return const SizedBox
+                          .shrink(); 
+                    }
+
+                    final currentExercise = sortedExercises[index];
+                    final nextIndex = index + 1;
+                    final nextExercise = nextIndex < sortedExercises.length
+                        ? sortedExercises[nextIndex]
+                        : null;
+
+                    Widget exerciseWidget;
+
+                    // If the current exercise and the next have the same alternative, we group them
+                    if (nextExercise != null &&
+                        currentExercise.isAlternative &&
+                        currentExercise.alternative == nextExercise.alternative) {
+                      skippedIndexes.add(
+                          nextIndex); // We avoid rendering nextExercise later
+                      exerciseWidget = Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           ExerciseBox(customExercise: currentExercise),
-                          SizedBox(width: 16),
+                          const SizedBox(width: 16),
                           ExerciseBox(customExercise: nextExercise),
                         ],
-                      ),
-                      ArrowDown(),
-                    ],
-                  );
-                } else {
-                  // If there's no matching alternative, show each one separately
-                  return Column(
-                    children: [
-                      ExerciseBox(customExercise: currentExercise),
-                      ArrowDown(),
-                    ],
-                  );
-                }
+                      );
+                    } else {
+                      exerciseWidget =
+                          ExerciseBox(customExercise: currentExercise);
+                    }
+
+                    // We check if there are more exercises after the current one to show the arrow
+                    final hasNextExercise = sortedExercises.skip(index + 1).any(
+                        (e) => !skippedIndexes
+                            .contains(sortedExercises.indexOf(e)));
+
+                    return Column(
+                      children: [
+                        exerciseWidget,
+                        if (hasNextExercise)
+                          ArrowDown(), // We only show the arrow if there are more exercises
+                      ],
+                    );
+                  },
+                );
               },
             ),
           ),

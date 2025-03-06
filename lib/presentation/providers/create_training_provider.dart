@@ -8,6 +8,7 @@ import 'package:train_track/domain/models/training.dart';
 class CreateTrainingState {
   final TextEditingController titleController;
   final List<CustomExercise> customExercises;
+  final List<TextEditingController> alternativeControllers;
   final List<TextEditingController> notesControllers;
   final List<List<TextEditingController>> repsControllers;
   final List<List<TextEditingController>> weightControllers;
@@ -15,6 +16,7 @@ class CreateTrainingState {
   CreateTrainingState({
     required this.titleController,
     required this.customExercises,
+    required this.alternativeControllers,
     required this.notesControllers,
     required this.repsControllers,
     required this.weightControllers,
@@ -23,6 +25,7 @@ class CreateTrainingState {
   CreateTrainingState copyWith({
     TextEditingController? titleController,
     List<CustomExercise>? customExercises,
+    List<TextEditingController>? alternativeControllers,
     List<TextEditingController>? notesControllers,
     List<List<TextEditingController>>? repsControllers,
     List<List<TextEditingController>>? weightControllers,
@@ -30,6 +33,8 @@ class CreateTrainingState {
     return CreateTrainingState(
       titleController: titleController ?? this.titleController,
       customExercises: customExercises ?? this.customExercises,
+      alternativeControllers:
+          alternativeControllers ?? this.alternativeControllers,
       notesControllers: notesControllers ?? this.notesControllers,
       repsControllers: repsControllers ?? this.repsControllers,
       weightControllers: weightControllers ?? this.weightControllers,
@@ -37,11 +42,12 @@ class CreateTrainingState {
   }
 }
 
-class TrainingNotifier extends StateNotifier<CreateTrainingState> {
-  TrainingNotifier()
+class CreateTrainingNotifier extends StateNotifier<CreateTrainingState> {
+  CreateTrainingNotifier()
       : super(CreateTrainingState(
           titleController: TextEditingController(),
           customExercises: [],
+          alternativeControllers: [],
           notesControllers: [],
           repsControllers: [],
           weightControllers: [],
@@ -54,14 +60,23 @@ class TrainingNotifier extends StateNotifier<CreateTrainingState> {
       ..sort((a, b) => a.order.compareTo(b.order));
 
     final titleController = TextEditingController(text: training.name);
+
+    final alternativeControllers = sortedExercises.map((exercise) {
+      return exercise.isAlternative
+          ? TextEditingController(text: exercise.alternative?.toString() ?? "")
+          : TextEditingController(); // If not alternative, an empty controller is added
+    }).toList();
+
     final notesControllers = sortedExercises
         .map((exercise) => TextEditingController(text: exercise.notes))
         .toList();
+
     final repsControllers = sortedExercises
         .map((exercise) => exercise.sets
             .map((set) => TextEditingController(text: set.reps.toString()))
             .toList())
         .toList();
+
     final weightControllers = sortedExercises
         .map((exercise) => exercise.sets
             .map((set) => TextEditingController(text: set.weight.toString()))
@@ -71,6 +86,7 @@ class TrainingNotifier extends StateNotifier<CreateTrainingState> {
     state = CreateTrainingState(
       titleController: titleController,
       customExercises: sortedExercises,
+      alternativeControllers: alternativeControllers,
       notesControllers: notesControllers,
       repsControllers: repsControllers,
       weightControllers: weightControllers,
@@ -79,9 +95,14 @@ class TrainingNotifier extends StateNotifier<CreateTrainingState> {
 
   // Add an exercise with empty sets
   void addExercise(Exercise exercise) {
-    final newCustomExercise =
-        CustomExercise(exercise: exercise, order: 0, notes: "", sets: []);
+    final newCustomExercise = CustomExercise(
+        exercise: exercise,
+        isAlternative: false,
+        order: 0,
+        notes: "",
+        sets: []);
 
+    state.alternativeControllers.add(TextEditingController(text: ""));
     state.notesControllers.add(TextEditingController(text: ""));
     state.repsControllers.add([TextEditingController(text: "")]);
     state.weightControllers.add([TextEditingController(text: "")]);
@@ -95,12 +116,17 @@ class TrainingNotifier extends StateNotifier<CreateTrainingState> {
     final newCustomExercises = exercises
         .map((exercise) => CustomExercise(
               exercise: exercise,
+              isAlternative: false,
               order: 0,
               notes: "",
               sets: [Sets(reps: 0, weight: 0)],
             ))
         .toList();
 
+    final newAlternativeControllers = List.generate(
+      exercises.length,
+      (_) => TextEditingController(text: ""),
+    );
     final newNotesControllers = List.generate(
       exercises.length,
       (_) => TextEditingController(text: ""),
@@ -114,6 +140,7 @@ class TrainingNotifier extends StateNotifier<CreateTrainingState> {
       (_) => [TextEditingController(text: "")],
     );
 
+    state.alternativeControllers.addAll(newAlternativeControllers);
     state.notesControllers.addAll(newNotesControllers);
     state.repsControllers.addAll(newRepsControllers);
     state.weightControllers.addAll(newWeightControllers);
@@ -125,6 +152,7 @@ class TrainingNotifier extends StateNotifier<CreateTrainingState> {
   // Remove an exercise from the list
   void removeExercise(int index) {
     // Release resources from drivers before deleting them
+    state.alternativeControllers[index].dispose();
     state.notesControllers[index].dispose();
     for (var controller in state.repsControllers[index]) {
       controller.dispose();
@@ -135,6 +163,8 @@ class TrainingNotifier extends StateNotifier<CreateTrainingState> {
 
     // Create new lists without the element at the indicated index
     final updatedExercises = [...state.customExercises]..removeAt(index);
+    final updatedAlternativeControllers = [...state.alternativeControllers]
+      ..removeAt(index);
     final updatedNotesControllers = [...state.notesControllers]
       ..removeAt(index);
     final updatedRepsControllers = [...state.repsControllers]..removeAt(index);
@@ -143,6 +173,7 @@ class TrainingNotifier extends StateNotifier<CreateTrainingState> {
 
     state = state.copyWith(
       customExercises: updatedExercises,
+      alternativeControllers: updatedAlternativeControllers,
       notesControllers: updatedNotesControllers,
       repsControllers: updatedRepsControllers,
       weightControllers: updatedWeightControllers,
@@ -152,6 +183,7 @@ class TrainingNotifier extends StateNotifier<CreateTrainingState> {
   // Reorder exercises
   void reorderExercise(int oldIndex, int newIndex) {
     final updatedExercises = [...state.customExercises];
+    final updatedAlternativeControllers = [...state.alternativeControllers];
     final updatedNotesControllers = [...state.notesControllers];
     final updatedRepsControllers = [...state.repsControllers];
     final updatedWeightControllers = [...state.weightControllers];
@@ -159,17 +191,21 @@ class TrainingNotifier extends StateNotifier<CreateTrainingState> {
     if (newIndex > oldIndex) newIndex--;
 
     final exercise = updatedExercises.removeAt(oldIndex);
+    final alternativeController =
+        updatedAlternativeControllers.removeAt(oldIndex);
     final noteController = updatedNotesControllers.removeAt(oldIndex);
     final repsController = updatedRepsControllers.removeAt(oldIndex);
     final weightController = updatedWeightControllers.removeAt(oldIndex);
 
     updatedExercises.insert(newIndex, exercise);
+    updatedAlternativeControllers.insert(newIndex, alternativeController);
     updatedNotesControllers.insert(newIndex, noteController);
     updatedRepsControllers.insert(newIndex, repsController);
     updatedWeightControllers.insert(newIndex, weightController);
 
     state = state.copyWith(
       customExercises: updatedExercises,
+      alternativeControllers: updatedAlternativeControllers,
       notesControllers: updatedNotesControllers,
       repsControllers: updatedRepsControllers,
       weightControllers: updatedWeightControllers,
@@ -180,6 +216,8 @@ class TrainingNotifier extends StateNotifier<CreateTrainingState> {
   void addSetToExercise(int exerciseIndex, Sets sets) {
     final updatedExercises = [...state.customExercises];
     updatedExercises[exerciseIndex] = CustomExercise(
+      isAlternative: updatedExercises[exerciseIndex].isAlternative,
+      alternative: updatedExercises[exerciseIndex].alternative,
       notes: updatedExercises[exerciseIndex].notes,
       order: updatedExercises[exerciseIndex].order,
       exercise: updatedExercises[exerciseIndex].exercise,
@@ -196,8 +234,10 @@ class TrainingNotifier extends StateNotifier<CreateTrainingState> {
     final updatedSets = [...updatedExercises[exerciseIndex].sets]
       ..removeAt(setIndex);
     updatedExercises[exerciseIndex] = CustomExercise(
+      isAlternative: updatedExercises[exerciseIndex].isAlternative,
       exercise: updatedExercises[exerciseIndex].exercise,
       order: updatedExercises[exerciseIndex].order,
+      alternative: updatedExercises[exerciseIndex].alternative,
       notes: updatedExercises[exerciseIndex].notes,
       sets: updatedSets,
     );
@@ -206,11 +246,30 @@ class TrainingNotifier extends StateNotifier<CreateTrainingState> {
     state = state.copyWith(customExercises: updatedExercises);
   }
 
+  // toggle isAlternative
+  void toggleAlternative(int index) {
+    final updatedExercises = [...state.customExercises];
+
+    updatedExercises[index] = CustomExercise(
+      exercise: updatedExercises[index].exercise,
+      order: updatedExercises[index].order,
+      notes: updatedExercises[index].notes,
+      sets: updatedExercises[index].sets,
+      isAlternative: !updatedExercises[index].isAlternative,
+      alternative: updatedExercises[index].isAlternative
+          ? null
+          : updatedExercises[index].alternative,
+    );
+
+    state = state.copyWith(customExercises: updatedExercises);
+  }
+
   // Reset state
   void reset() {
     state = CreateTrainingState(
       titleController: TextEditingController(),
       customExercises: [],
+      alternativeControllers: [],
       notesControllers: [],
       repsControllers: [],
       weightControllers: [],
@@ -219,6 +278,6 @@ class TrainingNotifier extends StateNotifier<CreateTrainingState> {
 }
 
 final createTrainingProvider =
-    StateNotifierProvider<TrainingNotifier, CreateTrainingState>(
-  (ref) => TrainingNotifier(),
+    StateNotifierProvider<CreateTrainingNotifier, CreateTrainingState>(
+  (ref) => CreateTrainingNotifier(),
 );

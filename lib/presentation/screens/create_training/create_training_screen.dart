@@ -55,6 +55,7 @@ class CreateTrainingScreen extends ConsumerWidget {
                       key: ValueKey(newTraining.customExercises[index]),
                       exerciseIndex: index,
                       customExercise: newTraining.customExercises[index],
+                      alternativeController: newTraining.alternativeControllers[index],
                       notesController: newTraining.notesControllers[index],
                       repsControllers: newTraining.repsControllers[index],
                       weightControllers: newTraining.weightControllers[index],
