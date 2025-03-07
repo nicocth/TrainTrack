@@ -10,7 +10,7 @@ class SelectableExerciseBox extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10),
-      constraints: const BoxConstraints(minWidth: 100, maxWidth: 200), 
+      constraints: const BoxConstraints(minWidth: 100, maxWidth: 200),
       decoration: BoxDecoration(
         color: Colors.black,
         borderRadius: BorderRadius.circular(10),
@@ -20,7 +20,7 @@ class SelectableExerciseBox extends ConsumerWidget {
         children: [
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min, 
+            mainAxisSize: MainAxisSize.min,
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(100),
@@ -32,19 +32,18 @@ class SelectableExerciseBox extends ConsumerWidget {
                 ),
               ),
               const SizedBox(width: 8),
-              Expanded( 
+              Expanded(
                 child: Text(
                   customExercise.exercise.name,
                   style: const TextStyle(color: Colors.white),
-                  maxLines: 3, 
-                  overflow: TextOverflow.ellipsis, 
-                  softWrap: true, 
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                  softWrap: true,
                 ),
               ),
             ],
           ),
-          
-              Checkbox(value: true, onChanged: (value){}),
+          Checkbox(value: true, onChanged: (value) {}),
         ],
       ),
     );
