@@ -61,5 +61,8 @@
     "summary": "Resumen",
     "training_chat_x_title": "Meses",
     "training_chat_y_title": "Veces realizado",
-    "hint_alternative_text": "Nº alternativa"
+    "hint_alternative_text": "Nº alternativa",
+    "start_training": "Iniciar entrenamiento",
+    "finish": "Finalizar",
+    "select_exercise": "Seleccione el siguiente ejercicio:"
 }

@@ -2,59 +2,47 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:train_track/domain/models/training.dart';
 import 'package:train_track/generated/l10n.dart';
-import 'package:train_track/presentation/screens/settings_screen/settings_screen.dart';
-import 'package:train_track/presentation/screens/training_session/exercise_selection_screen.dart';
+import 'package:train_track/presentation/providers/session_training_provider.dart';
 import 'package:train_track/presentation/widgets/shared/arrow_down.dart';
 import 'package:train_track/presentation/widgets/shared/exercise_box.dart';
-import 'package:train_track/presentation/widgets/shared/training_chart.dart';
 
-class TrainingSummaryScreen extends ConsumerWidget {
+class ExerciseSelectionScreen extends ConsumerWidget {
   final Training training;
-  const TrainingSummaryScreen({required this.training, super.key});
+  const ExerciseSelectionScreen({required this.training, super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final session =
+        ref.watch(sessionTrainingProvider); // Lee el estado del timer
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(S.current.summary),
+
+        title: Align(
+          alignment: Alignment.centerLeft,
+          child: Text(formatTime(session.seconds),
+                style: Theme.of(context).textTheme.headlineSmall),
+        ),
         actions: <Widget>[
-          IconButton(
-              icon: const Icon(Icons.settings),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: ElevatedButton.icon(
+              label: Text(S.current.finish),
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SettingsScreen(),
-                  ),
-                );
-              })
+                //TODO: implementar finalización de sesion
+              },
+            ),
+          ),
         ],
       ),
       body: Column(
         children: [
-          // Routine name
+          // Instructions
           Container(
-              alignment: Alignment.centerLeft,
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Text(training.name,
-                  style: Theme.of(context).textTheme.headlineSmall)),
-
-          // Chart
-          Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: TrainingChart(),
-          ),
-
-          // Exercise list title
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                S.current.exercises,
-                style: Theme.of(context).textTheme.headlineSmall,
-              ),
-            ),
+            alignment: Alignment.centerLeft,
+            padding: const EdgeInsets.all(15),
+            child: Text(S.current.select_exercise,
+                style: Theme.of(context).textTheme.bodyLarge),
           ),
 
           // Exercise list
@@ -121,23 +109,14 @@ class TrainingSummaryScreen extends ConsumerWidget {
               },
             ),
           ),
-
-          // Button to start training session
-          Padding(
-            padding: const EdgeInsets.only(bottom: 20),
-            child: ElevatedButton.icon(
-              label: Text(S.current.start_training),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => ExerciseSelectionScreen(training: training)),
-                );
-              },
-            ),
-          ),
         ],
       ),
     );
+  }
+
+  String formatTime(int seconds) {
+    final int minutes = seconds ~/ 60;
+    final int remainingSeconds = seconds % 60;
+    return '${minutes.toString().padLeft(2, '0')}:${remainingSeconds.toString().padLeft(2, '0')}';
   }
 }

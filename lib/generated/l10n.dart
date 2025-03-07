@@ -564,6 +564,31 @@ class S {
       args: [],
     );
   }
+
+  /// `Start training`
+  String get start_training {
+    return Intl.message(
+      'Start training',
+      name: 'start_training',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Finish`
+  String get finish {
+    return Intl.message('Finish', name: 'finish', desc: '', args: []);
+  }
+
+  /// `Select the next exercise:`
+  String get select_exercise {
+    return Intl.message(
+      'Select the next exercise:',
+      name: 'select_exercise',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

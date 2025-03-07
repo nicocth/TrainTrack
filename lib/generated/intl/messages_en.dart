@@ -73,6 +73,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fill_all_fields": MessageLookupByLibrary.simpleMessage(
       "Please fill all fields",
     ),
+    "finish": MessageLookupByLibrary.simpleMessage("Finish"),
     "help": MessageLookupByLibrary.simpleMessage("Help"),
     "hint_alternative_text": MessageLookupByLibrary.simpleMessage(
       "Alternative number",
@@ -111,7 +112,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "routine_saved": MessageLookupByLibrary.simpleMessage("Routine saved"),
     "routine_title": MessageLookupByLibrary.simpleMessage("Routine title"),
     "save_routine": MessageLookupByLibrary.simpleMessage("Save routine"),
+    "select_exercise": MessageLookupByLibrary.simpleMessage(
+      "Select the next exercise:",
+    ),
     "series": MessageLookupByLibrary.simpleMessage("Series"),
+    "start_training": MessageLookupByLibrary.simpleMessage("Start training"),
     "statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
     "summary": MessageLookupByLibrary.simpleMessage("Summary"),
     "training_chat_x_title": MessageLookupByLibrary.simpleMessage("Months"),
