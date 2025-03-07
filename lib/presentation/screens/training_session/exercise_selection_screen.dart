@@ -4,7 +4,7 @@ import 'package:train_track/domain/models/training.dart';
 import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/presentation/providers/session_training_provider.dart';
 import 'package:train_track/presentation/widgets/shared/arrow_down.dart';
-import 'package:train_track/presentation/widgets/shared/exercise_box.dart';
+import 'package:train_track/presentation/widgets/shared/selectable_exercise_box.dart';
 
 class ExerciseSelectionScreen extends ConsumerWidget {
   final Training training;
@@ -79,17 +79,20 @@ class ExerciseSelectionScreen extends ConsumerWidget {
                             nextExercise.alternative) {
                       skippedIndexes.add(
                           nextIndex); // We avoid rendering nextExercise later
-                      exerciseWidget = Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ExerciseBox(customExercise: currentExercise),
-                          const SizedBox(width: 16),
-                          ExerciseBox(customExercise: nextExercise),
-                        ],
+                      exerciseWidget = SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SelectableExerciseBox(customExercise: currentExercise),
+                            const SizedBox(width: 16),
+                            SelectableExerciseBox(customExercise: nextExercise),
+                          ],
+                        ),
                       );
                     } else {
                       exerciseWidget =
-                          ExerciseBox(customExercise: currentExercise);
+                          SelectableExerciseBox(customExercise: currentExercise);
                     }
 
                     // We check if there are more exercises after the current one to show the arrow

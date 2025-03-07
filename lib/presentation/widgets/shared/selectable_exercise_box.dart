@@ -1,35 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:train_track/domain/models/exercise.dart';
+import 'package:train_track/domain/models/custom_exercise.dart';
 
 class SelectableExerciseBox extends ConsumerWidget {
-  final Exercise exercise;
-  const SelectableExerciseBox({required this.exercise , super.key});
+  final CustomExercise customExercise;
+  const SelectableExerciseBox({required this.customExercise, super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      padding: EdgeInsets.all(12),
-      margin: EdgeInsets.symmetric(vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      constraints: const BoxConstraints(minWidth: 100, maxWidth: 200), 
       decoration: BoxDecoration(
         color: Colors.black,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: Colors.white),
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
+      child: Column(
         children: [
-          CircleAvatar(
-            backgroundColor: Colors.purple[300],
-            radius: 10,
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min, 
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(100),
+                child: Image.asset(
+                  customExercise.exercise.image,
+                  width: 40,
+                  height: 40,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              const SizedBox(width: 8),
+              Expanded( 
+                child: Text(
+                  customExercise.exercise.name,
+                  style: const TextStyle(color: Colors.white),
+                  maxLines: 3, 
+                  overflow: TextOverflow.ellipsis, 
+                  softWrap: true, 
+                ),
+              ),
+            ],
           ),
-          SizedBox(width: 8),
-          Text(
-            exercise.name,
-            style: TextStyle(color: Colors.white),
-          ),
-          SizedBox(width: 8),
-          Checkbox(value: true, onChanged: (value) {}),
+          
+              Checkbox(value: true, onChanged: (value){}),
         ],
       ),
     );

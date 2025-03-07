@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:train_track/domain/models/training.dart';
 import 'package:train_track/generated/l10n.dart';
+import 'package:train_track/presentation/providers/session_training_provider.dart';
 import 'package:train_track/presentation/screens/settings_screen/settings_screen.dart';
 import 'package:train_track/presentation/screens/training_session/exercise_selection_screen.dart';
 import 'package:train_track/presentation/widgets/shared/arrow_down.dart';
@@ -91,13 +92,16 @@ class TrainingSummaryScreen extends ConsumerWidget {
                             nextExercise.alternative) {
                       skippedIndexes.add(
                           nextIndex); // We avoid rendering nextExercise later
-                      exerciseWidget = Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ExerciseBox(customExercise: currentExercise),
-                          const SizedBox(width: 16),
-                          ExerciseBox(customExercise: nextExercise),
-                        ],
+                      exerciseWidget = SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ExerciseBox(customExercise: currentExercise),
+                            const SizedBox(width: 16),
+                            ExerciseBox(customExercise: nextExercise),
+                          ],
+                        ),
                       );
                     } else {
                       exerciseWidget =
@@ -128,10 +132,14 @@ class TrainingSummaryScreen extends ConsumerWidget {
             child: ElevatedButton.icon(
               label: Text(S.current.start_training),
               onPressed: () {
+                final sessionTrainingNotifier =
+                    ref.read(sessionTrainingProvider.notifier);
+                sessionTrainingNotifier.startTimer();
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => ExerciseSelectionScreen(training: training)),
+                      builder: (context) =>
+                          ExerciseSelectionScreen(training: training)),
                 );
               },
             ),
