@@ -1,16 +1,62 @@
-# train_track
+# TrainTrack
 
-A new Flutter project.
+## Descripción
+TrainTrack es un asistente de entrenamiento diseñado para personas que buscan una aplicación cómoda y ágil para planificar su propio entrenamiento. La aplicación ofrece una experiencia sin publicidad, con un límite amplio de ejercicios y una interfaz agradable.
 
-## Getting Started
+Este proyecto será presentado como Trabajo de Fin de Grado (TFG) en Desarrollo de Aplicaciones Multiplataforma (DAM), pero el objetivo es continuar su desarrollo y mejora a largo plazo.
 
-This project is a starting point for a Flutter application.
+## Características principales
+- Planificación de entrenamientos de manera sencilla y eficiente.
+- Sin anuncios ni interrupciones.
+- Amplia capacidad para almacenar rutinas personalizadas.
+- Interfaz moderna y amigable para el usuario.
+- Integración con Firebase para autenticación y almacenamiento de datos.
 
-A few resources to get you started if this is your first Flutter project:
+## Estructura del proyecto
+El proyecto sigue una arquitectura limpia pero reducida, utilizando **Flutter** para el desarrollo multiplataforma y **Firebase** para la gestión de usuarios y almacenamiento de datos.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Configuración del proyecto
+Al clonar este repositorio, hay dos archivos que **no están incluidos** por motivos de seguridad, ya que contienen claves API sensibles:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- `android/app/google-services.json`
+- `lib/config/firebase/firebase_options.dart`
+
+### Pasos para configurar el entorno:
+1. **Generar el archivo `google-services.json`**
+   - Accede a [Firebase Console](https://console.firebase.google.com/).
+   - Selecciona tu proyecto y ve a la configuración de Android.
+   - Descarga el archivo `google-services.json` y colócalo en `android/app/`.
+
+2. **Configurar `firebase_options.dart`**
+   - Ejecuta el siguiente comando para generar automáticamente el archivo:
+     ```sh
+     flutterfire configure
+     ```
+   - Asegúrate de seleccionar el proyecto correcto en Firebase.
+   - El archivo generado se ubicará en `lib/config/firebase/`.
+
+## Instalación y ejecución
+### 1. Clonar el repositorio
+```sh
+git clone https://github.com/tu-usuario/traintrack.git
+cd traintrack
+```
+
+### 2. Instalar dependencias
+```sh
+flutter pub get
+```
+
+### 3. Ejecutar la aplicación
+Para ejecutar en un emulador o dispositivo físico:
+```sh
+flutter run
+```
+
+## Contribución
+Si deseas contribuir a este proyecto, puedes hacer un **fork** del repositorio y enviar un **pull request** con tus mejoras.
+
+## Licencia
+Este proyecto se encuentra bajo la licencia MIT.
+
+
