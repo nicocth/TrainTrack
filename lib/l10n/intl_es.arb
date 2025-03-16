@@ -64,5 +64,6 @@
     "hint_alternative_text": "Nº alternativa",
     "start_training": "Iniciar entrenamiento",
     "finish": "Finalizar",
-    "select_exercise": "Seleccione el siguiente ejercicio:"
+    "select_exercise": "Seleccione el siguiente ejercicio:",
+    "finish_exercise": "Finalizar ejercicio"
 }

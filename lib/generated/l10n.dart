@@ -589,6 +589,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Finish exercise`
+  String get finish_exercise {
+    return Intl.message(
+      'Finish exercise',
+      name: 'finish_exercise',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

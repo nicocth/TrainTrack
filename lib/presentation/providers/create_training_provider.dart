@@ -96,6 +96,7 @@ class CreateTrainingNotifier extends StateNotifier<CreateTrainingState> {
   // Add an exercise with empty sets
   void addExercise(Exercise exercise) {
     final newCustomExercise = CustomExercise(
+        id: "",
         exercise: exercise,
         isAlternative: false,
         order: 0,
@@ -115,6 +116,7 @@ class CreateTrainingNotifier extends StateNotifier<CreateTrainingState> {
   void addExercises(List<Exercise> exercises) {
     final newCustomExercises = exercises
         .map((exercise) => CustomExercise(
+              id: "",
               exercise: exercise,
               isAlternative: false,
               order: 0,
@@ -216,6 +218,7 @@ class CreateTrainingNotifier extends StateNotifier<CreateTrainingState> {
   void addSetToExercise(int exerciseIndex, Sets sets) {
     final updatedExercises = [...state.customExercises];
     updatedExercises[exerciseIndex] = CustomExercise(
+      id: updatedExercises[exerciseIndex].id,
       isAlternative: updatedExercises[exerciseIndex].isAlternative,
       alternative: updatedExercises[exerciseIndex].alternative,
       notes: updatedExercises[exerciseIndex].notes,
@@ -234,6 +237,7 @@ class CreateTrainingNotifier extends StateNotifier<CreateTrainingState> {
     final updatedSets = [...updatedExercises[exerciseIndex].sets]
       ..removeAt(setIndex);
     updatedExercises[exerciseIndex] = CustomExercise(
+      id: updatedExercises[exerciseIndex].id,
       isAlternative: updatedExercises[exerciseIndex].isAlternative,
       exercise: updatedExercises[exerciseIndex].exercise,
       order: updatedExercises[exerciseIndex].order,
@@ -251,6 +255,7 @@ class CreateTrainingNotifier extends StateNotifier<CreateTrainingState> {
     final updatedExercises = [...state.customExercises];
 
     updatedExercises[index] = CustomExercise(
+      id: updatedExercises[index].id,
       exercise: updatedExercises[index].exercise,
       order: updatedExercises[index].order,
       notes: updatedExercises[index].notes,

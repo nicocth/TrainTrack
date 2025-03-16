@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:train_track/domain/models/training.dart';
 import 'package:train_track/generated/l10n.dart';
-import 'package:train_track/presentation/providers/session_training_provider.dart';
+import 'package:train_track/presentation/providers/training_session_provider.dart';
 import 'package:train_track/presentation/screens/settings_screen/settings_screen.dart';
 import 'package:train_track/presentation/screens/training_session/exercise_selection_screen.dart';
 import 'package:train_track/presentation/widgets/shared/training_chart.dart';
@@ -66,9 +66,9 @@ class TrainingSummaryScreen extends ConsumerWidget {
             child: ElevatedButton.icon(
               label: Text(S.current.start_training),
               onPressed: () {
-                final sessionTrainingNotifier =
-                    ref.read(sessionTrainingProvider.notifier);
-                sessionTrainingNotifier.startTimer();
+                final trainingSessionNotifier =
+                    ref.read(trainingSessionProvider.notifier);
+                trainingSessionNotifier.startSession(training);
                 Navigator.push(
                   context,
                   MaterialPageRoute(

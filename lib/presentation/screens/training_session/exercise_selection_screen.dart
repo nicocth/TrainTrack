@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:train_track/core/utils/input_formatter.dart';
 import 'package:train_track/domain/models/training.dart';
 import 'package:train_track/generated/l10n.dart';
-import 'package:train_track/presentation/providers/session_training_provider.dart';
+import 'package:train_track/presentation/providers/training_session_provider.dart';
 import 'package:train_track/presentation/widgets/shared/training_diagram.dart';
 
 class ExerciseSelectionScreen extends ConsumerWidget {
@@ -12,14 +12,14 @@ class ExerciseSelectionScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final session =
-        ref.watch(sessionTrainingProvider); 
+    final trainingSession =
+        ref.watch(trainingSessionProvider); 
 
     return Scaffold(
       appBar: AppBar(
         title: Align(
           alignment: Alignment.centerLeft,
-          child: Text(TimeFormatter.formatTime(session.seconds), 
+          child: Text(TimeFormatter.formatTime(trainingSession.seconds), 
               style: Theme.of(context).textTheme.headlineSmall),
         ),
         actions: <Widget>[
