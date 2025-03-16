@@ -9,6 +9,7 @@ class CustomExerciseMapper {
     final exerciseRef = await ExerciseMapper.getExerciseById(data['exercise']);
 
     return CustomExercise(
+      id: doc.id,
       exercise: exerciseRef,
       notes: data['notes'] ?? '',
       order: data['order'] ?? 0,
