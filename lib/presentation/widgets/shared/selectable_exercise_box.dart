@@ -10,16 +10,15 @@ class SelectableExerciseBox extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-final trainingSessionNotifier =
-        ref.watch(trainingSessionProvider.notifier);
-    
+    final trainingSessionState = ref.watch(trainingSessionProvider);
+
+    // Check if the exercise is marked as completed
+    final isCompleted =
+        trainingSessionState.completedExercises.contains(customExercise.order);
+
     return GestureDetector(
       onTap: () {
-        trainingSessionNotifier.selectExercise(customExercise.order);
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => TrainingScreen()),
-        );
+        _selectExercise(context, ref);
       },
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -56,10 +55,27 @@ final trainingSessionNotifier =
                 ),
               ],
             ),
-            Checkbox(value: true, onChanged: (value) {}),
+            Checkbox(
+              value: isCompleted,
+              onChanged: (value) {
+                _selectExercise(context, ref);
+              },
+            ),
           ],
         ),
       ),
+    );
+  }
+
+//The code is used twice to prioritize the user experience and so that it doesn't matter if they click
+//on the container or the check box, it works the same.
+  void _selectExercise(BuildContext context, WidgetRef ref) {
+    final trainingSessionNotifier = ref.read(trainingSessionProvider.notifier);
+
+    trainingSessionNotifier.selectExercise(customExercise.order);
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => TrainingScreen()),
     );
   }
 }
