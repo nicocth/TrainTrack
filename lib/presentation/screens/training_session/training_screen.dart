@@ -15,17 +15,21 @@ class TrainingScreen extends ConsumerWidget {
 
     final trainingSessionNotifier = ref.watch(trainingSessionProvider.notifier);
 
+    final sortedExercises = List.of(trainingSession.training!.exercises)
+      ..sort((a, b) => a.order.compareTo(b.order));
+
     //Get the selected exercise taking into account the order property, not the position in training
     final selectedExercise = trainingSession.training!.exercises.firstWhere(
         (exercise) => exercise.order == trainingSession.selectedExerciseIndex);
 
+    // Getting the correct index in the sorted list
+    final selectedIndex = sortedExercises.indexWhere(
+        (exercise) => exercise.order == trainingSession.selectedExerciseIndex);
+
     //The controller are already sorted in provider
-    final notesController = trainingSession
-        .notesControllers[trainingSession.selectedExerciseIndex!];
-    final repsControllers =
-        trainingSession.repsControllers[trainingSession.selectedExerciseIndex!];
-    final weightControllers = trainingSession
-        .weightControllers[trainingSession.selectedExerciseIndex!];
+    final notesController = trainingSession.notesControllers[selectedIndex];
+    final repsControllers = trainingSession.repsControllers[selectedIndex];
+    final weightControllers = trainingSession.weightControllers[selectedIndex];
 
     return Scaffold(
       appBar: AppBar(
@@ -36,9 +40,8 @@ class TrainingScreen extends ConsumerWidget {
         ),
         actions: <Widget>[
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: FinishTrainingSessionButton()
-          ),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: FinishTrainingSessionButton()),
         ],
       ),
       body: Padding(

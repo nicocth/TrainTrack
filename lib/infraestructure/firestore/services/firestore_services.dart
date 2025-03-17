@@ -103,7 +103,8 @@ class FirestoreService {
     }
   }
 
-  Future<Result> updateTrainingFromEdit(WidgetRef ref, String trainingId) async {
+  Future<Result> updateTrainingFromEdit(
+      WidgetRef ref, String trainingId) async {
     final authNotifier = ref.read(authProvider.notifier);
     final userId = authNotifier.getUserId();
 
@@ -135,13 +136,14 @@ class FirestoreService {
           'name': updatedTraining.customExercises[i].exercise.name,
           'is_alternative': updatedTraining.customExercises[i].isAlternative,
           'notes': updatedTraining.notesControllers[i].text,
-          'sets':
-              List.generate(updatedTraining.customExercises[i].sets.length, (j) {
+          'sets': List.generate(updatedTraining.customExercises[i].sets.length,
+              (j) {
             return {
-              'weight':
-                  double.tryParse(updatedTraining.weightControllers[i][j].text) ??
-                      0.0,
-              'reps': int.tryParse(updatedTraining.repsControllers[i][j].text) ?? 0,
+              'weight': double.tryParse(
+                      updatedTraining.weightControllers[i][j].text) ??
+                  0.0,
+              'reps':
+                  int.tryParse(updatedTraining.repsControllers[i][j].text) ?? 0,
             };
           }),
         };
@@ -164,70 +166,77 @@ class FirestoreService {
     }
   }
 
-  Future<Result> updateTrainingFromTrainingSession(WidgetRef ref, String trainingId) async {
-  final authNotifier = ref.read(authProvider.notifier);
-  final userId = authNotifier.getUserId();
+  Future<Result> updateTrainingFromTrainingSession(
+      WidgetRef ref, String trainingId) async {
+    final authNotifier = ref.read(authProvider.notifier);
+    final userId = authNotifier.getUserId();
 
-  final trainingSession = ref.read(trainingSessionProvider);
-  
-  if (trainingSession.training == null) {
-    return Result.failure('There is no active training to update.');
-  }
+    final trainingSession = ref.read(trainingSessionProvider);
 
-  final training = trainingSession.training!;
-
-  try {
-    final trainingRef = _firestore
-        .collection('users')
-        .doc(userId)
-        .collection('trainings')
-        .doc(trainingId);
-
-    await trainingRef.update({
-      'title': training.name,
-      'date_updated': Timestamp.now(),
-    });
-
-    final exercisesRef = trainingRef.collection('exercises');
-    final existingExercises = await exercisesRef.get();
-    
-    // Delete previous exercises
-    for (final doc in existingExercises.docs) {
-      await doc.reference.delete();
+    if (trainingSession.training == null) {
+      return Result.failure('There is no active training to update.');
     }
 
-    // Add updated exercises
-    for (int i = 0; i < training.exercises.length; i++) {
-      final customExercise = training.exercises[i];
+    final training = trainingSession.training!;
 
-      final exerciseData = {
-        'exercise': customExercise.exercise.id,
-        'order': customExercise.order,
-        'name': customExercise.exercise.name,
-        'is_alternative': customExercise.isAlternative,
-        'notes': trainingSession.notesControllers[i].text,
-        'sets': List.generate(customExercise.sets.length, (j) {
-          return {
-            'weight': double.tryParse(trainingSession.weightControllers[i][j].text) ?? 0.0,
-            'reps': int.tryParse(trainingSession.repsControllers[i][j].text) ?? 0,
-          };
-        }),
-      };
+    try {
+      final trainingRef = _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('trainings')
+          .doc(trainingId);
 
-      if (customExercise.isAlternative) {
-        exerciseData['alternative'] = customExercise.alternative ?? 0;
+      await trainingRef.update({
+        'title': training.name,
+        'date_updated': Timestamp.now(),
+      });
+
+      final exercisesRef = trainingRef.collection('exercises');
+      final existingExercises = await exercisesRef.get();
+
+      // Delete previous exercises
+      for (final doc in existingExercises.docs) {
+        await doc.reference.delete();
       }
 
-      await exercisesRef.add(exerciseData);
+      // Sort the exercises by the 'order' property
+      final sortedExercises = List.of(training.exercises)
+        ..sort((a, b) => a.order.compareTo(b.order));
+
+      // Save updated exercises
+      for (int i = 0; i < sortedExercises.length; i++) {
+        final customExercise = sortedExercises[i];
+
+        final exerciseData = {
+          'exercise': customExercise.exercise.id,
+          'order': customExercise.order,
+          'name': customExercise.exercise.name,
+          'is_alternative': customExercise.isAlternative,
+          'notes': trainingSession.notesControllers[i].text,
+          'sets': List.generate(customExercise.sets.length, (j) {
+            return {
+              'weight': double.tryParse(
+                      trainingSession.weightControllers[i][j].text) ??
+                  0.0,
+              'reps':
+                  int.tryParse(trainingSession.repsControllers[i][j].text) ?? 0,
+            };
+          }),
+        };
+
+        if (customExercise.isAlternative) {
+          exerciseData['alternative'] = customExercise.alternative ?? 0;
+        }
+
+        await exercisesRef.add(exerciseData);
+      }
+
+      return Result.success();
+    } catch (e) {
+      return Result.failure('Error updating training: $e');
     }
-
-    return Result.success();
-  } catch (e) {
-    return Result.failure('Error updating training: $e');
   }
-}
 
-  
   Future<Result> deleteTraining(String? userId, String trainingId) async {
     try {
       final trainingRef = _firestore
