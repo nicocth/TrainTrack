@@ -66,14 +66,20 @@ class TrainingSessionNotifier extends StateNotifier<TrainingSessionState> {
 
   void startSession(Training training) {
     _elapsedTime = 0;
-    _initControllers(training);
+
+    // Sort the exercises by the 'order' property before starting the session
+    final sortedExercises = List<CustomExercise>.from(training.exercises)
+      ..sort((a, b) => a.order.compareTo(b.order));
+
+    // Start the drivers with the sorted exercises
+    _initControllers(sortedExercises);
+    
+    // Set training and session status
     state = state.copyWith(training: training, seconds: 0, isRunning: true);
     startTimer();
   }
 
-  void _initControllers(Training training) {
-    final sortedExercises = List<CustomExercise>.from(training.exercises)..sort((a, b) => a.order.compareTo(b.order));
-    
+  void _initControllers(List<CustomExercise> sortedExercises) {
     final notesControllers = sortedExercises.map((e) => TextEditingController(text: e.notes)).toList();
     final repsControllers = sortedExercises
         .map((e) => e.sets.map((s) => TextEditingController(text: s.reps.toString())).toList())
@@ -89,13 +95,13 @@ class TrainingSessionNotifier extends StateNotifier<TrainingSessionState> {
     );
   }
 
-void startTimer() {
-  _timer?.cancel(); // Cancel the previous timer
-  _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-    _elapsedTime++;
-    state = state.copyWith(seconds: _elapsedTime);
-  });
-}
+  void startTimer() {
+    _timer?.cancel(); // Cancel the previous timer
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      _elapsedTime++;
+      state = state.copyWith(seconds: _elapsedTime);
+    });
+  }
 
   void stopTimer() {
     _timer?.cancel();

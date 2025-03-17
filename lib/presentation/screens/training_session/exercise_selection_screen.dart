@@ -4,6 +4,7 @@ import 'package:train_track/core/utils/input_formatter.dart';
 import 'package:train_track/domain/models/training.dart';
 import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/presentation/providers/training_session_provider.dart';
+import 'package:train_track/presentation/widgets/shared/finish_training_session_button.dart';
 import 'package:train_track/presentation/widgets/shared/training_diagram.dart';
 
 class ExerciseSelectionScreen extends ConsumerWidget {
@@ -25,12 +26,7 @@ class ExerciseSelectionScreen extends ConsumerWidget {
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: ElevatedButton.icon(
-              label: Text(S.current.finish),
-              onPressed: () {
-                //TODO: implement end training session
-              },
-            ),
+            child: FinishTrainingSessionButton()
           ),
         ],
       ),

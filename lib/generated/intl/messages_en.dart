@@ -41,6 +41,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirm_delete_message_training": MessageLookupByLibrary.simpleMessage(
       "Are you sure you want to delete the training?",
     ),
+    "confirm_finish_message_training": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to finish the training?",
+    ),
+    "confirm_finish_training": MessageLookupByLibrary.simpleMessage(
+      "Completion confirmation",
+    ),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirm password",
     ),

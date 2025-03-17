@@ -505,6 +505,16 @@ class S {
     );
   }
 
+  /// `Completion confirmation`
+  String get confirm_finish_training {
+    return Intl.message(
+      'Completion confirmation',
+      name: 'confirm_finish_training',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Are you sure you want to delete the training?`
   String get confirm_delete_message_training {
     return Intl.message(
@@ -520,6 +530,16 @@ class S {
     return Intl.message(
       'Are you sure you want to delete the exercise?',
       name: 'confirm_delete_message_exercise',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to finish the training?`
+  String get confirm_finish_message_training {
+    return Intl.message(
+      'Are you sure you want to finish the training?',
+      name: 'confirm_finish_message_training',
       desc: '',
       args: [],
     );

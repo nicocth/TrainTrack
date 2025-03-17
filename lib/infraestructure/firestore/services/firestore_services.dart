@@ -5,6 +5,7 @@ import 'package:train_track/domain/models/training.dart';
 import 'package:train_track/infraestructure/mappers/training_mapper.dart';
 import 'package:train_track/presentation/providers/auth_provider.dart';
 import 'package:train_track/presentation/providers/create_training_provider.dart';
+import 'package:train_track/presentation/providers/training_session_provider.dart';
 
 class FirestoreService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -102,7 +103,7 @@ class FirestoreService {
     }
   }
 
-  Future<Result> updateTraining(WidgetRef ref, String trainingId) async {
+  Future<Result> updateTrainingFromEdit(WidgetRef ref, String trainingId) async {
     final authNotifier = ref.read(authProvider.notifier);
     final userId = authNotifier.getUserId();
 
@@ -163,6 +164,70 @@ class FirestoreService {
     }
   }
 
+  Future<Result> updateTrainingFromTrainingSession(WidgetRef ref, String trainingId) async {
+  final authNotifier = ref.read(authProvider.notifier);
+  final userId = authNotifier.getUserId();
+
+  final trainingSession = ref.read(trainingSessionProvider);
+  
+  if (trainingSession.training == null) {
+    return Result.failure('There is no active training to update.');
+  }
+
+  final training = trainingSession.training!;
+
+  try {
+    final trainingRef = _firestore
+        .collection('users')
+        .doc(userId)
+        .collection('trainings')
+        .doc(trainingId);
+
+    await trainingRef.update({
+      'title': training.name,
+      'date_updated': Timestamp.now(),
+    });
+
+    final exercisesRef = trainingRef.collection('exercises');
+    final existingExercises = await exercisesRef.get();
+    
+    // Delete previous exercises
+    for (final doc in existingExercises.docs) {
+      await doc.reference.delete();
+    }
+
+    // Add updated exercises
+    for (int i = 0; i < training.exercises.length; i++) {
+      final customExercise = training.exercises[i];
+
+      final exerciseData = {
+        'exercise': customExercise.exercise.id,
+        'order': customExercise.order,
+        'name': customExercise.exercise.name,
+        'is_alternative': customExercise.isAlternative,
+        'notes': trainingSession.notesControllers[i].text,
+        'sets': List.generate(customExercise.sets.length, (j) {
+          return {
+            'weight': double.tryParse(trainingSession.weightControllers[i][j].text) ?? 0.0,
+            'reps': int.tryParse(trainingSession.repsControllers[i][j].text) ?? 0,
+          };
+        }),
+      };
+
+      if (customExercise.isAlternative) {
+        exerciseData['alternative'] = customExercise.alternative ?? 0;
+      }
+
+      await exercisesRef.add(exerciseData);
+    }
+
+    return Result.success();
+  } catch (e) {
+    return Result.failure('Error updating training: $e');
+  }
+}
+
+  
   Future<Result> deleteTraining(String? userId, String trainingId) async {
     try {
       final trainingRef = _firestore

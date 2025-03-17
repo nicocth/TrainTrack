@@ -35,7 +35,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "¿Ya tienes una cuenta?",
     ),
     "app_bar_settings": MessageLookupByLibrary.simpleMessage("Configuración"),
-    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
     "confirm_delete": MessageLookupByLibrary.simpleMessage(
       "Confirmación de borrado",
     ),
@@ -44,6 +44,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "confirm_delete_message_training": MessageLookupByLibrary.simpleMessage(
       "¿Estas seguro de borrar el entrenamiento?",
+    ),
+    "confirm_finish_message_training": MessageLookupByLibrary.simpleMessage(
+      "¿Estas seguro de finalizar el entrenamiento?",
+    ),
+    "confirm_finish_training": MessageLookupByLibrary.simpleMessage(
+      "Confirmación de finalización",
     ),
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirmar contraseña",

@@ -110,7 +110,7 @@ class CreateTrainingScreen extends ConsumerWidget {
 
       final result = isEditing
           ? await firestoreService
-              .updateTraining(ref, trainingId!)
+              .updateTrainingFromEdit(ref, trainingId!)
               .timeout(Duration(seconds: 6), onTimeout: () {
               throw TimeoutException(S.current
                   .request_timeout); // Add timeout in case the user is left without connection

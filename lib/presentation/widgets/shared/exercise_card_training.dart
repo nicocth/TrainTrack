@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:train_track/core/utils/input_formatter.dart';
 import 'package:train_track/domain/models/custom_exercise.dart';
-import 'package:train_track/domain/models/sets.dart';
 import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/presentation/providers/training_session_provider.dart';
 import 'package:train_track/presentation/widgets/shared/zoomable_image.dart';
