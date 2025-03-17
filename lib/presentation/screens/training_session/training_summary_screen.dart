@@ -32,28 +32,29 @@ class TrainingSummaryScreen extends ConsumerWidget {
       ),
       body: Column(
         children: [
-          // Routine name
-          Container(
-              alignment: Alignment.centerLeft,
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Text(training.name,
-                  style: Theme.of(context).textTheme.headlineSmall)),
-
-          // Chart
+          // Training name
           Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: TrainingChart(),
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                Container(
+                    alignment: Alignment.centerLeft,
+                    child: Text(training.name,
+                        style: Theme.of(context).textTheme.headlineSmall)),
+
+                // Chart with training data
+                TrainingChart(),
+              ],
+            ),
           ),
 
           // Exercise list title
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                S.current.exercises,
-                style: Theme.of(context).textTheme.headlineSmall,
-              ),
+          Container(
+            alignment: Alignment.centerLeft,
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+            child: Text(
+              S.current.exercises,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
           ),
 
@@ -62,7 +63,7 @@ class TrainingSummaryScreen extends ConsumerWidget {
 
           // Button to start training session
           Padding(
-            padding: const EdgeInsets.only(bottom: 20),
+            padding: const EdgeInsets.all(16.0),
             child: ElevatedButton.icon(
               label: Text(S.current.start_training),
               onPressed: () {
