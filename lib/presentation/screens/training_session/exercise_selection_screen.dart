@@ -28,7 +28,7 @@ class ExerciseSelectionScreen extends ConsumerWidget {
             child: ElevatedButton.icon(
               label: Text(S.current.finish),
               onPressed: () {
-                //TODO: implementar finalización de sesion
+                //TODO: implement end training session
               },
             ),
           ),

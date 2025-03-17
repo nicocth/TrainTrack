@@ -16,7 +16,13 @@ class TrainingScreen extends ConsumerWidget {
 
     final trainingSessionNotifier =
         ref.watch(trainingSessionProvider.notifier); 
-    final selectedExercise = trainingSession.training!.exercises[trainingSession.selectedExerciseIndex!];
+
+    //Get the selected exercise taking into account the order property, not the position in training
+    final selectedExercise = trainingSession.training!.exercises.firstWhere(
+      (exercise) => exercise.order == trainingSession.selectedExerciseIndex
+    );
+
+    //The controller are already sorted in provider
     final notesController = trainingSession.notesControllers[trainingSession.selectedExerciseIndex!];
     final repsControllers = trainingSession.repsControllers[trainingSession.selectedExerciseIndex!];
     final weightControllers = trainingSession.weightControllers[trainingSession.selectedExerciseIndex!];
@@ -34,7 +40,7 @@ class TrainingScreen extends ConsumerWidget {
             child: ElevatedButton.icon(
               label: Text(S.current.finish),
               onPressed: () {
-                //TODO: implementar finalización de sesion
+                //TODO: implement end training session
               },
             ),
           ),
