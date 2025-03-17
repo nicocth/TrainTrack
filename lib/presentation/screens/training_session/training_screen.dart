@@ -7,31 +7,31 @@ import 'package:train_track/presentation/screens/training_session/exercise_selec
 import 'package:train_track/presentation/widgets/shared/exercise_card_training.dart';
 
 class TrainingScreen extends ConsumerWidget {
-  const TrainingScreen({ super.key});
+  const TrainingScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final trainingSession =
-        ref.watch(trainingSessionProvider); 
+    final trainingSession = ref.watch(trainingSessionProvider);
 
-    final trainingSessionNotifier =
-        ref.watch(trainingSessionProvider.notifier); 
+    final trainingSessionNotifier = ref.watch(trainingSessionProvider.notifier);
 
     //Get the selected exercise taking into account the order property, not the position in training
     final selectedExercise = trainingSession.training!.exercises.firstWhere(
-      (exercise) => exercise.order == trainingSession.selectedExerciseIndex
-    );
+        (exercise) => exercise.order == trainingSession.selectedExerciseIndex);
 
     //The controller are already sorted in provider
-    final notesController = trainingSession.notesControllers[trainingSession.selectedExerciseIndex!];
-    final repsControllers = trainingSession.repsControllers[trainingSession.selectedExerciseIndex!];
-    final weightControllers = trainingSession.weightControllers[trainingSession.selectedExerciseIndex!];
+    final notesController = trainingSession
+        .notesControllers[trainingSession.selectedExerciseIndex!];
+    final repsControllers =
+        trainingSession.repsControllers[trainingSession.selectedExerciseIndex!];
+    final weightControllers = trainingSession
+        .weightControllers[trainingSession.selectedExerciseIndex!];
 
     return Scaffold(
       appBar: AppBar(
         title: Align(
           alignment: Alignment.centerLeft,
-          child: Text(TimeFormatter.formatTime(trainingSession.seconds), 
+          child: Text(TimeFormatter.formatTime(trainingSession.seconds),
               style: Theme.of(context).textTheme.headlineSmall),
         ),
         actions: <Widget>[
@@ -50,23 +50,21 @@ class TrainingScreen extends ConsumerWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-        
-            // Exercise 
-            ExerciseCardTraining(customExercise: selectedExercise, notesController: notesController, repsControllers: repsControllers, weightControllers: weightControllers),
+            // Exercise
+            ExerciseCardTraining(
+                customExercise: selectedExercise,
+                notesController: notesController,
+                repsControllers: repsControllers,
+                weightControllers: weightControllers),
 
             // button for finish exercise
             ElevatedButton.icon(
               label: Text(S.current.finish_exercise),
               onPressed: () {
-                
-                trainingSessionNotifier.markExerciseCompleted(trainingSession.selectedExerciseIndex!);
-                
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) =>
-                          ExerciseSelectionScreen(training: trainingSession.training!)),
-                );
+                trainingSessionNotifier.markExerciseCompleted(
+                    trainingSession.selectedExerciseIndex!);
+
+                Navigator.pop(context);
               },
             ),
           ],
