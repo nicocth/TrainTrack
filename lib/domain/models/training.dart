@@ -16,4 +16,19 @@ class Training {
   })  : dateCreated = dateCreated ?? DateTime.now(),
         dateUpdated = dateUpdated ?? DateTime.now();
 
+  Training copyWith({
+    String? id,
+    String? name,
+    DateTime? dateCreated,
+    DateTime? dateUpdated,
+    List<CustomExercise>? exercises,
+  }) {
+    return Training(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      exercises: exercises ?? this.exercises,
+      dateCreated: dateCreated ?? this.dateCreated,
+      dateUpdated: dateUpdated ?? this.dateUpdated,
+    );
+  }
 }

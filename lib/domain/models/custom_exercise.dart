@@ -19,4 +19,24 @@ class CustomExercise {
     required this.isAlternative,
     this.alternative
   });
+
+  CustomExercise copyWith({
+    String? id,
+    Exercise? exercise,
+    String? notes,
+    int? order,
+    bool? isAlternative,
+    int? alternative,
+    List<Sets>? sets,
+  }) {
+    return CustomExercise(
+      id: id ?? this.id,
+      exercise: exercise ?? this.exercise,
+      notes: notes ?? this.notes,
+      order: order ?? this.order,
+      isAlternative: isAlternative ?? this.isAlternative,
+      alternative: alternative ?? this.alternative,
+      sets: sets ?? this.sets,
+    );
+  }
 }
