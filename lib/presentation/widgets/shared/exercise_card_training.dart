@@ -22,8 +22,15 @@ class ExerciseCardTraining extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final trainingSessionNotifier = ref.read(trainingSessionProvider.notifier);
+    final trainingSession = ref.watch(trainingSessionProvider);
+final trainingSessionNotifier = ref.read(trainingSessionProvider.notifier);
 
+
+    // Verifica que los controladores tengan la misma longitud que los sets
+    assert(repsControllers.length == customExercise.sets.length);
+    assert(weightControllers.length == customExercise.sets.length);
+
+    
     final List<String> headers = [
       S.current.series,
       S.current.kg_text,
@@ -141,9 +148,8 @@ class ExerciseCardTraining extends ConsumerWidget {
                         //Button delete
                         IconButton(
                           icon: const Icon(Icons.delete, color: Colors.red),
-                          onPressed: () {
-                            //TODO: implement remove set
-                            //trainingSessionNotifier.removeSetFromExercise(index);
+                          onPressed: () {                            
+                            trainingSessionNotifier.removeSetFromExercise(customExercise.order, index);
                           },
                         ),
                       ],
@@ -156,8 +162,7 @@ class ExerciseCardTraining extends ConsumerWidget {
             // Button to add sets
             TextButton.icon(
               onPressed: () {
-                //TODO: implement add set
-                //trainingSessionNotifier.addSetToExercise(Sets(reps: 0, weight: 0));
+                trainingSessionNotifier.addSetToExercise(customExercise.order);
               },
               icon: const Icon(Icons.add),
               label: Text(S.current.add_series),

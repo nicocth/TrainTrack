@@ -18,13 +18,11 @@ class TrainingScreen extends ConsumerWidget {
     final sortedExercises = List.of(trainingSession.training!.exercises)
       ..sort((a, b) => a.order.compareTo(b.order));
 
-    //Get the selected exercise taking into account the order property, not the position in training
-    final selectedExercise = trainingSession.training!.exercises.firstWhere(
-        (exercise) => exercise.order == trainingSession.selectedExerciseIndex);
-
     // Getting the correct index in the sorted list
-    final selectedIndex = sortedExercises.indexWhere(
-        (exercise) => exercise.order == trainingSession.selectedExerciseIndex);
+    final selectedIndex = trainingSession.selectedExerciseIndex!;
+
+    //Get the selected exercise taking into account the order property, not the position in training
+    final selectedExercise = sortedExercises[selectedIndex];
 
     //The controller are already sorted in provider
     final notesController = trainingSession.notesControllers[selectedIndex];
