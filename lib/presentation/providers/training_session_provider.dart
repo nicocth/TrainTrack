@@ -14,6 +14,7 @@ class TrainingSessionState {
   final int? selectedExerciseIndex;
   // Set of exercises that have been completed
   final Set<int> completedExercises;
+  final List<Set<int>> completedSets;
   // Controllers are created ordered by the order property and this order is maintained when sets are added or removed.
   final List<TextEditingController> notesControllers;
   final List<List<TextEditingController>> repsControllers;
@@ -25,6 +26,7 @@ class TrainingSessionState {
     required this.isRunning,
     required this.selectedExerciseIndex,
     required this.completedExercises,
+    required this.completedSets,
     required this.notesControllers,
     required this.repsControllers,
     required this.weightControllers,
@@ -36,6 +38,7 @@ class TrainingSessionState {
     bool? isRunning,
     int? selectedExerciseIndex,
     Set<int>? completedExercises,
+    List<Set<int>>? completedSets,
     List<TextEditingController>? notesControllers,
     List<List<TextEditingController>>? repsControllers,
     List<List<TextEditingController>>? weightControllers,
@@ -47,6 +50,7 @@ class TrainingSessionState {
       selectedExerciseIndex:
           selectedExerciseIndex ?? this.selectedExerciseIndex,
       completedExercises: completedExercises ?? this.completedExercises,
+      completedSets: completedSets ?? this.completedSets,
       notesControllers: notesControllers ?? this.notesControllers,
       repsControllers: repsControllers ?? this.repsControllers,
       weightControllers: weightControllers ?? this.weightControllers,
@@ -65,6 +69,7 @@ class TrainingSessionNotifier extends StateNotifier<TrainingSessionState> {
           isRunning: false,
           selectedExerciseIndex: null,
           completedExercises: {},
+          completedSets: [],
           notesControllers: [],
           repsControllers: [],
           weightControllers: [],
@@ -81,7 +86,12 @@ class TrainingSessionNotifier extends StateNotifier<TrainingSessionState> {
     _initControllers(sortedExercises);
 
     // Set training and session status
-    state = state.copyWith(training: training, seconds: 0, isRunning: true);
+    state = state.copyWith(
+      training: training,
+      seconds: 0,
+      isRunning: true,
+      completedSets: List.generate(sortedExercises.length, (_) => {}),
+    );
     startTimer();
   }
 
@@ -130,6 +140,22 @@ class TrainingSessionNotifier extends StateNotifier<TrainingSessionState> {
     state = state.copyWith(completedExercises: updatedCompletedExercises);
   }
 
+  void markSetAsCompleted(int exerciseOrder, int setIndex) {
+
+    final updatedCompletedSets = List<Set<int>>.from(state.completedSets);
+    updatedCompletedSets[exerciseOrder] = Set<int>.from(updatedCompletedSets[exerciseOrder])..add(setIndex);
+
+    state = state.copyWith(completedSets: updatedCompletedSets);
+  }
+
+  void markSetAsNotCompleted(int exerciseOrder, int setIndex) {
+
+    final updatedCompletedSets = List<Set<int>>.from(state.completedSets);
+    updatedCompletedSets[exerciseOrder] = Set<int>.from(updatedCompletedSets[exerciseOrder])..remove(setIndex);
+
+    state = state.copyWith(completedSets: updatedCompletedSets);
+  }
+  
   void addSetToExercise(int exerciseOrder) {
     final training = state.training;
     if (training == null) return;
@@ -197,6 +223,8 @@ class TrainingSessionNotifier extends StateNotifier<TrainingSessionState> {
         List<List<TextEditingController>>.from(state.weightControllers)
           ..[exerciseOrder].removeAt(setIndex);
 
+    markSetAsNotCompleted(exerciseOrder, setIndex);
+
     // Update status
     state = state.copyWith(
       training: training.copyWith(exercises: updatedExercises),
@@ -214,6 +242,7 @@ class TrainingSessionNotifier extends StateNotifier<TrainingSessionState> {
       isRunning: false,
       selectedExerciseIndex: null,
       completedExercises: {},
+      completedSets: [],
       notesControllers: [],
       repsControllers: [],
       weightControllers: [],
