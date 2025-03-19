@@ -223,6 +223,7 @@ class TrainingSessionNotifier extends StateNotifier<TrainingSessionState> {
         List<List<TextEditingController>>.from(state.weightControllers)
           ..[exerciseOrder].removeAt(setIndex);
 
+    // if the set was completed, remove it from the completed sets
     markSetAsNotCompleted(exerciseOrder, setIndex);
 
     // Update status

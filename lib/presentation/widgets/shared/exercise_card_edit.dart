@@ -6,6 +6,7 @@ import 'package:train_track/domain/models/custom_exercise.dart';
 import 'package:train_track/domain/models/sets.dart';
 import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/presentation/providers/create_training_provider.dart';
+import 'package:train_track/presentation/widgets/shared/exercise_name.dart';
 import 'package:train_track/presentation/widgets/shared/zoomable_image.dart';
 
 class ExerciseCard extends ConsumerWidget {
@@ -49,12 +50,7 @@ class ExerciseCard extends ConsumerWidget {
               children: [
                 ZoomableImage(image: customExercise.exercise.image),
                 const SizedBox(width: 20),
-                Expanded(
-                  child: Text(
-                    customExercise.exercise.name,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                ),
+                ExerciseName(customExercise: customExercise),
                 IconButton(
                   icon: Icon(Icons.delete, color: Colors.red),
                   onPressed: () {

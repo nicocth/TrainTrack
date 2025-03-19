@@ -75,6 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_saving_routine": MessageLookupByLibrary.simpleMessage(
       "Error saving routine",
     ),
+    "exercise_setail_title": MessageLookupByLibrary.simpleMessage("Execution"),
     "exercises": MessageLookupByLibrary.simpleMessage("Exercises"),
     "fill_all_fields": MessageLookupByLibrary.simpleMessage(
       "Please fill all fields",

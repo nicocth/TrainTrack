@@ -67,5 +67,6 @@
     "start_training": "Iniciar entrenamiento",
     "finish": "Finalizar",
     "select_exercise": "Seleccione el siguiente ejercicio:",
-    "finish_exercise": "Finalizar ejercicio"
+    "finish_exercise": "Finalizar ejercicio",
+    "exercise_setail_title": "Ejecución"
 }

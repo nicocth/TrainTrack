@@ -67,5 +67,6 @@
     "start_training": "Start training",
     "finish": "Finish",
     "select_exercise": "Select the next exercise:",
-    "finish_exercise": "Finish exercise"
+    "finish_exercise": "Finish exercise",
+    "exercise_setail_title": "Execution"
 }
