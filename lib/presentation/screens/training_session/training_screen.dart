@@ -42,28 +42,36 @@ class TrainingScreen extends ConsumerWidget {
               child: FinishTrainingSessionButton()),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            // Exercise
-            ExerciseCardTraining(
+      body: SingleChildScrollView(
+        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Exercise
+              ExerciseCardTraining(
                 customExercise: selectedExercise,
                 notesController: notesController,
                 repsControllers: repsControllers,
-                weightControllers: weightControllers),
-
-            // button for finish exercise
-            ElevatedButton.icon(
-              label: Text(S.current.finish_exercise),
-              onPressed: () {
-                trainingSessionNotifier.markExerciseCompleted(
-                    trainingSession.selectedExerciseIndex!);
-
-                Navigator.pop(context);
-              },
-            ),
-          ],
+                weightControllers: weightControllers,
+              ),
+              const SizedBox(
+                  height:
+                      10), 
+              // button for finish exercise
+              Center(
+                child: ElevatedButton.icon(
+                  label: Text(S.current.finish_exercise),
+                  onPressed: () {
+                    trainingSessionNotifier.markExerciseCompleted(
+                        trainingSession.selectedExerciseIndex!);
+                    Navigator.pop(context);
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

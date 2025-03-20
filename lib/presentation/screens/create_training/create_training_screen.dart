@@ -13,77 +13,82 @@ class CreateTrainingScreen extends ConsumerWidget {
 
   const CreateTrainingScreen({super.key, this.trainingId});
 
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final newTraining = ref.watch(createTrainingProvider);
-    final newTrainingNotifier = ref.read(createTrainingProvider.notifier);
+ @override
+Widget build(BuildContext context, WidgetRef ref) {
+  final newTraining = ref.watch(createTrainingProvider);
+  final newTrainingNotifier = ref.read(createTrainingProvider.notifier);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(trainingId != null ? S.current.edit_routine : S.current.create_routine),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.save),
-            onPressed: () => _saveTraining(context, ref),
-          ),
-        ],
-      ),
-      body: Padding(
+  return Scaffold(
+    appBar: AppBar(
+      title: Text(trainingId != null ? S.current.edit_routine : S.current.create_routine),
+      actions: <Widget>[
+        IconButton(
+          icon: const Icon(Icons.save),
+          onPressed: () => _saveTraining(context, ref),
+        ),
+      ],
+    ),
+    body: SingleChildScrollView(
+      keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+      child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            //Training title
+            // Training title
             TextField(
               controller: newTraining.titleController,
               decoration: InputDecoration(labelText: S.current.routine_title),
             ),
 
-            //Spacer
-            const SizedBox(height: 20),
+            const SizedBox(height: 20), // Spacer
 
             // ExerciseCard list
-            Expanded(
-              child: ReorderableListView(
-                onReorder: (oldIndex, newIndex) {
-                  newTrainingNotifier.reorderExercise(oldIndex, newIndex);
-                },
-                children: [
-                  for (int index = 0;
-                      index < newTraining.customExercises.length;
-                      index++)
-                    ExerciseCard(
-                      key: ValueKey(newTraining.customExercises[index]),
-                      exerciseIndex: index,
-                      customExercise: newTraining.customExercises[index],
-                      alternativeController: newTraining.alternativeControllers[index],
-                      notesController: newTraining.notesControllers[index],
-                      repsControllers: newTraining.repsControllers[index],
-                      weightControllers: newTraining.weightControllers[index],
-                      onDelete: () {
-                        newTrainingNotifier.removeExercise(index);
-                      },
-                    ),
-                ],
-              ),
+            ReorderableListView(
+              shrinkWrap: true, // Allows the list to fit the content
+              physics: const NeverScrollableScrollPhysics(), // Avoid scroll conflicts
+              onReorder: (oldIndex, newIndex) {
+                newTrainingNotifier.reorderExercise(oldIndex, newIndex);
+              },
+              children: [
+                for (int index = 0; index < newTraining.customExercises.length; index++)
+                  ExerciseCard(
+                    key: ValueKey(newTraining.customExercises[index]),
+                    exerciseIndex: index,
+                    customExercise: newTraining.customExercises[index],
+                    alternativeController: newTraining.alternativeControllers[index],
+                    notesController: newTraining.notesControllers[index],
+                    repsControllers: newTraining.repsControllers[index],
+                    weightControllers: newTraining.weightControllers[index],
+                    onDelete: () {
+                      newTrainingNotifier.removeExercise(index);
+                    },
+                  ),
+              ],
             ),
 
-            // Button to add exercises
-            ElevatedButton.icon(
-              icon: const Icon(Icons.add),
-              label: Text(S.current.add_exercise),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const AddExerciseScreen()),
-                );
-              },
+            const SizedBox(height: 20), 
+
+            // Button to add exercises 
+            Center(
+              child: ElevatedButton.icon(
+                icon: const Icon(Icons.add),
+                label: Text(S.current.add_exercise),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const AddExerciseScreen()),
+                  );
+                },
+              ),
             ),
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
+
 
   Future<void> _saveTraining(BuildContext context, WidgetRef ref) async {
     final newTraining = ref.read(createTrainingProvider);
@@ -114,12 +119,12 @@ class CreateTrainingScreen extends ConsumerWidget {
               .timeout(Duration(seconds: 6), onTimeout: () {
               throw TimeoutException(S.current
                   .request_timeout); // Add timeout in case the user is left without connection
-            }) // Editar
+            })
           : await firestoreService
               .saveTraining(ref)
               .timeout(Duration(seconds: 6), onTimeout: () {
               throw TimeoutException(S.current.request_timeout);
-            }); // Crear nuevo
+            }); 
 
       //check if widget is mounted before displaying snackbar
       if (!context.mounted) return;

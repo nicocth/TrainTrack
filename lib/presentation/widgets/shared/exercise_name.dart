@@ -23,7 +23,7 @@ class ExerciseName extends ConsumerWidget {
         child: Text(
           customExercise.exercise.name,
           style: const TextStyle(fontWeight: FontWeight.bold,
-                  color: Colors.blue, // Color azul para simular un enlace
+                  color: Colors.blue,
         ),
         ),
       ),
