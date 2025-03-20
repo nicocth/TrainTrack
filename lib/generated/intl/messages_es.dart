@@ -113,6 +113,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "mode": MessageLookupByLibrary.simpleMessage("Modo"),
     "my_trainings": MessageLookupByLibrary.simpleMessage("Mis entrenamientos"),
+    "no": MessageLookupByLibrary.simpleMessage("No"),
     "notes": MessageLookupByLibrary.simpleMessage("Notas"),
     "number_value_error": MessageLookupByLibrary.simpleMessage(
       "Valor incorrecto, Introduzca un número",
@@ -131,11 +132,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "request_timeout": MessageLookupByLibrary.simpleMessage(
       "La peticion ha tardado demasiado tiempo revise su conexión",
     ),
-    "routine_saved": MessageLookupByLibrary.simpleMessage("Rutina guardada"),
     "routine_title": MessageLookupByLibrary.simpleMessage(
       "Título de la rutina",
     ),
-    "save_routine": MessageLookupByLibrary.simpleMessage("Guardar rutina"),
+    "save_training": MessageLookupByLibrary.simpleMessage(
+      "Guardar entrenamiento",
+    ),
     "select_exercise": MessageLookupByLibrary.simpleMessage(
       "Seleccione el siguiente ejercicio:",
     ),
@@ -149,7 +151,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "training_chat_y_title": MessageLookupByLibrary.simpleMessage(
       "Veces realizado",
     ),
+    "training_saved": MessageLookupByLibrary.simpleMessage(
+      "Entrenamiento guardado",
+    ),
+    "training_updated_saved": MessageLookupByLibrary.simpleMessage(
+      "Entrenamiento registrado y actualizado",
+    ),
     "uknown_error": MessageLookupByLibrary.simpleMessage("Error desconocido"),
+    "update_training_alert": MessageLookupByLibrary.simpleMessage(
+      "Confirmar cambios",
+    ),
+    "update_training_message": MessageLookupByLibrary.simpleMessage(
+      "¿Quieres actualizar la rutina con los valores actuales?",
+    ),
     "user_disabled": MessageLookupByLibrary.simpleMessage(
       "Usuario deshabilitado",
     ),
@@ -162,5 +176,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "wrong_password": MessageLookupByLibrary.simpleMessage(
       "Contraseña incorrecta",
     ),
+    "yes": MessageLookupByLibrary.simpleMessage("Si"),
   };
 }

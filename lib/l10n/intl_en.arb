@@ -31,8 +31,9 @@
     "my_trainings": "My trainings",
     "uknown_error": "Uknown error",
     "routine_title": "Routine title",
-    "save_routine": "Save routine",
-    "routine_saved": "Routine saved",
+    "save_training": "Save training",
+    "training_saved": "Training saved",
+    "training_updated_saved": "Registered and updated training",
     "error_saving_routine": "Error saving routine",
     "empty_title": "Please enter a title",
     "empty_exercises_list": "Please add at least one exercise",
@@ -68,5 +69,9 @@
     "finish": "Finish",
     "select_exercise": "Select the next exercise:",
     "finish_exercise": "Finish exercise",
-    "exercise_setail_title": "Execution"
+    "exercise_setail_title": "Execution",
+    "yes": "Yes",
+    "no": "No",
+    "update_training_alert":"Commit changes",
+    "update_training_message":"Do you want to update the training with the current values?"
 }

@@ -24,6 +24,13 @@ class TrainingScreen extends ConsumerWidget {
     //Get the selected exercise taking into account the order property, not the position in training
     final selectedExercise = sortedExercises[selectedIndex];
 
+    // Necessary check since when we end the session having watch it would give a range exception
+    if (selectedIndex >= trainingSession.notesControllers.length ||
+        selectedIndex >= trainingSession.repsControllers.length ||
+        selectedIndex >= trainingSession.weightControllers.length) {
+      return Scaffold();
+    }
+
     //The controller are already sorted in provider
     final notesController = trainingSession.notesControllers[selectedIndex];
     final repsControllers = trainingSession.repsControllers[selectedIndex];
@@ -56,9 +63,7 @@ class TrainingScreen extends ConsumerWidget {
                 repsControllers: repsControllers,
                 weightControllers: weightControllers,
               ),
-              const SizedBox(
-                  height:
-                      10), 
+              const SizedBox(height: 10),
               // button for finish exercise
               Center(
                 child: ElevatedButton.icon(

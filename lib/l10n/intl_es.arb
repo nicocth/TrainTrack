@@ -31,8 +31,9 @@
     "my_trainings": "Mis entrenamientos",
     "uknown_error": "Error desconocido",
     "routine_title": "Título de la rutina",
-    "save_routine": "Guardar rutina",
-    "routine_saved": "Rutina guardada",
+    "save_training": "Guardar entrenamiento",
+    "training_saved": "Entrenamiento guardado",
+    "training_updated_saved": "Entrenamiento registrado y actualizado",
     "error_saving_routine": "Error al guardar la rutina",
     "empty_title": "Por favor, ingresa un título",
     "empty_exercises_list": "Por favor, añade al menos un ejercicio",
@@ -68,5 +69,9 @@
     "finish": "Finalizar",
     "select_exercise": "Seleccione el siguiente ejercicio:",
     "finish_exercise": "Finalizar ejercicio",
-    "exercise_setail_title": "Ejecución"
+    "exercise_setail_title": "Ejecución",
+    "yes": "Si",
+    "no": "No",
+    "update_training_alert":"Confirmar cambios",
+    "update_training_message":"¿Quieres actualizar la rutina con los valores actuales?"
 }

@@ -137,7 +137,7 @@ Widget build(BuildContext context, WidgetRef ref) {
       }
 
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(S.current.routine_saved)),
+        SnackBar(content: Text(S.current.training_saved)),
       );
 
       // Return true if the training is success for refresh home

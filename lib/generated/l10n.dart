@@ -315,21 +315,31 @@ class S {
     );
   }
 
-  /// `Save routine`
-  String get save_routine {
+  /// `Save training`
+  String get save_training {
     return Intl.message(
-      'Save routine',
-      name: 'save_routine',
+      'Save training',
+      name: 'save_training',
       desc: '',
       args: [],
     );
   }
 
-  /// `Routine saved`
-  String get routine_saved {
+  /// `Training saved`
+  String get training_saved {
     return Intl.message(
-      'Routine saved',
-      name: 'routine_saved',
+      'Training saved',
+      name: 'training_saved',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Registered and updated training`
+  String get training_updated_saved {
+    return Intl.message(
+      'Registered and updated training',
+      name: 'training_updated_saved',
       desc: '',
       args: [],
     );
@@ -625,6 +635,36 @@ class S {
     return Intl.message(
       'Execution',
       name: 'exercise_setail_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes`
+  String get yes {
+    return Intl.message('Yes', name: 'yes', desc: '', args: []);
+  }
+
+  /// `No`
+  String get no {
+    return Intl.message('No', name: 'no', desc: '', args: []);
+  }
+
+  /// `Commit changes`
+  String get update_training_alert {
+    return Intl.message(
+      'Commit changes',
+      name: 'update_training_alert',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you want to update the training with the current values?`
+  String get update_training_message {
+    return Intl.message(
+      'Do you want to update the training with the current values?',
+      name: 'update_training_message',
       desc: '',
       args: [],
     );

@@ -99,6 +99,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "logout_failed": MessageLookupByLibrary.simpleMessage("Logout failed"),
     "mode": MessageLookupByLibrary.simpleMessage("Mode"),
     "my_trainings": MessageLookupByLibrary.simpleMessage("My trainings"),
+    "no": MessageLookupByLibrary.simpleMessage("No"),
     "notes": MessageLookupByLibrary.simpleMessage("Notes"),
     "number_value_error": MessageLookupByLibrary.simpleMessage(
       "Wrong value. Please introduce a number.",
@@ -117,9 +118,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "request_timeout": MessageLookupByLibrary.simpleMessage(
       "The request has taken too long, check your connection",
     ),
-    "routine_saved": MessageLookupByLibrary.simpleMessage("Routine saved"),
     "routine_title": MessageLookupByLibrary.simpleMessage("Routine title"),
-    "save_routine": MessageLookupByLibrary.simpleMessage("Save routine"),
+    "save_training": MessageLookupByLibrary.simpleMessage("Save training"),
     "select_exercise": MessageLookupByLibrary.simpleMessage(
       "Select the next exercise:",
     ),
@@ -131,12 +131,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "training_chat_y_title": MessageLookupByLibrary.simpleMessage(
       "Times performed",
     ),
+    "training_saved": MessageLookupByLibrary.simpleMessage("Training saved"),
+    "training_updated_saved": MessageLookupByLibrary.simpleMessage(
+      "Registered and updated training",
+    ),
     "uknown_error": MessageLookupByLibrary.simpleMessage("Uknown error"),
+    "update_training_alert": MessageLookupByLibrary.simpleMessage(
+      "Commit changes",
+    ),
+    "update_training_message": MessageLookupByLibrary.simpleMessage(
+      "Do you want to update the training with the current values?",
+    ),
     "user_disabled": MessageLookupByLibrary.simpleMessage("User disabled"),
     "user_not_found": MessageLookupByLibrary.simpleMessage("User not found"),
     "weak_password": MessageLookupByLibrary.simpleMessage(
       "Password must be at least 6 characters",
     ),
     "wrong_password": MessageLookupByLibrary.simpleMessage("Wrong password"),
+    "yes": MessageLookupByLibrary.simpleMessage("Yes"),
   };
 }
