@@ -166,14 +166,16 @@ class FirestoreService {
         ..sort((a, b) => a.order.compareTo(b.order));
 
       for (int i = 0; i < training.exercises.length; i++) {
+        //The exercises will be saved in the order of the order property
         final customExercise = sortedExercises[i];
-        final exerciseData = {
-          'exercise': customExercise.exercise.id,
-          'order': customExercise.order,
-          'name': customExercise.exercise.name,
-          'is_alternative': customExercise.isAlternative,
-          'notes': trainingSession.notesControllers[i].text,
-          'sets': List.generate(customExercise.sets.length, (j) {
+
+        //Only exercises that have sets marked as complete will be saved.
+        final completedSets = trainingSession.completedSets[i];
+        final hasCompletedSets = completedSets.isNotEmpty;
+        if (hasCompletedSets) {
+
+          // Filter only completed sets
+          final setsData = completedSets.map((j) {
             return {
               'weight': double.tryParse(
                       trainingSession.weightControllers[i][j].text) ??
@@ -181,13 +183,23 @@ class FirestoreService {
               'reps':
                   int.tryParse(trainingSession.repsControllers[i][j].text) ?? 0,
             };
-          }),
-        };
+          }).toList();
 
-        if (customExercise.isAlternative) {
-          exerciseData['alternative'] = customExercise.alternative ?? 0;
+          final exerciseData = {
+            'exercise': customExercise.exercise.id,
+            'order': customExercise.order,
+            'name': customExercise.exercise.name,
+            'is_alternative': customExercise.isAlternative,
+            'notes': trainingSession.notesControllers[i].text,
+            'sets': setsData
+          };
+
+          // Only if isAlternative is true will we get alternative
+          if (customExercise.isAlternative) {
+            exerciseData['alternative'] = customExercise.alternative ?? 0;
+          }
+          await historyDoc.collection('exercises').add(exerciseData);
         }
-        await historyDoc.collection('exercises').add(exerciseData);
       }
 
       return Result.success();
