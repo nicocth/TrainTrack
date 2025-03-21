@@ -88,6 +88,15 @@ class FinishTrainingSessionButton extends ConsumerWidget {
         }
       }
 
+      //save the training to history
+      await firestoreService
+          .saveTrainingToHistory(ref)
+          .timeout(Duration(seconds: 6), onTimeout: () {
+        throw TimeoutException(S.current.request_timeout);
+      });
+
+      if (!context.mounted) return;
+
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
             content: Text(updateRoutine

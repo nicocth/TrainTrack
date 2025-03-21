@@ -15,36 +15,19 @@ class FirestoreService {
     String creationDate = DateFormat('yyyy-MM-dd').format(DateTime.now());
 
     try {
-      // Crear el documento en Firestore con los datos básicos
+      // Create the document in Firestore with the basic data
       await _firestore.collection('users').doc(userId).set({
         'userId': userId,
         'email': email,
         'creation_date': creationDate,
-        'profile_image': '', // URL vacía por defecto
-        'nickname': '', // Se puede llenar después
+        'profile_image': '',
+        'nickname': '',
         'last_access': creationDate,
       });
-
-      // Inicializar las subcolecciones
-      await _initializeSubcollections(userId);
 
       return Result.success();
     } catch (e) {
       return Result.failure(e.toString());
-    }
-  }
-
-  // TODO: Consider deleting it
-  // Private method to initialize subcollections
-  Future<void> _initializeSubcollections(String userId) async {
-    const subcollections = ['trainings', 'record', 'prs'];
-
-    for (var collection in subcollections) {
-      await _firestore
-          .collection('users')
-          .doc(userId)
-          .collection(collection)
-          .add({});
     }
   }
 
@@ -100,6 +83,116 @@ class FirestoreService {
       return Result.success();
     } catch (e) {
       return Result.failure(e.toString());
+    }
+  }
+
+  // Method to save a Custom training
+  // Future<Result> saveTrainingToHistory(WidgetRef ref) async {
+  //   final authNotifier = ref.read(authProvider.notifier);
+  //   final userId = authNotifier.getUserId();
+
+  //   final trainingSession = ref.read(trainingSessionProvider);
+
+  //   if (trainingSession.training == null) {
+  //     return Result.failure('There is no active training to save.');
+  //   }
+
+  //   final training = trainingSession.training!;
+
+  //   try {
+  //     final trainingHistoryRef = _firestore
+  //         .collection('users')
+  //         .doc(userId)
+  //         .collection('training_history');
+
+  //     final historyData = {
+  //       'title': training.name,
+  //       'training_date': Timestamp.now(),
+  //       'exercises': training.exercises.map((exercise) {
+  //         return {
+  //           'exercise': exercise.exercise.id,
+  //           'order': exercise.order,
+  //           'name': exercise.exercise.name,
+  //           'is_alternative': exercise.isAlternative,
+  //           'notes': trainingSession.notesControllers[exercise.order].text,
+  //           'sets': List.generate(exercise.sets.length, (j) {
+  //             return {
+  //               'weight': double.tryParse(
+  //                       trainingSession.weightControllers[exercise.order][j].text) ??
+  //                   0.0,
+  //               'reps': int.tryParse(
+  //                       trainingSession.repsControllers[exercise.order][j].text) ??
+  //                   0,
+  //             };
+  //           }),
+  //           if (exercise.isAlternative) 'alternative': exercise.alternative ?? 0,
+  //         };
+  //       }).toList(),
+  //     };
+
+  //     await trainingHistoryRef.add(historyData);
+
+  //     return Result.success();
+  //   } catch (e) {
+  //     return Result.failure('Error saving training to history: $e');
+  //   }
+  // }
+
+  Future<Result> saveTrainingToHistory(WidgetRef ref) async {
+    final authNotifier = ref.read(authProvider.notifier);
+    final userId = authNotifier.getUserId();
+
+    final trainingSession = ref.read(trainingSessionProvider);
+
+    if (trainingSession.training == null) {
+      return Result.failure('There is no active training to save.');
+    }
+
+    final training = trainingSession.training!;
+
+    try {
+      final trainingHistoryRef = _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('training_history');
+
+      final historyDoc = await trainingHistoryRef.add({
+        'title': training.name,
+        'training_date': Timestamp.now(),
+      });
+
+      // Sort the exercises by the 'order' property
+      final sortedExercises = List.of(training.exercises)
+        ..sort((a, b) => a.order.compareTo(b.order));
+
+      for (int i = 0; i < training.exercises.length; i++) {
+        final customExercise = sortedExercises[i];
+        final exerciseData = {
+          'exercise': customExercise.exercise.id,
+          'order': customExercise.order,
+          'name': customExercise.exercise.name,
+          'is_alternative': customExercise.isAlternative,
+          'notes': trainingSession.notesControllers[i].text,
+          'sets': List.generate(customExercise.sets.length, (j) {
+            return {
+              'weight': double.tryParse(
+                      trainingSession.weightControllers[i][j].text) ??
+                  0.0,
+              'reps':
+                  int.tryParse(trainingSession.repsControllers[i][j].text) ?? 0,
+            };
+          }),
+        };
+
+        if (customExercise.isAlternative) {
+          exerciseData['alternative'] = customExercise.alternative ?? 0;
+        }
+        await historyDoc.collection('exercises').add(exerciseData);
+      }
+
+      return Result.success();
+    } catch (e) {
+      return Result.failure('Error saving training to history: $e');
     }
   }
 
