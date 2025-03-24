@@ -72,7 +72,7 @@ Widget build(BuildContext context, WidgetRef ref) {
             // Button to add exercises 
             Center(
               child: ElevatedButton.icon(
-                icon: const Icon(Icons.add),
+                icon: const Icon(Icons.add, color: Colors.white),
                 label: Text(S.current.add_exercise),
                 onPressed: () {
                   Navigator.push(
