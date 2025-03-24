@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:train_track/domain/models/exercise.dart';
 import 'package:train_track/generated/l10n.dart';
+import 'package:flutter_html/flutter_html.dart';
 
 class ExerciseDetailScreen extends StatelessWidget {
   final Exercise exercise;
@@ -11,23 +12,25 @@ class ExerciseDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(S.current.exercise_setail_title)),
-      body: Padding(
-        padding: const EdgeInsets.all(25.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: Image.asset(exercise.image),
-            ),
-            const SizedBox(height: 20),
-            Text(
-              exercise.name,
-              style: Theme.of(context).textTheme.headlineSmall,
-            ),
-            const SizedBox(height: 10),
-            Text(exercise.description),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(25.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.asset(exercise.image),
+              ),
+              const SizedBox(height: 20),
+              Text(
+                exercise.name,
+                style: Theme.of(context).textTheme.headlineSmall,
+              ),
+              const SizedBox(height: 10),
+              Html(data: exercise.description),
+            ],
+          ),
         ),
       ),
     );
