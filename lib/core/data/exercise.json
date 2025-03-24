@@ -2,42 +2,119 @@
   {
     "id": "press_banca_barra",
     "name": "Press de banca con barra",
-    "description": "Recostado sobre un banco horizontal, los brazos estirados verticalmente, con la barra cargada en las manos, el movimiento consiste en bajar la barra hasta que toque el torso (fase excéntrica) y luego subir (fase concéntrica) hasta la posición inicial.",
+    "description": "Échate sobre un banco. Las palmas de las manos deben estar hacia arriba. Baja lentamente el peso hasta tocar la parte central del tórax. <br><br> Empuja la barra hacia arriba hasta que los brazos estén completamente estirados pero sin llegar a bloquear la articulación del codo. Vuelve a descender la barra hasta tocar la parte central del tórax y repite el movimiento. <br><br> La espalda debe permanecer en contacto con el banco y los pies deben reposar firmemente en el suelo, para obtener mejor estabilidad. <br><br>El espacio ideal entre las manos es la distancia que hay entre los hombros o un poco más. Cuanto más cerca estén las manos entre sí, mayor será el esfuerzo de los pectorales internos y del tríceps. <br><br> Las manos alejadas aportan más trabajo a la parte exterior del músculo y minimizan el esfuerzo del tríceps. <br><br> La barra sólo se debe mover de forma vertical: hacia arriba y hacia abajo. No la balancee, ya que si lo hace, no estará ejercitando los músculos adecuados para este ejercicio. <br><br> Las repeticiones cortas (cuyo movimiento termina antes de la extensión total de los codos) mantienen la tensión en los pectorales y reducen el esfuerzo del tríceps.",
     "muscular_group": "pectoral",
     "image": "assets/images/press_banca.jpg"
   },
   {
+    "id": "press_banca_mancuernas",
+    "name": "Press banca con mancuernas",
+    "description": "Acostados boca arriba sobre un banco plano. El torso debe estar apoyado desde la cabeza a las caderas, con las piernas dobladas y los pies asegurados. <br><br> Agarrad una mancuerna en cada mano y sujetad los pesos directamente encima del pecho. Las palmas deben mirar hacia los pies. Es el punto de partida. <br><br> Doblad los brazos para bajar las mancuernas hacia la parte externa del pecho, manteniendo los codos apuntando hacia los lados. Tomad aire y retened la respiración mientras empezáis a bajar el peso. <br><br> Revertid la dirección cuando las mancuernas lleguen a la posición final, y devolved las al punto de partida siguiendo la dirección de un arco. <br><br> Expulsad el aire una vez que hayáis superado el punto de estancamiento (el más difícil del intervalo de recorrido). <br><br> Deteneos un instante con los brazos estirados pero no hiperextendidos.  Repetid las veces necesarias. <br><br> Estad seguros de subir las mancuernas de manera que permanezcan sobre un plano vertical directamente encima de los hombros en la posición final.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/press_banca_mancuernas.jpg"
+  },
+  {
     "id": "press_banca_inclinado_barra",
     "name": "Press de banca inclinado con barra",
-    "description": "Recostado sobre un banco a 30 o 45 grados, los brazos estirados verticalmente, con la barra cargada en las manos, el movimiento consiste en bajar la barra hasta que toque el torso (fase excéntrica) y luego subir (fase concéntrica) hasta la posición inicial.",
+    "description": "Acostados sobre un banco inclinado en ángulo aproximado de 30 a 45°. Separad las piernas ligeramente apoyando los pies sobre el suelo. Las caderas, hombros y cabeza deben reposar sobre el banco. <br><br> Agarrad una barra con agarre prono. Las manos deben estar algo más abiertas que la anchura de vuestros hombros. <br><br> Bajad la barra a la parte superior del pecho, tomad aire y retened el aliento cuando subáis el peso hacia el punto de partida. Dirigid los codos hacia los lados y mantenedlos así. <br><br> Expulsad a medida que superéis la parte más difícil de la subida o al extender los brazos. <br><br> Deteneos en la posición final con los brazos extendidos y verticales. <br><br> Tomad aire y retened el aliento a medida que bajéis el peso bajo control hasta la parte alta del pecho. <br><br> Si preferís deteneos un instante abajo, expulsad el aire después de llegar allí, tomadlo luego y retened la respiración cuando subáis la barra.",
     "muscular_group": "pectoral",
     "image": "assets/images/press_banca_inclinado_barra.jpg"
   },
   {
+    "id": "press_banca_inclinado_mancuernas",
+    "name": "Press de banca inclinado con mancuernas",
+    "description": "Sitúate sobre un banco con una inclinación entre 30 y 45 grados. Apoya los pies contra el suelo y extiende las piernas ligeramente para mantener el equilibrio. Las caderas, los hombros y la cabeza deben estar alineados y en contacto con el banco. <br><br> Coge una mancuerna con cada mano con un agarre de palmas hacia arriba. Las palmas han de mirar en la misma dirección que tu – al frente- durante el ejercicio. <br><br> Lleva las mancuernas a la altura del hombro con las manos colocadas junto a los hombros. <br><br> Cuando estés preparado, inspira y aguanta la respiración mientras empujas las mancuernas hacia arriba y hacia dentro. Mantén los codos hacia los lados, en el mismo plano que los hombros. <br><br> Expulsa el aire cuando pases el punto más difícil de la fase ascendente, cuando los brazos se extienden por completo. <br><br> Detente un instante en la posición sobre la cabeza. Inspira y aguanta la respiración mientras bajas las mancuernas hasta los hombros. <br><br> Cuando las mancuernas alcanzan la posición más baja, empújalas de nuevo hacia arriba hasta que los brazos queden totalmente extendidos. Haz una pausa y repite el ejercicio. <br><br> Para aumentar la intensidad, sube las mancuernas muy juntas pero sin tocarse.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/press_banca_inclinado_mancuernas.jpg"
+  },
+  {
+    "id": "press_banca_declinado_barra",
+    "name": "Press banca declinado con barra",
+    "description": "Acostados sobre un banco declinado de press con cabeza, hombros y glúteos descansando sobre el respaldo, y un ligero arco en la espina lumbar. <br><br> La barra debe situarse a una altura accesible y estar colocada directamente sobre la cara. <br><br> Utilizad un agarre prono (palmas mirando al frente) con las manos aproximadamente separadas a la anchura de vuestros hombros. La distancia precisa dependerá de vuestra capacidad para equilibrar el peso y el tipo de barra utilizada. <br><br> Sacad la barra y estirad los brazos, colocándolos directamente encima del cuello. Es el punto de partida. <br><br> Tomad más aire de lo habitual y retened lo cuando bajéis la barra hacia la mitad del pecho. Al aproximaros a los pectorales, revertid la dirección y devolved el peso al punto de partida. <br><br> Expulsad el aire al superar la parte más difícil de la fase de subida. <br><br> Los codos deben apuntar hacia adelante y mantenerse pegados a los lados durante el ascenso y el descenso.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/press_banca_declinado_barra.jpg"
+  },
+  {
     "id": "press_pecho_maquina_vertical",
     "name": "Press de pecho en máquina vertical",
-    "description": "Siéntate en la máquina con la espalda recta y los pies firmes en el suelo. Agarra las asas de la máquina y comienza a empujar hacia adelante, manteniendo los codos ligeramente flexionados. Lleva las asas hacia tu pecho y luego extiende los brazos para volver a la posición inicial",
+    "description": "Ajusta la altura del asiento para que los agarres queden a la altura de los hombros o un poco por debajo <br><br> Siéntate erguido con la espalda contra el acolchado y coloca los pies sobre el suelo directamente bajo las rodillas y separados aproximadamente a la anchura de los hombros. <br><br> Sujeta los agarres con las palmas mirando hacia fuera. <br><br> Toma aire y aguanta la respiración mientras empujas para llevar los agarres lejos del cuerpo. <br><br> Expulsa el aire después de pasar la parte más difícil del movimiento o cuando los brazos estén completamente extendidos. <br><br> Haz una pequeña pausa y regresa a la posición inicial. <br><br> Cuando las manos se aproximen a la altura del pecho, cambia rápidamente la dirección del movimiento y repite.",
     "muscular_group": "pectoral",
     "image": "assets/images/press_pecho_maquina_vertical.jpg"
   },
   {
+    "id": "aperturas_maquina",
+    "name": "Aperturas en máquina",
+    "description": "Es un movimiento de aislamiento, y por lo tanto es excelente realizarlos al final del entrenamiento. <br><br> Inicio: Ajustar el asiento de la máquina de vuelo de tal manera que los manillares queden a nivel del pecho. Sentado en el asiento, con la espalda plana contra el respaldo, agarrar los manillares y comenzar con los brazos estirados hacia afuera y los codos ligeramente flexionados. <br><br> Ejecución: Contraer los pectorales para desplazar las manos hasta que casi se junten. Contraer los pectorales fuertemente y contar uno; a continuación, volver lentamente a la posición de inicio sin permitir que el peso descanse sobre la columna de la máquina. <br><br> Variaciones: Algunas máquinas de vuelo (en ocasiones denominadas como pec-decks) incluyen almohadillamientos para los brazos, para situarlos en contacto con la parte interna de los codos y antebrazos con el fin de mantener los codos flexionados en un ángulo aproximado de 90 grados durante todo el rango del movimiento.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/aperturas_maquina.jpg"
+  },
+  {
+    "id": "aperturas_mancuernas",
+    "name": "Aperturas con mancuernas",
+    "description": "Túmbate boca arriba sobre un banco plano con los pies apoyados contra el suelo. La cabeza, espalda y glúteos deben estar en contacto con el banco. <br><br> Coge unas mancuernas con las palmas mirándose entre si y los brazos extendidos sobre el pecho. Bloquea los codos y dóblalos ligeramente. <br><br> Inspira profundamente y aguanta la respiración mientras bajas los brazos directamente hacia los lados. <br><br> A medida que los brazos se aproximan al nivel del hombro o ligeramente por debajo, contrae los músculos del pecho para invertir la dirección, manteniendo los codos ligeramente doblados. Sigue el mismo arco mientras elevas los brazos a la posición vertical y expulsa el aire. <br><br> Haz una pequeña pausa y repite.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/aperturas_mancuernas.jpg"
+  },
+  {
+    "id": "fondos_maquina_asistida",
+    "name": "Fondos en máquina asistida",
+    "description": "Agarre las barras y sujete su cuerpo con los brazos rectos. Mantenga los hombros lejos de las orejas retrayendo las escápulas. Contraiga el suelo pelvico y el core. <br><br> Comience a inclinarse hacia adelante doblando los codos hasta que su cuerpo esté alrededor de 30º y sienta el estiramiento en sus pectorales. Inhale durante el descenso. Contrayendo sus tríceps y pectorales, presione la parte superior de su cuerpo hacia la posición inicial mientras exhala. Asegúrate de empujar tu cuerpo hacia arriba y separar las orejas de los hombros durante el ascenso.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/fondos_maquina_asistida.jpg"
+  },
+  {
+    "id": "fondos_pecho_paralelas",
+    "name": "Fondos de pecho en paralelas",
+    "description": "Sitúate en el aparato de paralelas como indica la foto, con el cuerpo lo más erguido posible con una ligera inclinación hacia adelante. <br><br> Baja el cuerpo doblando los brazos y dejando que los codos se separen del cuerpo, pero sin estirar los hombros demasiado en la posición baja. <br><br> Extiende los brazos (sin bloquear los codos), expulsa el aire al alcanzar la posición final, mantenla un segundo apretando a tope el pecho. Inspira y vuelve a bajar el cuerpo.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/fondos_pecho_paralelas.jpg"
+  },
+  {
+    "id": "flexiones",
+    "name": "Flexiones",
+    "description": "Las flexiones trabajan principalmente la porción media de los pectorales. <br><br> Suelen utilizarse para calentamiento, cerca del final de la sesión de trabajo o cuando no se disponga de otro equipamiento. <br><br> Inicio: Colocar las manos a la anchura de los hombros sobre el suelo, con el cuerpo plano y rígido, y las puntas de los pies apoyadas en el suelo. Comenzar con los brazos extendidos y perpendiculares al suelo. <br><br> Ejecución: Flexionar los codos bajando lentamente el cuerpo hacia el suelo. Cuando el pecho alcance unos pocos centímetros del suelo, extender los brazos con un press hacia arriba para volver a la posición de inicio. <br><br> Variaciones: Para enfatizar la parte inferior del pecho e incrementar la dificultad, colocar los pies sobre un banco o una silla (en función de lo que se disponga) durante la serie completa. Para hacer énfasis en la porción baja del pecho y aumentar la dificultad, colocar las manos sobre una superficie elevada y estable.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/flexiones.jpg"
+  },
+  {
+    "id": "pullover_mancuerna",
+    "name": "Pullover con mancuerna",
+    "description": "Posición inicial: <br><br> Tumbado sobre los omóplatos descansando sobre un banco plano, el cuerpo extendido hacia fuera perpendicularmente al banco y los pies planos sobre el suelo y las rodillas flexionadas. Mantener una mancuerna con ambas manos. <br><br> Juntar las caderas al nivel del banco y comenzar sujetando las mancuernas derechas hacia arriba sobre el pecho con los brazos extendidos. <br><br> Ejecución: <br><br> Con los codos ligeramente flexionados, bajar las mancuernas hacia atrás y por debajo de la cabeza hasta que sienta un estiramiento en los pectorales y parte superior del brazo. <br><br> Contraer los pectorales para llevar de nuevo las mancuernas a la posición de inicio, manteniendo sólo una ligera flexión en los codos.<br><br> Realizar pullover utilizando una barra con la misma técnica o con una máquina especial para pullover.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/pullover_mancuerna.jpg"
+  },
+  {
+    "id": "cruces_polea_baja",
+    "name": "Cruces en polea baja",
+    "description": "Para empezar, coloca los manerales en la parte baja de las poleas y selecciona la resistencia que vayas a utilizar. No pongas demasiado, es un ejercicio de aislamiento donde no se requieren grandes pesos. <br><br> Colócate de pie, con una polea en cada mano, en tensión. Las palmas de las manos deben estar mirando al frente, las manos a la altura de la cintura y los brazos estirados pero no bloqueados. <br><br> Con una ligera flexión de brazos, sube las manos hacia arriba y hacia la línea media del cuerpo. Tus manos deben acabar juntas en lo alto del pecho, con las palmas mirando hacia arriba. <br><br> Intenta realizar una pequeña pausa en esta posición, aguantando la contracción. Después vuelve a la posición inicial.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/cruces_polea_baja.jpg"
+  },
+  {
+    "id": "cruces_polea_alta",
+    "name": "Cruces en polea alta",
+    "description": "Coge los agarres de los cables de una polea alta con las palmas mirando hacia abajo. Sitúate a igual distancia de cada polea y coloca un pie por delante para mantener el equilibrio. <br><br> Inclínate hacia delante entre 15 y 30 grados manteniendo la curvatura natural de la columna. En la posición inicial, los brazos deben estar a los lados y casi perpendiculares al cuerpo, con los codos ligeramente doblados. <br><br> Toma aire y aguanta la respiración cuando lleves los brazos adelante y abajo mientas los codos permanecen ligeramente doblados. Lleva los brazos delante del pecho hasta que las manos se junten o se crucen ligeramente frente al cuerpo. <br><br> Mantén esa posición durante un segundo mientras expulsas el aire. Regresa a la posición inicial. <br><br> Mantén el cuerpo en una posición estática para tener el movimiento controlado en todo momento.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/cruces_polea_alta.jpg"
+  },
+  {
     "id": "sentadilla_mutipower",
     "name": "Sentadilla en máquina multipower",
-    "description": "Coloque la barra del multipower sobre los músculos de la parte superior de la espalda. Asegúrese de que sus manos están equidistantes de cada extremo de la barra. Coloque los pies por delante del eje de su cuerpo. Levante la barra del bastidor y gírela para soltar los enganches de seguridad. Descienda lentamente, flexionando las caderas, rodillas y tobillos. Baje las caderas hasta que los cuádriceps estén aproximadamente paralelos al suelo. Mantenga la espalda recta con los glúteos hacia atrás. Pare contando uno y, a continuación, vuelva a la posición inicial elevándose siguiendo el eje de sustentación o incluso el de apoyo de los talones. No extienda demasiado las rodillas en la parte alta del movimiento y en ningún caso llegue a bloquear las rodillas.",
+    "description": "Coloque la barra del multipower sobre los músculos de la parte superior de la espalda (no en la columna cervical). <br><br> Asegúrese de que sus manos están equidistantes de cada extremo de la barra. Coloque los pies por delante del eje de su cuerpo. Levante la barra del bastidor y gírela para soltar los enganches de seguridad. <br><br> Descienda lentamente, flexionando las caderas, rodillas y tobillos. Baje las caderas hasta que los cuádriceps estén aproximadamente paralelos al suelo. Mantenga la espalda recta con los glúteos hacia atrás. Pare contando uno y, a continuación, vuelva a la posición inicial elevándose siguiendo el eje de sustentación o incluso el de apoyo de los talones. <br><br> No extienda demasiado las rodillas en la parte alta del movimiento y en ningún caso llegue a bloquear las rodillas.",
     "muscular_group": "legs",
     "image": "assets/images/sentadilla_multipower.jpg"
   },
   {
     "id": "sentadilla_barra_libre",
     "name": "Sentadilla con barra libre",
-    "description": "Se inicia de pie, mirando al frente y con la espalda recta, mientras los pies se separan del ancho de los hombros. La barra utilizada debe situarse justo encima de los trapecios, no debe apoyarse en el cuello. Siempre mirando al frente y sin curvar la espalda, debemos descender los glúteos flexionando la rodilla y la cadera, y cuidando que la rodilla no pase de la punta del pie ni sobrepase los 90 grados de flexión. Descendemos hasta que los muslos quedan paralelos al suelo y desde allí debemos elevarnos lentamente mientras exhalamos el aire inhalado al comenzar el descenso del cuerpo.",
+    "description": "De pie, apoya la barra en los hombros. Los pies deben mantenerse separados a la distancia del ancho de los hombros. Flexiona lentamente las rodillas hasta que los muslos y el gemelo formen más o menos un ángulo de 90º. Estira las piernas para regresar a la posición inicial. <br><br> Evita mirar al suelo y no bajar la cadera, la posición correcta es mantener siempre tu columna paralela a tus pantorrillas. <br><br> No hay un criterio claro en el grado de flexión, como norma general la referencia es hasta que el fémur (muslo) quede paralelo al suelo, pero con cargas ligeras se puede e incluso se debe flexionar mas, piensa que a mayor flexión, mayor participación del glúteo. <br><br> Por la mayor anchura de las caderas, las rodillas tienden a dirigirse hacia el interior quedando el pie en pisada prono, evita este error prestando atención para que tus rodillas permanezcan sobre tus pies. <br><br> Por la mayor laxitud, en la fase final de la extensión la rodillas tienden hiperextenderse (genu recurvatum), la cadera se coloca en anteversión y la zona lumbar arqueada en exceso. <br><br> Termina la fase de extensión con tensión siempre en los músculos de las piernas, evitando el bloqueo articular de hiperextensión, contrae glúteos y abdomen profundo para mantener tu columna en posición neutra y conseguir una correcta estabilización.",
     "muscular_group": "legs",
     "image": "assets/images/sentadilla_barra_libre.jpg"
   },
   {
     "id": "prensa_inclinada",
     "name": "Prensa inclinada",
-    "description": "Siéntese en la prensa de piernas con la espalda y la cabeza apoyadas cómodamente en el soporte acolchado. Coloca los pies en la plataforma a la anchura de la cadera, asegurándote de que los talones estén planos. El trasero debe ser plano contra el asiento en lugar de estar levantado. Las piernas deben formar un ángulo de aproximadamente 90 grados en las rodillas. Las rodillas deben estar alineadas con los pies y no deben doblarse ni hacia adentro ni hacia afuera. Sujete los mangos de asistencia para proporcionar apoyo y mantener la columna vertebral y la cabeza en su lugar.",
+    "description": "Coloque los pies en la máquina, con las rodillas separadas a la anchura de os hombros y la punta de los pies rectas o ligeramente giradas hacia fuera. Mantenga la zona baja y media de la espalda plana contra el almohadillado del respaldo y la cabeza en posición neutra. <br><br> Extienda los tobillos, rodillas y caderas. Presione con la parte media de los pies sobre la plataforma de la máquina, usando la misma presión de empuje en ambos. Detenga el movimiento justo antes de bloquear las rodillas. <br><br> Regrese lentamente a la posición inicial mediante la flexión de los tobillos, rodillas y caderas.",
     "muscular_group": "legs",
     "image": "assets/images/prensa_inclinada.jpg"
   }
