@@ -43,7 +43,7 @@ class TrainingSummaryScreen extends ConsumerWidget {
                         style: Theme.of(context).textTheme.headlineSmall)),
 
                 // Chart with training data
-                TrainingChart(),
+                TrainingChart(training: training),
               ],
             ),
           ),

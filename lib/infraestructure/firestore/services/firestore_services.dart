@@ -86,58 +86,6 @@ class FirestoreService {
     }
   }
 
-  // Method to save a Custom training
-  // Future<Result> saveTrainingToHistory(WidgetRef ref) async {
-  //   final authNotifier = ref.read(authProvider.notifier);
-  //   final userId = authNotifier.getUserId();
-
-  //   final trainingSession = ref.read(trainingSessionProvider);
-
-  //   if (trainingSession.training == null) {
-  //     return Result.failure('There is no active training to save.');
-  //   }
-
-  //   final training = trainingSession.training!;
-
-  //   try {
-  //     final trainingHistoryRef = _firestore
-  //         .collection('users')
-  //         .doc(userId)
-  //         .collection('training_history');
-
-  //     final historyData = {
-  //       'title': training.name,
-  //       'training_date': Timestamp.now(),
-  //       'exercises': training.exercises.map((exercise) {
-  //         return {
-  //           'exercise': exercise.exercise.id,
-  //           'order': exercise.order,
-  //           'name': exercise.exercise.name,
-  //           'is_alternative': exercise.isAlternative,
-  //           'notes': trainingSession.notesControllers[exercise.order].text,
-  //           'sets': List.generate(exercise.sets.length, (j) {
-  //             return {
-  //               'weight': double.tryParse(
-  //                       trainingSession.weightControllers[exercise.order][j].text) ??
-  //                   0.0,
-  //               'reps': int.tryParse(
-  //                       trainingSession.repsControllers[exercise.order][j].text) ??
-  //                   0,
-  //             };
-  //           }),
-  //           if (exercise.isAlternative) 'alternative': exercise.alternative ?? 0,
-  //         };
-  //       }).toList(),
-  //     };
-
-  //     await trainingHistoryRef.add(historyData);
-
-  //     return Result.success();
-  //   } catch (e) {
-  //     return Result.failure('Error saving training to history: $e');
-  //   }
-  // }
-
   Future<Result> saveTrainingToHistory(WidgetRef ref) async {
     final authNotifier = ref.read(authProvider.notifier);
     final userId = authNotifier.getUserId();
@@ -173,7 +121,6 @@ class FirestoreService {
         final completedSets = trainingSession.completedSets[i];
         final hasCompletedSets = completedSets.isNotEmpty;
         if (hasCompletedSets) {
-
           // Filter only completed sets
           final setsData = completedSets.map((j) {
             return {
@@ -389,6 +336,47 @@ class FirestoreService {
       return trainings;
     } catch (e) {
       throw Exception('Error fetching trainings: $e');
+    }
+  }
+
+  Future<List<int>> getTrainingCountLastThreeMonths(
+      WidgetRef ref, String trainingName) async {
+    final authNotifier = ref.read(authProvider.notifier);
+    final userId = authNotifier.getUserId();
+
+    try {
+      final trainingHistoryRef = _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('training_history');
+
+      final now = DateTime.now();
+      final startDate = DateTime(now.year, now.month - 2, 1);
+
+      // Ensure that Firestore has the necessary index for this query
+      final querySnapshot = await trainingHistoryRef
+          .where('title', isEqualTo: trainingName)
+          .where('training_date',
+              isGreaterThanOrEqualTo: Timestamp.fromDate(startDate))
+          .orderBy(
+              'training_date') // Firestore requires ordering after equality filtering
+          .get();
+
+      List<int> monthlyCounts = [0, 0, 0];
+
+      for (var doc in querySnapshot.docs) {
+        final trainingDate = (doc['training_date'] as Timestamp).toDate();
+        final monthDiff = (now.year - trainingDate.year) * 12 +
+            now.month -
+            trainingDate.month;
+        if (monthDiff >= 0 && monthDiff < 3) {
+          monthlyCounts[2 - monthDiff]++; // Reverse the order
+        }
+      }
+
+      return monthlyCounts;
+    } catch (e) {
+      throw Exception('Error fetching training counts: $e');
     }
   }
 }
