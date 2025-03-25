@@ -40,7 +40,7 @@ class SettingsScreen extends ConsumerWidget {
               title: Text(S.current.statistics),
               trailing: const Icon(Icons.arrow_forward_ios, size: 16),
               onTap: () {
-                //TODO Navegar a pantalla de estadistica
+                //TODO: Navigate to statistics screen
               },
             ),
             ListTile(
@@ -62,16 +62,18 @@ class SettingsScreen extends ConsumerWidget {
               leading: const Icon(Icons.translate),
               title: Text(S.current.language),
               trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+              enabled: false,
               onTap: () {
-                //TODO Navegar a pantalla de idiomas
+                //TODO: Navigate to the language screen
               },
             ),
             ListTile(
               leading: const Icon(Icons.brightness_6),
               title: Text(S.current.mode),
               trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+              enabled: false,
               onTap: () {
-                //TODO Navegar a pantalla de modo oscuro/claro
+                //TODO: Navigate to dark/light mode screen
               },
             ),
             SizedBox(height: 20),
@@ -80,8 +82,9 @@ class SettingsScreen extends ConsumerWidget {
               leading: const Icon(Icons.help),
               title: Text(S.current.help),
               trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+              enabled: false,
               onTap: () {
-                //TODO Navegar a pantalla de ayuda
+                //TODO: Navigate to help screen
               },
             ),
             SizedBox(height: 20),
