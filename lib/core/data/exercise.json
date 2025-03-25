@@ -117,5 +117,187 @@
     "description": "Coloque los pies en la máquina, con las rodillas separadas a la anchura de os hombros y la punta de los pies rectas o ligeramente giradas hacia fuera. Mantenga la zona baja y media de la espalda plana contra el almohadillado del respaldo y la cabeza en posición neutra. <br><br> Extienda los tobillos, rodillas y caderas. Presione con la parte media de los pies sobre la plataforma de la máquina, usando la misma presión de empuje en ambos. Detenga el movimiento justo antes de bloquear las rodillas. <br><br> Regrese lentamente a la posición inicial mediante la flexión de los tobillos, rodillas y caderas.",
     "muscular_group": "legs",
     "image": "assets/images/prensa_inclinada.jpg"
+  },
+  {
+    "id": "prensa_horizontal",
+    "name": "Prensa horizontal",
+    "description": "La prensa nos permite variar la posición de los pies, pudiendo influir sobre una zona muscular más que otra. <br><br> Con los pies arriba de la plataforma y separados se conseguirá involucrar más al glúteo; los pies se colocarán en la parte superior de la plataforma, con una separación superior a la anchura de los hombros y una ligera rotación externa (pies mirando ligeramente hacía afuera). <br><br> Conviene bajar bien en la flexión de piernas y empujar con los talones en la extensión para involucrar al glúteo. <br><br> Con los pies abajo y próximos el trabajo recaerá sobre todo en los cuádriceps.",
+    "muscular_group": "legs",
+    "image": "assets/images/prensa_horizontal.jpg"
+  },
+  {
+    "id": "extension_cuadriceps",
+    "name": "Extensión de cuádriceps",
+    "description": "La máquina de extensión de cuádriceps nos permite trabajar el músculo cuádriceps de forma aislada y analítica. <br><br> La posición sentada permite manejar cargas elevadas sin ningún riesgo de sobrecarga en otras articulaciones. <br><br> Una vez estemos sentado en la máquina debes ajustar los apoyos: el final del asiento debe coincidir con el hueco poplíteo (detrás de la rodilla) y la zona lumbar en contacto con el respaldo, finalmente regula el rodillo del brazo de palanca colocándolo al final de la tibia, en la articulación del tobillo. <br><br> Inicia el movimiento de extensión desde una flexión de La rodilla de 90°, no menos y realiza la extensión de la pierna hasta llegar de forma controlada a la extensión completa de la rodilla. <br><br> Intenta que en este movimiento de extensión las dos piernas trabajen por igual, normalmente se tiende a realizar mas esfuerzo con la pierna dominante.",
+    "muscular_group": "legs",
+    "image": "assets/images/extension_cuadriceps.jpg"
+  },
+  {
+    "id": "curl_femoral_tumbado",
+    "name": "Curl femoral tumbado",
+    "description": "Túmbate boca abajo en un aparato de curl de piernas. Coloca las rodillas un poco por debajo del borde del banco y sitúa la parte posterior de los tobillos bajo los rodillos acolchados. <br><br> Cógete a los agarres laterales del aparato o bien al propio aparato (si no dispone de agarres) <br><br> lnspira y aguanta la respiración mientras flexionas las rodillas aplicando fuerza contra los rodillos de los pies, expulsando el aire hacia la parte final del movimiento. <br><br> En la posición mas alta, las espinillas deberán quedar en vertical con los muslos o ligeramente mas cerca. Aguanta durante 1 o 2 segundos y regresa a la posición inicial de manera controlada. <br><br> Haz el movimiento a velocidad moderada.",
+    "muscular_group": "legs",
+    "image": "assets/images/curl_femoral_tumbado.jpg"
+  },
+  {
+    "id": "zancadas_mancuerna",
+    "name": "Zancadas con mancuerna",
+    "description": "Para realizar el ejercicio debemos colocarnos inicialmente de pie, con las piernas ligeramente separadas del ancho de la cadera y al comenzar el movimiento debemos inspirar y efectuar una zancada, es decir dar un paso adelante con una pierna manteniendo el torso lo más recto posible. <br><br> La pierna desplazada hacia adelante debe flexionarse por su rodilla hasta que el muslo quede paralelo al suelo y la rodilla flexionada forme con la pierna un ángulo de 90 grados. <br><br> La pierna que no se desplaza debe quedar anclada con el pie al suelo pero debe descender hacia el mismo por la rodilla. Espirando se regresa a la posición inicial. <br><br> Puede ejecutarse una zancada con barra colocada detrás de la nuca o con mancuernas a los lados del cuerpo, aunque al ser un ejercicio de autocarga, es decir, donde trabajamos soportando el peso del cuerpo, puede realizarse sin peso adicional al principio e incrementar la intensidad a medida que se incrementa el nivel de entrenamiento.",
+    "muscular_group": "legs",
+    "image": "assets/images/zancadas_mancuerna.jpg"
+  },
+  {
+    "id": "peso_muerto_rumano_barra",
+    "name": "Peso muerto rumano con barra",
+    "description": "Posición inicial: <br><br> Coged una barra con un agarre pronado justo por fuera de los muslos y separad los pies la distancia de las caderas. <br><br> Mantened las piernas prácticamente rectas, pero sin bloquear las rodillas en ningún momento. <br><br> Contraed la parte central del cuerpo manteniendo el arco natural de la espalda. <br><br> El pecho debe estar elevado, los hombros retrasados y la cabeza recta. <br><br> Estirad los brazos por completo. Tan sólo servirán como soporte del peso. <br><br> Movimiento <br><br> Inspirad y mantened la respiración. <br><br> Inclinaos hacia delante sin perder la curva de la espalda y llevad las caderas hacia detrás. Pensad que las caderas son un pivote. <br><br> Al inclinaros la barra debe desplazarse rozando las piernas a una distancia máxima de tres o cuatro centímetros. <br><br> Bajad hasta que la barra llegue a la mitad de las pantorrillas y el torso esté casi paralelo con el suelo. De hecho, parad antes de que la zona lumbar se redondee. No permitáis que la espalda se curve para bajar más la barra. <br><br> La cabeza debe estar algo elevada, pero lo más neutra posible. No podéis levantarla porque podríais deteriorar la alineación de las cervicales. <br><br> Volved al inicio con gran control adelantando las caderas. Espirad cuando superéis la parte más dura del levantamiento",
+    "muscular_group": "legs",
+    "image": "assets/images/peso_muerto_rumano_barra.jpg"
+  },
+  {
+    "id": "peso_muerto_barra",
+    "name": "Peso muerto con barra",
+    "description": "La práctica perfecciona el peso muerto. En la posición inicial, la forma es clave. Como sucede con otros movimientos compuestos complicados, hay que aprender la ejecución correcta del peso muerto no sólo para sacarle el máximo partido sino también para evitar lesiones. <br><br> Si nos doblamos muy hacia el frente y redondeamos la espalda, se pierde la  curvatura natural de la espina dorsal, lo que añade presión a los discos y el tejido conjuntivo y puede producir lesiones graves. <br><br> Cuando se hace correctamente, la espalda está arqueada, lo que distribuye el peso de forma más equilibrada a lo largo de la espina dorsal, y presenta también un apoyo mayor de los músculos. <br><br> Se debe evitar hacer pesos muertos con la espalda redondeada, que desvía la carga desde los glúteos, caderas y piernas hasta la espalda baja, esta posición biomecánica débil también estresa los ligamentos y los discos intervertebrales. <br><br> El peso muerto es un ejercicio complejo con riesgo alto de lesión si se ejecuta de forma incorrecta, se recomienda que la técnica sea corregida por un profesional antes de mover cargas altas.",
+    "muscular_group": "legs",
+    "image": "assets/images/peso_muerto.jpg"
+  },
+  {
+    "id": "curl_femoral_sentado",
+    "name": "Curl femoral sentado",
+    "description": "Sentados en un aparato de fiexi6n femoral sentado, colocad las rodillas de manera que sobresalgan lo justo del borde del asiento para permitir un movimiento completo de la articulación de la rodilla. Colocad la parte baja de la zona tibial contra los rodillos cuando las rodillas esten estiradas o ligeramente dobladas. <br><br> Sujetaos a los soportes de las manos y apoyaos contra el respaldo. Esto relaja algo los tendones superiores, algo util para los femorales rigidos. <br><br> Tomar aire y retenedlo mientras empujais con las pantorrillas hacia abajo a velocidad moderada. Los dedos de los pies deben apuntar directamente hacia arriba cuando dobleis las piernas. <br><br> Expulsad el aire cuando alcanceis el angulo de 90 grados en vuestras rodillas, y mantened la posici6n final durante uno o dos segundos para conseguir maxima tension. <br><br> Regresad al punto de partida bajo control y haced las repeticiones necesarias.",
+    "muscular_group": "legs",
+    "image": "assets/images/curl_femoral_sentado.jpg"
+  },
+  {
+    "id": "patada_gluteo_polea_baja",
+    "name": "Patada de glúteo en polea baja",
+    "description": "Posición inicial: Coloca el accesorio de la polea en la parte baja de la máquina y ajusta la altura. Coloca una tobillera en el pie de trabajo y engánchala al cable. <br><br> Postura: Colócate frente a la máquina con una ligera inclinación hacia adelante, apoyando las manos en la estructura para mantener el equilibrio. Mantén el núcleo activado y la espalda recta. <br><br> Movimiento: Empuja la pierna hacia atrás, manteniendo la rodilla ligeramente flexionada. Evita usar impulso; el movimiento debe ser controlado para garantizar la máxima activación muscular. <br><br> Retorno a la posición inicial: Regresa lentamente la pierna a la posición de inicio sin permitir que la polea pierda tensión. Repite el movimiento según las repeticiones indicadas.",
+    "muscular_group": "legs",
+    "image": "assets/images/patada_gluteo_polea_baja.jpg"
+  },
+  {
+    "id": "elevacion_gemelo_sentado",
+    "name": "Elevación de gemelo sentado",
+    "description": "Eleve las piernas empujando sobre la punta de los pies mediante la flexión plantar de los tobillos. Mantenga la posición contando uno en la parte alta del movimiento y, a continuación, vuelva lentamente a la posición inicial resistiendo el peso.",
+    "muscular_group": "legs",
+    "image": "assets/images/elevacion_gemelo_sentado.jpg"
+  },
+  {
+    "id": "gemelo_maquina_de_pie",
+    "name": "Gemelo en máquina de pie",
+    "description": "Inicio: Colócate de pie en una máquina de gemelos. Pon las plantas de los pies sobre la plataforma. La espalda y las piernas deben estar bien rectas, y las rodillas, ligeramente flexionadas. Desciende los talones al máximo posible, manteniendo el cuerpo en una posición fija. <br><br> Movimiento: Levanta los talones hasta que los gemelos estén totalmente contraídos. Debes apoyar todo el peso en las plantas de los pies. Aguanta en esa posición durante unos dos segundos y regresa despacio a la posición inicial.",
+    "muscular_group": "legs",
+    "image": "assets/images/gemelo_maquina_de_pie.jpg"
+  },
+  {
+    "id": "gemelo_prensa",
+    "name": "Gemelo en prensa",
+    "description": "Posición inicial:<br> Coloque la punta de los pies sobre el borde de una plataforma de press de pierna. Mantenga las piernas rectas pero sin bloquearlas. Coloque la espalda recta y las caderas hacia abajo contra el respaldo almohadillado.<br> Ejecución del ejercicio: <br><br> Presione la punta de los pies (flexión plantar) contra la plataforma moviendo solo los tobillos. Pare contando uno en la parte alta del movimiento y, a continuación, vuelva lentamente a la posición inicial .",
+    "muscular_group": "legs",
+    "image": "assets/images/gemelo_prensa.jpg"
+  },
+  {
+    "id": "remo_sentado_polea",
+    "name": "Remo en polea sentado",
+    "description": "Fijad un maneral de doble agarre a una polea baja sentaos mirando al aparato. <br><br> Colocad los pies contra la plataforma de manera que las rodillas estén algo dobladas en la posición inicial. <br><br> Inclinaos hacia el frente desde las caderas para agarrar el maneral mientras mantenéis una curvatura espinal normal ligeramente arqueada. Tirad hacia atrás hasta que el torso quede casi rígido y los brazos completamente extendidos. Esta es la posición inicial. <br><br> Tomad aire y retenedlo hasta que los manerales lleguen a rozar vuestra sección media. Mantened los codos en línea con el cuerpo. <br><br> Mientras expulsáis el aire, tirad hacia atrás hasta que los codos queden ligeramente atrás de la espalda y las manos cerca del cuerpo. <br><br> Retened la posición durante un segundo y volved de forma controlada a la posición inicial. Mantened el torso erecto y aseguraos de que sólo se mueve ligeramente durante la ejecución del ejercicio.",
+    "muscular_group": "back",
+    "image": "assets/images/remo_polea_sentado.jpg"
+  },
+  {
+    "id": "remo_maquina",
+    "name": "Remo en máquina",
+    "description": "En el remo en máquina debes adoptar una posición estable de sentado con las piernas formando un ángulo recto aproximado (ángulo de unos 80 grados). <br><br> Estabilice el tronco con el cojín pectoral -en caso de existir y si es necesario- y agarre los puños algo por debajo de la altura de los hombros. <br><br> En la máquina de remo, el movimiento también es dirigido por los músculos de los hombros y de la espalda. Esto hace que el tronco se eleve activamente. Los primeros centímetros del movimiento se realizan todavía con los brazos estirados. <br><br> Flexione los brazos progresivamente y lleve los puños hacia atrás hasta llegar con los codos por detrás del eje de los hombros. Mantenga la espalda recta durante todo el gesto. La mirada se dirige hacia delante.",
+    "muscular_group": "back",
+    "image": "assets/images/remo_maquina.jpg"
+  },
+  {
+    "id": "remo_mancuerna",
+    "name": "Remo con mancuerna",
+    "description": "Sujete una mancuerna con la palma de la mano hacia adentro, la otra debe descansar sobre el banco, al igual que la rodilla opuesta al brazo que realiza el ejercicio. Mantenga la columna vertebral recta y casi paralela al suelo. <br><br> Empuje la mancuerna de forma vertical en dirección al pecho y elevando el codo hasta la altura de la espalda. Baje la mancuerna lentamente hasta regresar a la posición inicial.",
+    "muscular_group": "back",
+    "image": "assets/images/remo_mancuerna.jpg"
+  },
+  {
+    "id": "remo_barra_t",
+    "name": "Remo en barra T",
+    "description": "Para comenzar con el ejercicio debemos colocarnos de pie, con la barra en T entre las piernas, las rodillas flexionadas ligeramente, el tronco a 45 grados y las manos en las asas laterales de la barra, de manera que las palmas miren hacia abajo, desde allí iniciamos el movimiento. <br><br> Siempre conservando la espalda recta y el tronco flexionado, y sólo movilizando los brazos, inspiramos y flexionamos los codos mientras jalamos de la barra para acercarla al pecho, espiramos al final del movimiento y después regresamos lentamente a la posición inicial mientras extendemos los brazos.",
+    "muscular_group": "back",
+    "image": "assets/images/remo_barra_t.jpg"
+  },
+  {
+    "id": "dominadas",
+    "name": "Dominadas",
+    "description": "Con el ancho de hombros o ligeramente más juntas. Los brazos deben extenderse por completo con el torso en la misma línea que los brazos. <br><br> Para empezar el ascenso, se usarán los músculos relativamente fuertes de la espalda alta y los músculos flexores del codo, mientras los codos son llevados hacia atrás de la espalda. El ascenso debe continuar hasta que el mentón sobrepase la barra. <br><br> Es importante recordar que antes de iniciar el ascenso, el atleta debe inhalar. En el descenso comienza a exhalar y el tronco debe volver a la posición inicial. Cuando se completa el descenso, los brazos deben extenderse por completo y los omóplatos deben elevarse. (ESTO ES EXTREMADAMENTE IMPORTANTE.) <br><br> Para completar el rango de movimiento, los brazos y abductores de la escapula deben estirarse en cada repetición. Las piernas deben estar en linea con el torso lo más que se pueda. No debe haber flexión de caderas, porque eso disminuirá la calidad del ejercicio. <br><br> Las correas en las manos solo deben usarlas atletas que tienen muy poca  fuerza de antebrazos y con riesgo de perder el agarre, o para los que se fatigan los antebrazos antes que la espalda alta.",
+    "muscular_group": "back",
+    "image": "assets/images/dominadas.jpg"
+  },
+  {
+    "id": "jalon_dorsal",
+    "name": "Jalón dorsal",
+    "description": "Selecciona el peso deseado y agarra los manerales con las palmas mirando al frente y siéntate. Asegura tus rodillas bajo el rodillo para mantener una posición estable durante todo el movimiento. Con los brazos completamente extendidos, mira al frente y saca el pecho hacia fuera. Esta es la posición inicial. <br><br> Inspira y tira del peso hacia abajo hacia la zona superior de tu pecho. Cuando sobrepases unos grados la paralela mantén la contracción durante un segundo y devuelve el peso a la posición inicial mientras sueltas el aire.",
+    "muscular_group": "back",
+    "image": "assets/images/jalon_dorsal.jpg"
+  },
+  {
+    "id": "encogimientos_mancuernas",
+    "name": "Encogimientos con mancuernas",
+    "description": "De pie, sujetar un par de mancuernas en los costados con los brazos extendidos y las palmas dirigidas hacia dentro. Flexionar las rodillas ligeramente. <br><br> Con los brazos estirados hacia el suelo, encoger los hombros hacia arriba tanto como sea posible. Mantener la contracción contando uno y, a continuación, regresar de nuevo a la posición de inicio.",
+    "muscular_group": "back",
+    "image": "assets/images/encogimientos_mancuernas.jpg"
+  },
+  {
+    "id": "curl_biceps_maquina",
+    "name": "Curl biceps en máquina",
+    "description": "Ajusta la altura del banco para llegar con comodidad a los manerales de la máquina. No debes tener los brazos ni demasiado estirados ni demasiado encogidos. <br><br> A continuación realiza el movimiento de curl y aguanta en la posición final durante un segundo apretando el bíceps al máximo. <br><br> Vuelve de forma controlada a la posición inicial aprovechando la fase negativa del ejercicio.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_biceps_maquina.jpg"
+  },
+  {
+    "id": "curl_biceps_barra_z",
+    "name": "Curl biceps con barra Z",
+    "description": "En posición de pie, con los talones separados a igual anchura de hombros, las rodillas sin bloquear y sosteniendo una barra zeta por las curvas internas y manos por debajo. <br><br> Llevad los hombros hacia atrás y bloquead los codos contra los costados. <br><br> Contraed los bíceps para subir la barra en un suave arco hacia los hombros, manteniendo las muñecas bloqueadas y los hombros hacia atrás. <br><br> Contraed los bíceps en la posición final de contracción de pico antes de regresar lentamente a la posición inicial.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_biceps_barra_z.jpg"
+  },
+  {
+    "id": "curl_biceps_mancuernas",
+    "name": "Curl biceps con mancuernas",
+    "description": "De pie, sujetando un par de mancuernas con los brazos extendidos hacia abajo. Comenzar con las palmas dirigidas hacia dentro y las rodillas ligeramente flexionadas. <br><br> Manteniendo los codos pegados a los costados, elevar las mancuernas mientras que, simultáneamente, gira las palmas hacia arriba y afuera, de tal manera que al final de la repetición éstas queden ligeramente hacia fuera. <br><br> Contraer los bíceps contando uno y, a continuación, bajar la mancuerna de regreso a la posición de inicio. Repetir con el otro brazo, alternando uno con otro.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_biceps_mancuernas.jpg"
+  },
+  {
+    "id": "curl_biceps_mancuernas_sentado",
+    "name": "Curl biceps con mancuernas sentado",
+    "description": "Preparación: Comienza sentándote en un banco plano con una mancuerna en cada mano, brazos completamente extendidos y palmas mirando hacia adelante. <br><br> Postura: Mantén la espalda recta y los pies apoyados en el suelo. Esta posición sentada asegura que tu cuerpo permanezca estable durante todo el ejercicio. <br><br> Movimiento de Curl: Inicia el movimiento flexionando el codo, llevando las mancuernas hacia los hombros. Mantén los brazos superiores estacionarios, permitiendo que los bíceps hagan el trabajo. <br><br> Contracción Completa: Aprieta los bíceps en la parte superior del movimiento para lograr una contracción completa. Esto maximiza la participación muscular y contribuye al desarrollo de un bíceps bien definido. <br><br> Descenso Controlado: Baja las mancuernas de nuevo de manera lenta y controlada, resistiendo la tentación de dejar que la gravedad tome el control. Esta fase excéntrica del ejercicio contribuye al crecimiento y control muscular.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_biceps_mancuernas_sentado.jpg"
+  },
+  {
+    "id": "curl_biceps_mancuernas_predicador",
+    "name": "Curl biceps con mancuernas en predicador",
+    "description": "Posición inicial: Siéntate en el banco predicador y ajusta la altura para que tus brazos queden totalmente apoyados en el banco, con el pecho también en contacto con el respaldo. Toma una mancuerna en cada mano, con las palmas mirando hacia arriba (agarre supino). <br><br> Ejecución: Inicia el movimiento levantando las mancuernas lentamente hacia tus hombros. El enfoque debe estar completamente en flexionar los codos sin mover los hombros ni el torso. El banco actúa como soporte para que el bíceps haga todo el trabajo. <br><br> Punto de contracción máxima: Antes de que las mancuernas llegan cerca de los hombros, mantén la contracción por uno o dos segundos. Este es el punto en el que más tensión se aplica sobre el bíceps. <br><br> Descenso controlado: Baja las mancuernas de forma lenta y controlada, asegurándote de mantener la tensión en los bíceps durante todo el movimiento. Evita estirar completamente los codos al final del recorrido para no liberar la tensión.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_biceps_mancuernas_predicador.jpg"
+  },
+  {
+    "id": "curl_biceps_mancuernas_predicador_martillo",
+    "name": "Curl biceps con mancuernas en predicador con agarre martillo",
+    "description": "Selecciona el peso deseado y siéntate en posición vertical con el pecho contra el banco de predicador. <br><br> Mantén la parte superior del brazo presionada contra la almohadilla y usa un agarre neutro (palmas enfrentadas). <br><br> Toma una respiración profunda y baja lentamente las mancuernas. Una vez que el bíceps esté completamente estirado (pero sin llegar a bloquear la articulación), devuelve el peso de regreso a la posición inicial. <br><br> Puedes realizarlo con ambos brazos a la vez o de forma alterna.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_biceps_mancuernas_predicador_martillo.jpg"
+  },
+  {
+    "id": "curl_biceps_mancuernas_martillo",
+    "name": "Curl biceps con mancuernas con agarre martillo",
+    "description": "De pie, sujetar un par de mancuernas a los costados, con las palmas dirigidas hacia adentro, y flexionar las rodillas ligeramente. <br><br> Con los codos pegados a los costados y sin mover la parte superior del brazo, elevar las mancuernas sin rotar las muñecas (las palmas se dirigen una hacia la otra durante todo el movimiento). Mantener la contracción contando uno al final del movimiento y, a continuación, volver a la posición de inicio.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_biceps_mancuernas_martillo.jpg"
+  },
+  {
+    "id": "curl_biceps_mancuernas_concentrado",
+    "name": "Curl biceps con mancuernas concentrado",
+    "description": "Sentado sobre un banco plano o una silla con los pies planos sobre el suelo, por delante del tronco. Mantener una mancuerna con una mano y colocar la otra sobre la pierna contralateral para sujetarse. Flexionarse hacia delante a nivel del abdomen con el brazo que trabaja extendido hacia abajo entre las piernas y el codo apoyado contra la cara interna del muslo del mismo lado. <br><br> Con el codo apoyado en la pierna para estabilizar la parte superior del brazo, hacer el curl levantando el peso tanto como sea posible con la palma dirigida hacia arriba durante todo el movimiento. Contraer el bíceps contando hasta uno y al final, mientras se rota la muñeca ligeramente hacia fuera, volver a la posición de inicio. Hacer todas las repeticiones con ese brazo y luego cambiar al otro.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_biceps_mancuernas_concentrado.jpg"
   }
 ]
