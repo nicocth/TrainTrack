@@ -22,15 +22,21 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "abdomen": MessageLookupByLibrary.simpleMessage("Abdomen"),
     "access_register": MessageLookupByLibrary.simpleMessage("Register now"),
     "account": MessageLookupByLibrary.simpleMessage("Account"),
     "add_exercise": MessageLookupByLibrary.simpleMessage("Add exercise"),
     "add_selected": MessageLookupByLibrary.simpleMessage("Add selected"),
     "add_series": MessageLookupByLibrary.simpleMessage("Add series"),
+    "all_muscular_groups": MessageLookupByLibrary.simpleMessage(
+      "All muscle groups",
+    ),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "Already have an account?",
     ),
     "app_bar_settings": MessageLookupByLibrary.simpleMessage("Settings"),
+    "back": MessageLookupByLibrary.simpleMessage("Back"),
+    "biceps": MessageLookupByLibrary.simpleMessage("Biceps"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "confirm_delete": MessageLookupByLibrary.simpleMessage(
       "Deletion confirmation",
@@ -91,6 +97,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "kg": MessageLookupByLibrary.simpleMessage("0.0"),
     "kg_text": MessageLookupByLibrary.simpleMessage("Kg"),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
+    "legs": MessageLookupByLibrary.simpleMessage("Legs"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "login_failed": MessageLookupByLibrary.simpleMessage(
       "Login failed, user or password do not match",
@@ -108,6 +115,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
       "passwords do not match",
     ),
+    "pectoral": MessageLookupByLibrary.simpleMessage("Pectoral"),
     "preferences": MessageLookupByLibrary.simpleMessage("Preferences"),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
     "registration_failed": MessageLookupByLibrary.simpleMessage(
@@ -120,10 +128,15 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "routine_title": MessageLookupByLibrary.simpleMessage("Routine title"),
     "save_training": MessageLookupByLibrary.simpleMessage("Save training"),
+    "search_exercise": MessageLookupByLibrary.simpleMessage("Search exercise"),
     "select_exercise": MessageLookupByLibrary.simpleMessage(
       "Select the next exercise:",
     ),
+    "select_muscular_group": MessageLookupByLibrary.simpleMessage(
+      "Select a muscle group",
+    ),
     "series": MessageLookupByLibrary.simpleMessage("Series"),
+    "shoulders": MessageLookupByLibrary.simpleMessage("Shoulders"),
     "start_training": MessageLookupByLibrary.simpleMessage("Start training"),
     "statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
     "summary": MessageLookupByLibrary.simpleMessage("Summary"),
@@ -135,6 +148,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "training_updated_saved": MessageLookupByLibrary.simpleMessage(
       "Registered and updated training",
     ),
+    "triceps": MessageLookupByLibrary.simpleMessage("Triceps"),
     "uknown_error": MessageLookupByLibrary.simpleMessage("Uknown error"),
     "update_training_alert": MessageLookupByLibrary.simpleMessage(
       "Commit changes",

@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "abdomen": MessageLookupByLibrary.simpleMessage("Abdomen"),
     "access_register": MessageLookupByLibrary.simpleMessage(
       "¿Aún no tienes una cuenta?",
     ),
@@ -31,10 +32,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "Añadir seleccionados",
     ),
     "add_series": MessageLookupByLibrary.simpleMessage("Añadir serie"),
+    "all_muscular_groups": MessageLookupByLibrary.simpleMessage(
+      "Todos los grupos musculares",
+    ),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "¿Ya tienes una cuenta?",
     ),
     "app_bar_settings": MessageLookupByLibrary.simpleMessage("Configuración"),
+    "back": MessageLookupByLibrary.simpleMessage("Espalda"),
+    "biceps": MessageLookupByLibrary.simpleMessage("Biceps"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
     "confirm_delete": MessageLookupByLibrary.simpleMessage(
       "Confirmación de borrado",
@@ -103,6 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "kg": MessageLookupByLibrary.simpleMessage("0.0"),
     "kg_text": MessageLookupByLibrary.simpleMessage("Kg"),
     "language": MessageLookupByLibrary.simpleMessage("Idioma"),
+    "legs": MessageLookupByLibrary.simpleMessage("Piernas"),
     "login": MessageLookupByLibrary.simpleMessage("Iniciar sesión"),
     "login_failed": MessageLookupByLibrary.simpleMessage(
       "Error al iniciar sesión, el usuario o la contraseña no coinciden",
@@ -122,6 +129,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
       "Las contraseñas no coinciden",
     ),
+    "pectoral": MessageLookupByLibrary.simpleMessage("Pectoral"),
     "preferences": MessageLookupByLibrary.simpleMessage("Preferencias"),
     "register": MessageLookupByLibrary.simpleMessage("Registrarse"),
     "registration_failed": MessageLookupByLibrary.simpleMessage(
@@ -138,10 +146,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "save_training": MessageLookupByLibrary.simpleMessage(
       "Guardar entrenamiento",
     ),
+    "search_exercise": MessageLookupByLibrary.simpleMessage("Buscar ejercicio"),
     "select_exercise": MessageLookupByLibrary.simpleMessage(
       "Seleccione el siguiente ejercicio:",
     ),
+    "select_muscular_group": MessageLookupByLibrary.simpleMessage(
+      "Selecciona un grupo muscular",
+    ),
     "series": MessageLookupByLibrary.simpleMessage("Series"),
+    "shoulders": MessageLookupByLibrary.simpleMessage("Hombros"),
     "start_training": MessageLookupByLibrary.simpleMessage(
       "Iniciar entrenamiento",
     ),
@@ -157,6 +170,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "training_updated_saved": MessageLookupByLibrary.simpleMessage(
       "Entrenamiento registrado y actualizado",
     ),
+    "triceps": MessageLookupByLibrary.simpleMessage("Triceps"),
     "uknown_error": MessageLookupByLibrary.simpleMessage("Error desconocido"),
     "update_training_alert": MessageLookupByLibrary.simpleMessage(
       "Confirmar cambios",

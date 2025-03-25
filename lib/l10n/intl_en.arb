@@ -73,5 +73,15 @@
     "yes": "Yes",
     "no": "No",
     "update_training_alert":"Commit changes",
-    "update_training_message":"Do you want to update the training with the current values?"
+    "update_training_message":"Do you want to update the training with the current values?",
+    "search_exercise": "Search exercise",
+    "select_muscular_group": "Select a muscle group",
+    "all_muscular_groups": "All muscle groups",
+    "pectoral": "Pectoral",
+    "back": "Back",
+    "biceps": "Biceps",
+    "triceps": "Triceps",
+    "abdomen": "Abdomen",
+    "shoulders": "Shoulders",
+    "legs": "Legs"
 }

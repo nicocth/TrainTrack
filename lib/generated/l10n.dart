@@ -669,6 +669,71 @@ class S {
       args: [],
     );
   }
+
+  /// `Search exercise`
+  String get search_exercise {
+    return Intl.message(
+      'Search exercise',
+      name: 'search_exercise',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select a muscle group`
+  String get select_muscular_group {
+    return Intl.message(
+      'Select a muscle group',
+      name: 'select_muscular_group',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All muscle groups`
+  String get all_muscular_groups {
+    return Intl.message(
+      'All muscle groups',
+      name: 'all_muscular_groups',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pectoral`
+  String get pectoral {
+    return Intl.message('Pectoral', name: 'pectoral', desc: '', args: []);
+  }
+
+  /// `Back`
+  String get back {
+    return Intl.message('Back', name: 'back', desc: '', args: []);
+  }
+
+  /// `Biceps`
+  String get biceps {
+    return Intl.message('Biceps', name: 'biceps', desc: '', args: []);
+  }
+
+  /// `Triceps`
+  String get triceps {
+    return Intl.message('Triceps', name: 'triceps', desc: '', args: []);
+  }
+
+  /// `Abdomen`
+  String get abdomen {
+    return Intl.message('Abdomen', name: 'abdomen', desc: '', args: []);
+  }
+
+  /// `Shoulders`
+  String get shoulders {
+    return Intl.message('Shoulders', name: 'shoulders', desc: '', args: []);
+  }
+
+  /// `Legs`
+  String get legs {
+    return Intl.message('Legs', name: 'legs', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
