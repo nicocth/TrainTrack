@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "¿Aún no tienes una cuenta?",
     ),
     "account": MessageLookupByLibrary.simpleMessage("Cuenta"),
+    "account_deleted": MessageLookupByLibrary.simpleMessage("Cuenta eliminada"),
     "add_exercise": MessageLookupByLibrary.simpleMessage("Añadir ejercicio"),
     "add_selected": MessageLookupByLibrary.simpleMessage(
       "Añadir seleccionados",
@@ -64,8 +65,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "create_training": MessageLookupByLibrary.simpleMessage(
       "Crear entrenamiento",
     ),
+    "current_password": MessageLookupByLibrary.simpleMessage(
+      "Contraseña actual",
+    ),
+    "current_password_empty": MessageLookupByLibrary.simpleMessage(
+      "La contraseña actual es obligatoria",
+    ),
     "delete": MessageLookupByLibrary.simpleMessage("Eliminar"),
+    "delete_account": MessageLookupByLibrary.simpleMessage("Eliminar cuenta"),
+    "delete_account_confirm": MessageLookupByLibrary.simpleMessage(
+      "¿Estás seguro de que deseas eliminar tu cuenta? Se eliminarán todos los datos asociados a ella.(entrenamientos, historial, etc...)",
+    ),
     "edit": MessageLookupByLibrary.simpleMessage("Editar"),
+    "edit_profile": MessageLookupByLibrary.simpleMessage("Editar perfil"),
     "edit_routine": MessageLookupByLibrary.simpleMessage("Editar rutina"),
     "email": MessageLookupByLibrary.simpleMessage("Correo electrónico"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
@@ -120,12 +132,20 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "mode": MessageLookupByLibrary.simpleMessage("Modo"),
     "my_trainings": MessageLookupByLibrary.simpleMessage("Mis entrenamientos"),
+    "new_password": MessageLookupByLibrary.simpleMessage("Nueva contraseña"),
+    "nickname": MessageLookupByLibrary.simpleMessage("Nombre de usuario"),
+    "nickname_updated": MessageLookupByLibrary.simpleMessage(
+      "Nombre de usuario actualizado",
+    ),
     "no": MessageLookupByLibrary.simpleMessage("No"),
     "notes": MessageLookupByLibrary.simpleMessage("Notas"),
     "number_value_error": MessageLookupByLibrary.simpleMessage(
       "Valor incorrecto, Introduzca un número",
     ),
     "password": MessageLookupByLibrary.simpleMessage("Contraseña"),
+    "password_updated": MessageLookupByLibrary.simpleMessage(
+      "La contraseña ha sido actualizada",
+    ),
     "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
       "Las contraseñas no coinciden",
     ),
@@ -172,6 +192,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "triceps": MessageLookupByLibrary.simpleMessage("Triceps"),
     "uknown_error": MessageLookupByLibrary.simpleMessage("Error desconocido"),
+    "update_nickname": MessageLookupByLibrary.simpleMessage(
+      "Actualizar nombre de usuario",
+    ),
+    "update_password": MessageLookupByLibrary.simpleMessage(
+      "Actualizar contraseña",
+    ),
     "update_training_alert": MessageLookupByLibrary.simpleMessage(
       "Confirmar cambios",
     ),
@@ -186,6 +212,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "weak_password": MessageLookupByLibrary.simpleMessage(
       "La contraseña debe tener al menos 6 caracteres",
+    ),
+    "wrong_current_password": MessageLookupByLibrary.simpleMessage(
+      "Contraseña actual incorrecta",
     ),
     "wrong_password": MessageLookupByLibrary.simpleMessage(
       "Contraseña incorrecta",

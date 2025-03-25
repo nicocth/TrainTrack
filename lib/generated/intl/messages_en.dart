@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "abdomen": MessageLookupByLibrary.simpleMessage("Abdomen"),
     "access_register": MessageLookupByLibrary.simpleMessage("Register now"),
     "account": MessageLookupByLibrary.simpleMessage("Account"),
+    "account_deleted": MessageLookupByLibrary.simpleMessage("Account deleted"),
     "add_exercise": MessageLookupByLibrary.simpleMessage("Add exercise"),
     "add_selected": MessageLookupByLibrary.simpleMessage("Add selected"),
     "add_series": MessageLookupByLibrary.simpleMessage("Add series"),
@@ -58,8 +59,19 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "create_routine": MessageLookupByLibrary.simpleMessage("Create routine"),
     "create_training": MessageLookupByLibrary.simpleMessage("Create training"),
+    "current_password": MessageLookupByLibrary.simpleMessage(
+      "Current password",
+    ),
+    "current_password_empty": MessageLookupByLibrary.simpleMessage(
+      "Current password is required",
+    ),
     "delete": MessageLookupByLibrary.simpleMessage("Delete"),
+    "delete_account": MessageLookupByLibrary.simpleMessage("Delete account"),
+    "delete_account_confirm": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to delete your account? All data associated with it will be deleted (trainings, history, etc...).",
+    ),
     "edit": MessageLookupByLibrary.simpleMessage("Edit"),
+    "edit_profile": MessageLookupByLibrary.simpleMessage("Edit profile"),
     "edit_routine": MessageLookupByLibrary.simpleMessage("Edit routine"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
@@ -106,12 +118,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "logout_failed": MessageLookupByLibrary.simpleMessage("Logout failed"),
     "mode": MessageLookupByLibrary.simpleMessage("Mode"),
     "my_trainings": MessageLookupByLibrary.simpleMessage("My trainings"),
+    "new_password": MessageLookupByLibrary.simpleMessage("New password"),
+    "nickname": MessageLookupByLibrary.simpleMessage("Nickname"),
+    "nickname_updated": MessageLookupByLibrary.simpleMessage(
+      "Nickname updated",
+    ),
     "no": MessageLookupByLibrary.simpleMessage("No"),
     "notes": MessageLookupByLibrary.simpleMessage("Notes"),
     "number_value_error": MessageLookupByLibrary.simpleMessage(
       "Wrong value. Please introduce a number.",
     ),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "password_updated": MessageLookupByLibrary.simpleMessage(
+      "Password updated",
+    ),
     "passwords_do_not_match": MessageLookupByLibrary.simpleMessage(
       "passwords do not match",
     ),
@@ -150,6 +170,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "triceps": MessageLookupByLibrary.simpleMessage("Triceps"),
     "uknown_error": MessageLookupByLibrary.simpleMessage("Uknown error"),
+    "update_nickname": MessageLookupByLibrary.simpleMessage("Update nickname"),
+    "update_password": MessageLookupByLibrary.simpleMessage("Update password"),
     "update_training_alert": MessageLookupByLibrary.simpleMessage(
       "Commit changes",
     ),
@@ -160,6 +182,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "user_not_found": MessageLookupByLibrary.simpleMessage("User not found"),
     "weak_password": MessageLookupByLibrary.simpleMessage(
       "Password must be at least 6 characters",
+    ),
+    "wrong_current_password": MessageLookupByLibrary.simpleMessage(
+      "Wrong current password",
     ),
     "wrong_password": MessageLookupByLibrary.simpleMessage("Wrong password"),
     "yes": MessageLookupByLibrary.simpleMessage("Yes"),

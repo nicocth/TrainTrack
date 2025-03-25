@@ -20,7 +20,6 @@ class FirestoreService {
         'userId': userId,
         'email': email,
         'creation_date': creationDate,
-        'profile_image': '',
         'nickname': '',
         'last_access': creationDate,
       });

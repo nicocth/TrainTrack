@@ -70,9 +70,34 @@ class S {
     );
   }
 
+  /// `Nickname`
+  String get nickname {
+    return Intl.message('Nickname', name: 'nickname', desc: '', args: []);
+  }
+
   /// `Email`
   String get email {
     return Intl.message('Email', name: 'email', desc: '', args: []);
+  }
+
+  /// `Current password`
+  String get current_password {
+    return Intl.message(
+      'Current password',
+      name: 'current_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New password`
+  String get new_password {
+    return Intl.message(
+      'New password',
+      name: 'new_password',
+      desc: '',
+      args: [],
+    );
   }
 
   /// `Password`
@@ -115,6 +140,16 @@ class S {
     return Intl.message(
       'Wrong password',
       name: 'wrong_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wrong current password`
+  String get wrong_current_password {
+    return Intl.message(
+      'Wrong current password',
+      name: 'wrong_current_password',
       desc: '',
       args: [],
     );
@@ -255,6 +290,16 @@ class S {
     return Intl.message(
       'Password must be at least 6 characters',
       name: 'weak_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Current password is required`
+  String get current_password_empty {
+    return Intl.message(
+      'Current password is required',
+      name: 'current_password_empty',
       desc: '',
       args: [],
     );
@@ -515,6 +560,16 @@ class S {
     );
   }
 
+  /// `Are you sure you want to delete your account? All data associated with it will be deleted (trainings, history, etc...).`
+  String get delete_account_confirm {
+    return Intl.message(
+      'Are you sure you want to delete your account? All data associated with it will be deleted (trainings, history, etc...).',
+      name: 'delete_account_confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Completion confirmation`
   String get confirm_finish_training {
     return Intl.message(
@@ -733,6 +788,76 @@ class S {
   /// `Legs`
   String get legs {
     return Intl.message('Legs', name: 'legs', desc: '', args: []);
+  }
+
+  /// `Update nickname`
+  String get update_nickname {
+    return Intl.message(
+      'Update nickname',
+      name: 'update_nickname',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update password`
+  String get update_password {
+    return Intl.message(
+      'Update password',
+      name: 'update_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Nickname updated`
+  String get nickname_updated {
+    return Intl.message(
+      'Nickname updated',
+      name: 'nickname_updated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password updated`
+  String get password_updated {
+    return Intl.message(
+      'Password updated',
+      name: 'password_updated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account deleted`
+  String get account_deleted {
+    return Intl.message(
+      'Account deleted',
+      name: 'account_deleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete account`
+  String get delete_account {
+    return Intl.message(
+      'Delete account',
+      name: 'delete_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit profile`
+  String get edit_profile {
+    return Intl.message(
+      'Edit profile',
+      name: 'edit_profile',
+      desc: '',
+      args: [],
+    );
   }
 }
 
