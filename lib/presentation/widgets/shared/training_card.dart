@@ -13,7 +13,6 @@ class TrainingCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    
     // Find the image with order == 0
     final customExerciseImage = training.exercises
         .firstWhere(
@@ -124,18 +123,14 @@ class TrainingCard extends ConsumerWidget {
     );
   }
 
-  void _showDeleteConfirmationDialog(BuildContext context, WidgetRef ref, String trainingId) {
+  void _showDeleteConfirmationDialog(
+      BuildContext context, WidgetRef ref, String trainingId) {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
         title: Text(S.current.confirm_delete),
         content: Text(S.current.confirm_delete_message_training),
         actions: [
-          TextButton(
-            //Close popup
-            onPressed: () => Navigator.pop(context),
-            child: Text(S.current.cancel),
-          ),
           TextButton(
             onPressed: () {
               //Close popup and delete training
@@ -146,6 +141,11 @@ class TrainingCard extends ConsumerWidget {
             },
             child: Text(S.current.delete,
                 style: const TextStyle(color: Colors.red)),
+          ),
+          TextButton(
+            //Close popup
+            onPressed: () => Navigator.pop(context),
+            child: Text(S.current.cancel),
           ),
         ],
       ),

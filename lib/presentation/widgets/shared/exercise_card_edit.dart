@@ -218,11 +218,6 @@ class ExerciseCard extends ConsumerWidget {
         content: Text(S.current.confirm_delete_message_exercise),
         actions: [
           TextButton(
-            //Close popup
-            onPressed: () => Navigator.pop(context),
-            child: Text(S.current.cancel),
-          ),
-          TextButton(
             onPressed: () {
               //Close popup and delete training
               Navigator.pop(context);
@@ -230,6 +225,11 @@ class ExerciseCard extends ConsumerWidget {
             },
             child: Text(S.current.delete,
                 style: const TextStyle(color: Colors.red)),
+          ),
+          TextButton(
+            //Close popup
+            onPressed: () => Navigator.pop(context),
+            child: Text(S.current.cancel),
           ),
         ],
       ),
