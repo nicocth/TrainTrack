@@ -87,6 +87,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "empty_training_list": MessageLookupByLibrary.simpleMessage(
       "There are no saved workouts",
     ),
+    "error_loading_data": MessageLookupByLibrary.simpleMessage(
+      "Error loading data",
+    ),
     "error_loading_training_list": MessageLookupByLibrary.simpleMessage(
       "Failed to load trainings list.",
     ),
@@ -117,6 +120,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "logout_failed": MessageLookupByLibrary.simpleMessage("Logout failed"),
     "mode": MessageLookupByLibrary.simpleMessage("Mode"),
+    "month": MessageLookupByLibrary.simpleMessage("Month"),
+    "months": MessageLookupByLibrary.simpleMessage("Months"),
     "my_trainings": MessageLookupByLibrary.simpleMessage("My trainings"),
     "new_password": MessageLookupByLibrary.simpleMessage("New password"),
     "nickname": MessageLookupByLibrary.simpleMessage("Nickname"),
@@ -156,7 +161,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "Select a muscle group",
     ),
     "series": MessageLookupByLibrary.simpleMessage("Series"),
+    "sets": MessageLookupByLibrary.simpleMessage("sets"),
     "shoulders": MessageLookupByLibrary.simpleMessage("Shoulders"),
+    "show_absolute_values": MessageLookupByLibrary.simpleMessage(
+      "Show absolute values",
+    ),
+    "show_percentages": MessageLookupByLibrary.simpleMessage(
+      "Show percentages",
+    ),
+    "stadistics": MessageLookupByLibrary.simpleMessage("Statistics"),
     "start_training": MessageLookupByLibrary.simpleMessage("Start training"),
     "statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
     "summary": MessageLookupByLibrary.simpleMessage("Summary"),
@@ -168,6 +181,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "training_updated_saved": MessageLookupByLibrary.simpleMessage(
       "Registered and updated training",
     ),
+    "trainings": MessageLookupByLibrary.simpleMessage("trainings"),
     "triceps": MessageLookupByLibrary.simpleMessage("Triceps"),
     "uknown_error": MessageLookupByLibrary.simpleMessage("Uknown error"),
     "update_nickname": MessageLookupByLibrary.simpleMessage("Update nickname"),

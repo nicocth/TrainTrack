@@ -859,6 +859,61 @@ class S {
       args: [],
     );
   }
+
+  /// `Statistics`
+  String get stadistics {
+    return Intl.message('Statistics', name: 'stadistics', desc: '', args: []);
+  }
+
+  /// `Error loading data`
+  String get error_loading_data {
+    return Intl.message(
+      'Error loading data',
+      name: 'error_loading_data',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Month`
+  String get month {
+    return Intl.message('Month', name: 'month', desc: '', args: []);
+  }
+
+  /// `Months`
+  String get months {
+    return Intl.message('Months', name: 'months', desc: '', args: []);
+  }
+
+  /// `Show percentages`
+  String get show_percentages {
+    return Intl.message(
+      'Show percentages',
+      name: 'show_percentages',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show absolute values`
+  String get show_absolute_values {
+    return Intl.message(
+      'Show absolute values',
+      name: 'show_absolute_values',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `trainings`
+  String get trainings {
+    return Intl.message('trainings', name: 'trainings', desc: '', args: []);
+  }
+
+  /// `sets`
+  String get sets {
+    return Intl.message('sets', name: 'sets', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

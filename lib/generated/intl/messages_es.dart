@@ -95,6 +95,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "empty_training_list": MessageLookupByLibrary.simpleMessage(
       "No hay entrenamientos guardados.",
     ),
+    "error_loading_data": MessageLookupByLibrary.simpleMessage(
+      "Error al cargar los datos",
+    ),
     "error_loading_training_list": MessageLookupByLibrary.simpleMessage(
       "No se ha podido cargar la lista de entrenamientos.",
     ),
@@ -131,6 +134,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Error al cerrar sesión",
     ),
     "mode": MessageLookupByLibrary.simpleMessage("Modo"),
+    "month": MessageLookupByLibrary.simpleMessage("mes"),
+    "months": MessageLookupByLibrary.simpleMessage("meses"),
     "my_trainings": MessageLookupByLibrary.simpleMessage("Mis entrenamientos"),
     "new_password": MessageLookupByLibrary.simpleMessage("Nueva contraseña"),
     "nickname": MessageLookupByLibrary.simpleMessage("Nombre de usuario"),
@@ -174,7 +179,15 @@ class MessageLookup extends MessageLookupByLibrary {
       "Selecciona un grupo muscular",
     ),
     "series": MessageLookupByLibrary.simpleMessage("Series"),
+    "sets": MessageLookupByLibrary.simpleMessage("series"),
     "shoulders": MessageLookupByLibrary.simpleMessage("Hombros"),
+    "show_absolute_values": MessageLookupByLibrary.simpleMessage(
+      "Mostrar valores absolutos",
+    ),
+    "show_percentages": MessageLookupByLibrary.simpleMessage(
+      "Mostrar porcentajes",
+    ),
+    "stadistics": MessageLookupByLibrary.simpleMessage("Estadísticas"),
     "start_training": MessageLookupByLibrary.simpleMessage(
       "Iniciar entrenamiento",
     ),
@@ -190,6 +203,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "training_updated_saved": MessageLookupByLibrary.simpleMessage(
       "Entrenamiento registrado y actualizado",
     ),
+    "trainings": MessageLookupByLibrary.simpleMessage("Sesiones"),
     "triceps": MessageLookupByLibrary.simpleMessage("Triceps"),
     "uknown_error": MessageLookupByLibrary.simpleMessage("Error desconocido"),
     "update_nickname": MessageLookupByLibrary.simpleMessage(

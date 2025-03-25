@@ -8,7 +8,7 @@ import 'package:train_track/core/utils/validators.dart';
 import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/presentation/screens/auth/login_screen.dart';
 
-//TODO: pending refactoring and modularization of this screen
+//TODO: refactor and modularize this screen
 
 final userProvider = StateProvider<User?>((ref) {
   return FirebaseAuth.instance.currentUser;

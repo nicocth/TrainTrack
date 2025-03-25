@@ -378,6 +378,27 @@ class FirestoreService {
       throw Exception('Error fetching training counts: $e');
     }
   }
+
+    Future<int> getTrainingCount(WidgetRef ref, int months) async {
+    final authNotifier = ref.read(authProvider.notifier);
+    final userId = authNotifier.getUserId();
+
+    final DateTime now = DateTime.now();
+    final DateTime startDate = DateTime(now.year, now.month - months, now.day);
+
+    try {
+      final trainingHistoryRef = _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('training_history')
+          .where('training_date', isGreaterThanOrEqualTo: Timestamp.fromDate(startDate));
+
+      final snapshot = await trainingHistoryRef.get();
+      return snapshot.docs.length;
+    } catch (e) {
+      return Future.error('Error retrieving training count: $e');
+    }
+  }
 }
 
 // class to handle the result of the operation

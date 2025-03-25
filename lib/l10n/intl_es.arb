@@ -96,5 +96,13 @@
     "password_updated": "La contraseña ha sido actualizada",
     "account_deleted": "Cuenta eliminada",
     "delete_account": "Eliminar cuenta",
-    "edit_profile": "Editar perfil"
+    "edit_profile": "Editar perfil",
+    "stadistics": "Estadísticas",
+    "error_loading_data": "Error al cargar los datos",
+    "month": "mes",
+    "months": "meses",
+    "show_percentages": "Mostrar porcentajes",
+    "show_absolute_values": "Mostrar valores absolutos",
+    "trainings": "Sesiones",
+    "sets": "series"
 }

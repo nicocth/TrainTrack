@@ -96,5 +96,13 @@
     "password_updated": "Password updated",
     "account_deleted": "Account deleted",
     "delete_account": "Delete account",
-    "edit_profile": "Edit profile"
+    "edit_profile": "Edit profile",
+    "stadistics": "Statistics",
+    "error_loading_data": "Error loading data",
+    "month": "Month",
+    "months": "Months",
+    "show_percentages": "Show percentages",
+    "show_absolute_values": "Show absolute values",
+    "trainings": "trainings",
+    "sets": "sets"
 }
