@@ -63,27 +63,6 @@ class SettingsScreen extends ConsumerWidget {
                 },
               ),
               SizedBox(height: 20),
-              Text(S.current.preferences,
-                  style: Theme.of(context).textTheme.bodyLarge),
-              ListTile(
-                leading: const Icon(Icons.translate),
-                title: Text(S.current.language),
-                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                enabled: false,
-                onTap: () {
-                  //TODO: Navigate to the language screen
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.brightness_6),
-                title: Text(S.current.mode),
-                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                enabled: false,
-                onTap: () {
-                  //TODO: Navigate to dark/light mode screen
-                },
-              ),
-              SizedBox(height: 20),
               Text(S.current.help, style: Theme.of(context).textTheme.bodyLarge),
               ListTile(
                 leading: const Icon(Icons.help),
