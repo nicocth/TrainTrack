@@ -102,7 +102,7 @@ class _StatisticsScreenState extends ConsumerState<StatisticsScreen> {
                               dataEntries: _getDataEntries(),
                               fillColor: Theme.of(context)
                                   .primaryColor
-                                  .withOpacity(0.3),
+                                  .withValues(alpha: 0.3),
                               borderColor: Theme.of(context).primaryColor,
                               borderWidth: 2,
                             ),
