@@ -202,7 +202,6 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
         throw FirebaseAuthException(code: 'user-creation-failed');
       }
 
-      // Llamar al servicio Firestore para crear el usuario en Firestore y sus subcolecciones
       final result = await FirestoreService().createUserInFirestore(email, user.uid);
 
       //check if widget is mounted before displaying snackbar

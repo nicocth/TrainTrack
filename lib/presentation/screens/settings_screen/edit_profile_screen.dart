@@ -41,7 +41,7 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
         throw TimeoutException(S.current.request_timeout);
       });
 
-      //check if widget is mounted before displaying snackbar
+      // Check if widget is mounted before displaying snackbar
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(S.current.nickname_updated)),
@@ -84,14 +84,14 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
       await user.reauthenticateWithCredential(credential);
       await user.updatePassword(_newPasswordController.text.trim());
 
-      //check if widget is mounted before displaying snackbar
+      // Check if widget is mounted before displaying snackbar
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(S.current.password_updated)),
         );
       }
     } on FirebaseAuthException {
-      //check if widget is mounted before displaying snackbar
+      // Check if widget is mounted before displaying snackbar
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(S.current.wrong_current_password)),
@@ -125,7 +125,7 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
       // Delete the Firebase Authentication account
       await user.delete();
 
-      //check if widget is mounted before navigating away
+      // Check if widget is mounted before navigating away
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(S.current.account_deleted)),

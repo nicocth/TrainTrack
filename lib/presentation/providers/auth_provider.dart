@@ -41,7 +41,7 @@ class AuthNotifier extends StateNotifier<User?> {
         email: email,
         password: password,
       );
-      return userCredential.user; // Devuelve el usuario registrado
+      return userCredential.user; // Returns the registered user
     } catch (e) {
       rethrow;
     }
@@ -55,7 +55,7 @@ class AuthNotifier extends StateNotifier<User?> {
     }
   }
 
-  // método para obtener el UID del usuario autenticado
+  // method to obtain the UID of the authenticated user
   String? getUserId() {
     return _auth.currentUser?.uid;
   }

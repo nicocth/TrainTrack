@@ -84,7 +84,7 @@ class AddExerciseScreenState extends ConsumerState<AddExerciseScreen> {
                 ),
                 ...MuscularGroup.values.map((group) => DropdownMenuItem(
                       value: group,
-                      //custom class to translate the contents of MuscularGroup
+                      // Custom class to translate the contents of MuscularGroup
                       child: Text(MuscularGroupFormatter.translate(group)),
                     )),
               ],

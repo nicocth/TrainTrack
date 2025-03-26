@@ -55,7 +55,7 @@ class TrainingsNotifier extends StateNotifier<TrainingsState> {
     try {
       await _firestoreService.deleteTraining(userId, trainingId);
 
-      // Filtramos la lista sin el elemento eliminado
+      // We filter the list without the deleted element
       final updatedTrainings =
           state.trainings.where((t) => t.id != trainingId).toList();
       state = state.copyWith(trainings: updatedTrainings);

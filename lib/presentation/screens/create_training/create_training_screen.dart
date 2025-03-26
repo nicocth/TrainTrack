@@ -126,7 +126,7 @@ Widget build(BuildContext context, WidgetRef ref) {
               throw TimeoutException(S.current.request_timeout);
             }); 
 
-      //check if widget is mounted before displaying snackbar
+      // Check if widget is mounted before displaying snackbar
       if (!context.mounted) return;
 
       if (result.isFailure) {
