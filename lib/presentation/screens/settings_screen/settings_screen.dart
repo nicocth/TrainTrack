@@ -29,84 +29,87 @@ class SettingsScreen extends ConsumerWidget {
       appBar: AppBar(
         title: Text(S.current.app_bar_settings),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(S.current.account,
-                style: Theme.of(context).textTheme.bodyLarge),
-            ListTile(
-              leading: const Icon(Icons.show_chart),
-              title: Text(S.current.statistics),
-              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const StatisticsScreen()),
-                );
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.person),
-              title: Text(S.current.account),
-              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const EditProfileScreen()),
-                );
-              },
-            ),
-            SizedBox(height: 20),
-            Text(S.current.preferences,
-                style: Theme.of(context).textTheme.bodyLarge),
-            ListTile(
-              leading: const Icon(Icons.translate),
-              title: Text(S.current.language),
-              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-              enabled: false,
-              onTap: () {
-                //TODO: Navigate to the language screen
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.brightness_6),
-              title: Text(S.current.mode),
-              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-              enabled: false,
-              onTap: () {
-                //TODO: Navigate to dark/light mode screen
-              },
-            ),
-            SizedBox(height: 20),
-            Text(S.current.help, style: Theme.of(context).textTheme.bodyLarge),
-            ListTile(
-              leading: const Icon(Icons.help),
-              title: Text(S.current.help),
-              trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-              enabled: false,
-              onTap: () {
-                //TODO: Navigate to help screen
-              },
-            ),
-            SizedBox(height: 20),
-            // Logout button
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
-                  foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                ),
-                onPressed: () => _logout(context, ref),
-                child: Text(S.current.logout),
+      body: SingleChildScrollView(
+        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(S.current.account,
+                  style: Theme.of(context).textTheme.bodyLarge),
+              ListTile(
+                leading: const Icon(Icons.show_chart),
+                title: Text(S.current.statistics),
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const StatisticsScreen()),
+                  );
+                },
               ),
-            ),
-          ],
+              ListTile(
+                leading: const Icon(Icons.person),
+                title: Text(S.current.account),
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const EditProfileScreen()),
+                  );
+                },
+              ),
+              SizedBox(height: 20),
+              Text(S.current.preferences,
+                  style: Theme.of(context).textTheme.bodyLarge),
+              ListTile(
+                leading: const Icon(Icons.translate),
+                title: Text(S.current.language),
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                enabled: false,
+                onTap: () {
+                  //TODO: Navigate to the language screen
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.brightness_6),
+                title: Text(S.current.mode),
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                enabled: false,
+                onTap: () {
+                  //TODO: Navigate to dark/light mode screen
+                },
+              ),
+              SizedBox(height: 20),
+              Text(S.current.help, style: Theme.of(context).textTheme.bodyLarge),
+              ListTile(
+                leading: const Icon(Icons.help),
+                title: Text(S.current.help),
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                enabled: false,
+                onTap: () {
+                  //TODO: Navigate to help screen
+                },
+              ),
+              SizedBox(height: 20),
+              // Logout button
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                  ),
+                  onPressed: () => _logout(context, ref),
+                  child: Text(S.current.logout),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
