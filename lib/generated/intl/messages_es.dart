@@ -29,6 +29,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "account": MessageLookupByLibrary.simpleMessage("Cuenta"),
     "account_deleted": MessageLookupByLibrary.simpleMessage("Cuenta eliminada"),
     "add_exercise": MessageLookupByLibrary.simpleMessage("Añadir ejercicio"),
+    "add_exercise_description": MessageLookupByLibrary.simpleMessage(
+      "Selecciona ejercicios dentro de una gran librería, la cual tendrá filtros por categoría y buscador para facilitar la tarea. <br><br> también podrás pulsar en la imagen de los ejercicios para hacer zoom y tener una idea de cómo es el ejercicio. <br><br> Al pulsar sobre añadir seleccionados volveremos a la pantalla de crear entrenamiento",
+    ),
+    "add_exercise_title": MessageLookupByLibrary.simpleMessage(
+      "Añadimos los ejercicios que deseemos:",
+    ),
     "add_selected": MessageLookupByLibrary.simpleMessage(
       "Añadir seleccionados",
     ),
@@ -65,6 +71,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "create_training": MessageLookupByLibrary.simpleMessage(
       "Crear entrenamiento",
     ),
+    "create_training_description_1": MessageLookupByLibrary.simpleMessage(
+      "El título de la rutina es obligatorio al igual que tener mínimo un ejercicio de lo contrario dará error al guardar.<br><br>Al darle al botón de añadir ejercicio iremos a la pantalla de agregar ejercicios.",
+    ),
+    "create_training_description_2": MessageLookupByLibrary.simpleMessage(
+      "De los ejercicios seleccionados se definen los siguientes parámetros para cada uno:<br><br>    - Notas<br>    - Sets<br>    - Repeticiones<br>    - Pesos<br><br>Si se habilita la opción de alternativa en dos ejercicios y se iguala el número que aparece (si no se modifica será 0) aparecerá posteriormente en los diagramas al mismo nivel.<br><br>El usuario guarda el entrenamiento creado y vuelve al menú principal. Si no tienes conexión y pasa más de 6 segundos se te informa que revises tu conexión y no avanza al menú principal para no perder la rutina creada. <br><br> Si se pulsa en el título te llevará una ventana que te mostrará como ejecutarlos correctamente.",
+    ),
+    "create_training_title": MessageLookupByLibrary.simpleMessage(
+      "Crear nuevo entrenamiento:",
+    ),
     "current_password": MessageLookupByLibrary.simpleMessage(
       "Contraseña actual",
     ),
@@ -78,6 +93,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "edit": MessageLookupByLibrary.simpleMessage("Editar"),
     "edit_profile": MessageLookupByLibrary.simpleMessage("Editar perfil"),
+    "edit_profile_screen_description": MessageLookupByLibrary.simpleMessage(
+      "Permite modificar el nombre del usuario mas no su correo.<br><br>Para modificar la contraseña o eliminar la cuenta requerirá la contraseña actual, si no la introduces o no es correcta nos mostrara mensaje de error.<br><br>Para eliminar la cuenta pedirá confirmación y advertirá de la perdida de datos que conlleva.",
+    ),
+    "edit_profile_screen_title": MessageLookupByLibrary.simpleMessage(
+      "Pantalla para editar datos del perfil",
+    ),
     "edit_routine": MessageLookupByLibrary.simpleMessage("Editar rutina"),
     "email": MessageLookupByLibrary.simpleMessage("Correo electrónico"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
@@ -104,6 +125,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_saving_routine": MessageLookupByLibrary.simpleMessage(
       "Error al guardar la rutina",
     ),
+    "exercise_selection_description": MessageLookupByLibrary.simpleMessage(
+      "Da opción de finalizar el entrenamiento.<br><br>Muestra el tiempo que llevamos de entrenamiento, esto ayuda a controlar los tiempos de ejecución y descanso durante el entrenamiento.<br><br>Muestra un diagrama de nuestros ejercicios con un cuadro de selección, que nos permite seleccionar el ejercicio que queremos ejecutar, esto arregla problemas como máquinas ocupadas, falta de equipamiento momentánea y permite alterar el orden del entreno sin perder tiempo, ya que las rutinas predefinidas que te obligan a seguir un orden concreto (siendo el orden importante para nuestro entrenamiento) son poco versátiles y nos harían perder demasiado tiempo esperando máquinas ocupadas.<br><br>Si seleccionamos un ejercicio vamos a la siguiente ventana.",
+    ),
+    "exercise_selection_title": MessageLookupByLibrary.simpleMessage(
+      "Pantalla de selección de ejercicios:",
+    ),
     "exercise_setail_title": MessageLookupByLibrary.simpleMessage("Ejecución"),
     "exercises": MessageLookupByLibrary.simpleMessage("Ejercicios"),
     "fill_all_fields": MessageLookupByLibrary.simpleMessage(
@@ -118,6 +145,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Nº alternativa",
     ),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
+    "home_description": MessageLookupByLibrary.simpleMessage(
+      "Muestra una lista de entrenamientos personalizados si los hay, sino muestra mensaje invitándote a crear el primer entrenamiento. Si no puede recuperarlos te informa de que no tienes conexión, en caso de mostrarlos correctamente podrás editarlos, borrarlos o iniciarlos. <br><br>Da opción de crear Nuevo Entrenamiento. <br><br>Da opción de navegar a pantalla de Configuración.",
+    ),
+    "home_title": MessageLookupByLibrary.simpleMessage("Menú principal:"),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "Correo electrónico inválido",
     ),
@@ -192,13 +223,31 @@ class MessageLookup extends MessageLookupByLibrary {
       "Iniciar entrenamiento",
     ),
     "statistics": MessageLookupByLibrary.simpleMessage("Estadisticas"),
+    "statistics_screen_description": MessageLookupByLibrary.simpleMessage(
+      "Todos los datos mostrados se ven filtrados por el rango de meses el cual incluye 1, 3 ,6 y 12 meses.<br><br>El botón de cambio de visualización permite alternar en la gráfica de radar los datos de valores absolutos a porcentajes.<br><br>La grafica de radar muestra la proporción de ejercicios por grupo muscular para poder observar descompensaciones.<br><br>Las tarjetas de abajo muestran valores totales en el rango de fechas.",
+    ),
+    "statistics_screen_title": MessageLookupByLibrary.simpleMessage(
+      "Pantalla de estadistica:",
+    ),
     "summary": MessageLookupByLibrary.simpleMessage("Resumen"),
+    "summary_description": MessageLookupByLibrary.simpleMessage(
+      "Muestra un resumen que comenzará con un gráfico que te expondrá cuantas veces has realizado ese entrenamiento en los últimos 3 meses, esto ayudará a elegir el grupo muscular o rutina antes de iniciar la sesión de entrenamiento. <br><br>Muestra un diagrama que nos permite ver los ejercicios y el orden de estos. <br><br>Si nos convence le daremos a iniciar y avanzaremos a la siguiente pantalla.",
+    ),
+    "summary_title": MessageLookupByLibrary.simpleMessage(
+      "Si se elige entrenamiento en Menú principal (Pantalla de resumen)",
+    ),
     "training_chat_x_title": MessageLookupByLibrary.simpleMessage("Meses"),
     "training_chat_y_title": MessageLookupByLibrary.simpleMessage(
       "Veces realizado",
     ),
     "training_saved": MessageLookupByLibrary.simpleMessage(
       "Entrenamiento guardado",
+    ),
+    "training_screen_description": MessageLookupByLibrary.simpleMessage(
+      "Permite visualizar la imagen y la descripción del ejercicio.<br><br>Permite modificar sets, repeticiones y pesos<br><br>Después de completar cada set el usuario tendrá que marcarlo como hecho, y al darle a que ha terminado el ejercicio lo devolverá al diagrama de entrenamiento en el cual se habrá marcado el check del ejercicio y podrá elegir el siguiente ejercicio.<br><br>Al completar el entrenamiento le daremos a finalizar entrenamiento desde aquí o desde la pantalla anterior, nos pedirá confirmación de finalización por si le hemos dado sin querer, si volvemos a darle a finalizar nos preguntará si queremos guardar los cambios en la rutina, si le decimos que no guardará el entrenamiento en el historial y si decimos que si aparte de esto también sobrescribirá los valores en Firebase del entrenamiento hecho.<br><br>Al terminar vuelve al menú principal.",
+    ),
+    "training_screen_title": MessageLookupByLibrary.simpleMessage(
+      "Pantalla de entrenamiento:",
     ),
     "training_updated_saved": MessageLookupByLibrary.simpleMessage(
       "Entrenamiento registrado y actualizado",
@@ -218,6 +267,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "update_training_message": MessageLookupByLibrary.simpleMessage(
       "¿Quieres actualizar la rutina con los valores actuales?",
     ),
+    "usage_guide": MessageLookupByLibrary.simpleMessage("Guía de uso"),
     "user_disabled": MessageLookupByLibrary.simpleMessage(
       "Usuario deshabilitado",
     ),

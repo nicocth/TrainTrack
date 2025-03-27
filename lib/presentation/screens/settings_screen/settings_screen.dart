@@ -4,6 +4,7 @@ import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/presentation/providers/auth_provider.dart';
 import 'package:train_track/presentation/screens/auth/login_screen.dart';
 import 'package:train_track/presentation/screens/settings_screen/edit_profile_screen.dart';
+import 'package:train_track/presentation/screens/settings_screen/help_screen.dart';
 import 'package:train_track/presentation/screens/settings_screen/statistics_screen.dart';
 
 class SettingsScreen extends ConsumerWidget {
@@ -63,14 +64,17 @@ class SettingsScreen extends ConsumerWidget {
                 },
               ),
               SizedBox(height: 20),
-              Text(S.current.help, style: Theme.of(context).textTheme.bodyLarge),
+              Text(S.current.help,
+                  style: Theme.of(context).textTheme.bodyLarge),
               ListTile(
                 leading: const Icon(Icons.help),
                 title: Text(S.current.help),
                 trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                enabled: false,
                 onTap: () {
-                  //TODO: Navigate to help screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const HelpScreen()),
+                  );
                 },
               ),
               SizedBox(height: 20),
