@@ -9,6 +9,7 @@ class AppTheme {
           centerTitle: true,
           backgroundColor: Colors.black,
           foregroundColor: Colors.orange[800],
+          surfaceTintColor: Colors.transparent,
           titleTextStyle: TextStyle(
             color: Colors.orange[800],
             fontSize: 35,
