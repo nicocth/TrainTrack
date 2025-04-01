@@ -138,6 +138,10 @@ class TrainingCard extends ConsumerWidget {
               ref
                   .read(trainingsProvider.notifier)
                   .deleteTraining(ref, trainingId);
+
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text(S.current.training_deleted)),
+              );
             },
             child: Text(S.current.delete,
                 style: const TextStyle(color: Colors.red)),

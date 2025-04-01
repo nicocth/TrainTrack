@@ -380,6 +380,16 @@ class S {
     );
   }
 
+  /// `Training deleted`
+  String get training_deleted {
+    return Intl.message(
+      'Training deleted',
+      name: 'training_deleted',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Registered and updated training`
   String get training_updated_saved {
     return Intl.message(

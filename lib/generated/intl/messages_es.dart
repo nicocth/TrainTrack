@@ -240,6 +240,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "training_chat_y_title": MessageLookupByLibrary.simpleMessage(
       "Veces realizado",
     ),
+    "training_deleted": MessageLookupByLibrary.simpleMessage(
+      "Entrenamiento borrado",
+    ),
     "training_saved": MessageLookupByLibrary.simpleMessage(
       "Entrenamiento guardado",
     ),

@@ -38,6 +38,7 @@
     "routine_title": "Título de la rutina",
     "save_training": "Guardar entrenamiento",
     "training_saved": "Entrenamiento guardado",
+    "training_deleted": "Entrenamiento borrado",
     "training_updated_saved": "Entrenamiento registrado y actualizado",
     "error_saving_routine": "Error al guardar la rutina",
     "empty_title": "Por favor, ingresa un título",

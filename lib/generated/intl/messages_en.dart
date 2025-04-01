@@ -218,6 +218,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "training_chat_y_title": MessageLookupByLibrary.simpleMessage(
       "Times performed",
     ),
+    "training_deleted": MessageLookupByLibrary.simpleMessage(
+      "Training deleted",
+    ),
     "training_saved": MessageLookupByLibrary.simpleMessage("Training saved"),
     "training_screen_description": MessageLookupByLibrary.simpleMessage(
       "Allows you to view the image and description of the exercise.<br><br>Allows you to modify sets, repetitions and weights<br><br>After completing each set the user will have to mark it as done, and clicking that they have finished the exercise will return them to the training diagram in which the exercise check will have been marked and they will be able to choose the next exercise.",
