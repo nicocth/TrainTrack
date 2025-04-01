@@ -98,7 +98,6 @@ class ExerciseCard extends ConsumerWidget {
 
             //Notes field
             SizedBox(
-              height: 50,
               child: TextField(
                 controller: notesController,
                 onChanged: (value) {

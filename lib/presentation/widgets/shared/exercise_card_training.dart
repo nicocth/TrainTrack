@@ -47,7 +47,6 @@ class ExerciseCardTraining extends ConsumerWidget {
             ),
             const SizedBox(height: 10),
             SizedBox(
-              height: 50,
               child: TextField(
                 controller: notesController,
                 onChanged: (value) {
