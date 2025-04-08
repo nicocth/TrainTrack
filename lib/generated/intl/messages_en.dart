@@ -83,6 +83,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "delete_account_confirm": MessageLookupByLibrary.simpleMessage(
       "Are you sure you want to delete your account? All data associated with it will be deleted (trainings, history, etc...).",
     ),
+    "delete_history": MessageLookupByLibrary.simpleMessage("Delete history"),
+    "delete_history_confirm": MessageLookupByLibrary.simpleMessage(
+      "Are you sure you want to delete your training history? This action is irreversible.",
+    ),
     "edit": MessageLookupByLibrary.simpleMessage("Edit"),
     "edit_profile": MessageLookupByLibrary.simpleMessage("Edit profile"),
     "edit_profile_screen_description": MessageLookupByLibrary.simpleMessage(
@@ -132,6 +136,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "hint_alternative_text": MessageLookupByLibrary.simpleMessage(
       "Alternative number",
     ),
+    "history_deleted": MessageLookupByLibrary.simpleMessage("History deleted"),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "home_description": MessageLookupByLibrary.simpleMessage(
       "Displays a list of custom workouts if there are any, but instead displays a message inviting you to create your first workout. If you can\'t retrieve them, you\'ll be informed that you\'re offline. If they display correctly, you\'ll be able to edit, delete, or start them. <br><br>Gives the option to create a new workout. <br><br>Gives the option to navigate to the Settings screen.",

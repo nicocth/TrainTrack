@@ -580,6 +580,16 @@ class S {
     );
   }
 
+  /// `Are you sure you want to delete your training history? This action is irreversible.`
+  String get delete_history_confirm {
+    return Intl.message(
+      'Are you sure you want to delete your training history? This action is irreversible.',
+      name: 'delete_history_confirm',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Completion confirmation`
   String get confirm_finish_training {
     return Intl.message(
@@ -850,11 +860,31 @@ class S {
     );
   }
 
+  /// `History deleted`
+  String get history_deleted {
+    return Intl.message(
+      'History deleted',
+      name: 'history_deleted',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Delete account`
   String get delete_account {
     return Intl.message(
       'Delete account',
       name: 'delete_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete history`
+  String get delete_history {
+    return Intl.message(
+      'Delete history',
+      name: 'delete_history',
       desc: '',
       args: [],
     );

@@ -91,6 +91,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "delete_account_confirm": MessageLookupByLibrary.simpleMessage(
       "¿Estás seguro de que deseas eliminar tu cuenta? Se eliminarán todos los datos asociados a ella.(entrenamientos, historial, etc...)",
     ),
+    "delete_history": MessageLookupByLibrary.simpleMessage(
+      "Eliminar historial",
+    ),
+    "delete_history_confirm": MessageLookupByLibrary.simpleMessage(
+      "¿Estás seguro de que deseas eliminar el historial de entrenamientos? Esta acción es irreversible.",
+    ),
     "edit": MessageLookupByLibrary.simpleMessage("Editar"),
     "edit_profile": MessageLookupByLibrary.simpleMessage("Editar perfil"),
     "edit_profile_screen_description": MessageLookupByLibrary.simpleMessage(
@@ -143,6 +149,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "help": MessageLookupByLibrary.simpleMessage("Ayuda"),
     "hint_alternative_text": MessageLookupByLibrary.simpleMessage(
       "Nº alternativa",
+    ),
+    "history_deleted": MessageLookupByLibrary.simpleMessage(
+      "Historial eliminado",
     ),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "home_description": MessageLookupByLibrary.simpleMessage(

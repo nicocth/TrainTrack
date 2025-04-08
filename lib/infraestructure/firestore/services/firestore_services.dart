@@ -318,6 +318,45 @@ class FirestoreService {
     }
   }
 
+Future<Result> deleteTrainingHistory(WidgetRef ref) async {
+  final authNotifier = ref.read(authProvider.notifier);
+  final userId = authNotifier.getUserId();
+
+  try {
+    final trainingHistoryRef = _firestore
+        .collection('users')
+        .doc(userId)
+        .collection('training_history');
+
+    final historySnapshot = await trainingHistoryRef.get();
+
+    for (final historyDoc in historySnapshot.docs) {
+      final docRef = historyDoc.reference;
+
+      // Subcolecciones esperadas, puedes agregar más si necesitas
+      final subcollections = ['exercises'];
+
+      for (final sub in subcollections) {
+        final subcollectionRef = docRef.collection(sub);
+        final subSnapshot = await subcollectionRef.get();
+
+        for (final subDoc in subSnapshot.docs) {
+          await subDoc.reference.delete();
+        }
+      }
+
+      // Finalmente borrar el documento principal
+      await docRef.delete();
+    }
+
+    return Result.success();
+  } catch (e) {
+    return Result.failure('Error deleting training history: $e');
+  }
+}
+
+
+
   // Method to fetch CustomExercise list
   Future<List<Training>> getAllTrainings(String? userId) async {
     try {
@@ -379,7 +418,7 @@ class FirestoreService {
     }
   }
 
-    Future<int> getTrainingCount(WidgetRef ref, int months) async {
+  Future<int> getTrainingCount(WidgetRef ref, int months) async {
     final authNotifier = ref.read(authProvider.notifier);
     final userId = authNotifier.getUserId();
 
@@ -391,7 +430,8 @@ class FirestoreService {
           .collection('users')
           .doc(userId)
           .collection('training_history')
-          .where('training_date', isGreaterThanOrEqualTo: Timestamp.fromDate(startDate));
+          .where('training_date',
+              isGreaterThanOrEqualTo: Timestamp.fromDate(startDate));
 
       final snapshot = await trainingHistoryRef.get();
       return snapshot.docs.length;
