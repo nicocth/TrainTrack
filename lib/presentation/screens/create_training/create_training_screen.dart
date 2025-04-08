@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/infraestructure/firestore/services/firestore_services.dart';
 import 'package:train_track/presentation/providers/create_training_provider.dart';
+import 'package:train_track/presentation/providers/trainings_provider.dart';
 import 'package:train_track/presentation/widgets/shared/exercise_card_edit.dart';
 import 'add_exercise_screen.dart';
 
@@ -125,6 +126,9 @@ Widget build(BuildContext context, WidgetRef ref) {
               .timeout(Duration(seconds: 6), onTimeout: () {
               throw TimeoutException(S.current.request_timeout);
             }); 
+
+      // Refresh the trainings list after saving
+      ref.read(trainingsProvider.notifier).loadTrainings(ref);
 
       // Check if widget is mounted before displaying snackbar
       if (!context.mounted) return;
