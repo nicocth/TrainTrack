@@ -333,7 +333,7 @@ Future<Result> deleteTrainingHistory(WidgetRef ref) async {
     for (final historyDoc in historySnapshot.docs) {
       final docRef = historyDoc.reference;
 
-      // Subcolecciones esperadas, puedes agregar más si necesitas
+      // Get the subcollection
       final subcollections = ['exercises'];
 
       for (final sub in subcollections) {
@@ -345,7 +345,6 @@ Future<Result> deleteTrainingHistory(WidgetRef ref) async {
         }
       }
 
-      // Finalmente borrar el documento principal
       await docRef.delete();
     }
 
@@ -355,6 +354,36 @@ Future<Result> deleteTrainingHistory(WidgetRef ref) async {
   }
 }
 
+Future<Result> deleteDocCurrentUser(WidgetRef ref) async {
+  final authNotifier = ref.read(authProvider.notifier);
+  final userId = authNotifier.getUserId();
+
+  try {
+    final userDocRef = _firestore.collection('users').doc(userId);
+
+    // Get the subcollection
+    final subcollections = ['trainings', 'training_history'];
+
+    for (final sub in subcollections) {
+      final subRef = userDocRef.collection(sub);
+      final subSnapshot = await subRef.get();
+      for (final doc in subSnapshot.docs) {
+        final exercisesRef = doc.reference.collection('exercises');
+        final exercisesSnapshot = await exercisesRef.get();
+        for (final ex in exercisesSnapshot.docs) {
+          await ex.reference.delete();
+        }
+        await doc.reference.delete();
+      }
+    }
+
+    await userDocRef.delete();
+
+    return Result.success();
+  } catch (e) {
+    return Result.failure('Error deleting user document: $e');
+  }
+}
 
 
   // Method to fetch CustomExercise list

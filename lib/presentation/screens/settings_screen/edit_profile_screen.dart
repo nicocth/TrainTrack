@@ -9,8 +9,6 @@ import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/infraestructure/firestore/services/firestore_services.dart';
 import 'package:train_track/presentation/screens/auth/login_screen.dart';
 
-//TODO: refactor and modularize this screen
-
 final userProvider = StateProvider<User?>((ref) {
   return FirebaseAuth.instance.currentUser;
 });
@@ -33,23 +31,6 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
   void initState() {
     super.initState();
     _loadUserData();
-  }
-
-  Future<void> _loadUserData() async {
-    final user = ref.read(userProvider);
-    if (user == null) return;
-
-    final userDoc = await FirebaseFirestore.instance
-        .collection('users')
-        .doc(user.uid)
-        .get();
-    if (userDoc.exists) {
-      final data = userDoc.data();
-      if (data != null) {
-        _nicknameController.text = data['nickname'] ?? '';
-        _emailController.text = user.email ?? '';
-      }
-    }
   }
 
   @override
@@ -125,7 +106,24 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
     );
   }
 
-    Future<void> _updateProfile() async {
+  Future<void> _loadUserData() async {
+    final user = ref.read(userProvider);
+    if (user == null) return;
+
+    final userDoc = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(user.uid)
+        .get();
+    if (userDoc.exists) {
+      final data = userDoc.data();
+      if (data != null) {
+        _nicknameController.text = data['nickname'] ?? '';
+        _emailController.text = user.email ?? '';
+      }
+    }
+  }
+
+  Future<void> _updateProfile() async {
     final user = ref.read(userProvider);
     if (user == null) return;
     try {
@@ -214,24 +212,31 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
         password: _currentPasswordController.text,
       );
       await user.reauthenticateWithCredential(credential);
+
       // Delete user document in Firestore
-      final userDoc =
-          FirebaseFirestore.instance.collection('users').doc(user.uid);
-      await userDoc.delete();
+      final result = await FirestoreService().deleteDocCurrentUser(ref);
 
       // Delete the Firebase Authentication account
       await user.delete();
 
       // Check if widget is mounted before navigating away
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(S.current.account_deleted)),
-        );
-        // Navigate to the login screen after deleting the account
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const LoginScreen()),
-        );
+      if (result.isSuccess) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(S.current.account_deleted)),
+          );
+          // Navigate to the login screen after deleting the account
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const LoginScreen()),
+          );
+        }
+      } else {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(result.errorMessage ?? 'Error')),
+          );
+        }
       }
     } on FirebaseAuthException {
       if (mounted) {
@@ -242,49 +247,48 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
     }
   }
 
-Future<void> _deleteHistory(WidgetRef ref) async {
-  final user = FirebaseAuth.instance.currentUser;
-  if (user == null) return;
+  Future<void> _deleteHistory(WidgetRef ref) async {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) return;
 
-  if (_currentPasswordController.text.isEmpty) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(S.current.current_password_empty)),
-    );
-    return;
-  }
-
-  try {
-    AuthCredential credential = EmailAuthProvider.credential(
-      email: user.email!,
-      password: _currentPasswordController.text,
-    );
-    await user.reauthenticateWithCredential(credential);
-
-    // Usar FirestoreService para borrar el historial
-    final result = await FirestoreService().deleteTrainingHistory(ref);
-
-    if (result.isSuccess) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(S.current.history_deleted)),
-        );
-      }
-    } else {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(result.errorMessage ?? 'Error')),
-        );
-      }
-    }
-  } on FirebaseAuthException {
-    if (mounted) {
+    if (_currentPasswordController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(S.current.wrong_current_password)),
+        SnackBar(content: Text(S.current.current_password_empty)),
       );
+      return;
+    }
+
+    try {
+      AuthCredential credential = EmailAuthProvider.credential(
+        email: user.email!,
+        password: _currentPasswordController.text,
+      );
+      await user.reauthenticateWithCredential(credential);
+
+      // Delete training history document in Firestore
+      final result = await FirestoreService().deleteTrainingHistory(ref);
+
+      if (result.isSuccess) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(S.current.history_deleted)),
+          );
+        }
+      } else {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(result.errorMessage ?? 'Error')),
+          );
+        }
+      }
+    } on FirebaseAuthException {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(S.current.wrong_current_password)),
+        );
+      }
     }
   }
-}
-
 
   Future<void> _confirmDeleteAccount() async {
     final bool confirm = await showDialog(
@@ -314,7 +318,7 @@ Future<void> _deleteHistory(WidgetRef ref) async {
     }
   }
 
-    Future<void> _confirmDeleteHistory() async {
+  Future<void> _confirmDeleteHistory() async {
     final bool confirm = await showDialog(
           context: context,
           builder: (BuildContext context) {
