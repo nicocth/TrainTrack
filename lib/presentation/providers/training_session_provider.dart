@@ -6,6 +6,7 @@ import 'package:train_track/domain/models/training.dart';
 import 'package:train_track/domain/models/custom_exercise.dart';
 
 class TrainingSessionState {
+  final DateTime? startTime;
   final int seconds;
   final bool isRunning;
   // training is received in a disordered manner from firebase to work with it you will always have to sort it first by order
@@ -22,6 +23,7 @@ class TrainingSessionState {
 
   TrainingSessionState({
     required this.training,
+    this.startTime,//Variable needed to calculate elapsed training time. If you try to accumulate time when the device is locked, the application pauses and stops counting.
     required this.seconds,
     required this.isRunning,
     required this.selectedExerciseIndex,
@@ -34,6 +36,7 @@ class TrainingSessionState {
 
   TrainingSessionState copyWith({
     Training? training,
+    DateTime? startTime,
     int? seconds,
     bool? isRunning,
     int? selectedExerciseIndex,
@@ -45,6 +48,7 @@ class TrainingSessionState {
   }) {
     return TrainingSessionState(
       training: training ?? this.training,
+      startTime: startTime ?? this.startTime,
       seconds: seconds ?? this.seconds,
       isRunning: isRunning ?? this.isRunning,
       selectedExerciseIndex:
@@ -60,11 +64,11 @@ class TrainingSessionState {
 
 class TrainingSessionNotifier extends StateNotifier<TrainingSessionState> {
   Timer? _timer;
-  int _elapsedTime = 0;
 
   TrainingSessionNotifier()
       : super(TrainingSessionState(
           training: null,
+          startTime: null,
           seconds: 0,
           isRunning: false,
           selectedExerciseIndex: null,
@@ -76,7 +80,6 @@ class TrainingSessionNotifier extends StateNotifier<TrainingSessionState> {
         ));
 
   void startSession(Training training) {
-    _elapsedTime = 0;
 
     // Sort the exercises by the 'order' property before starting the session
     final sortedExercises = List<CustomExercise>.from(training.exercises)
@@ -88,6 +91,7 @@ class TrainingSessionNotifier extends StateNotifier<TrainingSessionState> {
     // Set training and session status
     state = state.copyWith(
       training: training,
+      startTime: DateTime.now(),
       seconds: 0,
       isRunning: true,
       completedSets: List.generate(sortedExercises.length, (_) => {}),
@@ -117,13 +121,17 @@ class TrainingSessionNotifier extends StateNotifier<TrainingSessionState> {
     );
   }
 
-  void startTimer() {
-    _timer?.cancel(); // Cancel the previous timer
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      _elapsedTime++;
-      state = state.copyWith(seconds: _elapsedTime);
-    });
-  }
+void startTimer() {
+  _timer?.cancel();
+  _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+    final start = state.startTime;
+    if (start == null) return;
+    final now = DateTime.now();
+    final elapsed = now.difference(start).inSeconds;
+
+    state = state.copyWith(seconds: elapsed);
+  });
+}
 
   void stopTimer() {
     _timer?.cancel();
@@ -236,9 +244,9 @@ class TrainingSessionNotifier extends StateNotifier<TrainingSessionState> {
 
   void resetSession() {
     _timer?.cancel();
-    _elapsedTime = 0;
     state = state.copyWith(
       training: null,
+      startTime: null,
       seconds: 0,
       isRunning: false,
       selectedExerciseIndex: null,
