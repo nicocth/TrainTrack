@@ -42,6 +42,14 @@
     "image": "assets/images/press_pecho_maquina_vertical.jpg"
   },
   {
+    "id": "press_pecho_inclinado_palanca",
+    "name": "Press de pecho inclinado con palanca",
+    "description": "El press en máquina de discos trabaja principalmente la porción media de los pectorales.<br><br>Por norma general debe realizarse justo después de los ejercicios básicos con pesos libres pero antes de los ejercicios de aislamiento.<br><br>Inicio: Ajustar el asiento de la máquina de tal manera que los manillares queden por fuera de la parte inferior del pecho en su posición baja. Mantener los pies planos sobre el suelo y la espalda y la cabeza contra el respaldo del asiento. Comenzar en la posición baja.<br><br>Ejecución: Hacer press con trayecto del movimiento predeterminado por la máquina hasta que los codos estén extendidos pero sin bloquear. Lentamente, bajar la barra hasta la posición sin permitir que entre dos repeticiones el peso descanse sobre la sujeción.<br><br>Variaciones: Hay muchos tipos de máquinas de press, incluidas las que se asemejan a los press declinados e inclinados y máquinas que se cargan con discos (la máquina Hammer Strengh de la foto es una de las modalidades más populares).<br><br>Muchas también tienen diferentes posiciones de agarre, lo cual permite utilizar desde los muy estrechos o los más anchos e incluso un agarre neutro.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/press_pecho_inclinado_palanca.png"
+  },
+  
+  {
     "id": "aperturas_maquina",
     "name": "Aperturas en máquina",
     "description": "Es un movimiento de aislamiento, y por lo tanto es excelente realizarlos al final del entrenamiento. <br><br> Inicio: Ajustar el asiento de la máquina de vuelo de tal manera que los manillares queden a nivel del pecho. Sentado en el asiento, con la espalda plana contra el respaldo, agarrar los manillares y comenzar con los brazos estirados hacia afuera y los codos ligeramente flexionados. <br><br> Ejecución: Contraer los pectorales para desplazar las manos hasta que casi se junten. Contraer los pectorales fuertemente y contar uno; a continuación, volver lentamente a la posición de inicio sin permitir que el peso descanse sobre la columna de la máquina. <br><br> Variaciones: Algunas máquinas de vuelo (en ocasiones denominadas como pec-decks) incluyen almohadillamientos para los brazos, para situarlos en contacto con la parte interna de los codos y antebrazos con el fin de mantener los codos flexionados en un ángulo aproximado de 90 grados durante todo el rango del movimiento.",
