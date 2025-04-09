@@ -247,7 +247,7 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
     }
   }
 
-  Future<void> _deleteHistory(WidgetRef ref) async {
+  Future<void> _deleteHistory() async {
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) return;
 
@@ -342,7 +342,7 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
         false;
 
     if (confirm) {
-      await _deleteHistory(ref);
+      await _deleteHistory();
     }
   }
 }
