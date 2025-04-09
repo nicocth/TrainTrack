@@ -1,15 +1,13 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:train_track/domain/models/enum/muscular_group.dart';
 import 'package:train_track/domain/models/exercise.dart';
 import 'package:train_track/core/utils/input_formatter.dart';
+import 'package:train_track/domain/models/training_history.dart';
 import 'package:train_track/generated/l10n.dart';
+import 'package:train_track/infraestructure/firestore/services/firestore_services.dart';
 import 'package:train_track/infraestructure/mappers/exercise_mapper.dart';
-
-//TODO: refactor and modularize this screen
 
 class StatisticsScreen extends ConsumerStatefulWidget {
   const StatisticsScreen({super.key});
@@ -77,7 +75,7 @@ class _StatisticsScreenState extends ConsumerState<StatisticsScreen> {
                             selectedMonths = value;
                             isLoading = true;
                           });
-                          _fetchTrainingData(availableExercises).then((_) {
+                          _getTrainingData(availableExercises).then((_) {
                             setState(() => isLoading = false);
                           });
                         }
@@ -149,7 +147,7 @@ class _StatisticsScreenState extends ConsumerState<StatisticsScreen> {
   Future<void> _loadExercisesAndData() async {
     try {
       final exerciseList = await ExerciseMapper.fromJsonList();
-      await _fetchTrainingData(exerciseList);
+      await _getTrainingData(exerciseList);
 
       setState(() {
         availableExercises = exerciseList;
@@ -164,21 +162,11 @@ class _StatisticsScreenState extends ConsumerState<StatisticsScreen> {
     }
   }
 
-  Future<void> _fetchTrainingData(List<Exercise> exercises) async {
-    final userId = FirebaseAuth.instance.currentUser?.uid;
-    if (userId == null) return;
-
-    final DateTime cutoffDate =
-        DateTime.now().subtract(Duration(days: 30 * selectedMonths));
-
+  Future<void> _getTrainingData(List<Exercise> exercises) async {
     try {
-      final querySnapshot = await FirebaseFirestore.instance
-          .collection('users')
-          .doc(userId)
-          .collection('training_history')
-          .where('training_date',
-              isGreaterThanOrEqualTo: Timestamp.fromDate(cutoffDate))
-          .get();
+      // Get the training history data from Firestore
+      final List<TrainingHistory> trainingHistoryList =
+          await FirestoreService().getTrainingHistoryData(selectedMonths);
 
       // We initialize counters
       Map<MuscularGroup, int> muscleGroupCounts = {
@@ -189,45 +177,26 @@ class _StatisticsScreenState extends ConsumerState<StatisticsScreen> {
       int exercisesCount = 0;
       int repsCount = 0;
 
-      for (var workoutDoc in querySnapshot.docs) {
+      for (var traininHistory in trainingHistoryList) {
         // We count one training for each document
         trainingCount++;
 
         // We count one exercise for each collection
-        final exercisesSnapshot =
-            await workoutDoc.reference.collection('exercises').get();
-        exercisesCount += exercisesSnapshot.size;
+        final customExercisesList = traininHistory.exercises;
+        exercisesCount += customExercisesList.length;
 
-        for (var exerciseDoc in exercisesSnapshot.docs) {
-          final exerciseData = exerciseDoc.data();
-          final exerciseId = exerciseData['exercise'] as String?;
-          final setsList = exerciseData['sets'] as List<dynamic>? ?? [];
+        for (var customExercise in customExercisesList) {
           // We add the series of each exercise
-          setsCount += setsList.length;
+          setsCount += customExercise.sets.length;
 
           // We add the reps of each sets
-          for (var setData in setsList) {
-            repsCount += (setData['reps'] as int? ?? 0);
+          for (var setData in customExercise.sets) {
+            repsCount += setData.reps;
           }
 
-          if (exerciseId != null) {
-            final exercise = exercises.firstWhere(
-              (e) => e.id == exerciseId,
-              orElse: () => Exercise(
-                id: '',
-                name: '',
-                description: '',
-                image: '',
-                muscularGroup: MuscularGroup.pectoral,
-              ),
-            );
-
-            if (exercise.id.isNotEmpty) {
-              muscleGroupCounts[exercise.muscularGroup] =
-                  (muscleGroupCounts[exercise.muscularGroup] ?? 0) +
-                      setsList.length;
-            }
-          }
+          muscleGroupCounts[customExercise.exercise.muscularGroup] =
+              (muscleGroupCounts[customExercise.exercise.muscularGroup] ?? 0) +
+                  customExercise.sets.length;
         }
       }
 

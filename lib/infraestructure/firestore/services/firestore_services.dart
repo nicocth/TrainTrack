@@ -1,7 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:train_track/domain/models/training.dart';
+import 'package:train_track/domain/models/training_history.dart';
+import 'package:train_track/infraestructure/mappers/training_history_mapper.dart';
 import 'package:train_track/infraestructure/mappers/training_mapper.dart';
 import 'package:train_track/presentation/providers/auth_provider.dart';
 import 'package:train_track/presentation/providers/create_training_provider.dart';
@@ -30,7 +33,6 @@ class FirestoreService {
     }
   }
 
-  // Method to save a Custom training
   Future<Result> saveTraining(WidgetRef ref) async {
     final authNotifier = ref.read(authProvider.notifier);
     final userId = authNotifier.getUserId();
@@ -318,75 +320,73 @@ class FirestoreService {
     }
   }
 
-Future<Result> deleteTrainingHistory(WidgetRef ref) async {
-  final authNotifier = ref.read(authProvider.notifier);
-  final userId = authNotifier.getUserId();
+  Future<Result> deleteTrainingHistory(WidgetRef ref) async {
+    final authNotifier = ref.read(authProvider.notifier);
+    final userId = authNotifier.getUserId();
 
-  try {
-    final trainingHistoryRef = _firestore
-        .collection('users')
-        .doc(userId)
-        .collection('training_history');
+    try {
+      final trainingHistoryRef = _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('training_history');
 
-    final historySnapshot = await trainingHistoryRef.get();
+      final historySnapshot = await trainingHistoryRef.get();
 
-    for (final historyDoc in historySnapshot.docs) {
-      final docRef = historyDoc.reference;
+      for (final historyDoc in historySnapshot.docs) {
+        final docRef = historyDoc.reference;
+
+        // Get the subcollection
+        final subcollections = ['exercises'];
+
+        for (final sub in subcollections) {
+          final subcollectionRef = docRef.collection(sub);
+          final subSnapshot = await subcollectionRef.get();
+
+          for (final subDoc in subSnapshot.docs) {
+            await subDoc.reference.delete();
+          }
+        }
+
+        await docRef.delete();
+      }
+
+      return Result.success();
+    } catch (e) {
+      return Result.failure('Error deleting training history: $e');
+    }
+  }
+
+  Future<Result> deleteDocCurrentUser(WidgetRef ref) async {
+    final authNotifier = ref.read(authProvider.notifier);
+    final userId = authNotifier.getUserId();
+
+    try {
+      final userDocRef = _firestore.collection('users').doc(userId);
 
       // Get the subcollection
-      final subcollections = ['exercises'];
+      final subcollections = ['trainings', 'training_history'];
 
       for (final sub in subcollections) {
-        final subcollectionRef = docRef.collection(sub);
-        final subSnapshot = await subcollectionRef.get();
-
-        for (final subDoc in subSnapshot.docs) {
-          await subDoc.reference.delete();
+        final subRef = userDocRef.collection(sub);
+        final subSnapshot = await subRef.get();
+        for (final doc in subSnapshot.docs) {
+          final exercisesRef = doc.reference.collection('exercises');
+          final exercisesSnapshot = await exercisesRef.get();
+          for (final ex in exercisesSnapshot.docs) {
+            await ex.reference.delete();
+          }
+          await doc.reference.delete();
         }
       }
 
-      await docRef.delete();
+      await userDocRef.delete();
+
+      return Result.success();
+    } catch (e) {
+      return Result.failure('Error deleting user document: $e');
     }
-
-    return Result.success();
-  } catch (e) {
-    return Result.failure('Error deleting training history: $e');
   }
-}
 
-Future<Result> deleteDocCurrentUser(WidgetRef ref) async {
-  final authNotifier = ref.read(authProvider.notifier);
-  final userId = authNotifier.getUserId();
-
-  try {
-    final userDocRef = _firestore.collection('users').doc(userId);
-
-    // Get the subcollection
-    final subcollections = ['trainings', 'training_history'];
-
-    for (final sub in subcollections) {
-      final subRef = userDocRef.collection(sub);
-      final subSnapshot = await subRef.get();
-      for (final doc in subSnapshot.docs) {
-        final exercisesRef = doc.reference.collection('exercises');
-        final exercisesSnapshot = await exercisesRef.get();
-        for (final ex in exercisesSnapshot.docs) {
-          await ex.reference.delete();
-        }
-        await doc.reference.delete();
-      }
-    }
-
-    await userDocRef.delete();
-
-    return Result.success();
-  } catch (e) {
-    return Result.failure('Error deleting user document: $e');
-  }
-}
-
-
-  // Method to fetch CustomExercise list
   Future<List<Training>> getAllTrainings(String? userId) async {
     try {
       final trainingsSnapshot = await _firestore
@@ -466,6 +466,35 @@ Future<Result> deleteDocCurrentUser(WidgetRef ref) async {
       return snapshot.docs.length;
     } catch (e) {
       return Future.error('Error retrieving training count: $e');
+    }
+  }
+
+  Future<List<TrainingHistory>> getTrainingHistoryData(
+      int selectedMonths) async {
+    final userId = FirebaseAuth.instance.currentUser?.uid;
+    if (userId == null) throw Exception('User not logged in');
+
+    final DateTime cutoffDate =
+        DateTime.now().subtract(Duration(days: 30 * selectedMonths));
+
+    try {
+      final querySnapshot = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(userId)
+          .collection('training_history')
+          .where('training_date',
+              isGreaterThanOrEqualTo: Timestamp.fromDate(cutoffDate))
+          .get();
+
+      final List<TrainingHistory> trainingHistoryList = await Future.wait(
+        querySnapshot.docs.map((doc) async {
+          return await TrainingHistoryMapper.fromFirestore(doc, userId);
+        }),
+      );
+
+      return trainingHistoryList;
+    } catch (e) {
+      throw Exception('Error fetching training history: $e');
     }
   }
 }
