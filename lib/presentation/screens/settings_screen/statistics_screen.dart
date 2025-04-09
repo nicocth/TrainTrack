@@ -8,6 +8,7 @@ import 'package:train_track/domain/models/training_history.dart';
 import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/infraestructure/firestore/services/firestore_services.dart';
 import 'package:train_track/infraestructure/mappers/exercise_mapper.dart';
+import 'package:train_track/presentation/widgets/shared/training_session_banner.dart';
 
 class StatisticsScreen extends ConsumerStatefulWidget {
   const StatisticsScreen({super.key});
@@ -141,6 +142,7 @@ class _StatisticsScreenState extends ConsumerState<StatisticsScreen> {
                 ],
               ),
             ),
+      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 

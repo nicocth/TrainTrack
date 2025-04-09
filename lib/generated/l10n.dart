@@ -1124,6 +1124,31 @@ class S {
       args: [],
     );
   }
+
+  /// `Back to training`
+  String get back_to_training {
+    return Intl.message(
+      'Back to training',
+      name: 'back_to_training',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Discard`
+  String get discard {
+    return Intl.message('Discard', name: 'discard', desc: '', args: []);
+  }
+
+  /// `You have a training in progress`
+  String get training_in_progress {
+    return Intl.message(
+      'You have a training in progress',
+      name: 'training_in_progress',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

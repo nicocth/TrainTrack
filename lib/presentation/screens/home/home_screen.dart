@@ -5,6 +5,7 @@ import 'package:train_track/presentation/providers/trainings_provider.dart';
 import 'package:train_track/presentation/screens/create_training/create_training_screen.dart';
 import 'package:train_track/presentation/screens/settings_screen/settings_screen.dart';
 import 'package:train_track/presentation/widgets/shared/training_card.dart';
+import 'package:train_track/presentation/widgets/shared/training_session_banner.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -91,6 +92,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                             },
                           ),
           ),
+          TrainingSessionBanner(),
         ],
       ),
     );

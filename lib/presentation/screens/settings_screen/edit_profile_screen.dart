@@ -8,6 +8,7 @@ import 'package:train_track/core/utils/validators.dart';
 import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/infraestructure/firestore/services/firestore_services.dart';
 import 'package:train_track/presentation/screens/auth/login_screen.dart';
+import 'package:train_track/presentation/widgets/shared/training_session_banner.dart';
 
 final userProvider = StateProvider<User?>((ref) {
   return FirebaseAuth.instance.currentUser;
@@ -103,6 +104,7 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
           ),
         ),
       ),
+      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 

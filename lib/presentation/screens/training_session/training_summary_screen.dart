@@ -7,6 +7,7 @@ import 'package:train_track/presentation/screens/settings_screen/settings_screen
 import 'package:train_track/presentation/screens/training_session/exercise_selection_screen.dart';
 import 'package:train_track/presentation/widgets/shared/training_chart.dart';
 import 'package:train_track/presentation/widgets/shared/training_diagram.dart';
+import 'package:train_track/presentation/widgets/shared/training_session_banner.dart';
 
 class TrainingSummaryScreen extends ConsumerWidget {
   final Training training;
@@ -73,12 +74,12 @@ class TrainingSummaryScreen extends ConsumerWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) =>
-                          ExerciseSelectionScreen(training: training)),
+                      builder: (context) => ExerciseSelectionScreen()),
                 );
               },
             ),
           ),
+          TrainingSessionBanner(),
         ],
       ),
     );

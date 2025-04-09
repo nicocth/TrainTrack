@@ -8,26 +8,24 @@ import 'package:train_track/presentation/widgets/shared/finish_training_session_
 import 'package:train_track/presentation/widgets/shared/training_diagram.dart';
 
 class ExerciseSelectionScreen extends ConsumerWidget {
-  final Training training;
-  const ExerciseSelectionScreen({required this.training, super.key});
+  const ExerciseSelectionScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final trainingSession =
-        ref.watch(trainingSessionProvider); 
+    final trainingSession = ref.watch(trainingSessionProvider);
+    final Training training = trainingSession.training!;
 
     return Scaffold(
       appBar: AppBar(
         title: Align(
           alignment: Alignment.centerLeft,
-          child: Text(TimeFormatter.formatTime(trainingSession.seconds), 
+          child: Text(TimeFormatter.formatTime(trainingSession.seconds),
               style: Theme.of(context).textTheme.headlineSmall),
         ),
         actions: <Widget>[
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: FinishTrainingSessionButton()
-          ),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: FinishTrainingSessionButton()),
         ],
       ),
       body: Column(

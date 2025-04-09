@@ -80,8 +80,8 @@
     "exercise_setail_title": "Execution",
     "yes": "Yes",
     "no": "No",
-    "update_training_alert":"Commit changes",
-    "update_training_message":"Do you want to update the training with the current values?",
+    "update_training_alert": "Commit changes",
+    "update_training_message": "Do you want to update the training with the current values?",
     "search_exercise": "Search exercise",
     "select_muscular_group": "Select a muscle group",
     "all_muscular_groups": "All muscle groups",
@@ -126,5 +126,8 @@
     "statistics_screen_title": "Statistics screen:",
     "statistics_screen_description": "All data displayed is filtered by the month range which includes 1, 3, 6 and 12 months.<br><br>The toggle button allows you to toggle the radar chart data from absolute values ​​to percentages.<br><br>The radar chart shows the proportion of exercises per muscle group to observe imbalances.<br><br>The cards below show total values ​​in the date range.",
     "edit_profile_screen_title": "Edit profile data screen",
-    "edit_profile_screen_description": "Allows you to modify the user name but not their email.<br><br>To modify the password or delete the account, the current password will be required. If you do not enter it or it is incorrect, an error message will be displayed.<br><br>To delete the account, it will ask for confirmation and warn you of the loss of data that this entails."
+    "edit_profile_screen_description": "Allows you to modify the user name but not their email.<br><br>To modify the password or delete the account, the current password will be required. If you do not enter it or it is incorrect, an error message will be displayed.<br><br>To delete the account, it will ask for confirmation and warn you of the loss of data that this entails.",
+    "back_to_training": "Back to training",
+    "discard": "Discard",
+    "training_in_progress": "You have a training in progress"
 }

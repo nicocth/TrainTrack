@@ -126,7 +126,8 @@
     "statistics_screen_title": "Pantalla de estadistica:",
     "statistics_screen_description": "Todos los datos mostrados se ven filtrados por el rango de meses el cual incluye 1, 3 ,6 y 12 meses.<br><br>El botón de cambio de visualización permite alternar en la gráfica de radar los datos de valores absolutos a porcentajes.<br><br>La grafica de radar muestra la proporción de ejercicios por grupo muscular para poder observar descompensaciones.<br><br>Las tarjetas de abajo muestran valores totales en el rango de fechas.",
     "edit_profile_screen_title": "Pantalla para editar datos del perfil",
-    "edit_profile_screen_description": "Permite modificar el nombre del usuario mas no su correo.<br><br>Para modificar la contraseña o eliminar la cuenta requerirá la contraseña actual, si no la introduces o no es correcta nos mostrara mensaje de error.<br><br>Para eliminar la cuenta pedirá confirmación y advertirá de la perdida de datos que conlleva."
-
-
+    "edit_profile_screen_description": "Permite modificar el nombre del usuario mas no su correo.<br><br>Para modificar la contraseña o eliminar la cuenta requerirá la contraseña actual, si no la introduces o no es correcta nos mostrara mensaje de error.<br><br>Para eliminar la cuenta pedirá confirmación y advertirá de la perdida de datos que conlleva.",
+    "back_to_training": "Volver al entrenamiento",
+    "discard": "Descartar",
+    "training_in_progress": "Tienes un entrenamiento en curso"
 }

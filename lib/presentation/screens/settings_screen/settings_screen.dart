@@ -6,6 +6,7 @@ import 'package:train_track/presentation/screens/auth/login_screen.dart';
 import 'package:train_track/presentation/screens/settings_screen/edit_profile_screen.dart';
 import 'package:train_track/presentation/screens/settings_screen/help_screen.dart';
 import 'package:train_track/presentation/screens/settings_screen/statistics_screen.dart';
+import 'package:train_track/presentation/widgets/shared/training_session_banner.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -95,6 +96,7 @@ class SettingsScreen extends ConsumerWidget {
           ),
         ),
       ),
+      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 

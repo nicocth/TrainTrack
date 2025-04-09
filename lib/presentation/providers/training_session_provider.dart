@@ -23,7 +23,7 @@ class TrainingSessionState {
 
   TrainingSessionState({
     required this.training,
-    this.startTime,//Variable needed to calculate elapsed training time. If you try to accumulate time when the device is locked, the application pauses and stops counting.
+    this.startTime, //Variable needed to calculate elapsed training time. If you try to accumulate time when the device is locked, the application pauses and stops counting.
     required this.seconds,
     required this.isRunning,
     required this.selectedExerciseIndex,
@@ -80,7 +80,9 @@ class TrainingSessionNotifier extends StateNotifier<TrainingSessionState> {
         ));
 
   void startSession(Training training) {
-
+    // Reset the session before starting a new one
+    resetSession();
+    
     // Sort the exercises by the 'order' property before starting the session
     final sortedExercises = List<CustomExercise>.from(training.exercises)
       ..sort((a, b) => a.order.compareTo(b.order));
@@ -121,17 +123,17 @@ class TrainingSessionNotifier extends StateNotifier<TrainingSessionState> {
     );
   }
 
-void startTimer() {
-  _timer?.cancel();
-  _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-    final start = state.startTime;
-    if (start == null) return;
-    final now = DateTime.now();
-    final elapsed = now.difference(start).inSeconds;
+  void startTimer() {
+    _timer?.cancel();
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      final start = state.startTime;
+      if (start == null) return;
+      final now = DateTime.now();
+      final elapsed = now.difference(start).inSeconds;
 
-    state = state.copyWith(seconds: elapsed);
-  });
-}
+      state = state.copyWith(seconds: elapsed);
+    });
+  }
 
   void stopTimer() {
     _timer?.cancel();
@@ -149,21 +151,21 @@ void startTimer() {
   }
 
   void markSetAsCompleted(int exerciseOrder, int setIndex) {
-
     final updatedCompletedSets = List<Set<int>>.from(state.completedSets);
-    updatedCompletedSets[exerciseOrder] = Set<int>.from(updatedCompletedSets[exerciseOrder])..add(setIndex);
+    updatedCompletedSets[exerciseOrder] =
+        Set<int>.from(updatedCompletedSets[exerciseOrder])..add(setIndex);
 
     state = state.copyWith(completedSets: updatedCompletedSets);
   }
 
   void markSetAsNotCompleted(int exerciseOrder, int setIndex) {
-
     final updatedCompletedSets = List<Set<int>>.from(state.completedSets);
-    updatedCompletedSets[exerciseOrder] = Set<int>.from(updatedCompletedSets[exerciseOrder])..remove(setIndex);
+    updatedCompletedSets[exerciseOrder] =
+        Set<int>.from(updatedCompletedSets[exerciseOrder])..remove(setIndex);
 
     state = state.copyWith(completedSets: updatedCompletedSets);
   }
-  
+
   void addSetToExercise(int exerciseOrder) {
     final training = state.training;
     if (training == null) return;

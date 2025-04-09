@@ -47,6 +47,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "app_bar_settings": MessageLookupByLibrary.simpleMessage("Configuración"),
     "back": MessageLookupByLibrary.simpleMessage("Espalda"),
+    "back_to_training": MessageLookupByLibrary.simpleMessage(
+      "Volver al entrenamiento",
+    ),
     "biceps": MessageLookupByLibrary.simpleMessage("Biceps"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
     "confirm_delete": MessageLookupByLibrary.simpleMessage(
@@ -97,6 +100,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "delete_history_confirm": MessageLookupByLibrary.simpleMessage(
       "¿Estás seguro de que deseas eliminar el historial de entrenamientos? Esta acción es irreversible.",
     ),
+    "discard": MessageLookupByLibrary.simpleMessage("Descartar"),
     "edit": MessageLookupByLibrary.simpleMessage("Editar"),
     "edit_profile": MessageLookupByLibrary.simpleMessage("Editar perfil"),
     "edit_profile_screen_description": MessageLookupByLibrary.simpleMessage(
@@ -251,6 +255,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "training_deleted": MessageLookupByLibrary.simpleMessage(
       "Entrenamiento borrado",
+    ),
+    "training_in_progress": MessageLookupByLibrary.simpleMessage(
+      "Tienes un entrenamiento en curso",
     ),
     "training_saved": MessageLookupByLibrary.simpleMessage(
       "Entrenamiento guardado",

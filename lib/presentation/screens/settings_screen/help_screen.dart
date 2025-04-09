@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:train_track/generated/l10n.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:train_track/presentation/widgets/shared/training_session_banner.dart';
 
 class HelpScreen extends StatelessWidget {
   const HelpScreen({super.key});
@@ -30,7 +31,7 @@ class HelpScreen extends StatelessWidget {
               Html(data: S.current.home_description),
 
               const SizedBox(height: 10),
-              
+
               // Explanation of creating training 1
               Text(
                 S.current.create_training_title,
@@ -46,7 +47,7 @@ class HelpScreen extends StatelessWidget {
               Html(data: S.current.create_training_description_1),
 
               const SizedBox(height: 10),
-              
+
               // Explanation of add exercise screen
               Text(
                 S.current.add_exercise_title,
@@ -92,7 +93,7 @@ class HelpScreen extends StatelessWidget {
               Html(data: S.current.summary_description),
 
               const SizedBox(height: 10),
-              
+
               // Explanation of exercise selection screen
               Text(
                 S.current.exercise_selection_title,
@@ -108,7 +109,7 @@ class HelpScreen extends StatelessWidget {
               Html(data: S.current.exercise_selection_description),
 
               const SizedBox(height: 10),
-              
+
               // Explanation of training screen
               Text(
                 S.current.training_screen_title,
@@ -124,7 +125,7 @@ class HelpScreen extends StatelessWidget {
               Html(data: S.current.training_screen_description),
 
               const SizedBox(height: 10),
-              
+
               // Explanation of statistics screen
               Text(
                 S.current.statistics_screen_title,
@@ -140,7 +141,7 @@ class HelpScreen extends StatelessWidget {
               Html(data: S.current.statistics_screen_description),
 
               const SizedBox(height: 10),
-              
+
               // Explanation of edit profile screen
               Text(
                 S.current.edit_profile_screen_title,
@@ -158,6 +159,7 @@ class HelpScreen extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 }
