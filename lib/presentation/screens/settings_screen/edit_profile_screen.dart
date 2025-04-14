@@ -134,7 +134,7 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
 
       await userDoc.update({
         'nickname': _nicknameController.text.trim(),
-      }).timeout(Duration(seconds: 3), onTimeout: () {
+      }).timeout(Duration(seconds: 6), onTimeout: () {
         throw TimeoutException(S.current.request_timeout);
       });
 
@@ -179,7 +179,16 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
         password: _currentPasswordController.text,
       );
       await user.reauthenticateWithCredential(credential);
-      await user.updatePassword(_newPasswordController.text.trim());
+      await user.updatePassword(_newPasswordController.text.trim()).timeout(
+        Duration(seconds: 6),
+        onTimeout: () {
+          throw TimeoutException(S.current.request_timeout);
+        },
+      );
+
+      //Clear the password fields
+      _currentPasswordController.clear();
+      _newPasswordController.clear();
 
       // Check if widget is mounted before displaying snackbar
       if (mounted) {
@@ -192,6 +201,20 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(S.current.wrong_current_password)),
+        );
+      }
+    } on TimeoutException {
+      // Check if widget is mounted before displaying snackbar
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(S.current.request_timeout)),
+        );
+      }
+    } catch (e) {
+      // Handle other exceptions
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(e.toString())),
         );
       }
     }
@@ -268,9 +291,18 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
       await user.reauthenticateWithCredential(credential);
 
       // Delete training history document in Firestore
-      final result = await FirestoreService().deleteTrainingHistory(ref);
+      final result =
+          await FirestoreService().deleteTrainingHistory(ref).timeout(
+        Duration(seconds: 6),
+        onTimeout: () {
+          throw TimeoutException(S.current.request_timeout);
+        },
+      );
 
       if (result.isSuccess) {
+        // Clear the password field
+        _currentPasswordController.clear();
+
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text(S.current.history_deleted)),
@@ -287,6 +319,19 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(S.current.wrong_current_password)),
+        );
+      }
+    } on TimeoutException {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(S.current.request_timeout)),
+        );
+      }
+    } catch (e) {
+      // Handle other exceptions
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(e.toString())),
         );
       }
     }
