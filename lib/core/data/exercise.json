@@ -7,11 +7,32 @@
     "image": "assets/images/press_banca.jpg"
   },
   {
+    "id": "press_banca_barra_agarre_cerrado",
+    "name": "Press de banca con barra y agarre cerrado",
+    "description": "El press de banca de agarre estrecho es uno de los pocos ejercicios compuestos para los tríceps.<br><br>Puesto que el agarre se produce a una distancia menor que la anchura de los hombros, la mayor parte de la tensión del movimiento recae sobre los tríceps, a diferencia del press de banca estándar, puesto que al mantener los codos cercanos al cuerpo éstos reciben un mayor estiramiento.<br><br>En vuestro entrenamiento de tríceps, colocad este movimiento al principio, cuando estáis frescos, porque seréis capaces de mover más peso que en ningún otro ejercicio de la rutina.<br><br>Objetivo: Cabeza externa del tríceps.<br><br>Cuándo: Al comienzo del entrenamiento.<br><br>Inicio: Tumbado de espalda sobre un banco plano, bajo un soporte y sujetando una barra a la anchura de los hombros con las palmas dirigidas hacia delante, liberar la barra y comenzar situándola por encima del pecho con los brazos extendidos.<br><br>Ejecución: Manteniendo los codos en línea con el cuerpo, bajar lentamente la barra a la porción inferior de los pectorales flexionando los brazos. Cuando ésta toque al pecho, subir a la posición de inicio.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/press_banca_barra_agarre_cerrado.jpg"
+  },
+  {
+    "id": "press_banca_multipower",
+    "name": "Press de banca en multipower",
+    "description": "Ajusta la máquina de press de pecho a una altura adecuada para ti, ni muy alta ni muy baja, y asegúrate de que la barra esté bien colocada. Siéntate en el banco y apoya tu espalda contra el banco.<br><br>Agarra la barra con fuerza, con las manos separadas más que la anchura de tus hombros, con los codos ligeramente flexionados.<br><br>Inspira profundamente y comienza a presionar las barra hacia arriba hacia la posición de los hombros, extendiendo los brazos.<br><br>Haz una pausa en la parte superior del movimiento y luego controla el descenso de las barras de vuelta a la posición inicial. No bloquees los codos al final del movimiento y mantén un poco de tensión en los músculos pectorales durante todo el intervalo de recorrido.<br><br>Repite el movimiento por el número de repeticiones deseado. Te recomendados realizar de 8 a 15 repeticiones, y tres o cuatro series por sesión de entrenamiento de pecho.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/press_banca_multipower.jpg"
+  },
+  {
     "id": "press_banca_mancuernas",
     "name": "Press banca con mancuernas",
     "description": "Acostados boca arriba sobre un banco plano. El torso debe estar apoyado desde la cabeza a las caderas, con las piernas dobladas y los pies asegurados. <br><br> Agarrad una mancuerna en cada mano y sujetad los pesos directamente encima del pecho. Las palmas deben mirar hacia los pies. Es el punto de partida. <br><br> Doblad los brazos para bajar las mancuernas hacia la parte externa del pecho, manteniendo los codos apuntando hacia los lados. Tomad aire y retened la respiración mientras empezáis a bajar el peso. <br><br> Revertid la dirección cuando las mancuernas lleguen a la posición final, y devolved las al punto de partida siguiendo la dirección de un arco. <br><br> Expulsad el aire una vez que hayáis superado el punto de estancamiento (el más difícil del intervalo de recorrido). <br><br> Deteneos un instante con los brazos estirados pero no hiperextendidos.  Repetid las veces necesarias. <br><br> Estad seguros de subir las mancuernas de manera que permanezcan sobre un plano vertical directamente encima de los hombros en la posición final.",
     "muscular_group": "pectoral",
     "image": "assets/images/press_banca_mancuernas.jpg"
+  },
+  {
+    "id": "press_banca_mancuernas_agarre_cerrado",
+    "name": "Press de banca con mancuernas y agarre cerrado",
+    "description": "Preparación:<br><br>Túmbate en un banco de press de banca. <br><br>Sujeta las mancuernas con un agarre cerrado, un poco más estrecho que el ancho de tus hombros. <br><br>Mantén la espalda y la cabeza apoyadas en el banco. <br><br>Ejecución:<br><br>Baja las mancuernas lentamente hacia el pecho, manteniendo los codos cerca del cuerpo.<br><br>Empuja las mancuernas hacia arriba de forma explosiva, extendiendo completamente los brazos.<br><br>Repite el ejercicio el número de veces deseado.<br><br>Consejos:<br><br>Mantén la muñeca derecha para evitar lesiones.<br><br>Mantén los hombros hacia abajo y evita bloquear los codos.<br><br>Controla el movimiento y mantén la estabilidad de los hombros y el core.<br><br>Respira de forma controlada.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/press_banca_mancuernas_agarre_cerrado.jpg"
   },
   {
     "id": "press_banca_inclinado_barra",
@@ -35,6 +56,13 @@
     "image": "assets/images/press_banca_declinado_barra.jpg"
   },
   {
+    "id": "press_banca_declinado_mancuernas",
+    "name": "Press banca declinado con mancuernas",
+    "description": "Acuéstate en un banco declinado con los pies bien apoyados en el suelo y sostén una mancuerna en cada mano, con los brazos extendidos hacia el techo.<br><br>Baja lentamente las mancuernas hacia los lados de tu cuerpo, manteniendo los codos cerca de tu torso.<br><br>Luego, levanta las mancuernas hacia arriba hasta que estén por encima de tu pecho, asegurándote de mantener tus codos ligeramente doblados.<br><br>Finalmente, baja las mancuernas de nuevo hacia los lados de tu cuerpo y repite el movimiento para completar una serie.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/press_banca_declinado_mancuernas.jpg"
+  },
+  {
     "id": "press_pecho_maquina_vertical",
     "name": "Press de pecho en máquina vertical",
     "description": "Ajusta la altura del asiento para que los agarres queden a la altura de los hombros o un poco por debajo <br><br> Siéntate erguido con la espalda contra el acolchado y coloca los pies sobre el suelo directamente bajo las rodillas y separados aproximadamente a la anchura de los hombros. <br><br> Sujeta los agarres con las palmas mirando hacia fuera. <br><br> Toma aire y aguanta la respiración mientras empujas para llevar los agarres lejos del cuerpo. <br><br> Expulsa el aire después de pasar la parte más difícil del movimiento o cuando los brazos estén completamente extendidos. <br><br> Haz una pequeña pausa y regresa a la posición inicial. <br><br> Cuando las manos se aproximen a la altura del pecho, cambia rápidamente la dirección del movimiento y repite.",
@@ -48,7 +76,6 @@
     "muscular_group": "pectoral",
     "image": "assets/images/press_pecho_inclinado_palanca.png"
   },
-  
   {
     "id": "aperturas_maquina",
     "name": "Aperturas en máquina",
@@ -62,6 +89,13 @@
     "description": "Túmbate boca arriba sobre un banco plano con los pies apoyados contra el suelo. La cabeza, espalda y glúteos deben estar en contacto con el banco. <br><br> Coge unas mancuernas con las palmas mirándose entre si y los brazos extendidos sobre el pecho. Bloquea los codos y dóblalos ligeramente. <br><br> Inspira profundamente y aguanta la respiración mientras bajas los brazos directamente hacia los lados. <br><br> A medida que los brazos se aproximan al nivel del hombro o ligeramente por debajo, contrae los músculos del pecho para invertir la dirección, manteniendo los codos ligeramente doblados. Sigue el mismo arco mientras elevas los brazos a la posición vertical y expulsa el aire. <br><br> Haz una pequeña pausa y repite.",
     "muscular_group": "pectoral",
     "image": "assets/images/aperturas_mancuernas.jpg"
+  },
+  {
+    "id": "aperturas_mancuernas_inclinado",
+    "name": "Aperturas con mancuernas en banco inclinado",
+    "description": "Siéntate en un banco inclinado ajustado a un ángulo de aproximadamente 45 grados. Toma una mancuerna en cada mano y colócalas en posición vertical sobre tus muslos.<br><br>Con las palmas de las manos mirando hacia adelante, reclina tu espalda sobre el banco mientras llevas las mancuernas hacia los lados de tu pecho. Mantén los codos ligeramente flexionados.<br><br>Exhala y empuja las mancuernas hacia arriba, extendiendo los brazos y sintiendo la contracción en los músculos pectorales. Mantén el control del movimiento en todo momento.<br><br>Lentamente, baja las mancuernas de regreso a la posición inicial mientras inhalas. Repite el movimiento durante el número deseado de repeticiones, manteniendo una postura estable y evitando movimientos bruscos.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/aperturas_mancuernas_inclinado.jpg"
   },
   {
     "id": "fondos_maquina_asistida",
@@ -83,6 +117,48 @@
     "description": "Las flexiones trabajan principalmente la porción media de los pectorales. <br><br> Suelen utilizarse para calentamiento, cerca del final de la sesión de trabajo o cuando no se disponga de otro equipamiento. <br><br> Inicio: Colocar las manos a la anchura de los hombros sobre el suelo, con el cuerpo plano y rígido, y las puntas de los pies apoyadas en el suelo. Comenzar con los brazos extendidos y perpendiculares al suelo. <br><br> Ejecución: Flexionar los codos bajando lentamente el cuerpo hacia el suelo. Cuando el pecho alcance unos pocos centímetros del suelo, extender los brazos con un press hacia arriba para volver a la posición de inicio. <br><br> Variaciones: Para enfatizar la parte inferior del pecho e incrementar la dificultad, colocar los pies sobre un banco o una silla (en función de lo que se disponga) durante la serie completa. Para hacer énfasis en la porción baja del pecho y aumentar la dificultad, colocar las manos sobre una superficie elevada y estable.",
     "muscular_group": "pectoral",
     "image": "assets/images/flexiones.jpg"
+  },
+  {
+    "id": "flexiones_inclinadas",
+    "name": "Flexiones inclinadas",
+    "description": "Busca una superficie elevada, como un banco o una silla, y colócate frente a ella.<br><br>Coloca las manos en la superficie, separadas a la anchura de los hombros y con los dedos apuntando hacia adelante.<br><br>Mantén los pies juntos y el cuerpo recto mientras bajas lentamente el cuerpo hacia la superficie.<br><br>Empuja hacia arriba con los brazos para volver a la posición inicial.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/flexiones_inclinadas.png"
+  },
+  {
+    "id": "flexiones_declinadas",
+    "name": "Flexiones declinadas",
+    "description": "Coloca tus pies en una superficie elevada, como un banco, una silla o una caja estable.<br><br>Asegura la posición inicial, con las manos apoyadas en el suelo a la altura de los hombros y el cuerpo en línea recta desde la cabeza hasta los talones.<br><br>Desciende lentamente, doblando los brazos hasta que el pecho casi toque el suelo, manteniendo siempre el control del movimiento.<br><br>Empuja hacia arriba, extendiendo los codos hasta volver a la posición inicial.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/flexiones_declinadas.jpg"
+  },
+  {
+    "id": "flexiones_agarre_cerrado",
+    "name": "Flexiones con agarre cerrado",
+    "description": "Flexiones los codos y baje el cuerpo lentamente para formar una línea recta desde la cabeza hasta la rodilla. Recuerde comprimir los músculos centrales y mantener el equilibrio.<br><br>Haga una pausa de hasta 2 segundos.<br><br>Mientras exhala, impulse el cuerpo hacia arriba y tensione los brazos.<br><br>Vuelva a la posición inicial.<br><br>Realice las repeticiones que indique su plan.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/flexiones_agarre_cerrado.jpg"
+  },
+  {
+    "id": "flexiones_una_mano",
+    "name": "Flexiones a una mano",
+    "description": "Comienza en posición de plancha con las manos separadas al ancho de los hombros.<br><br>Separa los pies para tener una base sólida y coloca una mano detrás de la espalda.<br><br>Baja el cuerpo lentamente, manteniendo el codo pegado al costado.<br><br>Empuja hacia arriba hasta volver a la posición inicial. Realiza el mismo número de repeticiones en cada lado.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/flexiones_una_mano.jpg"
+  },
+  {
+    "id": "flexiones_diamante",
+    "name": "Flexiones diamante",
+    "description": "Para comenzar el ejercicio debemos tumbarnos boca abajo o en posición de decúbito ventral y apoyar las puntas de los pies juntas en el suelo, así como formar bajo nuestro pecho un diamante con las manos.<br><br>Para formar el diamante debemos unir ambos pulgares en el suelo y ambas puntas de los dedos índice. Apoyamos toda la palma de la mano y elevamos el cuerpo completo, sin quebrar la cintura.<br><br>Cuando logremos una posición de tabla, con el cuerpo alineado de pies a cabeza y nuestros brazos estén completamente extendidos, volvemos a flexionar los brazos para descender todo el cuerpo al mismo tiempo hasta que el pecho roce nuestras manos y volvemos a repetir tantas veces como sea necesario.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/flexiones_diamante.jpg"
+  },
+  {
+    "id": "flexiones_arqueras",
+    "name": "Flexiones arqueras",
+    "description": "Colócate en posición de flexiones con un agarre más amplio de lo normal, aproximadamente el doble del ancho de los hombros.<br><br>En cada repetición estira un brazo a la vez que flexionas el otro, llevando el cuerpo hacia un lado.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/flexiones_arqueras.jpg"
   },
   {
     "id": "pullover_mancuerna",
