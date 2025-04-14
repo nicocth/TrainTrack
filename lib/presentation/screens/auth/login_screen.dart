@@ -121,32 +121,31 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
                       style: const TextStyle(color: Colors.blue),
                     ),
                   ),
-SizedBox(height: 20),
-Row(
-  children: [
-    Expanded(
-      child: Divider(
-        color: Colors.white54,
-        thickness: 1,
-      ),
-    ),
-    Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-      child: Text(
-        S.current.or,
-        style: TextStyle(color: Colors.white),
-      ),
-    ),
-    Expanded(
-      child: Divider(
-        color: Colors.white54,
-        thickness: 1,
-      ),
-    ),
-  ],
-),
-SizedBox(height: 20),
-
+                  SizedBox(height: 10),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          color: Colors.white54,
+                          thickness: 1,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Text(
+                          S.current.or,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      Expanded(
+                        child: Divider(
+                          color: Colors.white54,
+                          thickness: 1,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 10),
                   ElevatedButton.icon(
                     icon: Image.asset(
                       'assets/launcher_icon/google_logo.png',
