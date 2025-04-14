@@ -5,7 +5,7 @@ import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/infraestructure/firestore/services/firestore_services.dart';
 import 'package:train_track/presentation/screens/home/home_screen.dart';
 import 'package:train_track/presentation/screens/auth/login_screen.dart';
-import 'package:train_track/presentation/providers/auth_provider.dart';
+import 'package:train_track/infraestructure/auth_firebase/auth_provider.dart';
 import 'package:train_track/core/utils/validators.dart';
 
 

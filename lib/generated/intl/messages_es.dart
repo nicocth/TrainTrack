@@ -173,6 +173,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "login_failed": MessageLookupByLibrary.simpleMessage(
       "Error al iniciar sesión, el usuario o la contraseña no coinciden",
     ),
+    "login_with_google": MessageLookupByLibrary.simpleMessage(
+      "Continuar con Google",
+    ),
     "logout": MessageLookupByLibrary.simpleMessage("Cerrar sesión"),
     "logout_failed": MessageLookupByLibrary.simpleMessage(
       "Error al cerrar sesión",
@@ -191,6 +194,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "number_value_error": MessageLookupByLibrary.simpleMessage(
       "Valor incorrecto, Introduzca un número",
     ),
+    "or": MessageLookupByLibrary.simpleMessage("o"),
     "password": MessageLookupByLibrary.simpleMessage("Contraseña"),
     "password_updated": MessageLookupByLibrary.simpleMessage(
       "La contraseña ha sido actualizada",

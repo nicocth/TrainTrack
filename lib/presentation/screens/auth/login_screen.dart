@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:train_track/generated/l10n.dart';
+import 'package:train_track/infraestructure/firestore/services/firestore_services.dart';
 import 'package:train_track/presentation/screens/auth/register_screen.dart';
 import 'package:train_track/presentation/screens/home/home_screen.dart';
-import 'package:train_track/presentation/providers/auth_provider.dart';
+import 'package:train_track/infraestructure/auth_firebase/auth_provider.dart';
 import 'package:train_track/core/utils/validators.dart';
 
 class LoginScreen extends ConsumerStatefulWidget {
@@ -94,29 +95,71 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
                       labelText: S.current.password,
                       prefixIcon: Icon(Icons.lock),
                       suffixIcon: IconButton(
-                        icon: Icon(_obscurePassword ? Icons.visibility : Icons.visibility_off),
+                        icon: Icon(_obscurePassword
+                            ? Icons.visibility
+                            : Icons.visibility_off),
                         onPressed: _togglePasswordVisibility,
                       ),
                     ),
                   ),
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () => login(context),
                     child: Text(S.current.login),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 10),
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => RegisterScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => RegisterScreen()),
                       );
                     },
                     child: Text(
                       S.current.access_register,
                       style: const TextStyle(color: Colors.blue),
                     ),
-                  )
+                  ),
+SizedBox(height: 20),
+Row(
+  children: [
+    Expanded(
+      child: Divider(
+        color: Colors.white54,
+        thickness: 1,
+      ),
+    ),
+    Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      child: Text(
+        S.current.or,
+        style: TextStyle(color: Colors.white),
+      ),
+    ),
+    Expanded(
+      child: Divider(
+        color: Colors.white54,
+        thickness: 1,
+      ),
+    ),
+  ],
+),
+SizedBox(height: 20),
+
+                  ElevatedButton.icon(
+                    icon: Image.asset(
+                      'assets/launcher_icon/google_logo.png',
+                      height: 24,
+                    ),
+                    label: Text(S.current.login_with_google),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.black,
+                      elevation: 2,
+                    ),
+                    onPressed: () => loginWithGoogle(context),
+                  ),
                 ],
               ),
             ),
@@ -131,24 +174,29 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
     final email = _emailController.text.trim();
     final password = _passwordController.text;
 
-
-    if (!Validators.emptyfields(email, password)) {	
+    if (!Validators.emptyfields(email, password)) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(S.current.fill_all_fields), backgroundColor: Colors.red),
+        SnackBar(
+            content: Text(S.current.fill_all_fields),
+            backgroundColor: Colors.red),
       );
       return;
     }
 
     if (!Validators.validateEmail(email)) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(S.current.invalid_email), backgroundColor: Colors.red),
+        SnackBar(
+            content: Text(S.current.invalid_email),
+            backgroundColor: Colors.red),
       );
       return;
     }
 
     if (!Validators.validatePassword(password)) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(S.current.weak_password), backgroundColor: Colors.red),
+        SnackBar(
+            content: Text(S.current.weak_password),
+            backgroundColor: Colors.red),
       );
       return;
     }
@@ -158,7 +206,7 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
 
       //check if widget is mounted before displaying snackbar
       if (!context.mounted) return;
-      
+
       if (mounted) {
         Navigator.pushAndRemoveUntil(
           context,
@@ -190,6 +238,41 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
 
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(errorMessage), backgroundColor: Colors.red),
+      );
+    }
+  }
+
+  void loginWithGoogle(BuildContext context) async {
+    try {
+      final user = await ref.read(authProvider.notifier).signInWithGoogle();
+
+      if (user == null) return;
+
+      final email = user.email ?? '';
+      final uid = user.uid;
+
+      final result = await FirestoreService().createUserInFirestore(email, uid);
+
+      if (!context.mounted) return;
+
+      if (result.isFailure) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+              content: Text(result.errorMessage ?? S.current.uknown_error),
+              backgroundColor: Colors.red),
+        );
+        return;
+      }
+
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => HomeScreen()),
+        (route) => false,
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+            content: Text(S.current.login_failed), backgroundColor: Colors.red),
       );
     }
   }

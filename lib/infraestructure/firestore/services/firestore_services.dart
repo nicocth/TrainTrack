@@ -6,7 +6,7 @@ import 'package:train_track/domain/models/training.dart';
 import 'package:train_track/domain/models/training_history.dart';
 import 'package:train_track/infraestructure/mappers/training_history_mapper.dart';
 import 'package:train_track/infraestructure/mappers/training_mapper.dart';
-import 'package:train_track/presentation/providers/auth_provider.dart';
+import 'package:train_track/infraestructure/auth_firebase/auth_provider.dart';
 import 'package:train_track/presentation/providers/create_training_provider.dart';
 import 'package:train_track/presentation/providers/training_session_provider.dart';
 

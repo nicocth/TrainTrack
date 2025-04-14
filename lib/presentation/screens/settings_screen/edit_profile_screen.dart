@@ -4,15 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:train_track/core/utils/validators.dart';
 import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/infraestructure/firestore/services/firestore_services.dart';
 import 'package:train_track/presentation/screens/auth/login_screen.dart';
 import 'package:train_track/presentation/widgets/shared/training_session_banner.dart';
-
-final userProvider = StateProvider<User?>((ref) {
-  return FirebaseAuth.instance.currentUser;
-});
 
 class EditProfileScreen extends ConsumerStatefulWidget {
   const EditProfileScreen({super.key});
@@ -22,16 +19,28 @@ class EditProfileScreen extends ConsumerStatefulWidget {
 }
 
 class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
+  final User user = FirebaseAuth.instance.currentUser!;
   final TextEditingController _nicknameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _currentPasswordController =
       TextEditingController();
   final TextEditingController _newPasswordController = TextEditingController();
+  // Detect if the user is a Google user
+  late bool _isGoogleUser;
 
   @override
   void initState() {
     super.initState();
     _loadUserData();
+  }
+
+  @override
+  void dispose() {
+    _nicknameController.dispose();
+    _emailController.dispose();
+    _currentPasswordController.dispose();
+    _newPasswordController.dispose();
+    super.dispose();
   }
 
   @override
@@ -49,38 +58,51 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                 decoration: InputDecoration(labelText: S.current.email),
                 enabled: false,
               ),
-              TextField(
-                controller: _nicknameController,
-                decoration: InputDecoration(labelText: S.current.nickname),
-              ),
-              SizedBox(height: 20),
-              SizedBox(
-                width: 240,
-                child: ElevatedButton(
-                  onPressed: _updateProfile,
-                  child: Text(S.current.update_nickname),
+              // If the user is not a Google user, show the password fields
+              if (!_isGoogleUser) ...[
+                TextField(
+                  controller: _nicknameController,
+                  decoration: InputDecoration(labelText: S.current.nickname),
                 ),
-              ),
-              SizedBox(height: 30),
-              TextField(
-                controller: _currentPasswordController,
-                decoration:
-                    InputDecoration(labelText: S.current.current_password),
-                obscureText: true,
-              ),
-              TextField(
-                controller: _newPasswordController,
-                decoration: InputDecoration(labelText: S.current.new_password),
-                obscureText: true,
-              ),
-              SizedBox(height: 20),
-              SizedBox(
-                width: 240,
-                child: ElevatedButton(
-                  onPressed: _updatePassword,
-                  child: Text(S.current.update_password),
+              ] else ...[
+                TextField(
+                  controller: _nicknameController,
+                  decoration: InputDecoration(labelText: S.current.nickname),
+                  enabled: false,
                 ),
-              ),
+              ],
+
+              if (!_isGoogleUser) ...[
+                SizedBox(height: 20),
+                SizedBox(
+                  width: 240,
+                  child: ElevatedButton(
+                    onPressed: _updateProfile,
+                    child: Text(S.current.update_nickname),
+                  ),
+                ),
+                SizedBox(height: 30),
+                TextField(
+                  controller: _currentPasswordController,
+                  decoration:
+                      InputDecoration(labelText: S.current.current_password),
+                  obscureText: true,
+                ),
+                TextField(
+                  controller: _newPasswordController,
+                  decoration:
+                      InputDecoration(labelText: S.current.new_password),
+                  obscureText: true,
+                ),
+                SizedBox(height: 20),
+                SizedBox(
+                  width: 240,
+                  child: ElevatedButton(
+                    onPressed: _updatePassword,
+                    child: Text(S.current.update_password),
+                  ),
+                ),
+              ],
               SizedBox(height: 20),
               // button to delete statistics
               SizedBox(
@@ -109,25 +131,28 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
   }
 
   Future<void> _loadUserData() async {
-    final user = ref.read(userProvider);
-    if (user == null) return;
+    _isGoogleUser =
+        user.providerData.any((info) => info.providerId == 'google.com');
 
     final userDoc = await FirebaseFirestore.instance
         .collection('users')
         .doc(user.uid)
         .get();
+
     if (userDoc.exists) {
       final data = userDoc.data();
       if (data != null) {
-        _nicknameController.text = data['nickname'] ?? '';
+        if (_isGoogleUser) {
+          _nicknameController.text = user.displayName ?? '';
+        } else {
+          _nicknameController.text = data['nickname'] ?? '';
+        }
         _emailController.text = user.email ?? '';
       }
     }
   }
 
   Future<void> _updateProfile() async {
-    final user = ref.read(userProvider);
-    if (user == null) return;
     try {
       final userDoc =
           FirebaseFirestore.instance.collection('users').doc(user.uid);
@@ -224,19 +249,23 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) return;
 
-    if (_currentPasswordController.text.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(S.current.current_password_empty)),
-      );
-      return;
-    }
-
     try {
-      AuthCredential credential = EmailAuthProvider.credential(
-        email: user.email!,
-        password: _currentPasswordController.text,
-      );
-      await user.reauthenticateWithCredential(credential);
+      if (_isGoogleUser) {
+        await _reauthenticateWithGoogle();
+      } else {
+        if (_currentPasswordController.text.isEmpty) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(S.current.current_password_empty)),
+          );
+          return;
+        }
+
+        final credential = EmailAuthProvider.credential(
+          email: user.email!,
+          password: _currentPasswordController.text,
+        );
+        await user.reauthenticateWithCredential(credential);
+      }
 
       // Delete user document in Firestore
       final result = await FirestoreService().deleteDocCurrentUser(ref);
@@ -276,19 +305,23 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
     final user = FirebaseAuth.instance.currentUser;
     if (user == null) return;
 
-    if (_currentPasswordController.text.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(S.current.current_password_empty)),
-      );
-      return;
-    }
-
     try {
-      AuthCredential credential = EmailAuthProvider.credential(
-        email: user.email!,
-        password: _currentPasswordController.text,
-      );
-      await user.reauthenticateWithCredential(credential);
+      if (_isGoogleUser) {
+        await _reauthenticateWithGoogle();
+      } else {
+        if (_currentPasswordController.text.isEmpty) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(S.current.current_password_empty)),
+          );
+          return;
+        }
+
+        final credential = EmailAuthProvider.credential(
+          email: user.email!,
+          password: _currentPasswordController.text,
+        );
+        await user.reauthenticateWithCredential(credential);
+      }
 
       // Delete training history document in Firestore
       final result =
@@ -391,5 +424,22 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
     if (confirm) {
       await _deleteHistory();
     }
+  }
+
+  Future<void> _reauthenticateWithGoogle() async {
+    final user = FirebaseAuth.instance.currentUser;
+    if (user == null) return;
+
+    final googleUser = await GoogleSignIn().signIn();
+    if (googleUser == null) return;
+
+    final googleAuth = await googleUser.authentication;
+
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth.accessToken,
+      idToken: googleAuth.idToken,
+    );
+
+    await user.reauthenticateWithCredential(credential);
   }
 }

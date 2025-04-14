@@ -129,5 +129,7 @@
     "edit_profile_screen_description": "Permite modificar el nombre del usuario mas no su correo.<br><br>Para modificar la contraseña o eliminar la cuenta requerirá la contraseña actual, si no la introduces o no es correcta nos mostrara mensaje de error.<br><br>Para eliminar la cuenta pedirá confirmación y advertirá de la perdida de datos que conlleva.",
     "back_to_training": "Volver al entrenamiento",
     "discard": "Descartar",
-    "training_in_progress": "Tienes un entrenamiento en curso"
+    "training_in_progress": "Tienes un entrenamiento en curso",
+    "or": "o",
+    "login_with_google": "Continuar con Google"
 }

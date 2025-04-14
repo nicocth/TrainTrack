@@ -155,6 +155,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "login_failed": MessageLookupByLibrary.simpleMessage(
       "Login failed, user or password do not match",
     ),
+    "login_with_google": MessageLookupByLibrary.simpleMessage(
+      "Continue with Google",
+    ),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "logout_failed": MessageLookupByLibrary.simpleMessage("Logout failed"),
     "mode": MessageLookupByLibrary.simpleMessage("Mode"),
@@ -171,6 +174,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "number_value_error": MessageLookupByLibrary.simpleMessage(
       "Wrong value. Please introduce a number.",
     ),
+    "or": MessageLookupByLibrary.simpleMessage("or"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "password_updated": MessageLookupByLibrary.simpleMessage(
       "Password updated",

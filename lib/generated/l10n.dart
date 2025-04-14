@@ -1149,6 +1149,21 @@ class S {
       args: [],
     );
   }
+
+  /// `or`
+  String get or {
+    return Intl.message('or', name: 'or', desc: '', args: []);
+  }
+
+  /// `Continue with Google`
+  String get login_with_google {
+    return Intl.message(
+      'Continue with Google',
+      name: 'login_with_google',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

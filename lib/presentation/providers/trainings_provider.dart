@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:train_track/domain/models/training.dart';
 import 'package:train_track/infraestructure/firestore/services/firestore_services.dart';
-import 'package:train_track/presentation/providers/auth_provider.dart';
+import 'package:train_track/infraestructure/auth_firebase/auth_provider.dart';
 
 class TrainingsState {
   final List<Training> trainings;

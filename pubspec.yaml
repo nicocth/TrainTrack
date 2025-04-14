@@ -49,6 +49,7 @@ dependencies:
   fl_chart: ^0.70.2
   flutter_html: ^3.0.0
   firebase_crashlytics: ^4.3.5
+  google_sign_in: ^6.3.0
 
 dev_dependencies:
   flutter_test:
@@ -78,7 +79,7 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
-   - assets/launcher_icon/logo.png
+   - assets/launcher_icon/
    - assets/images/
    - lib/core/data/exercise.json
   #   - images/a_dot_ham.jpeg

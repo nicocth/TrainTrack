@@ -129,5 +129,7 @@
     "edit_profile_screen_description": "Allows you to modify the user name but not their email.<br><br>To modify the password or delete the account, the current password will be required. If you do not enter it or it is incorrect, an error message will be displayed.<br><br>To delete the account, it will ask for confirmation and warn you of the loss of data that this entails.",
     "back_to_training": "Back to training",
     "discard": "Discard",
-    "training_in_progress": "You have a training in progress"
+    "training_in_progress": "You have a training in progress",
+    "or": "or",
+    "login_with_google": "Continue with Google"
 }
