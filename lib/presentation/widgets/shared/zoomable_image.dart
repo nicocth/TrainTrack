@@ -23,8 +23,7 @@ class ZoomableImage extends ConsumerWidget {
           ),
         );
       },
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(100),
+      child: ClipOval(
         child: Image.asset(
           image,
           width: 60,
