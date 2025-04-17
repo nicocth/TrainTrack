@@ -784,11 +784,46 @@
     "image": "assets/images/curl_biceps_barra_z.jpg"
   },
   {
+    "id": "curl_biceps_barra",
+    "name": "Curl biceps con barra",
+    "description": "En posición de pie, con los talones separados a igual anchura de hombros, las rodillas sin bloquear y sosteniendo una barra. <br><br> Llevad los hombros hacia atrás y bloquead los codos contra los costados. <br><br> Contraed los bíceps para subir la barra en un suave arco hacia los hombros, manteniendo las muñecas bloqueadas y los hombros hacia atrás. <br><br> Contraed los bíceps en la posición final de contracción de pico antes de regresar lentamente a la posición inicial.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_biceps_barra.jpg"
+  },
+  {
     "id": "curl_biceps_mancuernas",
     "name": "Curl biceps con mancuernas",
     "description": "De pie, sujetando un par de mancuernas con los brazos extendidos hacia abajo. Comenzar con las palmas dirigidas hacia dentro y las rodillas ligeramente flexionadas. <br><br> Manteniendo los codos pegados a los costados, elevar las mancuernas mientras que, simultáneamente, gira las palmas hacia arriba y afuera, de tal manera que al final de la repetición éstas queden ligeramente hacia fuera. <br><br> Contraer los bíceps contando uno y, a continuación, bajar la mancuerna de regreso a la posición de inicio. Repetir con el otro brazo, alternando uno con otro.",
     "muscular_group": "biceps",
     "image": "assets/images/curl_biceps_mancuernas.jpg"
+  },
+  {
+    "id": "curl_martillo",
+    "name": "Curl martillo",
+    "description": "De pie, sujetar un par de mancuernas a los costados, con las palmas dirigidas hacia adentro, y flexionar las rodillas ligeramente. <br><br> Con los codos pegados a los costados y sin mover la parte superior del brazo, elevar las mancuernas sin rotar las muñecas (las palmas se dirigen una hacia la otra durante todo el movimiento). Mantener la contracción contando uno al final del movimiento y, a continuación, volver a la posición de inicio.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_martillo.jpg"
+  },
+  {
+    "id": "curl_martillo_polea",
+    "name": "Curl martillo en polea",
+    "description": "Coloca la polea en la posición más baja y ajusta el peso deseado.<br><br>Toma las cuerdas con un agarre neutro (palmas mirándose entre sí).<br><br>Mantén los codos pegados a los costados y comienza a flexionar los bíceps, manteniendo los antebrazos paralelos al suelo.<br><br>Continúa levantando las manos hacia los hombros y siente la contracción en los bíceps. Luego, baja las manos lentamente a la posición inicial.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_martillo_polea.jpg"
+  },
+  {
+    "id": "curl_martillo_inclinado",
+    "name": "Curl martillo inclinado",
+    "description": "Comenzar en una posición de pie frente a un banco inclinado, con los pies separados al ancho de los hombros y los brazos a los costados del cuerpo, sosteniendo una mancuerna en cada mano con las palmas mirando hacia adentro.<br><br>Con los codos pegados al cuerpo, levantar las mancuernas hacia los hombros, doblando los codos y manteniendo los brazos en una posición fija. Asegurarse de mantener los codos en una posición estacionaria y no balancear los brazos hacia adelante o hacia atrás.<br><br>Al llegar a la posición de contracción, apretar los bíceps y mantener la posición durante un segundo antes de bajar lentamente las mancuernas a la posición inicial.<br><br>Al bajar las mancuernas, asegurarse de mantener los codos pegados al cuerpo y controlar el movimiento en todo momento. Evitar dejar caer las mancuernas o permitir que los codos se muevan hacia adelante.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_martillo_inclinado.jpg"
+  },
+  {
+    "id": "curl_biceps_mancuernas_concentrado",
+    "name": "Curl biceps con mancuernas concentrado",
+    "description": "Sentado sobre un banco plano o una silla con los pies planos sobre el suelo, por delante del tronco. Mantener una mancuerna con una mano y colocar la otra sobre la pierna contralateral para sujetarse. Flexionarse hacia delante a nivel del abdomen con el brazo que trabaja extendido hacia abajo entre las piernas y el codo apoyado contra la cara interna del muslo del mismo lado. <br><br> Con el codo apoyado en la pierna para estabilizar la parte superior del brazo, hacer el curl levantando el peso tanto como sea posible con la palma dirigida hacia arriba durante todo el movimiento. Contraer el bíceps contando hasta uno y al final, mientras se rota la muñeca ligeramente hacia fuera, volver a la posición de inicio. Hacer todas las repeticiones con ese brazo y luego cambiar al otro.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_biceps_mancuernas_concentrado.jpg"
   },
   {
     "id": "curl_biceps_mancuernas_sentado",
@@ -798,6 +833,13 @@
     "image": "assets/images/curl_biceps_mancuernas_sentado.jpg"
   },
   {
+    "id": "curl_biceps_mancuernas_banco_inclinado",
+    "name": "Curl biceps con mancuernas en banco inclinado",
+    "description": "Acostados boca arriba sobre un banco inclinado en angulo de 45. La espalda debe apoyarse contra el banco.<br><br>Sujetad una mancuerna en cada mano, empleando agarre neutro, con los brazos extendidos y colgando directamente a los lados.<br><br>Tomad aire y retenedlo mientras subís el peso hasta los hombros doblando los codos. Mantened los brazos fijos, sin llevarlos hacia delante.<br><br>Girad lentamente las muñecas cuando los antebrazos alcancen la paralela al suelo. Las palmas deben mirar hacia arriba en la posición final.<br><br>Expulsad el aire y devolved las manos a la posición neutral cuando regreséis al punto de partida.<br><br>Mantened una posición estable del cuerpo para que no se muevan el torso ni los brazos.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_biceps_mancuernas_banco_inclinado.jpg"
+  },
+  {
     "id": "curl_biceps_mancuernas_predicador",
     "name": "Curl biceps con mancuernas en predicador",
     "description": "Posición inicial: Siéntate en el banco predicador y ajusta la altura para que tus brazos queden totalmente apoyados en el banco, con el pecho también en contacto con el respaldo. Toma una mancuerna en cada mano, con las palmas mirando hacia arriba (agarre supino). <br><br> Ejecución: Inicia el movimiento levantando las mancuernas lentamente hacia tus hombros. El enfoque debe estar completamente en flexionar los codos sin mover los hombros ni el torso. El banco actúa como soporte para que el bíceps haga todo el trabajo. <br><br> Punto de contracción máxima: Antes de que las mancuernas llegan cerca de los hombros, mantén la contracción por uno o dos segundos. Este es el punto en el que más tensión se aplica sobre el bíceps. <br><br> Descenso controlado: Baja las mancuernas de forma lenta y controlada, asegurándote de mantener la tensión en los bíceps durante todo el movimiento. Evita estirar completamente los codos al final del recorrido para no liberar la tensión.",
@@ -805,25 +847,32 @@
     "image": "assets/images/curl_biceps_mancuernas_predicador.jpg"
   },
   {
-    "id": "curl_biceps_mancuernas_predicador_martillo",
-    "name": "Curl biceps con mancuernas en predicador con agarre martillo",
+    "id": "curl_martillo_predicador",
+    "name": "Curl martillo en predicador",
     "description": "Selecciona el peso deseado y siéntate en posición vertical con el pecho contra el banco de predicador. <br><br> Mantén la parte superior del brazo presionada contra la almohadilla y usa un agarre neutro (palmas enfrentadas). <br><br> Toma una respiración profunda y baja lentamente las mancuernas. Una vez que el bíceps esté completamente estirado (pero sin llegar a bloquear la articulación), devuelve el peso de regreso a la posición inicial. <br><br> Puedes realizarlo con ambos brazos a la vez o de forma alterna.",
     "muscular_group": "biceps",
-    "image": "assets/images/curl_biceps_mancuernas_predicador_martillo.jpg"
+    "image": "assets/images/curl_martillo_predicador.jpg"
   },
   {
-    "id": "curl_biceps_mancuernas_martillo",
-    "name": "Curl biceps con mancuernas con agarre martillo",
-    "description": "De pie, sujetar un par de mancuernas a los costados, con las palmas dirigidas hacia adentro, y flexionar las rodillas ligeramente. <br><br> Con los codos pegados a los costados y sin mover la parte superior del brazo, elevar las mancuernas sin rotar las muñecas (las palmas se dirigen una hacia la otra durante todo el movimiento). Mantener la contracción contando uno al final del movimiento y, a continuación, volver a la posición de inicio.",
+    "id": "curl_biceps_barra_predicador",
+    "name": "Curl biceps con barra en predicador",
+    "description": "La técnica de ejecución consiste en que el individuo debe estar sentado sobre la máquina, con los brazos completamente apoyados sobre el pupitre que compone el banco Scott.<br><br>Agarra la barra Z o recta o en su defecto, dos mancuernas con ambas manos o incluso a una mano.<br><br>Durante la ejecución del bíceps en banco Scott, las palmas deben mirar hacia arriba, sin movilizar los brazos y teniendo ambos estirados mientras se sostiene la carga y se inicia el movimiento.<br><br>Inspira profundamente y se comienza con la flexión de los codos para poder llevar el peso hacia el nivel del pecho con ambas manos. Mantén ahí 2 segundos<br><br>Regresa a la posición inicial de forma lenta y precisa. Lo importante es no extender completamente los brazos.",
     "muscular_group": "biceps",
-    "image": "assets/images/curl_biceps_mancuernas_martillo.jpg"
+    "image": "assets/images/curl_biceps_barra_predicador.jpg"
   },
   {
-    "id": "curl_biceps_mancuernas_concentrado",
-    "name": "Curl biceps con mancuernas concentrado",
-    "description": "Sentado sobre un banco plano o una silla con los pies planos sobre el suelo, por delante del tronco. Mantener una mancuerna con una mano y colocar la otra sobre la pierna contralateral para sujetarse. Flexionarse hacia delante a nivel del abdomen con el brazo que trabaja extendido hacia abajo entre las piernas y el codo apoyado contra la cara interna del muslo del mismo lado. <br><br> Con el codo apoyado en la pierna para estabilizar la parte superior del brazo, hacer el curl levantando el peso tanto como sea posible con la palma dirigida hacia arriba durante todo el movimiento. Contraer el bíceps contando hasta uno y al final, mientras se rota la muñeca ligeramente hacia fuera, volver a la posición de inicio. Hacer todas las repeticiones con ese brazo y luego cambiar al otro.",
+    "id": "curl_biceps_polea_pie",
+    "name": "Curl biceps en polea de pie",
+    "description": "Toma la barra con un agarre cercano y lentamente, mientras exhala, lleva la barra hacia los hombros. Mantén aislado el bíceps y espera hasta un par de segundos para regresar.<br><br>Regresa lentamente a la posición inicial, extendiendo los brazos completamente.<br><br>Realiza el movimiento de acuerdo a la cantidad de repeticiones que desea realizar.",
     "muscular_group": "biceps",
-    "image": "assets/images/curl_biceps_mancuernas_concentrado.jpg"
+    "image": "assets/images/curl_biceps_polea_pie.jpg"
+  },
+  {
+    "id": "curl_biceps_una_mano_polea",
+    "name": "Curl biceps con una mano en polea",
+    "description": "Ajusta la polea de la máquina a la altura de tu cintura.<br><br>Situate de espaldas a la polea y sujeta el mango con una mano, con la palma hacia arriba.<br><br>Mantén el brazo pegado al costado del cuerpo y sin mover el codo, lleva el mango hacia tu hombro mientras contraes el bíceps.<br><br>Vuelve a la posición inicial de manera controlada y repite el movimiento.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_biceps_una_mano_polea.jpg"
   },
   {
     "id": "press_banca_barra_agarre_cerrado",
