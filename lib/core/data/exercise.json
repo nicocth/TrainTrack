@@ -112,6 +112,13 @@
     "image": "assets/images/fondos_pecho_paralelas.jpg"
   },
   {
+    "id": "fondos_barra",
+    "name": "Fondos en barra",
+    "description": "Acércate a las barras de fondos, agárralas firmemente con las manos separadas a la altura de los hombros y levántate hasta que los brazos estén completamente extendidos y el cuerpo en el aire.<br><br>Baje lentamente el cuerpo doblando los codos hasta que formen un ángulo de 90 grados, manteniendo el pecho hacia adelante y los codos cerca del cuerpo.<br><br>Una vez que hayas llegado al final del movimiento, vuelve a subir a la posición inicial extendiendo los brazos y usando la fuerza del pecho y los tríceps.<br><br>Repita este proceso durante la cantidad deseada de repeticiones, asegurándose de mantener la forma adecuada durante todo el ejercicio para evitar lesiones.",
+    "muscular_group": "pectoral",
+    "image": "assets/images/fondos_barra.png"
+  },
+  {
     "id": "flexiones",
     "name": "Flexiones",
     "description": "Las flexiones trabajan principalmente la porción media de los pectorales. <br><br> Suelen utilizarse para calentamiento, cerca del final de la sesión de trabajo o cuando no se disponga de otro equipamiento. <br><br> Inicio: Colocar las manos a la anchura de los hombros sobre el suelo, con el cuerpo plano y rígido, y las puntas de los pies apoyadas en el suelo. Comenzar con los brazos extendidos y perpendiculares al suelo. <br><br> Ejecución: Flexionar los codos bajando lentamente el cuerpo hacia el suelo. Cuando el pecho alcance unos pocos centímetros del suelo, extender los brazos con un press hacia arriba para volver a la posición de inicio. <br><br> Variaciones: Para enfatizar la parte inferior del pecho e incrementar la dificultad, colocar los pies sobre un banco o una silla (en función de lo que se disponga) durante la serie completa. Para hacer énfasis en la porción baja del pecho y aumentar la dificultad, colocar las manos sobre una superficie elevada y estable.",
@@ -553,11 +560,53 @@
     "image": "assets/images/remo_maquina.jpg"
   },
   {
+    "id": "remo_sentado_palanca",
+    "name": "Remo sentado con palanca",
+    "description": "Sujete las manijas con un agarre por encima de la cabeza, asegurándose de que sus brazos estén completamente extendidos y su espalda recta.<br><br>Tire de las manijas hacia su cuerpo mientras mantiene los codos cerca de los costados, concentrándose en apretar los omóplatos en el punto máximo del movimiento.<br><br>Mantenga la posición durante uno o dos segundos para maximizar la participación de los músculos.<br><br>Extiende lentamente los brazos hasta la posición inicial, asegurándote de mantener la espalda recta y mantener el control durante todo el movimiento.",
+    "muscular_group": "back",
+    "image": "assets/images/remo_sentado_palanca.png"
+  },
+  {
+    "id": "remo_barra",
+    "name": "Remo con barra",
+    "description": "Colócate frente a una barra cargada en el suelo. Flexiona las rodillas ligeramente, mantén la espalda recta y agarra la barra con un agarre pronado (palmas hacia abajo) al ancho de los hombros.<br><br>Manteniendo la espalda recta, estira las piernas y tira de la barra hacia tu cuerpo, llevando los codos hacia atrás. Asegúrate de mantener los hombros hacia abajo y atrás durante todo el movimiento.<br><br>Mantén una contracción en los músculos de la espalda durante un segundo en la posición de máxima contracción.<br><br>Controladamente, baja la barra hacia el punto inicial, estirando los brazos completamente.",
+    "muscular_group": "back",
+    "image": "assets/images/remo_barra.jpg"
+  },
+  {
+    "id": "remo_pendlay",
+    "name": "Remo pendlay",
+    "description": "1. Ponte de pie frente a una barra con peso. Considera tu resistencia y condición física antes de optar por una cantidad de peso, también puedes consultar a tu entrenador.<br><br>2. Para la posición inicial, debes tener el medio pie alineado debajo de la mitad de la barra.<br><br>3. Tus pies deben estar separados a la anchura de los hombros y las rodillas ligeramente flexionadas.<br><br>4. Tu barbilla debe permanecer recogida durante todo el movimiento.<br><br>5. Tus hombros deben estar directamente alineados con tus caderas en una posición neutra de la cabeza y cuello.<br><br>6. Tus brazos deben permanecer a los lados, con una ligera flexión en los codos.<br><br>7. Tensa los hombros, las caderas y el core inhalando y exhalando profundamente antes de bajar hacia la barra.<br><br>8. Mantén siempre la espalda recta mientras gira las caderas.<br><br>9. Comienza a bajar la parte superior del cuerpo hasta que quede paralela al suelo. Flexiona las caderas y las rodillas para bajar hacia la barra. Las espinillas deben estar verticales.<br><br>10. Las piernas deben estar más rectas que en un peso muerto, pero aún así flexionadas para proteger el músculo.<br><br>11. De forma estricta, agarre la barra; contraiga los músculos de la espalda girando los hombros hacia fuera. Los platos (o pesos) de la barra deben permanecer en contacto con el suelo.<br><br>12. Levántela con cuidado hacia la parte inferior del pecho utilizando los dorsales y los brazos. Los codos deben desplazarse hacia atrás y estar a 45 grados de la parte superior del cuerpo.<br><br>13. Los omóplatos deben contraerse de forma natural mientras los codos se enderezan y la barra se aleja del pecho.<br><br>14. Mientras mantienes la alineación inicial de remo, endereza los codos y deja que la barra se desplace hacia el suelo.<br><br>15. Deje la barra lastrada con cuidado en el suelo entre cada repetición.<br><br>16. Si no puedes mantenerte en la posición correcta durante toda la serie, trabaja tu flexibilidad y movilidad antes de continuar.",
+    "muscular_group": "back",
+    "image": "assets/images/remo_pendlay.jpg"
+  },
+  {
     "id": "remo_mancuerna",
     "name": "Remo con mancuerna",
     "description": "Sujete una mancuerna con la palma de la mano hacia adentro, la otra debe descansar sobre el banco, al igual que la rodilla opuesta al brazo que realiza el ejercicio. Mantenga la columna vertebral recta y casi paralela al suelo. <br><br> Empuje la mancuerna de forma vertical en dirección al pecho y elevando el codo hasta la altura de la espalda. Baje la mancuerna lentamente hasta regresar a la posición inicial.",
     "muscular_group": "back",
     "image": "assets/images/remo_mancuerna.jpg"
+  },
+  {
+    "id": "remo_polea_una_mano_sentado",
+    "name": "Remo en polea con una sola mano sentado",
+    "description": "Siéntate en la máquina de remo en polea baja y apoya los pies en los soportes con las rodillas flexionadas. Si la máquina de tu gimnasio no tiene soportes para los pies, apoya los pies en el suelo con firmeza.<br><br>Retrae los omóplatos y mantén la contracción abdominal, asegurándote de que la espalda esté recta durante el ejercicio.<br><br>Desde esa posición (posición inicial), tira del agarre hacia tu cuerpo (hacia la zona del pectoral inferior) flexionando el codo.<br><br>Contrae los músculos dorsales y los omóplatos mientras acercas el agarre a tu cuerpo, haciendo una parada de un segundo cuando el agarre está casi pegado a tu cuerpo.<br><br>Extiende el brazo de forma lenta y controlada hasta que este estirado por completo y mantén la espalda recta en todo momento.",
+    "muscular_group": "back",
+    "image": "assets/images/remo_polea_una_mano_sentado.jpg"
+  },
+  {
+    "id": "remo_inclinado_mancuernas",
+    "name": "Remo inclinado con mancuernas",
+    "description": "Posición inicial<br><br>De pie, con las rodillas ligeramente flexionadas. Sujeta las mancuernas con un agarre neutro (con las palmas de las manos una frente a otra). Inclínate hacia delante manteniendo la espalda recta y el pecho hacia afuera.<br><br>Ejecución<br><br>Tira de las mancuernas hacia las caderas. Aprieta la espalda en la parte superior del movimiento, llevando los hombros y los codos por detrás del cuerpo. A continuación, vuelve lentamente a la posición inicial. Mantén los codos hacia adentro durante todo el movimiento.",
+    "muscular_group": "back",
+    "image": "assets/images/remo_inclinado_mancuernas.jpg"
+  },
+  {
+    "id": "remo_mancuernas_banco_inclinado",
+    "name": "Remo con mancuernas en banco inclinado",
+    "description": "Coloca un banco inclinado a aproximadamente 45 grados y siéntate en él con un par de mancuernas.<br><br>Inclínate hacia adelante manteniendo la espalda recta, y deja caer los brazos hacia abajo, sosteniendo las mancuernas.<br><br>Levanta las mancuernas hacia el pecho, manteniendo los codos cerca del cuerpo y los hombros hacia abajo y hacia atrás.<br><br>Baja las mancuernas lentamente a la posición inicial y repite el ejercicio.",
+    "muscular_group": "back",
+    "image": "assets/images/remo_mancuernas_banco_inclinado.jpg"
   },
   {
     "id": "remo_barra_t",
@@ -567,11 +616,67 @@
     "image": "assets/images/remo_barra_t.jpg"
   },
   {
+    "id": "remo_banco_barra",
+    "name": "Remo en banco con barra",
+    "description": "Recuéstate boca abajo y sujeta la barra con el agarre elegido, prono o supino.<br><br>Lleva los omóplatos hacia atrás y hacia abajo y sube la barra hacia el banco.<br><br>Haz una pausa de dos segundos.<br><br>Luego, baja la barra de forma controlada hasta que los brazos estén completamente extendidos.",
+    "muscular_group": "back",
+    "image": "assets/images/remo_banco_barra.jpg"
+  },
+  {
+    "id": "remo_banco_mancuernas",
+    "name": "Remo en banco con mancuernas",
+    "description": "1. Posición inicial:<br><br>Espalda recta y core activado.<br><br>Brazos extendidos hacia el suelo, mancuernas a la altura de los hombros.<br><br>Palmas mirando hacia el cuerpo o ligeramente en diagonal (puedes variar el agarre según el enfoque).<br><br>2. Remo (fase concéntrica):<br><br>Tira de las mancuernas hacia los lados del torso.<br><br>Lleva los codos hacia atrás, lo más cerca del cuerpo posible.<br><br>Aprieta la espalda arriba del movimiento (activa los omóplatos).<br><br>Evita subir los hombros.<br><br>3. Descenso (fase excéntrica):<br><br>Baja lentamente las mancuernas hasta la posición inicial.<br><br>Controla el peso, no lo dejes caer.",
+    "muscular_group": "back",
+    "image": "assets/images/remo_banco_mancuernas.jpg"
+  },
+  {
+    "id": "remo_renegado",
+    "name": "Remo renegado",
+    "description": "Comienza en una posición de tabla alta, con una mancuerna en cada mano, las muñecas en línea con los hombros y los codos extendidos.<br><br>Baja una mancuerna hacia el suelo, doblando el codo y manteniendo el brazo pegado al cuerpo. Asegúrate de mantener una buena postura y no rotar las caderas.<br><br>Vuelve a la posición inicial y repite con la otra mancuerna.<br><br>Continúa alternando los brazos durante 8-10 repeticiones en total.",
+    "muscular_group": "back",
+    "image": "assets/images/remo_renegado.jpg"
+  },
+  {
+    "id": "remo_meadows",
+    "name": "Remo meadows",
+    "description": "Preparación y posición inicial:<br><br>Coloca una barra en una esquina o utiliza una landmine si tienes acceso. Carga el extremo libre de la barra y colócate de lado, de modo que quedes perpendicular a la barra.<br><br>Adopta una posición escalonada, con un pie ligeramente adelantado y el otro atrás, creando una base de apoyo sólida.<br><br>Flexiona las rodillas e inclina el torso hacia adelante sin arquear la espalda. Agarra la manga de la barra (la parte gruesa donde se colocan los discos) con la mano más cercana a la barra y utiliza la otra mano para estabilizarte apoyándola en la rodilla o en un banco bajo.<br><br>Ejecución:<br><br>Inicia el movimiento tirando del codo hacia atrás y manteniéndolo cerca del torso, evitando cualquier rotación del tronco. Lleva la carga hasta que el codo forme un ángulo de 90 grados o hasta que la barra esté al nivel del torso, sintiendo la contracción en el dorsal.<br><br>Mantén la contracción por un segundo en la parte superior del movimiento y baja la barra de forma controlada hasta extender completamente el brazo, manteniendo los hombros en posición estable sin dejar que se desplacen hacia adelante.",
+    "muscular_group": "back",
+    "image": "assets/images/remo_meadows.jpg"
+  },
+  {
     "id": "dominadas",
     "name": "Dominadas",
     "description": "Con el ancho de hombros o ligeramente más juntas. Los brazos deben extenderse por completo con el torso en la misma línea que los brazos. <br><br> Para empezar el ascenso, se usarán los músculos relativamente fuertes de la espalda alta y los músculos flexores del codo, mientras los codos son llevados hacia atrás de la espalda. El ascenso debe continuar hasta que el mentón sobrepase la barra. <br><br> Es importante recordar que antes de iniciar el ascenso, el atleta debe inhalar. En el descenso comienza a exhalar y el tronco debe volver a la posición inicial. Cuando se completa el descenso, los brazos deben extenderse por completo y los omóplatos deben elevarse. (ESTO ES EXTREMADAMENTE IMPORTANTE.) <br><br> Para completar el rango de movimiento, los brazos y abductores de la escapula deben estirarse en cada repetición. Las piernas deben estar en linea con el torso lo más que se pueda. No debe haber flexión de caderas, porque eso disminuirá la calidad del ejercicio. <br><br> Las correas en las manos solo deben usarlas atletas que tienen muy poca  fuerza de antebrazos y con riesgo de perder el agarre, o para los que se fatigan los antebrazos antes que la espalda alta.",
     "muscular_group": "back",
     "image": "assets/images/dominadas.jpg"
+  },
+  {
+    "id": "remo_invertido",
+    "name": "Remo invertido (Australian Pull ups)",
+    "description": "Posición inicial:<br><br>Túmbate bajo la barra en posición supina (boca arriba).<br><br>Agarra la barra con las manos separadas al ancho de hombros (o un poco más), con palmas hacia adelante (prono) o neutro (en anillas/TRX).<br><br>Extiende completamente el cuerpo, formando una línea recta desde la cabeza hasta los talones (como una plancha inversa).<br><br>Apoya los talones en el suelo, con los pies juntos o separados para más estabilidad.<br><br>Activa el core y los glúteos para mantener la alineación.<br><br>Fase concéntrica (subida):<br><br>Tira del pecho hacia la barra, manteniendo los codos pegados al cuerpo o ligeramente abiertos (según el enfoque).<br><br>Sube hasta que el pecho toque la barra o se acerque bastante.<br><br>No encorves los hombros ni dejes que el cuello se adelante.<br><br>Fase excéntrica (bajada):<br><br>Baja lentamente y con control hasta extender los brazos por completo.",
+    "muscular_group": "back",
+    "image": "assets/images/remo_invertido.jpg"
+  },
+  {
+    "id": "dominadas_una_mano_asistida",
+    "name": "Dominadas a una mano asistidas",
+    "description": "Agarra la barra con una sola mano principal (con la que harás el esfuerzo). Palma hacia ti (supino) o neutro, según lo prefieras.<br><br>Usa la otra mano para asistir:<br><br>Puede sostener una banda que cuelgue de la barra.<br><br>Puede agarrar la muñeca o antebrazo de la mano que tira.<br><br>Puede sujetarse de una estructura lateral (como una barra vertical cercana).<br><br>Cuerpo recto o en ligera posición en “banana” (hollow body) para estabilidad.<br><br>Fase concéntrica (subida):<br><br>Tira con fuerza con la mano principal.<br><br>Usa la otra mano solo como apoyo, lo menos posible (usa más asistencia si estás empezando).<br><br>Lleva el pecho hacia la barra, intentando que tu barbilla la supere.<br><br>Evita girar el tronco o balancearte.<br><br>Fase excéntrica (bajada):<br><br>Baja controlando lentamente.<br><br>Mantén tensión en los dorsales todo el tiempo.<br><br>No sueltes de golpe ni te dejes caer.",
+    "muscular_group": "back",
+    "image": "assets/images/dominadas_una_mano_asistida.jpg"
+  },
+  {
+    "id": "dominadas_una_mano",
+    "name": "Dominadas a una mano",
+    "description": "Colgado en una barra de dominadas con una mano en agarre neutro (palma hacia el interior), sube el cuerpo mediante la flexión del brazo hasta llegar con la cabeza a la barra, inclinando hacia el lado contrario del brazo para compensar el peso. Desciende lentamente. Con la otra mano puedes coger peso para añadir dificultad.",
+    "muscular_group": "back",
+    "image": "assets/images/dominada_una_mano.png"
+  },
+  {
+    "id": "muscle_ups",
+    "name": "Muscle ups",
+    "description": "Posición inicial en el muscle up:<br><br>Primero deberemos colgarnos con las manos agarradas a la barra, en un agarre ligeramente más ancho que nuestros hombros.<br><br>Deberemos realizar un agarre suicida o agarre falso (en donde los pulgares no envuelvan la barra). De seguido realizaremos un movimiento de kipping que ayudará a establecer impulso.<br><br>Las piernas deberán estar juntas y los glúteos y el CORE contraído para estabilizar.<br><br>Pecho a la barra:<br><br>El siguiente paso será realizar un pull up de pecho a la barra, es decir nos empujaremos de forma explosiva hacia la barra traccionando con nuestros dorsales.<br><br>En este movimiento de pecho a la barra, deberemos mantener la musculatura del CORE activa y las piernas juntas.<br><br>Buscaremos llevar la barra a la parte inferior del pecho e inclinándonos hacia atrás mientras nos levantamos, con el fin de buscar una activación total del dorsal. Esto facilitará la tracción y aproximación a la barra.<br><br>Rueda sobre la barra:<br><br>Una vez lleguemos con el pecho a la barra, llevaremos pecho y hombros hacia adelante, de modo que asumamos una posición en la que dejemos la barra en posición inferior.<br><br>Usar un agarre falso nos ayudará mucho durante esta fase de rotación o transición.<br><br>Empuje hacia arriba:<br><br>De seguido realizaremos un fondo de tríceps, extendiendo brazos y llevando así el cuerpo hacia arriba por encima de la barra. Durante la fase final, seguiremos controlando y activando nuestra musculatura estabilizadora del CORE.",
+    "muscular_group": "back",
+    "image": "assets/images/muscle_ups.png"
   },
   {
     "id": "jalon_dorsal",
@@ -581,11 +686,88 @@
     "image": "assets/images/jalon_dorsal.jpg"
   },
   {
+    "id": "jalon_dorsal_una_mano",
+    "name": "Jalón dorsal a una mano",
+    "description": "Posición inicial:<br><br>Quita la barra de la polea dorsal y sustitúyela por una maneral tipo D. Utiliza un peso que sea aproximadamente la mitad del que usas para los jalones con barra.<br><br>Si tus manos y antebrazos se fatigan al hacer estos ejercicios, utiliza agarraderas. Agarra el maneral con agarre neutro, y sujeta los cuadríceps debajo de los rodillos frontales si lo realizas en una estación de poleas.<br><br>Con la mano libre, agarra la parte alta de los rodillos, o un lateral, si es que existe, para mantener el torso estabilizado. Apoya los pies sobre el suelo.<br><br>El brazo que trabaja debe estar totalmente extendido. Esa es la posición inicial.<br><br>Ejecución:<br><br>Tira del maneral hacia abajo, girando la mano hacia ti, y manteniendo el codo cerca del costado.<br><br>Contrae los músculos de la espalda, y no dejes que el torso gire a uno u otro lado.<br><br>Contraed las escápulas y mantened la contracción durante uno o dos segundos en la posición final del movimiento, extendiendo luego lentamente el brazo para devolver el maneral al punto de partida.<br><br>No dejéis el movimiento de retorno a media. Continuadlo hasta que el brazo que trabaja esté completamente extendido.",
+    "muscular_group": "back",
+    "image": "assets/images/jalon_dorsal_una_mano.jpg"
+  },
+  {
+    "id": "jalon_frontal_brazos_rectos",
+    "name": "Jalón frontal con brazos rectos",
+    "description": "De pie, separado entre 25 y 35 centímetros de una polea alta, de cara a la pila de placas. Agarra una barra recta con un agarre prono (palmas hacia abajo) con las manos separadas a una distancia igual a la anchura de los hombros.<br><br>Coloca los brazos rectos sobre la cabeza con un ángulo de 15 a 20 grados y dobla los codos ligeramente. Si eres alto, dobla las rodillas para que los brazos queden relativamente rectos cuando los extiendas sobre la cabeza.<br><br>Toma aire y aguanta la respiración mientas tiras de la barra hacia abajo con los brazos rectos a lo Concéntrate en tirar desde los hombros hasta que la barra esté a la altura de la cadera.<br><br>Mantén el torso recto mientras tiras hacia abajo y contrae los músculos de la espalda baja para mantener esta postura.<br><br>Aguanta la contracción en la parte baja durante dos segundos.<br><br>Expulsa el aire mientras devuelves la barra de manera controlada a la posición inicial.<br><br>Detente un instante en la posición alta y luego repite.",
+    "muscular_group": "back",
+    "image": "assets/images/jalon_frontal_brazos_rectos.jpg"
+  },
+  {
+    "id": "pullover_barra",
+    "name": "Pullover con barra",
+    "description": "Posición inicial<br><br>Tumbado en un banco, con los pies en el suelo a la anchura de los hombros. Sujeta la barra con las manos en pronación por encima del pecho, con los brazos casi completamente extendidos.<br><br>Ejecución<br><br>Con los codos ligeramente flexionados, baja lentamente la barra por detrás de la cabeza en forma de arco. Cuando los brazos estén a la altura de la cabeza, vuelve lentamente a la posición inicial.",
+    "muscular_group": "back",
+    "image": "assets/images/pullover_barra.jpg"
+  },
+  {
     "id": "encogimientos_mancuernas",
     "name": "Encogimientos con mancuernas",
     "description": "De pie, sujetar un par de mancuernas en los costados con los brazos extendidos y las palmas dirigidas hacia dentro. Flexionar las rodillas ligeramente. <br><br> Con los brazos estirados hacia el suelo, encoger los hombros hacia arriba tanto como sea posible. Mantener la contracción contando uno y, a continuación, regresar de nuevo a la posición de inicio.",
     "muscular_group": "back",
     "image": "assets/images/encogimientos_mancuernas.jpg"
+  },
+  {
+    "id": "encogimientos_barra",
+    "name": "Encogimientos con barra",
+    "description": "Iniciamos de pie, sujetamos una barra por delante de los muslos con agarre hacia abajo y a la anchura de los hombros. Flexionar las rodillas ligeramente.<br><br>Mientras se mantienen los brazos extendidos, elevar (encoger) los hombros dirigiéndolos hacia arriba (no hacia atrás) tanto como sea posible. Mantener la contracción contando uno y, a continuación, relajar los hombros para bajar la barra de nuevo y volver a la posición de inicio.",
+    "muscular_group": "back",
+    "image": "assets/images/encogimientos_barra.jpg"
+  },
+  {
+    "id": "encogimientos_multipower",
+    "name": "Encogimientos en multipower",
+    "description": "Iniciamos de pie, sujetamos una barra por delante de los muslos con agarre hacia abajo y a la anchura de los hombros. Flexionar las rodillas ligeramente.<br><br>Mientras se mantienen los brazos extendidos, elevar (encoger) los hombros dirigiéndolos hacia arriba (no hacia atrás) tanto como sea posible. Mantener la contracción contando uno y, a continuación, relajar los hombros para bajar la barra de nuevo y volver a la posición de inicio.",
+    "muscular_group": "back",
+    "image": "assets/images/encogimientos_multipower.jpg"
+  },
+  {
+    "id": "encogimiento_hombros_maquina",
+    "name": "Encogimiento de hombros con máquina",
+    "description": "Ajusta la altura del asiento de la máquina de discos de modo que las almohadillas queden a la altura de tus hombros.<br><br>Siéntate y agarra las asas con las manos, manteniendo los brazos extendidos.<br><br>Contrae los hombros, levantando las almohadillas hacia arriba lo más que puedas, manteniendo los brazos extendidos.<br><br>Lentamente baja las almohadillas hasta la posición inicial y repite el ejercicio según las repeticiones y series recomendadas.",
+    "muscular_group": "back",
+    "image": "assets/images/encogimiento_hombros_maquina.jpg"
+  },
+  {
+    "id": "encogimiento_hombros_barra_hexagonal",
+    "name": "Encogimiento de hombros con máquina",
+    "description": "Iniciamos de pie, sujetamos una barra por delante de los muslos con agarre hacia abajo y a la anchura de los hombros. Flexionar las rodillas ligeramente.<br><br>Mientras se mantienen los brazos extendidos, elevar (encoger) los hombros dirigiéndolos hacia arriba (no hacia atrás) tanto como sea posible. Mantener la contracción contando uno y, a continuación, relajar los hombros para bajar la barra de nuevo y volver a la posición de inicio.",
+    "muscular_group": "back",
+    "image": "assets/images/encogimiento_hombros_barra_hexagonal.jpg"
+  },
+  {
+    "id": "encogimientos_polea",
+    "name": "Encogimientos en polea",
+    "description": "Inicio De pie, de frente a la columna de peso de una polea baja con una barra recta sujeta al cable. Coger la barra con un agarre a la anchura de los hombros, con los brazos extendidos hacia el suelo y la barra por delante de los muslos.<br><br>Ejecución Con los brazos extendidos, encoger los hombros hacia arriba tanto como<br><br>sea posible. Mantener la contracción en lo alto del movimiento contando<br><br>uno y, a continuación, volver a la posición de comienzo.",
+    "muscular_group": "back",
+    "image": "assets/images/encogimientos_polea.jpg"
+  },
+  {
+    "id": "hiperextensiones_espalda",
+    "name": "Hiperextensiones de espalda",
+    "description": "Ajustar el aparato de tal manera que el almohadillamiento de las piernas quede justamente por debajo del abdomen. Asegurar los pies por delante del almohadillamiento de los tobillos y colocar los muslos pegados al almohadillamiento con las piernas estiradas.<br><br>Comenzar con la parte superior del cuerpo alineada con la inferior y los brazos cruzados sobre el pecho.<br><br>Flexionar a nivel del abdomen para bajar el tronco hacia el suelo. Cuando el abdomen alcance un ángulo aproximado de 90 grados, contraer los músculos de la región lumbar para elevar el tronco de regreso a la posición de inicio.",
+    "muscular_group": "back",
+    "image": "assets/images/hiperextensiones_espalda.jpg"
+  },
+  {
+    "id": "hiperextensiones_inversa",
+    "name": "Hiperextensiones inversa",
+    "description": "1. Tumbarse apoyando el tronco en un banco a 30 o 45º, disponiendo las piernas sobre el borde y agarrando los laterales de la misma, con las rodillas estiradas.<br><br>2. Manteniendo el tronco bloqueado en posición, elevar las piernas, asegurándose de contraer los glúteos en el punto superior del movimiento y de impedir la hiperextensión de la región lumbar.<br><br>3. Bajar las piernas a la posición inicial, manteniendo la columna vertebral estable y asegurándose de prevenir que la región lumbar se redondee.",
+    "muscular_group": "back",
+    "image": "assets/images/hiperextensiones_inversa.jpg"
+  },
+  {
+    "id": "extension_espalda_maquina",
+    "name": "Extensión de espalda en máquina",
+    "description": "Posición inicial:<br><br>Siéntate con la espalda recta y los brazos cruzados o agarrando las asas laterales.<br><br>Movimiento excéntrico (descenso):<br><br>Baja el torso lentamente, manteniendo la espalda recta. No redondees la espalda.<br><br>Baja hasta un punto cómodo sin perder la alineación natural de la columna.<br><br>Movimiento concéntrico (subida):<br><br>Sube controladamente usando los músculos lumbares, glúteos e isquiosurales.<br><br>No hiperextiendas la espalda. Basta con quedar alineado.",
+    "muscular_group": "back",
+    "image": "assets/images/extension_espalda_maquina.jpg"
   },
   {
     "id": "curl_biceps_maquina",
@@ -700,6 +882,34 @@
     "image": "assets/images/press_frances.jpg"
   },
   {
+    "id": "aperturas_invertidas_maquina_contractora",
+    "name": "Aperturas invertidas en máquina contractora",
+    "description": "Ajusta la altura del asiento para poder coger los agarres con un agarre neutral (palmas enfrentadas). <br><br> El pecho debe estar en contacto con el soporte del aparato durante todo el ejercicio. <br><br> Toma aire y aguanta la respiración mientras llevas los brazos atrás todo lo posible. Los codos deben finalizar bastante por detrás de la espalda. <br><br> Cuando los brazos estén tan atrás como sea posible, aguanta durante un segundo y luego expulsa el aire para regresar a la posición inicial de forma controlada.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/aperturas_invertidas_maquina_contractora.jpg"
+  },
+  {
+    "id": "encogimientos_posteriores",
+    "name": "Encogimientos posteriores (Pájaros)",
+    "description": "De pie, coge unas mancuernas con un agarre neutral (palmas enfrentadas).<br><br>Inclínate al frente doblando las caderas siempre con la espalda ligeramente arqueada. En la posición inicial la espalda debe estar paralela al suelo y las rodillas dobladas, los brazos colgando perpendiculares al suelo.<br><br>Toma aire y aguantando la respiración levanta las mancuernas todo lo que puedas llevando el peso hacia afuera.<br><br>En la posición más alta, los brazos deben sobrepasar el nivel de la espalda todo lo posible. Expulsa el aire mientras bajas los brazos de forma controlada a la posición inicial.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/encogimientos_posteriores.jpg"
+  },
+  {
+    "id": "encogimientos_posteriores_polea",
+    "name": "Encogimientos posteriores en polea de pie (Pájaros)",
+    "description": "Ajusta el peso y las poleas a la altura adecuada.<br><br>Agarra la polea izquierda con la mano derecha y la polea derecha con la mano izquierda, cruzándolas frente a ti. Esta será tu posición inicial.<br><br>Inicie el movimiento moviendo los brazos hacia atrás y hacia afuera, manteniendo los brazos rectos mientras ejecutas el movimiento.<br><br>Haga una pausa al final del movimiento antes de devolver los mangos a la posición inicial.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/encogimientos_posteriores_polea.jpg"
+  },
+  {
+    "id": "elevaciones_y_inclinadas_mancuernas",
+    "name": "Elevaciones en Y inclinadas con mancuernas",
+    "description": "Inclínese ligeramente hacia adelante, manteniendo la espalda recta y los hombros hacia abajo.<br><br>Levante lentamente las mancuernas hacia arriba y hacia los lados, formando una forma de Y con su cuerpo.<br><br>Mantén esta posición por un momento, asegurándote de que tus brazos estén rectos y paralelos al suelo.<br><br>Poco a poco baja las mancuernas hasta la posición inicial, manteniendo el control del movimiento en todo momento. Repita el ejercicio hasta el número deseado de repeticiones.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/elevaciones_y_inclinadas_mancuernas.jpg"
+  },
+  {
     "id": "rotacion_externa_hombro_polea",
     "name": "Rotación externa de hombro en polea",
     "description": "Las rotaciones externas en polea son un excelente ejercicio para trabajar el manguito rotador podemos realizarlo en nuestra rutina habitual de prevención de lesiones en el hombro o al final de un entrenamiento que implique a otro grupo muscular mayor. <br><br> Colocar el cable de la polea o la banda elástica con el manillar a la altura del abdomen (manteniendo una resistencia muy ligera). Separarse un paso del punto de origen de la polea o de la banda hasta sentir tensión. <br><br> Situado lateralmente a la polea, comenzar tirando del manillar separándolo del punto de origen, con el antebrazo cruzando el cuerpo y el codo pegado al costado. <br><br> Con el brazo flexionado y el codo pegado al costado, tirar lentamente del manillar hacia fuera y atrás hasta que el antebrazo quede aproximadamente perpendicular al abdomen. Lentamente, volver a la posición de comienzo. <br><br> Completar todas las repeticiones con un solo brazo y, a continuación, cambiar de brazo colocándose en la posición opuesta.",
@@ -728,6 +938,13 @@
     "image": "assets/images/pike_push_up.jpg"
   },
   {
+    "id": "remo_vertical_polea",
+    "name": "Remo vertical con polea",
+    "description": "Colocación inicial:<br><br>Usa una polea baja con una barra recta o en forma de EZ.<br><br>Párate erguido, con los pies a la anchura de los hombros.<br><br>Agarra la barra con las palmas hacia ti (agarre prono), con las manos separadas al ancho de los hombros o ligeramente más cerradas.<br><br>Mantén los brazos extendidos frente a ti con una ligera flexión en los codos.<br><br>Movimiento:<br><br>Eleva la barra hacia arriba, pegada al cuerpo, manteniendo los codos más altos que las muñecas durante todo el movimiento.<br><br>Sube la barra hasta que tus codos estén a la altura de los hombros (o un poco más bajos si sientes molestias).<br><br>Haz una breve pausa en la parte superior para contraer los trapecios y deltoides.<br><br>Descenso:<br><br>Baja la barra de forma controlada hasta la posición inicial.<br><br>Mantén la espalda recta durante todo el ejercicio y evita impulsarte con el cuerpo.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/remo_vertical_polea.jpg"
+  },
+  {
     "id": "face_pull",
     "name": "Face pull",
     "description": "Lo habitual es usar un agarre prono y una polea. Si lo haces de pie tendrás que inclinarte ligeramente hacia atrás (ángulo de 20 grados), si lo haces sentado y en polea baja tendrás que separarte de la polea lo suficiente para sentir el peso y que las placas no choquen entre sí al estirar los brazos en cada repetición. <br><br> El movimiento comienza con los brazos estirados, codos próximos al torso y con la columna bien erguida.  Desde esta posición llevamos la polea hacia el cuello o hacia el rostro combinando una extensión horizontal de hombro, una abducción y una rotación externa. Casi nada. <br><br> La posición final es la misma que un doble bíceps de culturismo, es decir, la característica pose que realizan los culturistas cuando desean mostrar sus bíceps. ",
@@ -747,13 +964,6 @@
     "description": "Extienda los brazos para presionar las manijas hacia arriba hasta que los codos estén extendidos pero no bloqueados.<br><br> Mantenga 1 seg. <br><br> Baje lentamente el peso hasta que sus manos estén justo por encima de los hombros, de modo que los pesos móviles no toquen el resto de la pila. Manteniendo tensión constante en los músculos del hombro.",
     "muscular_group": "shoulders",
     "image": "assets/images/press_hombro_maquina.jpg"
-  },
-  {
-    "id": "aperturas_invertidas_maquina_contractora",
-    "name": "Aperturas invertidas en máquina contractora",
-    "description": "Ajusta la altura del asiento para poder coger los agarres con un agarre neutral (palmas enfrentadas). <br><br> El pecho debe estar en contacto con el soporte del aparato durante todo el ejercicio. <br><br> Toma aire y aguanta la respiración mientras llevas los brazos atrás todo lo posible. Los codos deben finalizar bastante por detrás de la espalda. <br><br> Cuando los brazos estén tan atrás como sea posible, aguanta durante un segundo y luego expulsa el aire para regresar a la posición inicial de forma controlada.",
-    "muscular_group": "shoulders",
-    "image": "assets/images/aperturas_invertidas_maquina_contractora.jpg"
   },
   {
     "id": "elevaciones_laterales_mancuernas",
