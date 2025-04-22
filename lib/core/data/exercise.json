@@ -1029,6 +1029,174 @@
     "image": "assets/images/press_jm.jpg"
   },
   {
+    "id": "rotacion_externa_hombro_polea",
+    "name": "Rotación externa de hombro en polea",
+    "description": "Las rotaciones externas en polea son un excelente ejercicio para trabajar el manguito rotador podemos realizarlo en nuestra rutina habitual de prevención de lesiones en el hombro o al final de un entrenamiento que implique a otro grupo muscular mayor. <br><br> Colocar el cable de la polea o la banda elástica con el manillar a la altura del abdomen (manteniendo una resistencia muy ligera). Separarse un paso del punto de origen de la polea o de la banda hasta sentir tensión. <br><br> Situado lateralmente a la polea, comenzar tirando del manillar separándolo del punto de origen, con el antebrazo cruzando el cuerpo y el codo pegado al costado. <br><br> Con el brazo flexionado y el codo pegado al costado, tirar lentamente del manillar hacia fuera y atrás hasta que el antebrazo quede aproximadamente perpendicular al abdomen. Lentamente, volver a la posición de comienzo. <br><br> Completar todas las repeticiones con un solo brazo y, a continuación, cambiar de brazo colocándose en la posición opuesta.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/rotacion_externa_hombro_polea.jpg"
+  },
+  {
+    "id": "rotacion_externa_hombro_mancuerna",
+    "name": "Rotación externa de hombro con mancuerna",
+    "description": "Siéntate en una silla o banco con la espalda recta y los pies apoyados en el suelo.<br><br>Sostén una mancuerna con la mano derecha y levanta el brazo hasta que esté paralelo al suelo, con el codo doblado a 90 grados y el antebrazo hacia afuera.<br><br>Lentamente, gira la mano hacia afuera, alejándote del cuerpo, hasta que sientas un estiramiento en los músculos del hombro.<br><br>Mantén la posición durante unos segundos y luego regresa lentamente a la posición inicial. Repite con el otro brazo.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/rotacion_externa_hombro_mancuerna.jpg"
+  },
+  {
+    "id": "press_militar_barra_pie",
+    "name": "Press militar con barra de pie",
+    "description": "Nos colocamos frente a la barra, con los pies ligeramente separados, más o menos a la anchura de nuestras caderas. Con ello ganamos estabilidad a la hora de levantar el peso. <br><br> Flexionamos ligeramente las rodillas para evitar sobrecargar estas articulaciones. <br><br> Cogemos la barra con las manos en pronación (palmas mirando hacia adelante), y las colocamos a una anchura algo superior a la de nuestros hombros. <br><br> Colocamos los codos pegados al tronco y orientados ligeramente hacia adelante, quedando por delante de la barra. <br><br> Manteniendo esta posición y expandiendo la caja torácica, sacamos la barra del soporte y la situamos en la parte alta de nuestro pecho, a la altura de las clavículas. <br><br> La espalda, en el punto de inicio, deberá realizar una hiperlordosis, llevando la parte alta de la misma hacia atrás, más o menos una distancia que permita igualar su situación con la de nuestros talones. <br><br> Iniciamos el movimiento mientras expiramos, elevando la barra verticalmente con los brazos sobre nuestra cabeza. <br><br> En el punto final evitaremos bloquear los codos para evitar lesionar esta articulación. <br><br> Cuando la barra quede arriba, deberá situarse ligeramente por detrás de la cabeza, quedando los brazos, la espalda y las piernas alineadas. Asimismo, se deben retraer las escápulas para estabilizar la posición. <br><br> Se mantiene esta posición durante un segundo y se desciende la barra realizando el recorrido vertical inverso.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/press_militar_barra_pie.jpg"
+  },
+  {
+    "id": "press_militar_landmine",
+    "name": "Press militar landmine con barra",
+    "description": "Preparación:<br><br>Coloca un extremo de la barra en una base de landmine o contra una esquina firme (asegúrate de que no se deslice).<br><br>Carga discos en el otro extremo según tu nivel.<br><br>Posición inicial:<br><br>Ponte de pie, con los pies separados a la anchura de los hombros.<br><br>Colócate frente a la barra, y agarra el extremo libre con ambas manos, justo por delante del pecho (como si fueras a hacer un press vertical).<br><br>Los codos apuntan ligeramente hacia abajo y pegados al cuerpo.<br><br>Activa el core, mantén la espalda recta y el pecho erguido.<br><br>Movimiento:<br><br>Empuja la barra hacia arriba y ligeramente hacia adelante en la línea del landmine (aproximadamente un ángulo de 45°).<br><br>Estira completamente los brazos, sin bloquear los codos de forma agresiva.<br><br>Evita arquear la espalda.<br><br>Regreso:<br><br>Baja la barra de forma controlada hasta que vuelva justo frente al pecho.<br><br>Mantén el core apretado todo el tiempo.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/press_militar_landmine.jpg"
+  },
+  {
+    "id": "press_landmine_un_brazo",
+    "name": "Press landmine a un brazo",
+    "description": "Comience colocando un accesorio para mina terrestre en una base para mina terrestre o anclando de forma segura una barra en una esquina.<br><br>Cargue peso en la barra si lo desea.<br><br>Párese frente a la mina terrestre o la barra con los pies separados al ancho de los hombros.<br><br>Sujete el extremo de la barra con una mano, manteniendo el codo cerca del cuerpo.<br><br>Presione la barra hacia arriba y lejos de su cuerpo hasta que su brazo esté completamente extendido.<br><br>Baje la barra a la posición inicial, manteniendo el codo cerca del cuerpo durante todo el movimiento.<br><br>Repita el ejercicio hasta obtener la cantidad de repeticiones deseada, luego cambie de lado y repita con el otro brazo.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/press_landmine_un_brazo.jpg"
+  },
+  {
+    "id": "press_hombros_barra",
+    "name": "Press de hombros con barra",
+    "description": "Nos colocamos frente a la barra, con los pies ligeramente separados, más o menos a la anchura de nuestras caderas. Con ello ganamos estabilidad a la hora de levantar el peso.<br><br>Flexionamos ligeramente las rodillas para evitar sobrecargar estas articulaciones.<br><br>Cogemos la barra con las manos en pronación (palmas mirando hacia adelante), y las colocamos a una anchura algo superior a la de nuestros hombros.<br><br>Colocamos los codos pegados al tronco y orientados ligeramente hacia adelante, quedando por delante de la barra.<br><br>Manteniendo esta posición y expandiendo la caja torácica, sacamos la barra del soporte y la situamos en la parte alta de nuestro pecho, a la altura de las clavículas.<br><br>La espalda, en el punto de inicio, deberá realizar una hiperlordosis, llevando la parte alta de la misma hacia atrás, más o menos una distancia que permita igualar su situación con la de nuestros talones.<br><br>Iniciamos el movimiento mientras expiramos, elevando la barra verticalmente con los brazos sobre nuestra cabeza.<br><br>En el punto final evitaremos bloquear los codos para evitar lesionar esta articulación.<br><br>Cuando la barra quede arriba, deberá situarse ligeramente por detrás de la cabeza, quedando los brazos, la espalda y las piernas alineadas. Asimismo, se deben retraer las escápulas para estabilizar la posición.<br><br>Se mantiene esta posición durante un segundo y se desciende la barra realizando el recorrido vertical inverso.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/press_hombros_barra.jpg"
+  },
+  {
+    "id": "press_hombros_barra_sentado",
+    "name": "Press de hombros con barra sentado",
+    "description": "Posición inicial<br><br>Siéntate en el banco y desengancha la barra cogiéndola con un agarre en pronación y los codos apuntando hacia fuera. La barra se coloca por delante a la altura de la barbilla. Este nivel puede variar en función de la flexibilidad de tus hombros. La distancia entre las manos debe ser tal que los codos formen un ángulo de 90° cuando los brazos estén paralelos al suelo.<br><br>Ejecución<br><br>Aprieta los hombros mientras empujas el peso verticalmente. Detén el movimiento cuando tus brazos estén a punto de estar completamente extendidos. A continuación, vuelve lentamente a la posición inicial.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/press_hombros_barra_sentado.jpg"
+  },
+  {
+    "id": "press_hombros_mancuernas",
+    "name": "Press de hombros con mancuernas",
+    "description": "Mantenerse erguido mientras se sujetan un par de mancuernas. Comenzar elevándolas por fuera de los hombros con las palmas dirigidas hacia delante. <br><br> Hacer press con las mancuernas llevándolas hacia arriba a la vez que se contraen los músculos de los hombros y se extienden los codos hasta que el peso quede por encima de la cabeza, justamente antes de bloquear los brazos. Lentamente, bajar las mancuernas a la posición de comienzo.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/press_hombros_mancuernas.jpg"
+  },
+  {
+    "id": "press_hombros_mancuernas_sentado",
+    "name": "Press de hombros con mancuernas sentado",
+    "description": "Sentado en un asiento de espalda baja, o banco ajustable, mantenerse erguido mientras se sujetan un par de mancuernas. Comenzar elevándolas por fuera de los hombros con las palmas dirigidas hacia delante. <br><br> Hacer press con las mancuernas llevándolas hacia arriba a la vez que se contraen los músculos de los hombros y se extienden los codos hasta que el peso quede por encima de la cabeza, justamente antes de bloquear los brazos. Lentamente, bajar las mancuernas a la posición de comienzo.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/press_hombros_mancuernas_sentado.jpg"
+  },
+  {
+    "id": "press_z",
+    "name": "Press en Z",
+    "description": "Posición inicial<br><br>Siéntate en el suelo y desengancha la barra cogiéndola con un agarre en pronación y los codos apuntando hacia fuera. La barra se coloca por delante a la altura de la barbilla. Este nivel puede variar en función de la flexibilidad de tus hombros. La distancia entre las manos debe ser tal que los codos formen un ángulo de 90° cuando los brazos estén paralelos al suelo.<br><br>Ejecución<br><br>Aprieta los hombros mientras empujas el peso verticalmente. Detén el movimiento cuando tus brazos estén a punto de estar completamente extendidos. A continuación, vuelve lentamente a la posición inicial.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/press_z.jpg"
+  },
+  {
+    "id": "press_z_mancuernas",
+    "name": "Press Z con mancuernas",
+    "description": "Posición inicial:<br><br>Siéntate en el suelo con las piernas estiradas hacia el frente, separadas un poco más que el ancho de caderas (en forma de V).<br><br>Mantén el torso recto y el core activado. Es normal que al principio cueste mantener el equilibrio.<br><br>Sostén una mancuerna en cada mano a la altura de los hombros, con los codos doblados y las palmas mirando al frente.<br><br>Movimiento:<br><br>Desde esa posición, empuja las mancuernas hacia arriba, estirando los brazos completamente sobre la cabeza.<br><br>Mantén el core contraído y evita arquear la espalda.<br><br>Al llegar arriba, los brazos deben quedar alineados con las orejas.<br><br>Regreso:<br><br>Baja lentamente las mancuernas a la posición inicial (altura de hombros), con control.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/press_z_mancuernas.jpg"
+  },
+  {
+    "id": "press_tras_nuca",
+    "name": "Press tras nuca",
+    "description": "IMPORTANTE: Ejercicio no recomendado<br><br>El press tras nuca con barra es un ejercicio que cuenta con cierta polémica, en especial en aquellos que se encuentran enfocados a trabajar la región de los hombros. Esto se debe a que es considerado como una de las variantes más lesivas que existen en lo que respecta a dicha región. Por lo que nuestro consejo, de inicio, es que no debes abusar de su realización, pues con el paso del tiempo, podrías desencadenar, incluso, una lesión crónica en hombros u otras articulaciones del tren superior.<br><br>Ejecución:<br><br>Contando con una barra en un peso adecuado para ti, tómala con agarre prono y llevala hacia arriba de tu cabeza, en este punto puedes expirar. No ancles los codos en esta posición, para ello, puede dejarlos un poco flexionados (ligeramente).<br><br>Hecho esto, inspira de nuevo y lleva la barra hacia atrás de tu cabeza, sin llevar demasiado atrás o demasiado abajo.<br><br>Soporta por uno o dos segundos la posición, exhala de nuevo y vuelve en un movimiento controlado a la posición donde la barra se ubicaba sobre tu cabeza.<br><br>Finalmente, lleva la barra, en un movimiento controlado, hacia el frente de tu cuerpo, colocándola en tus muslos si así lo deseas.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/press_tras_nuca.jpg"
+  },
+  {
+    "id": "press_hombro_multipower",
+    "name": "Press de hombro en multipower",
+    "description": "Ajusta la barra a la altura de los ojos y carga el peso deseado en la barra. <br><br> Coloca las manos a la altura de los hombros y desbloquea la barra usando un agarre en pronación. Esta será la posición inicial del movimiento. <br><br> Presiona la barra hacia arriba extendiendo los codos y contrayendo los deltoides.<br><br> Baja lentamente la barra hasta la posición inicial (los brazos deben estar en un ángulo de aproximadamente 90 grados o un poco más abajo dependiendo de la longitud de los brazos).",
+    "muscular_group": "shoulders",
+    "image": "assets/images/press_hombro_multipower.jpg"
+  },
+  {
+    "id": "press_hombro_maquina",
+    "name": "Press hombro en máquina",
+    "description": "Extienda los brazos para presionar las manijas hacia arriba hasta que los codos estén extendidos pero no bloqueados.<br><br> Mantenga 1 seg. <br><br> Baje lentamente el peso hasta que sus manos estén justo por encima de los hombros, de modo que los pesos móviles no toquen el resto de la pila. Manteniendo tensión constante en los músculos del hombro.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/press_hombro_maquina.jpg"
+  },
+  {
+    "id": "press_arnold",
+    "name": "Press Arnold",
+    "description": "Siéntate en un banco y sujeta las mancuernas con un agarre neutro (palmas hacia tu cuerpo) y sostenlas a la altura de los hombros con los codos doblados y apuntando hacia afuera.<br><br>Eleva las mancuernas sobre tu cabeza mientras giras las manos hacia afuera. Asegúrate de mantener los codos ligeramente flexionados durante todo el movimiento.<br><br>Baja las mancuernas a la posición inicial mientras giras las manos nuevamente hacia adentro.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/press_arnold.jpg"
+  },
+  {
+    "id": "push_press",
+    "name": "Push press",
+    "description": "Pies a la anchura de las caderas.<br><br>Agarramos la barra con una anchura ligeramente superior a la de los hombros.<br><br>Los codos ligeramente por delante de la barra.<br><br>Agarre total de la barra (pulgar por fuera del resto de los dedos).<br><br>La barra descansa en el torso.<br><br>El torso baja recto.<br><br>Cuando extendemos cadera y piernas entonces hacemos el empuje.<br><br>Los talones tocan el suelo hasta que la cadera y piernas se extienden.<br><br>La barra se eleva verticalmente por encima de la mitad de los pies.<br><br>Completamos con una completa extensión de cadera, piernas y brazos.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/push_press.jpg"
+  },
+  {
+    "id": "push_press_mancuernas",
+    "name": "Push press con mancuernas",
+    "description": "Posición inicial<br><br>De pie con una mancuerna apoyada en cada hombro y los codos apuntando hacia delante. Los pies deben estar separados a la anchura de los hombros.<br><br>Ejecución<br><br>Dobla ligeramente las rodillas y luego sube, empujando las mancuernas hacia arriba en el aire y terminando con los brazos extendidos por encima de la cabeza. Pausa, y luego vuelve a la posición inicial.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/push_press_mancuernas.jpg"
+  },
+  {
+    "id": "press_tronco",
+    "name": "Pres con tronco",
+    "description": "Párese frente al tronco StrongMan con los pies separados al ancho de los hombros.<br><br>Inclínese hacia abajo y agarre las manijas del tronco con un agarre superior.<br><br>Contraiga el centro del cuerpo y levante el tronco del suelo, manteniendo la espalda recta.<br><br>Al levantar el tronco, utilice las piernas para impulsar el peso hacia arriba y por encima de la cabeza.<br><br>Una vez que el tronco esté sobre tu cabeza, sosténlo durante unos segundos antes de volver a bajarlo al suelo.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/press_tronco.jpg"
+  },
+  {
+    "id": "press_vikingo",
+    "name": "Press vikingo",
+    "description": "Colocación inicial:<br><br>Ajusta el asiento de la máquina para que las manillas queden a la altura de tus hombros.<br><br>Si es una máquina con manillas independientes, asegúrate de que puedas empujar sin desalinearte.<br><br>Siéntate erguido, con la espalda apoyada completamente en el respaldo.<br><br>Agarra las manillas con un agarre neutro (palmas mirando hacia dentro) o pronado (palmas hacia adelante), según el diseño.<br><br>Posición de inicio:<br><br>Contrae el core y mantén los pies bien apoyados en el suelo.<br><br>Inicia con los codos flexionados, las manillas al lado de tus hombros.<br><br>Movimiento:<br><br>Empuja las manillas hacia arriba y ligeramente hacia adelante (el movimiento es más natural que un press vertical estricto).<br><br>Extiende los codos sin bloquearlos completamente arriba.<br><br>Evita despegar la espalda del respaldo.<br><br>Descenso:<br><br>Baja las manillas de forma controlada hasta volver a la posición inicial.<br><br>No dejes que los pesos golpeen entre sí (si es con placas)",
+    "muscular_group": "shoulders",
+    "image": "assets/images/press_vikingo.jpg"
+  },
+  {
+    "id": "elevaciones_laterales_maquina",
+    "name": "Elevaciones laterales en máquina",
+    "description": "Ajustar el asiento de la máquina de tal manera que los brazos se encuentren confortablemente bajo los almohadillamientos, sin encoger los hombros. <br><br> Comenzar con los codos flexionados y los brazos pegados al almohadillamiento, la parte inferior de los brazos en contacto con los costados y el peso ligeramente levantado de la columna de placas para proporcionarte ligera tensión. <br><br> Contraer los deltoides para elevar los brazos hacia arriba y hacia afuera, manteniéndolos contra los almohadillamientos durante todo el movimiento. Mantener la contracción final durante un segundo, a continuación, volver lentamente a la posición de inicio.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/elevaciones_laterales_maquina.jpg"
+  },
+  {
+    "id": "elevaciones_laterales_mancuernas",
+    "name": "Elevaciones laterales con mancuernas",
+    "description": "Sujetad las mancuernas por la parte externa de los muslos, con las palmas mirando hacia dentro. <br><br> Doblad ligeramente los codos y mantenedlos así durante todo el recorrido. Si empezáis a abrir y a cerrar los codos, reduciréis el aislamiento del hombro medio. <br><br> Elevad los pesos hacia fuera haciendo un arco amplio hasta el nivel de los hombros. <br><br> Es importante mantener los codos por encima de las manos al comienzo del ejercicio, llevándolos en el mismo plano horizontal en la posición de arriba.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/elevaciones_laterales_mancuernas.jpg"
+  },
+  {
+    "id": "elevaciones_laterales_polea",
+    "name": "Elevaciones laterales con polea",
+    "description": "Para comenzar levanta la manilla y llévala hasta que tu mano se ubique al nivel de los hombros, mientras haces esto exhala el aire.<br><br>Regresa a la posición inicial mientras inhalas.<br><br>Repite hasta completar la serie y luego realiza el mismo proceso con el lado izquierdo.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/elevaciones_laterales_polea.jpg"
+  },
+  {
+    "id": "elevaciones_frontales_mancuernas",
+    "name": "Elevaciones frontales con mancuernas",
+    "description": "De pie, con la espalda recta y las rodillas ligeramente flexionadas, sujeta dos mancuernas frente a tus muslos con las palmas de las manos hacia el cuerpo (lo que se conoce como agarre en pronación). <br><br> Levanta las mancuernas hacia delante sin balancearte y manteniendo las palmas mirando hacia abajo. <br><br> Exhala profundamente mientras levantas las mancuernas y mantén una ligera flexión de los codos durante el ejercicio. <br><br> Cuando las mancuernas estén a la altura de tus ojos, aprieta los deltoides y aguanta la postura 1-2 segundos. <br><br> Después de apretar los deltoides en el punto máximo de contracción (es decir, cuando la mancuerna/mano esté paralela al suelo/nivel del hombro) y hayas aislado los músculos de los hombros de forma efectiva, baja las mancuernas de forma lenta y controlada a la posición inicial. <br><br> Repite este proceso las veces indicadas.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/elevaciones_frontales_mancuernas.jpg"
+  },
+  {
+    "id": "elevaciones_frontales_barra",
+    "name": "Elevaciones frontales con barra",
+    "description": "Posición inicial<br><br>Para realizar este ejercicio, adopta un agarre pronunciado, ancho de hombros en la barra desde una posición de pie. Permita que sus brazos cuelguen directamente hasta la mitad del muslo con los codos extendidos. Tu cabeza debe mirar hacia adelante, con tus hombros hacia atrás y tu pecho hacia arriba. Mantenga una columna neutral y contraiga sus abdominales para proporcionar soporte central.<br><br>Ejecución<br><br>Desde la posición inicial, comience el movimiento flexionando el hombro, levantando el peso directamente frente a usted. Mantenga los codos extendidos y la muñeca neutral durante todo el movimiento.<br><br>Continúe el movimiento hacia arriba de los brazos hasta que la barra esté justo por encima de la altura del hombro.<br><br>En la parte superior del movimiento, haga una pausa breve y luego regrese lentamente a la posición inicial.<br><br>Repita el movimiento de acuerdo a las repeticiones que indique su plan de entrenamiento.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/elevaciones_frontales_barra.jpg"
+  },
+  {
     "id": "aperturas_invertidas_maquina_contractora",
     "name": "Aperturas invertidas en máquina contractora",
     "description": "Ajusta la altura del asiento para poder coger los agarres con un agarre neutral (palmas enfrentadas). <br><br> El pecho debe estar en contacto con el soporte del aparato durante todo el ejercicio. <br><br> Toma aire y aguanta la respiración mientras llevas los brazos atrás todo lo posible. Los codos deben finalizar bastante por detrás de la espalda. <br><br> Cuando los brazos estén tan atrás como sea posible, aguanta durante un segundo y luego expulsa el aire para regresar a la posición inicial de forma controlada.",
@@ -1050,39 +1218,18 @@
     "image": "assets/images/encogimientos_posteriores_polea.jpg"
   },
   {
-    "id": "elevaciones_y_inclinadas_mancuernas",
-    "name": "Elevaciones en Y inclinadas con mancuernas",
-    "description": "Inclínese ligeramente hacia adelante, manteniendo la espalda recta y los hombros hacia abajo.<br><br>Levante lentamente las mancuernas hacia arriba y hacia los lados, formando una forma de Y con su cuerpo.<br><br>Mantén esta posición por un momento, asegurándote de que tus brazos estén rectos y paralelos al suelo.<br><br>Poco a poco baja las mancuernas hasta la posición inicial, manteniendo el control del movimiento en todo momento. Repita el ejercicio hasta el número deseado de repeticiones.",
+    "id": "remo_vertical_barra",
+    "name": "Remo vertical con barra",
+    "description": "Levantad los brazos para tirar de la barra en línea recta hacia la barbilla, elevando los codos. Mantened la barra cerca del cuerpo en todo momento y el torso recto con la curva natural de la columna.<br><br>En el punto alto los codos apuntarán hacia los lados. Mantened la posición un segundo antes de regresar al inicio y repetir.",
     "muscular_group": "shoulders",
-    "image": "assets/images/elevaciones_y_inclinadas_mancuernas.jpg"
+    "image": "assets/images/remo_vertical_barra.jpg"
   },
   {
-    "id": "rotacion_externa_hombro_polea",
-    "name": "Rotación externa de hombro en polea",
-    "description": "Las rotaciones externas en polea son un excelente ejercicio para trabajar el manguito rotador podemos realizarlo en nuestra rutina habitual de prevención de lesiones en el hombro o al final de un entrenamiento que implique a otro grupo muscular mayor. <br><br> Colocar el cable de la polea o la banda elástica con el manillar a la altura del abdomen (manteniendo una resistencia muy ligera). Separarse un paso del punto de origen de la polea o de la banda hasta sentir tensión. <br><br> Situado lateralmente a la polea, comenzar tirando del manillar separándolo del punto de origen, con el antebrazo cruzando el cuerpo y el codo pegado al costado. <br><br> Con el brazo flexionado y el codo pegado al costado, tirar lentamente del manillar hacia fuera y atrás hasta que el antebrazo quede aproximadamente perpendicular al abdomen. Lentamente, volver a la posición de comienzo. <br><br> Completar todas las repeticiones con un solo brazo y, a continuación, cambiar de brazo colocándose en la posición opuesta.",
+    "id": "remo_vertical_mancuernas",
+    "name": "Remo vertical con mancuernas",
+    "description": "Sujeta una mancuerna con cada mano, con los brazos extendidos hacia abajo y las palmas de las manos mirando hacia ti. Las manos deben estar separadas menos del ancho de tus hombros.<br><br>Levanta de forma lenta y controlada las mancuernas, manteniéndolas cerca del cuerpo durante todo el recorrido y únicamente flexionando los codos. Los codos deben quedar más altos que los antebrazos en todo momento.<br><br>Cuando las mancuernas llegan a la altura de las clavículas (casi tocando la barbilla), mantén la posición un segundo.<br><br>Baja de forma lenta y controlada las mancuernas hacia la posición inicial, hasta la altura de los muslos y repite el proceso las veces indicadas.",
     "muscular_group": "shoulders",
-    "image": "assets/images/rotacion_externa_hombro_polea.jpg"
-  },
-  {
-    "id": "press_militar_barra_pie",
-    "name": "Press militar con barra de pie",
-    "description": "Nos colocamos frente a la barra, con los pies ligeramente separados, más o menos a la anchura de nuestras caderas. Con ello ganamos estabilidad a la hora de levantar el peso. <br><br> Flexionamos ligeramente las rodillas para evitar sobrecargar estas articulaciones. <br><br> Cogemos la barra con las manos en pronación (palmas mirando hacia adelante), y las colocamos a una anchura algo superior a la de nuestros hombros. <br><br> Colocamos los codos pegados al tronco y orientados ligeramente hacia adelante, quedando por delante de la barra. <br><br> Manteniendo esta posición y expandiendo la caja torácica, sacamos la barra del soporte y la situamos en la parte alta de nuestro pecho, a la altura de las clavículas. <br><br> La espalda, en el punto de inicio, deberá realizar una hiperlordosis, llevando la parte alta de la misma hacia atrás, más o menos una distancia que permita igualar su situación con la de nuestros talones. <br><br> Iniciamos el movimiento mientras expiramos, elevando la barra verticalmente con los brazos sobre nuestra cabeza. <br><br> En el punto final evitaremos bloquear los codos para evitar lesionar esta articulación. <br><br> Cuando la barra quede arriba, deberá situarse ligeramente por detrás de la cabeza, quedando los brazos, la espalda y las piernas alineadas. Asimismo, se deben retraer las escápulas para estabilizar la posición. <br><br> Se mantiene esta posición durante un segundo y se desciende la barra realizando el recorrido vertical inverso.",
-    "muscular_group": "shoulders",
-    "image": "assets/images/press_militar_barra_pie.jpg"
-  },
-  {
-    "id": "press_hombros_mancuernas_sentado",
-    "name": "Press de hombros con mancuernas sentado",
-    "description": "Sentado en un asiento de espalda baja, o banco ajustable, mantenerse erguido mientras se sujetan un par de mancuernas. Comenzar elevándolas por fuera de los hombros con las palmas dirigidas hacia delante. <br><br> Hacer press con las mancuernas llevándolas hacia arriba a la vez que se contraen los músculos de los hombros y se extienden los codos hasta que el peso quede por encima de la cabeza, justamente antes de bloquear los brazos. Lentamente, bajar las mancuernas a la posición de comienzo.",
-    "muscular_group": "shoulders",
-    "image": "assets/images/press_hombros_mancuernas_sentado.jpg"
-  },
-  {
-    "id": "pike_push_up",
-    "name": "Pike push up",
-    "description": "Nos situaremos tumbados boca abajo en posición de plancha con los brazos extendidos. Quedarán como único punto de apoyo las puntas de los pies y las palmas de las manos. una vez en esta posición de plancha elevaremos la cadera formando una A, de esta manera conseguiremos el ángulo adecuado para poder incidir de una forma correcta en los hombros. <br><br> Es importante que antes de empezar con el movimiento, realicemos una correcta retracción escapular y que además, hagamos un gesto como de querer romper el suelo hacia afuera. Esto hará que nuestros codos se peguen más hacia nuestro cuerpo y protegerá la articulación de nuestro hombro evitando lesiones. <br><br> Una vez hecho esto, iniciaremos el movimiento. Descenderemos flexionando nuestros codos hasta que nuestra cabeza llegue casi a rozar el suelo, volveremos a subir hasta la posición inicial. Tenemos que intentar realizar el movimiento al completo, es decir que nuestros brazos queden completamente estirados una vez arriba, la espalda se mantiene completamente recta durante todo el ejercicio. ",
-    "muscular_group": "shoulders",
-    "image": "assets/images/pike_push_up.jpg"
+    "image": "assets/images/remo_vertical_mancuernas.jpg"
   },
   {
     "id": "remo_vertical_polea",
@@ -1099,39 +1246,74 @@
     "image": "assets/images/face_pull.jpg"
   },
   {
-    "id": "elevaciones_laterales_maquina",
-    "name": "Elevaciones laterales en máquina",
-    "description": "Ajustar el asiento de la máquina de tal manera que los brazos se encuentren confortablemente bajo los almohadillamientos, sin encoger los hombros. <br><br> Comenzar con los codos flexionados y los brazos pegados al almohadillamiento, la parte inferior de los brazos en contacto con los costados y el peso ligeramente levantado de la columna de placas para proporcionarte ligera tensión. <br><br> Contraer los deltoides para elevar los brazos hacia arriba y hacia afuera, manteniéndolos contra los almohadillamientos durante todo el movimiento. Mantener la contracción final durante un segundo, a continuación, volver lentamente a la posición de inicio.",
+    "id": "face_pull_mancuernas",
+    "name": "Face pull con mancuernas",
+    "description": "Posición inicial:<br><br>Ponte de pie con una mancuerna ligera en cada mano.<br><br>Inclina ligeramente el torso hacia adelante (como si hicieras remo inclinado), con una posición atlética, rodillas semi-flexionadas y espalda recta.<br><br>Los brazos cuelgan al frente, con los codos extendidos y las palmas mirándose entre sí (agarre neutro).<br><br>Movimiento:<br><br>Tira de las mancuernas hacia tu cara o parte superior del pecho, separando los codos y llevándolos hacia los lados y atrás, en forma de “W”.<br><br>Mientras tiras, rota ligeramente las manos hacia afuera, como si quisieras mostrar las palmas hacia atrás (rotación externa).<br><br>Aprieta los omóplatos al final del movimiento.<br><br>Regreso:<br><br>Baja las mancuernas de forma lenta y controlada a la posición inicial.",
     "muscular_group": "shoulders",
-    "image": "assets/images/elevaciones_laterales_maquina.jpg"
+    "image": "assets/images/face_pull_mancuernas.jpg"
   },
   {
-    "id": "press_hombro_maquina",
-    "name": "Press hombro en máquina",
-    "description": "Extienda los brazos para presionar las manijas hacia arriba hasta que los codos estén extendidos pero no bloqueados.<br><br> Mantenga 1 seg. <br><br> Baje lentamente el peso hasta que sus manos estén justo por encima de los hombros, de modo que los pesos móviles no toquen el resto de la pila. Manteniendo tensión constante en los músculos del hombro.",
+    "id": "elevaciones_y_inclinadas_mancuernas",
+    "name": "Elevaciones en Y inclinadas con mancuernas",
+    "description": "Inclínese ligeramente hacia adelante, manteniendo la espalda recta y los hombros hacia abajo.<br><br>Levante lentamente las mancuernas hacia arriba y hacia los lados, formando una forma de Y con su cuerpo.<br><br>Mantén esta posición por un momento, asegurándote de que tus brazos estén rectos y paralelos al suelo.<br><br>Poco a poco baja las mancuernas hasta la posición inicial, manteniendo el control del movimiento en todo momento. Repita el ejercicio hasta el número deseado de repeticiones.",
     "muscular_group": "shoulders",
-    "image": "assets/images/press_hombro_maquina.jpg"
+    "image": "assets/images/elevaciones_y_inclinadas_mancuernas.jpg"
   },
   {
-    "id": "elevaciones_laterales_mancuernas",
-    "name": "Elevaciones laterales con mancuernas",
-    "description": "Sujetad las mancuernas por la parte externa de los muslos, con las palmas mirando hacia dentro. <br><br> Doblad ligeramente los codos y mantenedlos así durante todo el recorrido. Si empezáis a abrir y a cerrar los codos, reduciréis el aislamiento del hombro medio. <br><br> Elevad los pesos hacia fuera haciendo un arco amplio hasta el nivel de los hombros. <br><br> Es importante mantener los codos por encima de las manos al comienzo del ejercicio, llevándolos en el mismo plano horizontal en la posición de arriba.",
+    "id": "curl_cuello",
+    "name": "Curl de cuello",
+    "description": "Posición inicial:<br><br>Acuéstate boca arriba en un banco plano o en el suelo.<br><br>Mantén las rodillas flexionadas y los pies apoyados en el suelo.<br><br>Coloca una toalla doblada o una pequeña almohada bajo la cabeza si necesitas más soporte.<br><br>Preparación:<br><br>Coloca una mancuerna liviana sobre la frente.<br><br>Puedes sostener la mancuerna con ambas manos, cuidando que no ruede ni te golpee.<br><br>Mantén la barbilla ligeramente hacia el pecho (posición neutral).<br><br>Movimiento:<br><br>Contrae los músculos del cuello y lleva la barbilla hacia el pecho, levantando ligeramente la cabeza del banco/suelo.<br><br>El movimiento debe ser lento y controlado.<br><br>No levantes los hombros ni la espalda, solo la cabeza.<br><br>Regreso:<br><br>Baja la cabeza lentamente a la posición inicial sin soltar la mancuerna.<br><br>Evita dejar caer la cabeza o hacer movimientos bruscos.",
     "muscular_group": "shoulders",
-    "image": "assets/images/elevaciones_laterales_mancuernas.jpg"
+    "image": "assets/images/curl_cuello.jpg"
   },
   {
-    "id": "elevaciones_frontales_mancuernas",
-    "name": "Elevaciones frontales con mancuernas",
-    "description": "De pie, con la espalda recta y las rodillas ligeramente flexionadas, sujeta dos mancuernas frente a tus muslos con las palmas de las manos hacia el cuerpo (lo que se conoce como agarre en pronación). <br><br> Levanta las mancuernas hacia delante sin balancearte y manteniendo las palmas mirando hacia abajo. <br><br> Exhala profundamente mientras levantas las mancuernas y mantén una ligera flexión de los codos durante el ejercicio. <br><br> Cuando las mancuernas estén a la altura de tus ojos, aprieta los deltoides y aguanta la postura 1-2 segundos. <br><br> Después de apretar los deltoides en el punto máximo de contracción (es decir, cuando la mancuerna/mano esté paralela al suelo/nivel del hombro) y hayas aislado los músculos de los hombros de forma efectiva, baja las mancuernas de forma lenta y controlada a la posición inicial. <br><br> Repite este proceso las veces indicadas.",
+    "id": "extension_cuello",
+    "name": "Extensión de cuello",
+    "description": "Posición inicial:<br><br>Acuéstate boca abajo en un banco plano, dejando la cabeza fuera del borde del banco.<br><br>El cuerpo debe estar bien apoyado, con los pies firmes en el suelo.<br><br>Coloca una toalla doblada sobre la parte posterior de la cabeza si vas a usar peso.<br><br>Preparación:<br><br>Coloca una mancuerna ligera o disco pequeño sobre la parte posterior de tu cabeza, sujetándola con las dos manos si es necesario (con mucho control).<br><br>Comienza con la cabeza en posición neutral o ligeramente hacia abajo.<br><br>Movimiento:<br><br>Contrae los músculos del cuello para levantar la cabeza hacia arriba, como si miraras hacia el frente.<br><br>Detente cuando el cuello esté alineado con el resto de la columna (no hiperextiendas).<br><br>El movimiento debe ser lento y controlado, sin impulsos.<br><br>Regreso:<br><br>Baja la cabeza lentamente a la posición inicial.",
     "muscular_group": "shoulders",
-    "image": "assets/images/elevaciones_frontales_mancuernas.jpg"
+    "image": "assets/images/extension_cuello.jpg"
   },
   {
-    "id": "press_hombro_multipower",
-    "name": "Press de hombro en multipower",
-    "description": "Ajusta la barra a la altura de los ojos y carga el peso deseado en la barra. <br><br> Coloca las manos a la altura de los hombros y desbloquea la barra usando un agarre en pronación. Esta será la posición inicial del movimiento. <br><br> Presiona la barra hacia arriba extendiendo los codos y contrayendo los deltoides.<br><br> Baja lentamente la barra hasta la posición inicial (los brazos deben estar en un ángulo de aproximadamente 90 grados o un poco más abajo dependiendo de la longitud de los brazos).",
+    "id": "pike_push_up",
+    "name": "Pike push up",
+    "description": "Nos situaremos tumbados boca abajo en posición de plancha con los brazos extendidos. Quedarán como único punto de apoyo las puntas de los pies y las palmas de las manos. una vez en esta posición de plancha elevaremos la cadera formando una A, de esta manera conseguiremos el ángulo adecuado para poder incidir de una forma correcta en los hombros. <br><br> Es importante que antes de empezar con el movimiento, realicemos una correcta retracción escapular y que además, hagamos un gesto como de querer romper el suelo hacia afuera. Esto hará que nuestros codos se peguen más hacia nuestro cuerpo y protegerá la articulación de nuestro hombro evitando lesiones. <br><br> Una vez hecho esto, iniciaremos el movimiento. Descenderemos flexionando nuestros codos hasta que nuestra cabeza llegue casi a rozar el suelo, volveremos a subir hasta la posición inicial. Tenemos que intentar realizar el movimiento al completo, es decir que nuestros brazos queden completamente estirados una vez arriba, la espalda se mantiene completamente recta durante todo el ejercicio.",
     "muscular_group": "shoulders",
-    "image": "assets/images/press_hombro_multipower.jpg"
+    "image": "assets/images/pike_push_up.jpg"
+  },
+  {
+    "id": "flexiones_pino",
+    "name": "Flexiones a pino",
+    "description": "1. Preparación:<br><br>Coloca tus manos en el suelo, a una anchura igual o ligeramente mayor a la de tus hombros. <br><br>Usa una pared para ayudarte a mantener el equilibrio hasta que te sientas cómodo en la posición de pino. <br><br>Mantén las piernas rectas y los talones apoyados en la pared. <br><br>2. Flexión de brazos:<br><br>Flexiona los codos y baja tu cuerpo, manteniendo los codos hacia dentro (hacia el cuerpo). <br><br>El objetivo es llevar tu cabeza lo más cerca posible del suelo, o incluso tocarlo si lo deseas. <br><br>Mantén el cuerpo recto y equilibrado durante la flexión. <br><br>3. Extensión de brazos:<br><br>Empuja con las manos para volver a la posición inicial, extendiendo completamente los brazos. <br><br>Asegúrate de mantener los codos hacia dentro y el cuerpo alineado. ",
+    "muscular_group": "shoulders",
+    "image": "assets/images/flexiones_pino.jpg"
+  },
+  {
+    "id": "frog_planche",
+    "name": "Frog planche",
+    "description": "Comience en posición de flexión con las manos separadas al ancho de los hombros y los pies juntos.<br><br>Contraiga el centro del cuerpo y desplace lentamente el peso hacia adelante, llevando los hombros sobre las manos.<br><br>Mientras desplaza su peso hacia adelante, levante los pies del suelo y extienda las piernas hacia atrás.<br><br>Mantenga su cuerpo en línea recta desde la cabeza hasta los talones.<br><br>Dobla las rodillas y llévalas hacia el pecho, manteniendo los pies juntos.<br><br>Mantén esta posición durante unos segundos y luego baja lentamente los pies hasta el suelo.<br><br>Repita esto varias veces, aumentando gradualmente el tiempo que mantiene la posición",
+    "muscular_group": "shoulders",
+    "image": "assets/images/frog_planche.jpg"
+  },
+  {
+    "id": "advanced_tuck_planche",
+    "name": "Advanced tuck planche",
+    "description": "1. Posición inicial:<br><br>Colócate en posición de plancha, con los antebrazos apoyados en el suelo, los hombros alineados con los codos y las piernas extendidas. <br><br>2. Flexión de rodillas:<br><br>Flexiona las rodillas hacia el pecho, manteniendo el cuerpo en una línea recta. <br><br>3. Levantamiento de pies:<br><br>Despega los pies del suelo, manteniendo el cuerpo estable y la postura correcta. <br><br>4. Apertura de piernas (si se requiere):<br><br>Para una versión más avanzada, puedes intentar abrir las piernas en una posición de straddle, manteniendo la postura. <br><br>5. Retención:<br><br>Mantén la posición durante el tiempo que puedas, enfocándote en la estabilidad y el control. ",
+    "muscular_group": "shoulders",
+    "image": "assets/images/advanced_tuck_planche.jpg"
+  },
+  {
+    "id": "straddle_planche",
+    "name": "Straddle planche",
+    "description": "Explicación técnica:<br><br>Las manos se colocan en el suelo o las paralelas abiertas a anchura de hombros.<br><br>Es muy importante que los hombros se inclinen excesivamente adelante para poder mantener el tren inferior en el aire.<br><br>La cadera debe permanecer extendida en todas las fases del movimiento, es por eso que el glúteo y el abdomen deben estar bien contraídos para fijar la posición correcta.<br><br>Tanto en la fase de flexión de brazos como en la fase de empuje, el hombro debe permanece por delante de la mano.<br><br>Errores comunes:<br><br>Algunos de los errores más destacados que se producen cuando empezamos a trabajar este movimiento son:<br><br>1. No adelantar lo suficiente los hombros con respecto a la mano.<br><br>2. Excesiva curvatura lumbar.<br><br>3. Carpar la cadera en cualquiera de las fases del movimiento.<br><br>4. Abrir el pecho en la fase de push.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/straddle_planche.jpg"
+  },
+  {
+    "id": "full_planche",
+    "name": "Full planche",
+    "description": "Explicación técnica:<br><br>Las manos se colocan en el suelo o las paralelas abiertas a anchura de hombros.<br><br>Es muy importante que los hombros se inclinen excesivamente adelante para poder mantener el tren inferior en el aire.<br><br>La cadera debe permanecer extendida en todas las fases del movimiento, es por eso que el glúteo y el abdomen deben estar bien contraídos para fijar la posición correcta.<br><br>Tanto en la fase de flexión de brazos como en la fase de empuje, el hombro debe permanece por delante de la mano.<br><br>Errores comunes:<br><br>Algunos de los errores más destacados que se producen cuando empezamos a trabajar este movimiento son:<br><br>1. No adelantar lo suficiente los hombros con respecto a la mano.<br><br>2. Excesiva curvatura lumbar.<br><br>3. Carpar la cadera en cualquiera de las fases del movimiento.<br><br>4. Abrir el pecho en la fase de push.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/full_planche.jpg"
   },
   {
     "id": "rueda_abdominal_sentado",
@@ -1167,5 +1349,12 @@
     "description": "Túmbate en el suelo, en decúbito prono, apoyado en los codos y antebrazos y en los dedos de los pies. Mantén esta posición estática durante al menos 15 segundos mientras mantienes el cuerpo lo más estirado posible.",
     "muscular_group": "abdomen",
     "image": "assets/images/plancha_abdominal.jpg"
+  },
+  {
+    "id": "bandera",
+    "name": "La bandera",
+    "description": "Posición inicial:<br><br>Encuentra una barra vertical resistente (como las de un parque de barras o un poste).<br><br>Coloca las manos a la anchura de los hombros o un poco más:<br><br>La mano superior empuja hacia abajo y hacia el cuerpo (como si hicieras un shoulder press).<br><br>La mano inferior jala hacia arriba y afuera (como en una dominada lateral).<br><br>Ejecución del movimiento:<br><br>Activa el core con fuerza: aprieta abdomen, glúteos y piernas para convertir tu cuerpo en una tabla rígida.<br><br>Eleva las piernas lateralmente con control**, hasta que el cuerpo quede en posición horizontal respecto al suelo.<br><br>Mantén la posición lo más recto posible: cuerpo alineado de pies a cabeza.<br><br>Respira de forma controlada mientras aguantas el tiempo deseado.<br><br>Puntos clave:<br><br>El brazo de arriba empuja con el hombro y el de abajo jala con la espalda.<br><br>Las piernas deben estar juntas y extendidas, no flexionadas.<br><br>El core debe estar súper activado para evitar que las caderas se caigan.<br><br>Es normal empezar con progresiones: bandera con piernas encogidas, con una pierna extendida, o usando resistencia.<br><br>Advertencias:<br><br>Es muy exigente, no es para principiantes.<br><br>Necesitas una buena base de fuerza en hombros, espalda y core.<br><br>Trabaja con progresiones para evitar lesiones.",
+    "muscular_group": "abdomen",
+    "image": "assets/images/bandera.jpg"
   }
 ]
