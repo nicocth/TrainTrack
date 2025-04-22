@@ -926,9 +926,30 @@
   {
     "id": "extension_triceps_mancuerna",
     "name": "Extensión de tríceps con mancuerna",
-    "description": "La colocación:<br> PASO 1: Sentaos en una banca con apoyo lumbar y separad las piernas para mantener el equilibrio. <br><br> PASO 2: Coged una mancuerna por la parte interna rodeando la barra con los pulgares para asegurar el agarre. Las palmas miran hacia arriba en todo momento. <br><br> PASO 3: Elevad el pecho y dirigid la mirada hacia delante. <br><br> PASO 4: tensad el torso conservando el arco natural de la espalda. <br><br> PASO 5: elevad los brazos por encima de la cabeza con los codos apuntando hacia arriba y adelante. Los codos deben estar por detrás de la cabeza durante el ejercicio. <br><br> El movimiento:<br> PASO 1: inspirad y mantened la respiración. <br><br> PASO 2: fijad la parte superior de los brazos en una posición vertical con los codos apuntando hacia arriba. Evitad que se separen para que la tensión no se desvíe de los tríceps. <br><br> PASO 3: permitid que la mancuerna baje por detrás de la cabeza con gran control y notando el estiramiento de los tríceps. <br><br> PASO 4: invertid el movimiento sin balanceo y contrayendo los músculos hasta estirar los brazos <br><br> PASO 5: espirad en la posición inicial para conservar la estabilidad de la columna.",
+    "description": "POSICIÓN INICIAL:<br><br>Seleccione el peso adecuado de la mancuerna. Colóquese de pie con una mancuerna en la mano. Deberia utilizar un agarre neutro Levanta la mancuerna justo encima de ti extendiendo tu brazo. Contraiga el suelo pelvico y el core mientras mantiene su pecho levantado.<br><br>EJECUCIÓN:<br><br>Baje lentamente la mancuerna justo detrás de usted doblando su brazo mientras inhala. Regrese a la posición inicial en un movimiento fuerte mientras exhala. Repita el movimiento para la cantidad especificada de repeticiones y luego cambie de lado y repita con el otro brazo.<br><br>CONSEJOS: Mientras hace el ejercicio, mueva solo la articulación del codo, asegúrese de no mover ninguna otra parte de su cuerpo.",
     "muscular_group": "triceps",
     "image": "assets/images/extension_triceps_mancuerna.jpg"
+  },
+  {
+    "id": "extension_triceps_mancuerna_encima_cabeza",
+    "name": "Extensión de tríceps con mancuerna por encima de la cabeza",
+    "description": "La colocación:<br> PASO 1: Sentaos en una banca con apoyo lumbar y separad las piernas para mantener el equilibrio. <br><br> PASO 2: Coged una mancuerna por la parte interna rodeando la barra con los pulgares para asegurar el agarre. Las palmas miran hacia arriba en todo momento. <br><br> PASO 3: Elevad el pecho y dirigid la mirada hacia delante. <br><br> PASO 4: tensad el torso conservando el arco natural de la espalda. <br><br> PASO 5: elevad los brazos por encima de la cabeza con los codos apuntando hacia arriba y adelante. Los codos deben estar por detrás de la cabeza durante el ejercicio. <br><br> El movimiento:<br> PASO 1: inspirad y mantened la respiración. <br><br> PASO 2: fijad la parte superior de los brazos en una posición vertical con los codos apuntando hacia arriba. Evitad que se separen para que la tensión no se desvíe de los tríceps. <br><br> PASO 3: permitid que la mancuerna baje por detrás de la cabeza con gran control y notando el estiramiento de los tríceps. <br><br> PASO 4: invertid el movimiento sin balanceo y contrayendo los músculos hasta estirar los brazos <br><br> PASO 5: espirad en la posición inicial para conservar la estabilidad de la columna.",
+    "muscular_group": "triceps",
+    "image": "assets/images/extension_triceps_mancuerna_encima_cabeza.jpg"
+  },
+  {
+    "id": "extensiones_barra_encima_cabeza",
+    "name": "Extensiones con barra por encima de la cabeza",
+    "description": "Comience con la barra en un soporte a la altura de los hombros.<br><br>Sujete la barra ligeramente más estrecha que el ancho de los hombros.<br><br>Levante la barra del soporte y manténgala a la altura del cuello.<br><br>Presiónalo sobre tu cabeza hasta que tus brazos estén rectos.<br><br>Baja la barra detrás de tu cabeza hasta que llegue justo por encima de las orejas, manteniendo los codos en la misma posición.<br><br>Levanta la barra nuevamente a la posición vertical usando tus tríceps",
+    "muscular_group": "triceps",
+    "image": "assets/images/extensiones_barra_encima_cabeza.jpg"
+  },
+  {
+    "id": "extensiones_triceps_banco_mancuerna",
+    "name": "Extensiones de tríceps en banco con mancuerna",
+    "description": "Elige un par de mancuernas con un peso adecuado a tu nivel de condición física.<br><br>Acuéstate en un banco plano con la cara hacia arriba, sosteniendo una mancuerna en cada mano.<br><br>Extiende los brazos sobre tu pecho, con las palmas enfrentadas entre sí. Utiliza un agarre neutro para mantener las mancuernas en su lugar.<br><br>Alinea tus brazos con los hombros y mantén los codos rectos.<br><br>Flexiona los codos y baja lentamente las mancuernas hasta que lleguen a la altura de tus oídos, mientras inhalas durante el descenso.<br><br>Haz una pausa de un segundo y contrae tus tríceps para volver a la posición inicial mientras exhalas.",
+    "muscular_group": "triceps",
+    "image": "assets/images/extensiones_triceps_banco_mancuerna.jpg"
   },
   {
     "id": "patada_triceps_mancuerna",
@@ -952,6 +973,34 @@
     "image": "assets/images/extension_triceps_maquina.jpg"
   },
   {
+    "id": "fondos_maquina",
+    "name": "Fondos en máquina",
+    "description": "Para realizar los fondos de tríceps en máquina, nos deberemos sentar de forma segura en una máquina de empuje, seleccionando el peso y sujetando firmemente las asas.<br><br>Ahora mantendremos los codos a los lados, con el fin de poner énfasis en el trabajo en los tríceps. Los codos deberán estar doblados en un ángulo de 90 grados.<br><br>Posteriormente, deberemos contraer el tríceps, extendiendo los brazos hacia abajo a medida que exhalamos.<br><br>En la parte inferior del movimiento, nos centraremos en mantener una pequeña curva con nuestros brazos para mantener la tensión en los músculos del tríceps sin bloquear la articulación del codo.<br><br>Poco a poco, llevamos los brazos a la posición inicial mientras inhalamos.",
+    "muscular_group": "triceps",
+    "image": "assets/images/fondos_maquina.jpg"
+  },
+  {
+    "id": "fondos_banco",
+    "name": "Fondos en banco",
+    "description": "Siéntate en el borde de un banco resistente con las manos apoyadas a los lados del cuerpo, mirando hacia adelante y las piernas estiradas frente a ti.<br><br>Levanta tu cuerpo al empujar hacia arriba con los brazos, manteniendo los codos ligeramente flexionados y los hombros hacia abajo. Mantén una postura erguida y los abdominales contraídos.<br><br>Baja lentamente tu cuerpo al flexionar los codos hasta que tus hombros estén aproximadamente a la altura de los codos. Mantén el control del movimiento y evita que los hombros se levanten hacia las orejas.<br><br>Vuelve a la posición inicial empujando con fuerza hacia arriba hasta que los brazos estén completamente extendidos. Repite el movimiento durante el número deseado de repeticiones.",
+    "muscular_group": "triceps",
+    "image": "assets/images/fondos_banco.jpg"
+  },
+  {
+    "id": "fondos_anillas",
+    "name": "Fondos en anillas",
+    "description": "Siéntate en el borde de un banco resistente con las manos apoyadas a los lados del cuerpo, mirando hacia adelante y las piernas estiradas frente a ti.<br><br>Levanta tu cuerpo al empujar hacia arriba con los brazos, manteniendo los codos ligeramente flexionados y los hombros hacia abajo. Mantén una postura erguida y los abdominales contraídos.<br><br>Baja lentamente tu cuerpo al flexionar los codos hasta que tus hombros estén aproximadamente a la altura de los codos. Mantén el control del movimiento y evita que los hombros se levanten hacia las orejas.<br><br>Vuelve a la posición inicial empujando con fuerza hacia arriba hasta que los brazos estén completamente extendidos. Repite el movimiento durante el número deseado de repeticiones.",
+    "muscular_group": "triceps",
+    "image": "assets/images/fondos_anillas.jpg"
+  },
+  {
+    "id": "fondos_coreanos",
+    "name": "Fondos coreanos",
+    "description": "Colócate sentado en la barra, con agarre supino.<br><br>Déjate caer hasta flexionar los brazos más de 90º<br><br>En ese punto, intenta alejar el cuerpo lo máximo posible de la barra, extendiendo los brazos y llevando la cadera hacia delante.<br><br>Luego vuelve hacia atrás y completa el korean dip volviéndote a subir a la barra.",
+    "muscular_group": "triceps",
+    "image": "assets/images/fondos_coreanos.jpg"
+  },
+  {
     "id": "extension_triceps_polea_baja",
     "name": "Extensión de triceps en polea baja",
     "description": "Preparación: Conecta una cuerda a la polea baja de la máquina y selecciona un peso adecuado. <br><br> Posición inicial: Da la espalda a la máquina y agarra la cuerda por detrás de tu cuello con un agarre neutro (palmas enfrentadas). Mantén los pies separados al ancho de tus hombros. Tus antebrazos deben estar paralelos al suelo y tus codos apuntando hacia el techo. <br><br> Ejecución: Extiende la cuerda hacia arriba lentamente, únicamente moviendo tus antebrazos, hasta que tus brazos estén totalmente extendidos. A medida que extiendes, separa la cuerda hasta que tus manos queden a la altura de tus hombros. <br><br> Retención y retorno: Haz una breve pausa y luego regresa lentamente la cuerda a la posición inicial, permitiendo que tus manos se junten nuevamente.<br><br> Repeticiones: Repite el movimiento hasta alcanzar la cantidad de repeticiones deseada.",
@@ -964,6 +1013,20 @@
     "description": "Echado en el banco, sujete la barra con los brazos extendidos por encima del pecho. Con las palmas hacia arriba, deje poca distancia entre las manos, unos 15 cm. <br><br> Flexione los codos y baje la barra hasta tocar la frente. <br><br> Empuje la barra hacia arriba, hasta que los codos queden bloqueados. Vuelva lentamente a la posición inicial.",
     "muscular_group": "triceps",
     "image": "assets/images/press_frances.jpg"
+  },
+  {
+    "id": "press_tate",
+    "name": "Press tate",
+    "description": "Para realizar este ejercicio solamente necesitas unas mancuernas y un banco en el que poder tumbarte.<br><br>En todo momento las mancuernas deben estar en contacto entre sí. El inicio de este ejercicio es similar a cualquier press con mancuernas, estarás tumbado boca arriba con los brazos completamente extendidos y codos ligeramente bloqueados.<br><br>Manteniendo el contacto entre las mancuernas, llévalas hacia tu torso hasta hacer contacto. Mantén alineados tus hombros y codos para enfocar la tensión en el tríceps. Una vez hayan tocado las mancuernas tu torso, mantén la tensión.<br><br>No dejes que las mancuernas descansen sobre ti, ni realices un rebote.<br><br>Vuelve a la posición inicial hasta realizar el recorrido completo. Repite tantas veces puedas manteniendo una técnica correcta.",
+    "muscular_group": "triceps",
+    "image": "assets/images/press_tate.jpg"
+  },
+  {
+    "id": "press_jm",
+    "name": "Press JM",
+    "description": "Al igual que en un press cerrado, las manos se sitúan aproximadamente a la misma altura de los hombros. Una vez agarrada la barra la sacamos y extendemos los codos como la posición final de un press de banca, con los brazos perpendiculares al cuerpo.<br><br>Desde esa posición inicial con los brazos perpendiculares al cuerpo vamos flexionando los codos a la vez que los llevamos hacia el costado. Aquí está la mezcla de un press cerrado en el que llevamos los codos al lado del cuerpo como un press de banca, y un press francés con el que llevamos la carga a la frente.<br><br>Los codos siempre deben estar mirando hacia el techo lo máximo posible y no abrirse. Bajamos la carga de forma controlada hasta llevarla a la altura de la clavícula, pero sin llegar a tocarla porque nuestro rango de movimiento no nos lo permitirá.<br><br>Si te molestan los codos al realizar el JM press prueba a dirigir la barra hacia la barbilla a ver si desaparece esa tensión. Incluso puedes probar a llevar la barra a la nariz para testear otro rango de movimiento.",
+    "muscular_group": "triceps",
+    "image": "assets/images/press_jm.jpg"
   },
   {
     "id": "aperturas_invertidas_maquina_contractora",
