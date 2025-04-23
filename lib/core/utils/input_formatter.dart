@@ -34,11 +34,22 @@ class DecimalTextInputFormatter extends TextInputFormatter {
 
 class TimeFormatter {
   static String formatTime(int seconds) {
-    final int minutes = seconds ~/ 60;
+    final int hours = seconds ~/ 3600;
+    final int minutes = (seconds % 3600) ~/ 60;
     final int remainingSeconds = seconds % 60;
-    return '${minutes.toString().padLeft(2, '0')}:${remainingSeconds.toString().padLeft(2, '0')}';
+
+    if (hours > 0) {
+      return '${hours.toString().padLeft(2, '0')}:'
+             '${minutes.toString().padLeft(2, '0')}:'
+             '${remainingSeconds.toString().padLeft(2, '0')}';
+    } else {
+      return '${minutes.toString().padLeft(2, '0')}:'
+             '${remainingSeconds.toString().padLeft(2, '0')}';
+    }
   }
 }
+
+
 
 // custom class to translate the contents of MuscularGroup
 class MuscularGroupFormatter {
