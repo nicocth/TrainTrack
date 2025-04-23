@@ -1043,11 +1043,18 @@
     "image": "assets/images/rotacion_externa_hombro_mancuerna.jpg"
   },
   {
-    "id": "press_militar_barra_pie",
-    "name": "Press militar con barra de pie",
+    "id": "press_militar_pie",
+    "name": "Press militar de pie",
     "description": "Nos colocamos frente a la barra, con los pies ligeramente separados, más o menos a la anchura de nuestras caderas. Con ello ganamos estabilidad a la hora de levantar el peso. <br><br> Flexionamos ligeramente las rodillas para evitar sobrecargar estas articulaciones. <br><br> Cogemos la barra con las manos en pronación (palmas mirando hacia adelante), y las colocamos a una anchura algo superior a la de nuestros hombros. <br><br> Colocamos los codos pegados al tronco y orientados ligeramente hacia adelante, quedando por delante de la barra. <br><br> Manteniendo esta posición y expandiendo la caja torácica, sacamos la barra del soporte y la situamos en la parte alta de nuestro pecho, a la altura de las clavículas. <br><br> La espalda, en el punto de inicio, deberá realizar una hiperlordosis, llevando la parte alta de la misma hacia atrás, más o menos una distancia que permita igualar su situación con la de nuestros talones. <br><br> Iniciamos el movimiento mientras expiramos, elevando la barra verticalmente con los brazos sobre nuestra cabeza. <br><br> En el punto final evitaremos bloquear los codos para evitar lesionar esta articulación. <br><br> Cuando la barra quede arriba, deberá situarse ligeramente por detrás de la cabeza, quedando los brazos, la espalda y las piernas alineadas. Asimismo, se deben retraer las escápulas para estabilizar la posición. <br><br> Se mantiene esta posición durante un segundo y se desciende la barra realizando el recorrido vertical inverso.",
     "muscular_group": "shoulders",
-    "image": "assets/images/press_militar_barra_pie.jpg"
+    "image": "assets/images/press_militar_pie.jpg"
+  },
+  {
+    "id": "press_militar_sentado",
+    "name": "Press militar sentado",
+    "description": "Posición inicial<br><br>Siéntate en el banco y desengancha la barra cogiéndola con un agarre en pronación y los codos apuntando hacia fuera. La barra se coloca por delante a la altura de la barbilla. Este nivel puede variar en función de la flexibilidad de tus hombros. La distancia entre las manos debe ser tal que los codos formen un ángulo de 90° cuando los brazos estén paralelos al suelo.<br><br>Ejecución<br><br>Aprieta los hombros mientras empujas el peso verticalmente. Detén el movimiento cuando tus brazos estén a punto de estar completamente extendidos. A continuación, vuelve lentamente a la posición inicial.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/press_militar_sentado.jpg"
   },
   {
     "id": "press_militar_landmine",
@@ -1062,20 +1069,6 @@
     "description": "Comience colocando un accesorio para mina terrestre en una base para mina terrestre o anclando de forma segura una barra en una esquina.<br><br>Cargue peso en la barra si lo desea.<br><br>Párese frente a la mina terrestre o la barra con los pies separados al ancho de los hombros.<br><br>Sujete el extremo de la barra con una mano, manteniendo el codo cerca del cuerpo.<br><br>Presione la barra hacia arriba y lejos de su cuerpo hasta que su brazo esté completamente extendido.<br><br>Baje la barra a la posición inicial, manteniendo el codo cerca del cuerpo durante todo el movimiento.<br><br>Repita el ejercicio hasta obtener la cantidad de repeticiones deseada, luego cambie de lado y repita con el otro brazo.",
     "muscular_group": "shoulders",
     "image": "assets/images/press_landmine_un_brazo.jpg"
-  },
-  {
-    "id": "press_hombros_barra",
-    "name": "Press de hombros con barra",
-    "description": "Nos colocamos frente a la barra, con los pies ligeramente separados, más o menos a la anchura de nuestras caderas. Con ello ganamos estabilidad a la hora de levantar el peso.<br><br>Flexionamos ligeramente las rodillas para evitar sobrecargar estas articulaciones.<br><br>Cogemos la barra con las manos en pronación (palmas mirando hacia adelante), y las colocamos a una anchura algo superior a la de nuestros hombros.<br><br>Colocamos los codos pegados al tronco y orientados ligeramente hacia adelante, quedando por delante de la barra.<br><br>Manteniendo esta posición y expandiendo la caja torácica, sacamos la barra del soporte y la situamos en la parte alta de nuestro pecho, a la altura de las clavículas.<br><br>La espalda, en el punto de inicio, deberá realizar una hiperlordosis, llevando la parte alta de la misma hacia atrás, más o menos una distancia que permita igualar su situación con la de nuestros talones.<br><br>Iniciamos el movimiento mientras expiramos, elevando la barra verticalmente con los brazos sobre nuestra cabeza.<br><br>En el punto final evitaremos bloquear los codos para evitar lesionar esta articulación.<br><br>Cuando la barra quede arriba, deberá situarse ligeramente por detrás de la cabeza, quedando los brazos, la espalda y las piernas alineadas. Asimismo, se deben retraer las escápulas para estabilizar la posición.<br><br>Se mantiene esta posición durante un segundo y se desciende la barra realizando el recorrido vertical inverso.",
-    "muscular_group": "shoulders",
-    "image": "assets/images/press_hombros_barra.jpg"
-  },
-  {
-    "id": "press_hombros_barra_sentado",
-    "name": "Press de hombros con barra sentado",
-    "description": "Posición inicial<br><br>Siéntate en el banco y desengancha la barra cogiéndola con un agarre en pronación y los codos apuntando hacia fuera. La barra se coloca por delante a la altura de la barbilla. Este nivel puede variar en función de la flexibilidad de tus hombros. La distancia entre las manos debe ser tal que los codos formen un ángulo de 90° cuando los brazos estén paralelos al suelo.<br><br>Ejecución<br><br>Aprieta los hombros mientras empujas el peso verticalmente. Detén el movimiento cuando tus brazos estén a punto de estar completamente extendidos. A continuación, vuelve lentamente a la posición inicial.",
-    "muscular_group": "shoulders",
-    "image": "assets/images/press_hombros_barra_sentado.jpg"
   },
   {
     "id": "press_hombros_mancuernas",
@@ -1125,6 +1118,13 @@
     "description": "Extienda los brazos para presionar las manijas hacia arriba hasta que los codos estén extendidos pero no bloqueados.<br><br> Mantenga 1 seg. <br><br> Baje lentamente el peso hasta que sus manos estén justo por encima de los hombros, de modo que los pesos móviles no toquen el resto de la pila. Manteniendo tensión constante en los músculos del hombro.",
     "muscular_group": "shoulders",
     "image": "assets/images/press_hombro_maquina.jpg"
+  },
+  {
+    "id": "press_hombro_maquina_discos",
+    "name": "Press hombro en máquina con discos",
+    "description": "Extienda los brazos para presionar las manijas hacia arriba hasta que los codos estén extendidos pero no bloqueados.<br><br> Mantenga 1 seg. <br><br> Baje lentamente el peso hasta que sus manos estén justo por encima de los hombros, de modo que los pesos móviles no toquen el resto de la pila. Manteniendo tensión constante en los músculos del hombro.",
+    "muscular_group": "shoulders",
+    "image": "assets/images/press_hombro_maquina_discos.jpg"
   },
   {
     "id": "press_arnold",
@@ -1330,18 +1330,88 @@
     "image": "assets/images/encogimientos_maquina.jpg"
   },
   {
-    "id": "encogimientos_polea_alta",
-    "name": "Encogimientos en polea alta",
-    "description": "Colocaos de pie, de espaldas a la polea. Algunas estaciones de poleas disponen de puntos de apoyo o zonas acolchadas contra las que apoyar los glúteos y estabilizar el cuerpo (Esto ayuda a evitar que os sentéis hacia atrás al hacer el ejercicio). Inclinaos ligeramente hacia delante y tomad una fuerte inspiración. <br><br> Agarrad la cuerda con un agarre neutro y colocad las manos detrás de la cabeza; éstas deben permanecer en esta misma posición durante toda la serie. Mantened la barbilla lejos del pecho. <br><br> Usad una separación de pies amplia para un mejor equilibrio y mantened las rodillas desbloqueadas. <br><br> Contraed los abdominales doblándoos hacia delante por la cintura (no mantengáis la espalda arqueada) llevando los codos hacia las rodillas. <br><br> Mantened las manos bloqueadas detrás de la cabeza, para evitar que estiréis con los brazos. Los abdominales deben hacer todo el trabajo. <br><br> No empujéis las caderas hacia atrás mal inclinaros hacia delante, porque eso elimina parte de la tensión de los abdominales. <br><br> Mantened la contracción final durante un segundo y dejad que el peso tire de vosotros para regresar a la posición inicial.",
+    "id": "abdominales_polea",
+    "name": "Abdominales en polea",
+    "description": "Para comenzar el movimiento debemos colocarnos de rodilla y de espaldas a la máquina de polea alta, debemos coger la barra o la cuerda de la polea previa selección del peso a utilizar y situar ambas manos que toman la polea detrás de la nuca. Desde allí comenzamos el ejercicio.<br><br>Inspiramos y siempre permaneciendo las manos con la carga detrás de la nuca nos incurvamos realizando un crunch abdominal mientras espiramos y contraemos el abdomen para acercar el pecho a la pelvis. Lentamente regresamos a la posición inicial controlando el descenso de la carga.",
     "muscular_group": "abdomen",
-    "image": "assets/images/encogimientos_polea_alta.jpg"
+    "image": "assets/images/abdominales_polea.jpg"
   },
   {
-    "id": "abdominales_suelo",
-    "name": "Abdominales en suelo",
+    "id": "encogimiento_abdominal_polea",
+    "name": "Encogimiento abdominal en polea",
+    "description": "Para comenzar el movimiento debemos colocarnos de espaldas a la máquina de polea alta, debemos coger la barra o la cuerda de la polea previa selección del peso a utilizar y situar ambas manos que toman la polea detrás de la nuca. Desde allí comenzamos el ejercicio.<br><br>Inspiramos y siempre permaneciendo las manos con la carga detrás de la nuca nos incurvamos realizando un crunch abdominal mientras espiramos y contraemos el abdomen para acercar el pecho a la pelvis. Lentamente regresamos a la posición inicial controlando el descenso de la carga.",
+    "muscular_group": "abdomen",
+    "image": "assets/images/encogimiento_abdominal_polea.jpg"
+  },
+  {
+    "id": "encogimientos_polea_alta_pie",
+    "name": "Encogimientos en polea alta de pie",
+    "description": "Colocaos de pie, de espaldas a la polea. Algunas estaciones de poleas disponen de puntos de apoyo o zonas acolchadas contra las que apoyar los glúteos y estabilizar el cuerpo (Esto ayuda a evitar que os sentéis hacia atrás al hacer el ejercicio). Inclinaos ligeramente hacia delante y tomad una fuerte inspiración. <br><br> Agarrad la cuerda con un agarre neutro y colocad las manos detrás de la cabeza; éstas deben permanecer en esta misma posición durante toda la serie. Mantened la barbilla lejos del pecho. <br><br> Usad una separación de pies amplia para un mejor equilibrio y mantened las rodillas desbloqueadas. <br><br> Contraed los abdominales doblándoos hacia delante por la cintura (no mantengáis la espalda arqueada) llevando los codos hacia las rodillas. <br><br> Mantened las manos bloqueadas detrás de la cabeza, para evitar que estiréis con los brazos. Los abdominales deben hacer todo el trabajo. <br><br> No empujéis las caderas hacia atrás mal inclinaros hacia delante, porque eso elimina parte de la tensión de los abdominales. <br><br> Mantened la contracción final durante un segundo y dejad que el peso tire de vosotros para regresar a la posición inicial.",
+    "muscular_group": "abdomen",
+    "image": "assets/images/encogimientos_polea_alta_pie.jpg"
+  },
+  {
+    "id": "abdominal_bicicleta",
+    "name": "Abdominal bicicleta",
+    "description": "Acuéstate boca arriba sobre una colchoneta.<br><br>Coloca las manos detrás de la cabeza, sin jalar el cuello.<br><br>Eleva las piernas y flexiónalas a 90°.<br><br>Activa el abdomen y levanta ligeramente los hombros del suelo.<br><br>Gira el torso llevando el codo derecho hacia la rodilla izquierda, mientras extiendes la pierna derecha.<br><br>Cambia de lado: codo izquierdo hacia rodilla derecha, extendiendo la pierna izquierda.<br><br>Repite el movimiento de forma alternada como si estuvieras pedaleando una bicicleta en el aire.",
+    "muscular_group": "abdomen",
+    "image": "assets/images/abdominal_bicicleta.jpg"
+  },
+  {
+    "id": "encogimientos_invertidos",
+    "name": "Encogimientos invertidos",
+    "description": "Acuéstate boca arriba en una colchoneta, con los brazos a los lados o debajo de los glúteos para más estabilidad.<br><br>Flexiona las piernas y eleva los pies del suelo, manteniendo las rodillas a 90°.<br><br>Activa el abdomen y lleva las rodillas hacia el pecho, levantando ligeramente la cadera del suelo.<br><br>Haz una pausa arriba, sintiendo la contracción abdominal.<br><br>Baja lentamente las piernas a la posición inicial, sin dejar que los pies toquen el suelo.",
+    "muscular_group": "abdomen",
+    "image": "assets/images/encogimientos_invertidos.jpg"
+  },
+  {
+    "id": "patadas_aleteo",
+    "name": "Patadas de aleteo",
+    "description": "Acuéstate boca arriba sobre una colchoneta.<br><br>Coloca las manos debajo de los glúteos (o a los lados para más estabilidad).<br><br>Estira las piernas completamente y levántalas unos 10-15 cm del suelo.<br><br>Activa el abdomen y comienza a alternar el movimiento de las piernas:<br><br>Sube una pierna ligeramente mientras bajas la otra, sin que ninguna toque el suelo.<br><br>Mantén el movimiento constante y controlado, como si estuvieras pateando en el agua.",
+    "muscular_group": "abdomen",
+    "image": "assets/images/patadas_aleteo.jpg"
+  },
+  {
+    "id": "tijeras_piernas",
+    "name": "Tijeras de piernas",
+    "description": "Acuéstate boca arriba sobre una colchoneta.<br><br>Coloca las manos debajo de los glúteos o a los lados del cuerpo para mayor estabilidad.<br><br>Estira completamente las piernas y levántalas unos 10-15 cm del suelo.<br><br>Activa el core (abdomen firme) y comienza a cruzar las piernas alternando:<br><br>Pierna derecha sobre la izquierda, luego izquierda sobre derecha.<br><br>Hazlo como si dibujaras una tijera en el aire.<br><br>Mantén el movimiento fluido y controlado, sin dejar que las piernas toquen el suelo.",
+    "muscular_group": "abdomen",
+    "image": "assets/images/tijeras_piernas.jpg"
+  },
+  {
+    "id": "escaladores",
+    "name": "Escaladores",
+    "description": "Colócate en posición de plancha alta:<br><br> - Manos alineadas con los hombros.<br><br> - Cuerpo formando una línea recta de cabeza a pies.<br><br>Activa el core y mantén la espalda recta.<br><br>Lleva la rodilla derecha hacia el pecho, sin levantar la cadera.<br><br>Vuelve a la posición inicial y cambia de pierna, llevando la rodilla izquierda hacia el pecho.<br><br>Repite de forma rápida pero controlada, como si estuvieras corriendo en el sitio.",
+    "muscular_group": "abdomen",
+    "image": "assets/images/escaladores.jpg"
+  },
+  {
+    "id": "crunches",
+    "name": "Crunches",
     "description": "Apoya la espalda contra el suelo, dobla las rodillas y apoya los pies sobre el suelo. Coloca las manos detrás de la cabeza mientras diriges la mirada hacia el techo. <br><br> lnspira profundamente y aguanta la respiración a medida que separas del suelo la cabeza y los hombros tanto como puedas. <br><br> Mientras te elevas, redondea la parte superior de la espalda (flexión espinal). Cuando estés en la posición mas elevada, mira fijamente hacia el horizonte. <br><br> Aguanta en esa posición durante un segundo aproximadamente. Expulsa el aire y vuelve a la posición inicial. Relájate durante un instante antes de repetir.",
     "muscular_group": "abdomen",
-    "image": "assets/images/abdominales_suelo.jpg"
+    "image": "assets/images/crunches.jpg"
+  },
+  {
+    "id": "crunch_lateral",
+    "name": "Crunch lateral",
+    "description": "Acuéstate de lado sobre una colchoneta.<br><br>Dobla las rodillas ligeramente y mantenlas juntas, una sobre la otra.<br><br>Apoya el brazo inferior extendido en el suelo (o doblado para más comodidad).<br><br>Coloca la mano del brazo superior detrás de la cabeza.<br><br>Desde ahí, eleva el torso lateralmente, llevando el codo hacia la cadera, contrayendo los oblicuos.<br><br>Baja lentamente sin dejar caer el cuerpo al suelo.<br><br>Luego cambia de lado para trabajar ambos oblicuos.",
+    "muscular_group": "abdomen",
+    "image": "assets/images/crunch_lateral.jpg"
+  },
+  {
+    "id": "crunch_oblicuos_silla_romana",
+    "name": "Crunch olibcuos en silla romana",
+    "description": "Acuéstate de lado sobre una colchoneta.<br><br>Dobla las rodillas ligeramente y mantenlas juntas, una sobre la otra.<br><br>Apoya el brazo inferior extendido en el suelo (o doblado para más comodidad).<br><br>Coloca la mano del brazo superior detrás de la cabeza.<br><br>Desde ahí, eleva el torso lateralmente, llevando el codo hacia la cadera, contrayendo los oblicuos.<br><br>Baja lentamente sin dejar caer el cuerpo al suelo.<br><br>Luego cambia de lado para trabajar ambos oblicuos.",
+    "muscular_group": "abdomen",
+    "image": "assets/images/crunch_oblicuos_silla_romana.jpg"
+  },
+  {
+    "id": "sit_ups",
+    "name": "Sit-Ups",
+    "description": "Posición inicial: Acuéstate boca arriba con las rodillas flexionadas y los pies juntos en el suelo.<br><br>Colocación de manos: Puedes colocar las manos detrás de la cabeza o cruzadas sobre el pecho.<br><br>Elevación del torso: Levanta el torso hacia arriba, usando la fuerza de tus músculos abdominales, hasta que estés en posición sentada.<br><br>Regreso a la posición inicial: Bajar el torso de forma controlada hasta la posición inicial.<br><br>Repeticiones: Repite el movimiento durante el tiempo o las repeticiones deseadas.",
+    "muscular_group": "abdomen",
+    "image": "assets/images/sit_ups.jpg"
   },
   {
     "id": "plancha_abdominal",
@@ -1349,6 +1419,62 @@
     "description": "Túmbate en el suelo, en decúbito prono, apoyado en los codos y antebrazos y en los dedos de los pies. Mantén esta posición estática durante al menos 15 segundos mientras mantienes el cuerpo lo más estirado posible.",
     "muscular_group": "abdomen",
     "image": "assets/images/plancha_abdominal.jpg"
+  },
+  {
+    "id": "superman",
+    "name": "Superman",
+    "description": "Acuéstate boca abajo sobre una colchoneta o superficie cómoda.<br><br>Extiende los brazos hacia el frente (como si volaras como Superman).<br><br>Junta las piernas y manténlas estiradas.<br><br>A la vez, eleva brazos, pecho y piernas del suelo lo más alto que puedas.<br><br>Aprieta los glúteos y la zona lumbar al subir. Mantén la posición por 1-2 segundos.<br><br>Baja lentamente sin dejar caer el cuerpo.",
+    "muscular_group": "abdomen",
+    "image": "assets/images/superman.jpg"
+  },
+  {
+    "id": "elevaciones_piernas_colgado",
+    "name": "Elevaciones de piernas colgado",
+    "description": "Posición inicial de las elevaciones de piernas colgado<br><br>Agarraos con las manos por encima de la barra de dominadas, colgando con los brazos estirados (usad correas si comprobáis que las manos ceden antes de que los abdominales se fatiguen).<br><br>Mantened las piernas rectas con una muy ligera flexión de rodillas y caderas. Bloquead las piernas en esa posición durante toda la duración de la serie.<br><br>Inhalad y mantened la respiración, con la cabeza dirigida al frente.<br><br>Ejecución de las elevaciones de piernas colgado<br><br>Evitando que el cuerpo se balancee, contraed los abdominales para elevar las piernas tan alto como podáis, bien por encima del punto en el que éstas están en posición paralela con el suelo (deben superar el plano horizontal).<br><br>Aseguraos de que la columna se curva hacia arriba en su parte inferior, lo cual es un signo de que los abdominales inferiores están plenamente contraídos.<br><br>Procurad mantener momentáneamente la posición superior mientras exhaláis, resistiendo el peso de las piernas mientras las descendéis bajo control.<br><br>Llegad al punto muerto en el punto bajo al estirar las piernas, para evitar cualquier balanceo y generar impulso que facilite la siguiente repetición.<br><br>Al elevar los piernas hasta que se disponen a 90 grados (paralelos al suelo) es el psoas el que realiza la acción de contraerse concéntricamente, mientras que el abdomen se contrae de forma isométrica.",
+    "muscular_group": "abdomen",
+    "image": "assets/images/elevaciones_piernas_colgado.jpg"
+  },
+  {
+    "id": "elevaciones_piernas",
+    "name": "Elevaciones de piernas",
+    "description": "Para comenzar el ejercicio debemos recostarnos en el suelo, con la espalda totalmente apoyada en la superficie y flexionamos la cadera para elevar las piernas rectas hasta que éstas queden perpendiculares al tronco. Desde allí, con la cabeza, cuello y hombros sobre el suelo, comenzamos el movimiento.<br><br>Colocamos las manos a los lados del cuerpo, con las palmas sobre el suelo, o bien, para una mayor comodidad y mejor apoyo de la espalda, podemos colocarlas bajo los glúteos.<br><br>Inspiramos y descendemos las piernas lentamente mientras contraemos el abdomen para controlar el movimiento. Podemos bajar las piernas sólo hasta mitad de recorrido o continuar hasta casi llegar al suelo.<br><br>Regresamos lentamente a la posición inicial y repetimos tantas veces como se haya indicado.",
+    "muscular_group": "abdomen",
+    "image": "assets/images/elevaciones_piernas.jpg"
+  },
+  {
+    "id": "toes_to_bar",
+    "name": "Toes to bar",
+    "description": "Ejecución:<br><br>1. Colgándose de la barra:<br><br>Colóquese en posición de dominadas, con los brazos completamente extendidos y los hombros retraídos. <br><br>2. Movimiento de las piernas:<br><br>Levante las piernas hacia arriba, utilizando el impulso de la cadera y la fuerza de los músculos abdominales. <br><br>3. Tocar la barra:<br><br>Llegue a tocar la barra con los dedos de los pies, manteniendo los brazos extendidos. <br><br>4. Descenso:<br><br>Baja lentamente las piernas hasta la posición inicial. ",
+    "muscular_group": "abdomen",
+    "image": "assets/images/toes_to_bar.jpg"
+  },
+  {
+    "id": "jumping_jack",
+    "name": "Jumping jack",
+    "description": "POSICIÓN INICIAL:<br><br>Coloquese de pie con los pies a la anchura de los hombros.<br><br>EJECUCIÓN:<br><br>Con un salto, separe los pies más anchos que los hombros y levante las manos justo por encima de la cabeza. Con otro salto, regrese a la posición inicial.<br><br>CONSEJOS: Realice el ejercicio durante el tiempo requerido. Debe realizar el ejercicio lo más rápido posible. Mantenga la mirada hacia adelante.",
+    "muscular_group": "abdomen",
+    "image": "assets/images/jumping_jack.jpg"
+  },
+  {
+    "id": "giros_rusos",
+    "name": "Giros rusos",
+    "description": "La posición inicial para dar comienzo a la práctica de este ejercicio es sentado en el suelo.<br><br>Una vez que estés sentado, coloca tus glúteos contra la superficie y con los pies apoyados en el suelo mantén las rodillas dobladas.<br><br>Ahora que ya estamos preparados en postura de inicio, el siguiente paso es inclinar la espalda hacia atrás a unos 45 grados, aproximadamente.<br><br>No te olvides de mantener la postura con la espalda recta e intentar tener los abdominales contraídos en todo momento.<br><br>Es importante que las primeras veces tengas las manos juntas. Cuando ya tengas la técnica interiorizada podrás añadir kettlebells, mancuernas y pesas o, incluso, balones medicinales para incrementar la dificultad del ejercicio.<br><br>Después de tener la posición controlada al 100%, ya podemos aprender la ejecución del movimiento.<br><br>La clave está en girar el torso hacia la izquierda. Este giro estará acompañado en todo momento por las manos, quienes irán en la misma dirección.<br><br>Una vez ejecutado en esta dirección, volveremos al centro y realizaremos el giro del torso hacia la derecha.<br><br>Una vez que ya tenemos el movimiento controlado, pondremos el foco en realizar series repetitivas e intensas de este completo ejercicio.",
+    "muscular_group": "abdomen",
+    "image": "assets/images/giros_rusos.jpg"
+  },
+  {
+    "id": "lenador_polea",
+    "name": "Leñador en polea",
+    "description": "Posición inicial:<br><br>Unid un maneral D a una polea alta. Alejaos lateralmente de 60 a 90 centímetros de la polea alta.<br><br>Separad los pies algo más que la anchura de las caderas manteniendo los dedos apuntando hacia fuera y doblando ligeramente las rodillas.<br><br>Manteniendo la posición de los pies, girad lentamente el cuerpo y agarrad el maneral con ambas manos. Conservad la tensión en la espalda y los abdominales. Es el punto de partida.<br><br>Ejecución:<br><br>Manteniendo los brazos estirados, tirad del maneral hacia abajo y en diagonal al cuerpo mientras giráis desde la polea.<br><br>Cuando tiréis del maneral hacia el cuerpo doblad algo más las rodillas y deteneos cuando el maneral se acerca a la tibia de la pierna más alejada de la polea.<br><br>Deteneos brevemente en la posición baja, manteniendo los abdominales tensos y la espalda plana.<br><br>Volved lentamente al punto de partida siguiendo el mismo recorrido. Repetid las veces necesarias.<br><br>También se puede realizar con la polea en una posición más baja. Realiza ambas formas para introducir variación en tu entrenamiento.",
+    "muscular_group": "abdomen",
+    "image": "assets/images/lenador_polea.jpg"
+  },
+  {
+    "id": "flexion_lateral_mancuerna",
+    "name": "Flexión lateral con mancuerna",
+    "description": "POSICIÓN INICIAL:<br><br>Seleccione el peso adecuado de la mancuerna. Colóquese de pie con los pies a la anchura de los hombros y agarre la mancuerna con la mano izquierda.<br><br>EJECUCIÓN:<br><br>Lentamente doble su cuerpo desde su cintura hacia su lado izquierdo hasta que sienta el estiramiento en sus músculos oblicuos. Inhale durante el movimiento. Vuelva a la posición inicial con un suave movimiento mientras inhala. Repita el movimiento para la cantidad especificada de repeticiones y luego repita con el otro lado.",
+    "muscular_group": "abdomen",
+    "image": "assets/images/flexion_lateral_mancuerna.jpg"
   },
   {
     "id": "bandera",
