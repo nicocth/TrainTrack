@@ -910,6 +910,48 @@
     "image": "assets/images/zottman_curl.jpg"
   },
   {
+    "id": "curl_invertido_barra",
+    "name": "Curl invertido con barra",
+    "description": "Posición inicial<br><br>Para efectuar de una excelente manera el curl de bíceps invertido con barra, deberás pararte con el tronco erguido, a la vez que sostiene la barra a la altura de tus hombros. Recuerda que el agarre en el curl de bíceps invertido es prono (seguramente, si ya has realizado el curl de bíceps, esta variante se te facilitará).<br><br>Ejecución del ejercicio<br><br>Comienza levantando la barra hasta que tus bíceps se tensen y se encuentren totalmente contraídos. Así, ésta llegará a la altura de tus hombros.<br><br>Lo recomendado es sostener la posición por lo menos un segundo y luego, con lentitud y en un movimiento controlado, desciende la barra.<br><br>Lo ideal es realizar repeticiones hasta llegar al fallo muscular; sin embargo, debes practicar la técnica de ejecución, de preferencia, unas cuantas veces sin carga, para poder habituarte al movimiento.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_invertido_barra.jpg"
+  },
+  {
+    "id": "curl_invertido_mancuernas",
+    "name": "Curl invertido con mancuernas",
+    "description": "Agarra una mancuerna en cada mano con las palmas hacia abajo y los brazos extendidos.<br><br>Inhala y dobla los codos para levantar las mancuernas hacia los hombros mientras exhalas.<br><br>Mantén la posición por un momento y luego baja lentamente las mancuernas de nuevo a la posición inicial.<br><br>Repite el ejercicio durante el número deseado de repeticiones.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_invertido_mancuernas.jpg"
+  },
+  {
+    "id": "curl_muneca_barra_palmas_arriba",
+    "name": "Curl muñeca con barra palmas arriba",
+    "description": "Manteniendo los brazos quietos (como el resto del cuerpo), flexionar las muñecas tanto como sea posible para elevar la barra hacia la parte superior de los brazos en un corto rango de movimiento.<br><br>Curl de muñeca con barra palmas arriba<br><br>Como con el curl de muñecas de pie, permitir que la barra se deslice hacia los dedos al final de cada repetición para conseguir un estiramiento mayor.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_muneca_barra_palmas_arriba.jpg"
+  },
+  {
+    "id": "curl_muneca_barra_palmas_abajo",
+    "name": "Curl muñeca con barra palmas abajo",
+    "description": "Ejecución:<br><br>1. Agarre:<br><br>Agarra la barra con las palmas hacia abajo, manteniendo los brazos ligeramente flexionados en los codos. <br><br>2. Posición inicial:<br><br>Apoya la parte superior de los antebrazos en un banco plano, banco alto o una superficie similar, dejando las muñecas libres. <br><br>3. Movimiento:<br><br>Flexiona las muñecas hacia abajo (curl) y luego extiéndelas hacia arriba (extensión). <br><br>4. Control:<br><br>Realiza el movimiento de forma lenta y controlada, sintiendo la contracción de los músculos extensores del antebrazo.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_muneca_barra_palmas_abajo.jpg"
+  },
+  {
+    "id": "curl_muneca_mancuernas_palmas_arriba",
+    "name": "Curl muñeca con mancuernas palmas arriba",
+    "description": "1. Posición:<br><br>Siéntate en un banco o silla, o arrodíllate frente a un banco.<br><br>2. Agarre:<br><br>Sujeta una mancuerna en cada mano con las palmas hacia arriba (en la posición de agarre supinado).<br><br>3. Apoyo:<br><br>Apoya la parte superior del antebrazo sobre la superficie, asegurándote de que la muñeca esté libre para moverse.<br><br>4. Movimiento:<br><br>Flexiona la muñeca para levantar la mancuerna hacia arriba, luego vuelve a la posición inicial extendiendo la muñeca.<br><br>5. Control:<br><br>Realiza el movimiento de manera controlada, evitando movimientos bruscos o excesivos.",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_muneca_mancuernas_palmas_arriba.jpg"
+  },
+  {
+    "id": "curl_muneca_mancuernas_palmas_abajo",
+    "name": "Curl muñeca con mancuernas palmas abajo",
+    "description": "Los curls de muñeca trabajan específicamente los flexores (palmas hacia arriba) y los extensores (palmas hacia abajo) de la muñeca, responsables de ese aspecto grueso y denso en los antebrazos. El truco está en priorizar la calidad sobre la cantidad. Disminuye la velocidad de las repeticiones, siente cómo se contrae el músculo y no olvides controlar la fase negativa (la fase de descenso).",
+    "muscular_group": "biceps",
+    "image": "assets/images/curl_muneca_mancuernas_palmas_abajo.jpg"
+  },
+  {
     "id": "press_banca_barra_agarre_cerrado",
     "name": "Press banca con barra y agarre cerrado",
     "description": "El press de banca de agarre estrecho es uno de los pocos ejercicios compuestos para los tríceps.<br><br>Puesto que el agarre se produce a una distancia menor que la anchura de los hombros, la mayor parte de la tensión del movimiento recae sobre los tríceps, a diferencia del press de banca estándar, puesto que al mantener los codos cercanos al cuerpo éstos reciben un mayor estiramiento.<br><br>En vuestro entrenamiento de tríceps, colocad este movimiento al principio, cuando estáis frescos, porque seréis capaces de mover más peso que en ningún otro ejercicio de la rutina.<br><br>Objetivo: Cabeza externa del tríceps.<br><br>Cuándo: Al comienzo del entrenamiento.<br><br>Inicio: Tumbado de espalda sobre un banco plano, bajo un soporte y sujetando una barra a la anchura de los hombros con las palmas dirigidas hacia delante, liberar la barra y comenzar situándola por encima del pecho con los brazos extendidos.<br><br>Ejecución: Manteniendo los codos en línea con el cuerpo, bajar lentamente la barra a la porción inferior de los pectorales flexionando los brazos. Cuando ésta toque al pecho, subir a la posición de inicio.",
