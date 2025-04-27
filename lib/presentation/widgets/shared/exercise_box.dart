@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:train_track/domain/models/custom_exercise.dart';
+import 'package:train_track/presentation/widgets/shared/exercise_image.dart';
 
 class ExerciseBox extends ConsumerWidget {
   final CustomExercise customExercise;
@@ -22,8 +23,8 @@ class ExerciseBox extends ConsumerWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(100),
-            child: Image.asset(
-              customExercise.exercise.image,
+            child: ExerciseImage(
+              exercise: customExercise.exercise,
               width: 40,
               height: 40,
               fit: BoxFit.cover,

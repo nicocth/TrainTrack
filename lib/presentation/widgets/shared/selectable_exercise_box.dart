@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:train_track/domain/models/custom_exercise.dart';
 import 'package:train_track/presentation/providers/training_session_provider.dart';
 import 'package:train_track/presentation/screens/training_session/training_screen.dart';
+import 'package:train_track/presentation/widgets/shared/exercise_image.dart';
 
 class SelectableExerciseBox extends ConsumerWidget {
   final CustomExercise customExercise;
@@ -30,30 +31,33 @@ class SelectableExerciseBox extends ConsumerWidget {
         ),
         child: Column(
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(100),
-                  child: Image.asset(
-                    customExercise.exercise.image,
-                    width: 40,
-                    height: 40,
-                    fit: BoxFit.cover,
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(100),
+                    child: ExerciseImage(
+                      exercise: customExercise.exercise,
+                      width: 40,
+                      height: 40,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                ),
-                const SizedBox(width: 8),
-                Expanded(
-                  child: Text(
-                    customExercise.exercise.name,
-                    style: const TextStyle(color: Colors.white),
-                    maxLines: 3,
-                    overflow: TextOverflow.ellipsis,
-                    softWrap: true,
+                  const SizedBox(width: 8),
+                  Expanded(
+                    child: Text(
+                      customExercise.exercise.name,
+                      style: const TextStyle(color: Colors.white),
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: true,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             Checkbox(
               value: isCompleted,

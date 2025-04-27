@@ -131,5 +131,22 @@
     "discard": "Discard",
     "training_in_progress": "You have a training in progress",
     "or": "or",
-    "login_with_google": "Continue with Google"
+    "login_with_google": "Continue with Google",
+    "add_local_exercise": "Add local exercise",
+    "customize": "Customize",
+    "exercise_name": "Exercise name",
+    "required_field": "This field is required",
+    "select_image": "Select image",
+    "save_exercise": "Save exercise",
+    "show_local_exercises": "Show local exercises",
+    "exercise_saved": "Exercise saved",
+    "manage_local_exercises": "Manage local exercises",
+    "exercise_deleted": "Exercise deleted",
+    "local_exercises_management_title": "Exercises management",
+    "no_local_exercises": "There are no local exercises saved",
+    "image_required": "Image is required",
+    "storage_warning_short": "Important: Click to read",
+    "storage_warning_message":"Local exercises are saved to your device's internal storage. If you change devices, uninstall the app, or clear the storage data, the exercises will no longer be available.",
+    "warning": "Warning",
+    "understood": "Understood"
 }

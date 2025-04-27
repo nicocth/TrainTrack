@@ -48,7 +48,7 @@ class ExerciseCard extends ConsumerWidget {
             // Upper section with image, name and delete button
             Row(
               children: [
-                ZoomableImage(image: customExercise.exercise.image),
+                ZoomableImage(exercise: customExercise.exercise),
                 const SizedBox(width: 20),
                 ExerciseName(customExercise: customExercise),
                 IconButton(

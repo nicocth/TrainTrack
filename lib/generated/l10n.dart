@@ -1164,6 +1164,161 @@ class S {
       args: [],
     );
   }
+
+  /// `Add local exercise`
+  String get add_local_exercise {
+    return Intl.message(
+      'Add local exercise',
+      name: 'add_local_exercise',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Customize`
+  String get customize {
+    return Intl.message('Customize', name: 'customize', desc: '', args: []);
+  }
+
+  /// `Exercise name`
+  String get exercise_name {
+    return Intl.message(
+      'Exercise name',
+      name: 'exercise_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This field is required`
+  String get required_field {
+    return Intl.message(
+      'This field is required',
+      name: 'required_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select image`
+  String get select_image {
+    return Intl.message(
+      'Select image',
+      name: 'select_image',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save exercise`
+  String get save_exercise {
+    return Intl.message(
+      'Save exercise',
+      name: 'save_exercise',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show local exercises`
+  String get show_local_exercises {
+    return Intl.message(
+      'Show local exercises',
+      name: 'show_local_exercises',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Exercise saved`
+  String get exercise_saved {
+    return Intl.message(
+      'Exercise saved',
+      name: 'exercise_saved',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Manage local exercises`
+  String get manage_local_exercises {
+    return Intl.message(
+      'Manage local exercises',
+      name: 'manage_local_exercises',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Exercise deleted`
+  String get exercise_deleted {
+    return Intl.message(
+      'Exercise deleted',
+      name: 'exercise_deleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Exercises management`
+  String get local_exercises_management_title {
+    return Intl.message(
+      'Exercises management',
+      name: 'local_exercises_management_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `There are no local exercises saved`
+  String get no_local_exercises {
+    return Intl.message(
+      'There are no local exercises saved',
+      name: 'no_local_exercises',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Image is required`
+  String get image_required {
+    return Intl.message(
+      'Image is required',
+      name: 'image_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Important: Click to read`
+  String get storage_warning_short {
+    return Intl.message(
+      'Important: Click to read',
+      name: 'storage_warning_short',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Local exercises are saved to your device's internal storage. If you change devices, uninstall the app, or clear the storage data, the exercises will no longer be available.`
+  String get storage_warning_message {
+    return Intl.message(
+      'Local exercises are saved to your device\'s internal storage. If you change devices, uninstall the app, or clear the storage data, the exercises will no longer be available.',
+      name: 'storage_warning_message',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Warning`
+  String get warning {
+    return Intl.message('Warning', name: 'warning', desc: '', args: []);
+  }
+
+  /// `Understood`
+  String get understood {
+    return Intl.message('Understood', name: 'understood', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -40,7 +40,7 @@ class ExerciseCardTraining extends ConsumerWidget {
           children: [
             Row(
               children: [
-                ZoomableImage(image: customExercise.exercise.image),
+                ZoomableImage(exercise: customExercise.exercise),
                 const SizedBox(width: 20),
                 ExerciseName(customExercise: customExercise)
               ],

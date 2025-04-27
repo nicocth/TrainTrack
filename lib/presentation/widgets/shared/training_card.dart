@@ -6,6 +6,7 @@ import 'package:train_track/presentation/providers/create_training_provider.dart
 import 'package:train_track/presentation/providers/trainings_provider.dart';
 import 'package:train_track/presentation/screens/create_training/create_training_screen.dart';
 import 'package:train_track/presentation/screens/training_session/training_summary_screen.dart';
+import 'package:train_track/presentation/widgets/shared/exercise_image.dart';
 
 class TrainingCard extends ConsumerWidget {
   final Training training;
@@ -19,8 +20,7 @@ class TrainingCard extends ConsumerWidget {
           (exercise) => exercise.order == 0,
           orElse: () => training.exercises.first,
         )
-        .exercise
-        .image;
+        .exercise;
 
     return GestureDetector(
       onTap: () {
@@ -48,8 +48,8 @@ class TrainingCard extends ConsumerWidget {
               Positioned.fill(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15),
-                  child: Image.asset(
-                    customExerciseImage,
+                  child: ExerciseImage(
+                    exercise: customExerciseImage,
                     fit: BoxFit.cover,
                   ),
                 ),

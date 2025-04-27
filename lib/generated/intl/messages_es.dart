@@ -35,6 +35,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "add_exercise_title": MessageLookupByLibrary.simpleMessage(
       "Añadimos los ejercicios que deseemos:",
     ),
+    "add_local_exercise": MessageLookupByLibrary.simpleMessage(
+      "Añadir ejercicio local",
+    ),
     "add_selected": MessageLookupByLibrary.simpleMessage(
       "Añadir seleccionados",
     ),
@@ -89,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "current_password_empty": MessageLookupByLibrary.simpleMessage(
       "La contraseña actual es obligatoria",
     ),
+    "customize": MessageLookupByLibrary.simpleMessage("Personalizar"),
     "delete": MessageLookupByLibrary.simpleMessage("Eliminar"),
     "delete_account": MessageLookupByLibrary.simpleMessage("Eliminar cuenta"),
     "delete_account_confirm": MessageLookupByLibrary.simpleMessage(
@@ -135,6 +139,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "error_saving_routine": MessageLookupByLibrary.simpleMessage(
       "Error al guardar la rutina",
     ),
+    "exercise_deleted": MessageLookupByLibrary.simpleMessage(
+      "Ejercicio borrado",
+    ),
+    "exercise_name": MessageLookupByLibrary.simpleMessage(
+      "Nombre del ejercicio",
+    ),
+    "exercise_saved": MessageLookupByLibrary.simpleMessage(
+      "Ejercicio guardado correctamente",
+    ),
     "exercise_selection_description": MessageLookupByLibrary.simpleMessage(
       "Da opción de finalizar el entrenamiento.<br><br>Muestra el tiempo que llevamos de entrenamiento, esto ayuda a controlar los tiempos de ejecución y descanso durante el entrenamiento.<br><br>Muestra un diagrama de nuestros ejercicios con un cuadro de selección, que nos permite seleccionar el ejercicio que queremos ejecutar, esto arregla problemas como máquinas ocupadas, falta de equipamiento momentánea y permite alterar el orden del entreno sin perder tiempo, ya que las rutinas predefinidas que te obligan a seguir un orden concreto (siendo el orden importante para nuestro entrenamiento) son poco versátiles y nos harían perder demasiado tiempo esperando máquinas ocupadas.<br><br>Si seleccionamos un ejercicio vamos a la siguiente ventana.",
     ),
@@ -162,6 +175,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Muestra una lista de entrenamientos personalizados si los hay, sino muestra mensaje invitándote a crear el primer entrenamiento. Si no puede recuperarlos te informa de que no tienes conexión, en caso de mostrarlos correctamente podrás editarlos, borrarlos o iniciarlos. <br><br>Da opción de crear Nuevo Entrenamiento. <br><br>Da opción de navegar a pantalla de Configuración.",
     ),
     "home_title": MessageLookupByLibrary.simpleMessage("Menú principal:"),
+    "image_required": MessageLookupByLibrary.simpleMessage(
+      "La imagen es obligatoria",
+    ),
     "invalid_email": MessageLookupByLibrary.simpleMessage(
       "Correo electrónico inválido",
     ),
@@ -169,6 +185,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "kg_text": MessageLookupByLibrary.simpleMessage("Kg"),
     "language": MessageLookupByLibrary.simpleMessage("Idioma"),
     "legs": MessageLookupByLibrary.simpleMessage("Piernas"),
+    "local_exercises_management_title": MessageLookupByLibrary.simpleMessage(
+      "Gestionar ejercicios",
+    ),
     "login": MessageLookupByLibrary.simpleMessage("Iniciar sesión"),
     "login_failed": MessageLookupByLibrary.simpleMessage(
       "Error al iniciar sesión, el usuario o la contraseña no coinciden",
@@ -180,6 +199,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "logout_failed": MessageLookupByLibrary.simpleMessage(
       "Error al cerrar sesión",
     ),
+    "manage_local_exercises": MessageLookupByLibrary.simpleMessage(
+      "Gestionar ejercicios locales",
+    ),
     "mode": MessageLookupByLibrary.simpleMessage("Modo"),
     "month": MessageLookupByLibrary.simpleMessage("mes"),
     "months": MessageLookupByLibrary.simpleMessage("meses"),
@@ -190,6 +212,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Nombre de usuario actualizado",
     ),
     "no": MessageLookupByLibrary.simpleMessage("No"),
+    "no_local_exercises": MessageLookupByLibrary.simpleMessage(
+      "No hay ejercicios locales guardados",
+    ),
     "notes": MessageLookupByLibrary.simpleMessage("Notas"),
     "number_value_error": MessageLookupByLibrary.simpleMessage(
       "Valor incorrecto, Introduzca un número",
@@ -213,9 +238,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "request_timeout": MessageLookupByLibrary.simpleMessage(
       "La peticion ha tardado demasiado tiempo revise su conexión",
     ),
+    "required_field": MessageLookupByLibrary.simpleMessage("Campo obligatorio"),
     "routine_title": MessageLookupByLibrary.simpleMessage(
       "Título de la rutina",
     ),
+    "save_exercise": MessageLookupByLibrary.simpleMessage("Guardar ejercicio"),
     "save_training": MessageLookupByLibrary.simpleMessage(
       "Guardar entrenamiento",
     ),
@@ -223,6 +250,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "select_exercise": MessageLookupByLibrary.simpleMessage(
       "Seleccione el siguiente ejercicio:",
     ),
+    "select_image": MessageLookupByLibrary.simpleMessage("Elegir imagen"),
     "select_muscular_group": MessageLookupByLibrary.simpleMessage(
       "Selecciona un grupo muscular",
     ),
@@ -231,6 +259,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "shoulders": MessageLookupByLibrary.simpleMessage("Hombros"),
     "show_absolute_values": MessageLookupByLibrary.simpleMessage(
       "Mostrar valores absolutos",
+    ),
+    "show_local_exercises": MessageLookupByLibrary.simpleMessage(
+      "Ver ejercicios locales",
     ),
     "show_percentages": MessageLookupByLibrary.simpleMessage(
       "Mostrar porcentajes",
@@ -245,6 +276,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "statistics_screen_title": MessageLookupByLibrary.simpleMessage(
       "Pantalla de estadistica:",
+    ),
+    "storage_warning_message": MessageLookupByLibrary.simpleMessage(
+      "Los ejercicios locales se guardan en el almacenamiento interno del dispositivo. Si cambias de dispositivo, desistalas la aplicación o borras los datos de almacenamiento los ejercicios no estarán disponibles.",
+    ),
+    "storage_warning_short": MessageLookupByLibrary.simpleMessage(
+      "Importante: pulse para leer.",
     ),
     "summary": MessageLookupByLibrary.simpleMessage("Resumen"),
     "summary_description": MessageLookupByLibrary.simpleMessage(
@@ -278,6 +315,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "trainings": MessageLookupByLibrary.simpleMessage("Sesiones"),
     "triceps": MessageLookupByLibrary.simpleMessage("Triceps"),
     "uknown_error": MessageLookupByLibrary.simpleMessage("Error desconocido"),
+    "understood": MessageLookupByLibrary.simpleMessage("Entendido"),
     "update_nickname": MessageLookupByLibrary.simpleMessage(
       "Actualizar nombre de usuario",
     ),
@@ -297,6 +335,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "user_not_found": MessageLookupByLibrary.simpleMessage(
       "Usuario no encontrado",
     ),
+    "warning": MessageLookupByLibrary.simpleMessage("Advertencia"),
     "weak_password": MessageLookupByLibrary.simpleMessage(
       "La contraseña debe tener al menos 6 caracteres",
     ),

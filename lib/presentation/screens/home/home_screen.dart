@@ -65,7 +65,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
           // List title
           Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 15.0),
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
@@ -88,7 +88,11 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                             itemBuilder: (context, index) {
                               final training = trainingsState.trainings[index];
 
-                              return TrainingCard(training: training);
+                              return Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 6.0),
+                                child: TrainingCard(training: training),
+                              );
                             },
                           ),
           ),

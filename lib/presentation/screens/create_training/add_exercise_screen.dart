@@ -31,8 +31,10 @@ class AddExerciseScreenState extends ConsumerState<AddExerciseScreen> {
   void _filterExercises() {
     setState(() {
       filteredExercises = availableExercises.where((exercise) {
-        final matchesSearch = exercise.name.toLowerCase().contains(searchQuery.toLowerCase());
-        final matchesGroup = selectedGroup == null || exercise.muscularGroup == selectedGroup;
+        final matchesSearch =
+            exercise.name.toLowerCase().contains(searchQuery.toLowerCase());
+        final matchesGroup =
+            selectedGroup == null || exercise.muscularGroup == selectedGroup;
         return matchesSearch && matchesGroup;
       }).toList();
     });
@@ -101,7 +103,7 @@ class AddExerciseScreenState extends ConsumerState<AddExerciseScreen> {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5.0),
                   child: ListTile(
-                    leading: ZoomableImage(image: exercise.image),
+                    leading: ZoomableImage(exercise: exercise),
                     title: Text(exercise.name),
                     trailing: Icon(
                       isSelected ? Icons.check_circle : Icons.circle_outlined,
@@ -109,7 +111,9 @@ class AddExerciseScreenState extends ConsumerState<AddExerciseScreen> {
                     ),
                     onTap: () {
                       setState(() {
-                        isSelected ? selectedExercises.remove(exercise) : selectedExercises.add(exercise);
+                        isSelected
+                            ? selectedExercises.remove(exercise)
+                            : selectedExercises.add(exercise);
                       });
                     },
                   ),
@@ -137,10 +141,15 @@ class AddExerciseScreenState extends ConsumerState<AddExerciseScreen> {
   }
 
   Future<void> _loadExerciseFromJson() async {
-    List<Exercise> exerciseList = await ExerciseMapper.fromJsonList();
+    final defaultExercises =
+        await ExerciseMapper.fromJsonList(); // read from assets
+
+    final customExercises =
+        await ExerciseMapper.fromLocalJsonList(); // read from local file
+
     setState(() {
-      availableExercises = exerciseList;
-      filteredExercises = exerciseList;
+      availableExercises = [...defaultExercises, ...customExercises];
+      filteredExercises = availableExercises;
     });
   }
 }

@@ -3,8 +3,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/infraestructure/auth_firebase/auth_provider.dart';
 import 'package:train_track/presentation/screens/auth/login_screen.dart';
+import 'package:train_track/presentation/screens/settings_screen/add_local_exercise.dart';
 import 'package:train_track/presentation/screens/settings_screen/edit_profile_screen.dart';
 import 'package:train_track/presentation/screens/settings_screen/help_screen.dart';
+import 'package:train_track/presentation/screens/settings_screen/local_exercises_management.dart';
 import 'package:train_track/presentation/screens/settings_screen/statistics_screen.dart';
 import 'package:train_track/presentation/widgets/shared/training_session_banner.dart';
 
@@ -64,6 +66,30 @@ class SettingsScreen extends ConsumerWidget {
                   );
                 },
               ),
+              SizedBox(height: 20),
+              Text(S.current.customize,
+                  style: Theme.of(context).textTheme.bodyLarge),
+              ListTile(
+                title: Text(S.current.add_local_exercise),
+                leading: Icon(Icons.add),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => AddLocalExercise()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text(S.current.manage_local_exercises),
+                leading: Icon(Icons.add),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => LocalExercisesManagement()),
+                  );
+                },
+              ),
+
               SizedBox(height: 20),
               Text(S.current.help,
                   style: Theme.of(context).textTheme.bodyLarge),

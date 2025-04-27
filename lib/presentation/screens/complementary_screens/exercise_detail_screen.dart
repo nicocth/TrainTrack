@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:train_track/domain/models/exercise.dart';
 import 'package:train_track/generated/l10n.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:train_track/presentation/widgets/shared/exercise_image.dart';
 
 class ExerciseDetailScreen extends StatelessWidget {
   final Exercise exercise;
@@ -21,7 +22,12 @@ class ExerciseDetailScreen extends StatelessWidget {
               Center(
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
-                  child: Image.asset(exercise.image),
+                  child: ExerciseImage(
+                    exercise: exercise,
+                    width: 300,
+                    height: 300,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
               const SizedBox(height: 20),
