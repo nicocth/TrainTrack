@@ -45,6 +45,6 @@ app.*.map.json
 /android/app/release
 lib/config/firebase/firebase_options.dart
 android/app/google-services.json
-linux/flutter/
-macos/Flutter/
-windows/flutter/
+linux/
+macos/
+windows/
