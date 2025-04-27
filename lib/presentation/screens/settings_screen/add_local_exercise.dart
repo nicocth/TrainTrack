@@ -7,6 +7,7 @@ import 'package:train_track/core/utils/input_formatter.dart';
 import 'package:train_track/domain/models/enum/muscular_group.dart';
 import 'package:train_track/infraestructure/mappers/exercise_mapper.dart';
 import 'package:train_track/presentation/screens/home/home_screen.dart';
+import 'package:train_track/presentation/widgets/shared/training_session_banner.dart';
 
 import '../../../generated/l10n.dart';
 
@@ -126,6 +127,7 @@ class _AddLocalExerciseState extends State<AddLocalExercise> {
           ),
         ),
       ),
+      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 

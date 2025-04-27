@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:train_track/core/utils/input_formatter.dart';
 import 'package:train_track/domain/models/enum/muscular_group.dart';
+import 'package:train_track/presentation/widgets/shared/training_session_banner.dart';
 import '../../../generated/l10n.dart';
 import 'add_local_exercise.dart';
 
@@ -28,7 +29,8 @@ class _LocalExercisesManagementState extends State<LocalExercisesManagement> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(S.current.local_exercises_management_title, style: TextStyle(fontSize: 25)),
+        title: Text(S.current.local_exercises_management_title,
+            style: TextStyle(fontSize: 25)),
         actions: [
           IconButton(
             icon: const Icon(Icons.add),
@@ -84,6 +86,7 @@ class _LocalExercisesManagementState extends State<LocalExercisesManagement> {
                 );
               },
             ),
+      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 
