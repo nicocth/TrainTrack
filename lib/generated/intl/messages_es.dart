@@ -30,7 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "account_deleted": MessageLookupByLibrary.simpleMessage("Cuenta eliminada"),
     "add_exercise": MessageLookupByLibrary.simpleMessage("Añadir ejercicio"),
     "add_exercise_description": MessageLookupByLibrary.simpleMessage(
-      "Selecciona ejercicios dentro de una gran librería, la cual tendrá filtros por categoría y buscador para facilitar la tarea. <br><br> también podrás pulsar en la imagen de los ejercicios para hacer zoom y tener una idea de cómo es el ejercicio. <br><br> Al pulsar sobre añadir seleccionados volveremos a la pantalla de crear entrenamiento",
+      "Selecciona ejercicios dentro de una gran librería, la cual tendrá filtros por categoría y buscador para facilitar la tarea. <br><br> También podrás pulsar en la imagen de los ejercicios para hacer zoom y tener una idea de cómo es el ejercicio. <br><br> Al pulsar sobre añadir seleccionados volveremos a la pantalla de crear entrenamiento",
     ),
     "add_exercise_title": MessageLookupByLibrary.simpleMessage(
       "Añadimos los ejercicios que deseemos:",
@@ -81,7 +81,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "El título de la rutina es obligatorio al igual que tener mínimo un ejercicio de lo contrario dará error al guardar.<br><br>Al darle al botón de añadir ejercicio iremos a la pantalla de agregar ejercicios.",
     ),
     "create_training_description_2": MessageLookupByLibrary.simpleMessage(
-      "De los ejercicios seleccionados se definen los siguientes parámetros para cada uno:<br><br>    - Notas<br>    - Sets<br>    - Repeticiones<br>    - Pesos<br><br>Si se habilita la opción de alternativa en dos ejercicios y se iguala el número que aparece (si no se modifica será 0) aparecerá posteriormente en los diagramas al mismo nivel.<br><br>El usuario guarda el entrenamiento creado y vuelve al menú principal. Si no tienes conexión y pasa más de 6 segundos se te informa que revises tu conexión y no avanza al menú principal para no perder la rutina creada. <br><br> Si se pulsa en el título te llevará una ventana que te mostrará como ejecutarlos correctamente.",
+      "De los ejercicios seleccionados se definen los siguientes parámetros para cada uno:<br><br>    - Notas<br>    - Sets<br>    - Repeticiones<br>    - Pesos<br><br>Si se habilita la opción de alternativa en dos ejercicios consecutivos y se iguala el número que aparece (si no se modifica será 0) aparecerá posteriormente en los diagramas al mismo nivel.",
+    ),
+    "create_training_description_3": MessageLookupByLibrary.simpleMessage(
+      "El usuario podrá navegar por la aplicación sin perder la rutina creada siempre y cuando no edite otro entrenamiento.<br><br>Para finalizar el usuario pulsa el icono de guardar ubicado arriba a la derecha, guarda el entrenamiento creado y vuelve al menú principal. Si no tiene conexión y pasa más de 6 segundos, se le informa que revise su conexión y no avanza al menú principal para no perder la rutina creada.",
     ),
     "create_training_title": MessageLookupByLibrary.simpleMessage(
       "Crear nuevo entrenamiento:",
@@ -108,10 +111,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "edit": MessageLookupByLibrary.simpleMessage("Editar"),
     "edit_profile": MessageLookupByLibrary.simpleMessage("Editar perfil"),
     "edit_profile_screen_description": MessageLookupByLibrary.simpleMessage(
-      "Permite modificar el nombre del usuario mas no su correo.<br><br>Para modificar la contraseña o eliminar la cuenta requerirá la contraseña actual, si no la introduces o no es correcta nos mostrará mensaje de error.<br><br>Para eliminar la cuenta pedirá confirmación y advertirá de la perdida de datos que conlleva.",
-    ),
-    "edit_profile_screen_title": MessageLookupByLibrary.simpleMessage(
-      "Pantalla para editar datos del perfil",
+      "Permite modificar el nombre del usuario más no su correo.<br><br>Para modificar la contraseña, eliminar el historial de entrenamientos o eliminar la cuenta requerirá la contraseña actual, si no la introduces o no es correcta nos mostrará mensaje de error.<br><br>Para eliminar la cuenta pedirá confirmación y advertirá de la perdida de datos que conlleva.<br><br>Si iniciaste sesión con Google solo podrás eliminar el historial y tus datos relacionados con TrainTrack, esto no eliminará tu cuenta de Google.",
     ),
     "edit_routine": MessageLookupByLibrary.simpleMessage("Editar rutina"),
     "email": MessageLookupByLibrary.simpleMessage("Correo electrónico"),
@@ -145,6 +145,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "exercise_deleted": MessageLookupByLibrary.simpleMessage(
       "Ejercicio borrado",
     ),
+    "exercise_detail_description": MessageLookupByLibrary.simpleMessage(
+      "Si se pulsa sobre los títulos de los ejercicios te llevará una ventana que te mostrará como ejecutarlos correctamente.",
+    ),
     "exercise_name": MessageLookupByLibrary.simpleMessage(
       "Nombre del ejercicio",
     ),
@@ -152,7 +155,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Ejercicio guardado correctamente",
     ),
     "exercise_selection_description": MessageLookupByLibrary.simpleMessage(
-      "Da opción de finalizar el entrenamiento.<br><br>Muestra el tiempo que llevamos de entrenamiento, esto ayuda a controlar los tiempos de ejecución y descanso durante el entrenamiento.<br><br>Muestra un diagrama de nuestros ejercicios con un cuadro de selección, que nos permite seleccionar el ejercicio que queremos ejecutar, esto arregla problemas como máquinas ocupadas, falta de equipamiento momentánea y permite alterar el orden del entreno sin perder tiempo, ya que las rutinas predefinidas que te obligan a seguir un orden concreto (siendo el orden importante para nuestro entrenamiento) son poco versátiles y nos harían perder demasiado tiempo esperando máquinas ocupadas.<br><br>Si seleccionamos un ejercicio vamos a la siguiente ventana.",
+      "Da opción de finalizar el entrenamiento.<br><br>Muestra el tiempo que llevamos de entrenamiento, esto ayuda a controlar los tiempos de ejecución y descanso durante el entrenamiento.<br><br>Muestra un diagrama de nuestros ejercicios con un cuadro de selección, que nos permite seleccionar el ejercicio que queremos ejecutar, esto arregla problemas como máquinas ocupadas, falta de equipamiento temporal y permite alterar el orden del entreno sin perder tiempo, el check de ejercicio finalizado no tiene relevancia a la hora de registrar el entrenamiento, es simplemente una ayuda visual.<br><br>Si pulsamos sobre un ejercicio vamos a la siguiente ventana.",
     ),
     "exercise_selection_title": MessageLookupByLibrary.simpleMessage(
       "Pantalla de selección de ejercicios:",
@@ -174,9 +177,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "history_deleted": MessageLookupByLibrary.simpleMessage(
       "Historial eliminado",
     ),
+    "history_screen_description": MessageLookupByLibrary.simpleMessage(
+      "Muestra el historial de entrenamientos del último año ordenado por fecha, si se pulsa sobre cualquier entrenamiento podemos acceder a todos sus datos.",
+    ),
+    "history_screen_title": MessageLookupByLibrary.simpleMessage(
+      "Pantalla de historial:",
+    ),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "home_description": MessageLookupByLibrary.simpleMessage(
-      "Muestra una lista de entrenamientos personalizados si los hay, sino muestra mensaje invitándote a crear el primer entrenamiento. Si no puede recuperarlos te informa de que no tienes conexión, en caso de mostrarlos correctamente podrás editarlos, borrarlos o iniciarlos. <br><br>Da opción de crear Nuevo Entrenamiento. <br><br>Da opción de navegar a pantalla de Configuración.",
+      "Muestra una lista de entrenamientos personalizados, si aún no tienes mostrará un mensaje invitándote a crear el primer entrenamiento. En caso de mostrarlos correctamente podrás editarlos, borrarlos o iniciar entrenamiento.<br><br>Da opción de crear nuevo entrenamiento. <br><br>Da opción de navegar a pantalla de configuración.",
+    ),
+    "home_explanation": MessageLookupByLibrary.simpleMessage(
+      "Explicación de Home",
     ),
     "home_title": MessageLookupByLibrary.simpleMessage("Menú principal:"),
     "image_required": MessageLookupByLibrary.simpleMessage(
@@ -240,6 +252,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "pectoral": MessageLookupByLibrary.simpleMessage("Pectoral"),
     "preferences": MessageLookupByLibrary.simpleMessage("Preferencias"),
     "register": MessageLookupByLibrary.simpleMessage("Registrarse"),
+    "register_training": MessageLookupByLibrary.simpleMessage(
+      "Registrar entrenamiento",
+    ),
     "registration_failed": MessageLookupByLibrary.simpleMessage(
       "Error al registrar el usuario",
     ),
@@ -281,7 +296,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "statistics": MessageLookupByLibrary.simpleMessage("Estadísticas"),
     "statistics_screen_description": MessageLookupByLibrary.simpleMessage(
-      "Todos los datos mostrados se ven filtrados por el rango de meses el cual incluye 1, 3 ,6 y 12 meses.<br><br>El botón de cambio de visualización permite alternar en la gráfica de radar los datos de valores absolutos a porcentajes.<br><br>La grafica de radar muestra la proporción de ejercicios por grupo muscular para poder observar descompensaciones.<br><br>Las tarjetas de abajo muestran valores totales en el rango de fechas.",
+      "Todos los datos mostrados se ven filtrados por el rango de meses el cual incluye 1, 3, 6 y 12 meses.<br><br>El botón de cambio de visualización permite alternar en la gráfica de radar los datos de valores absolutos a porcentajes, el dato que usa en ambos casos es el número de series registradas de cada ejercicio/grupo muscular<br><br>La gráfica de radar muestra la proporción de ejercicios por grupo muscular para poder observar descompensaciones.<br><br>Las tarjetas de abajo muestran valores totales en el rango de fechas.",
     ),
     "statistics_screen_title": MessageLookupByLibrary.simpleMessage(
       "Pantalla de estadística:",
@@ -297,7 +312,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Muestra un resumen que comenzará con un gráfico que te expondrá cuantas veces has realizado ese entrenamiento en los últimos 3 meses, esto ayudará a elegir el grupo muscular o rutina antes de iniciar la sesión de entrenamiento. <br><br>Muestra un diagrama que nos permite ver los ejercicios y el orden de estos. <br><br>Si nos convence le daremos a iniciar y avanzaremos a la siguiente pantalla.",
     ),
     "summary_title": MessageLookupByLibrary.simpleMessage(
-      "Si se elige entrenamiento en Menú principal (Pantalla de resumen)",
+      "Pantalla de resumen:",
     ),
     "training_chat_x_title": MessageLookupByLibrary.simpleMessage("Meses"),
     "training_chat_y_title": MessageLookupByLibrary.simpleMessage(
@@ -313,7 +328,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Entrenamiento guardado",
     ),
     "training_screen_description": MessageLookupByLibrary.simpleMessage(
-      "Permite visualizar la imagen y la descripción del ejercicio.<br><br>Permite modificar sets, repeticiones y pesos<br><br>Después de completar cada set el usuario tendrá que marcarlo como hecho, y al darle a que ha terminado el ejercicio lo devolverá al diagrama de entrenamiento en el cual se habrá marcado el check del ejercicio y podrá elegir el siguiente ejercicio.<br><br>Al completar el entrenamiento le daremos a finalizar entrenamiento desde aquí o desde la pantalla anterior, nos pedirá confirmación de finalización por si le hemos dado sin querer, si volvemos a darle a finalizar nos preguntará si queremos guardar los cambios en la rutina, si le decimos que no guardará el entrenamiento en el historial y si decimos que si aparte de esto también sobrescribirá los valores en Firebase del entrenamiento hecho.<br><br>Al terminar vuelve al menú principal.",
+      "Da opción de finalizar el entrenamiento.<br><br>Permite visualizar la imagen y la descripción del ejercicio.<br><br>Permite modificar notas, sets, repeticiones y pesos<br><br>Después de completar cada set mientras se entrena es importante que el usuario lo marque como realizado, ya que de lo contrario no se registrara en el historial, al pulsar sobre Finalizar ejercicio lo devolverá a la pantalla de selección de ejercicio, en el cual se habrá marcado el check del ejercicio y podrá elegir el siguiente ejercicio.<br><br>Al completar el entrenamiento le daremos a finalizar entrenamiento desde aquí o desde la pantalla anterior, nos pedirá confirmación de finalización por si le hemos dado sin querer, si volvemos a darle a finalizar nos preguntará si queremos guardar los cambios en la rutina, si le decimos que no guardará el entrenamiento en el historial y si decimos que si aparte de esto también sobrescribirá los valores de la rutina guardada.<br><br>Al terminar vuelve al menú principal.",
     ),
     "training_screen_title": MessageLookupByLibrary.simpleMessage(
       "Pantalla de entrenamiento:",

@@ -960,10 +960,10 @@ class S {
     return Intl.message('Main screen:', name: 'home_title', desc: '', args: []);
   }
 
-  /// `Displays a list of custom workouts if there are any, but instead displays a message inviting you to create your first workout. If you can't retrieve them, you'll be informed that you're offline. If they display correctly, you'll be able to edit, delete, or start them. <br><br>Gives the option to create a new workout. <br><br>Gives the option to navigate to the Settings screen.`
+  /// `Displays a list of custom workouts; if you don't have any yet, a message will appear inviting you to create your first workout. If the list is displayed correctly, you can edit, delete, or start a workout.<br><br>Gives the option to create a new workout.<br><br>Gives the option to navigate to the Settings screen.`
   String get home_description {
     return Intl.message(
-      'Displays a list of custom workouts if there are any, but instead displays a message inviting you to create your first workout. If you can\'t retrieve them, you\'ll be informed that you\'re offline. If they display correctly, you\'ll be able to edit, delete, or start them. <br><br>Gives the option to create a new workout. <br><br>Gives the option to navigate to the Settings screen.',
+      'Displays a list of custom workouts; if you don\'t have any yet, a message will appear inviting you to create your first workout. If the list is displayed correctly, you can edit, delete, or start a workout.<br><br>Gives the option to create a new workout.<br><br>Gives the option to navigate to the Settings screen.',
       name: 'home_description',
       desc: '',
       args: [],
@@ -1010,20 +1010,40 @@ class S {
     );
   }
 
-  /// `The following parameters are defined for each of the selected exercises:<br><br> - Notes<br> - Sets<br> - Repetitions<br> - Weights<br><br>If the alternative option is enabled in two exercises and the number that appears is equal (if it is not modified it will be 0) it will later appear in the diagrams at the same level.<br><br>The user saves the created workout and returns to the main menu. If you are offline and more than 6 seconds pass, you are informed to check your connection and it will not advance to the main menu so as not to lose the created routine. <br><br>If you click on the title, a window will appear that will show you how to execute them correctly.`
+  /// `Of the selected exercises, the following parameters are defined for each one:<br><br> - Notes<br> - Sets<br> - Repetitions<br> - Weights<br><br>If the alternative option is enabled in two consecutive exercises and the number that appears is equal (if it is not modified it will be 0) it will subsequently appear in the diagrams at the same level.`
   String get create_training_description_2 {
     return Intl.message(
-      'The following parameters are defined for each of the selected exercises:<br><br> - Notes<br> - Sets<br> - Repetitions<br> - Weights<br><br>If the alternative option is enabled in two exercises and the number that appears is equal (if it is not modified it will be 0) it will later appear in the diagrams at the same level.<br><br>The user saves the created workout and returns to the main menu. If you are offline and more than 6 seconds pass, you are informed to check your connection and it will not advance to the main menu so as not to lose the created routine. <br><br>If you click on the title, a window will appear that will show you how to execute them correctly.',
+      'Of the selected exercises, the following parameters are defined for each one:<br><br> - Notes<br> - Sets<br> - Repetitions<br> - Weights<br><br>If the alternative option is enabled in two consecutive exercises and the number that appears is equal (if it is not modified it will be 0) it will subsequently appear in the diagrams at the same level.',
       name: 'create_training_description_2',
       desc: '',
       args: [],
     );
   }
 
-  /// `If training is chosen in the Main Menu (Summary Screen)`
+  /// `If you click on the exercise titles, a window will appear showing you how to perform them correctly.`
+  String get exercise_detail_description {
+    return Intl.message(
+      'If you click on the exercise titles, a window will appear showing you how to perform them correctly.',
+      name: 'exercise_detail_description',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The user will be able to navigate through the application without losing the created routine as long as they do not edit another workout.<br><br>To finish, the user presses the save icon located at the top right, saves the created workout and returns to the main menu. If they are offline and more than 6 seconds pass, they will be informed to check their connection and will not advance to the main menu to avoid losing the created routine.`
+  String get create_training_description_3 {
+    return Intl.message(
+      'The user will be able to navigate through the application without losing the created routine as long as they do not edit another workout.<br><br>To finish, the user presses the save icon located at the top right, saves the created workout and returns to the main menu. If they are offline and more than 6 seconds pass, they will be informed to check their connection and will not advance to the main menu to avoid losing the created routine.',
+      name: 'create_training_description_3',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Summary Screen:`
   String get summary_title {
     return Intl.message(
-      'If training is chosen in the Main Menu (Summary Screen)',
+      'Summary Screen:',
       name: 'summary_title',
       desc: '',
       args: [],
@@ -1050,10 +1070,10 @@ class S {
     );
   }
 
-  /// `Gives the option to end the workout.<br><br>Shows the time we have been training, this helps to control the execution and rest times during the workout.<br><br>Shows a diagram of our exercises with a selection box, which allows us to select the exercise we want to execute, this fixes problems such as busy machines, momentary lack of equipment and allows us to alter the order of the workout without wasting time, since the predefined routines that force you to follow a specific order (the order being important for our training) are not very versatile and would make us waste too much time waiting for busy machines.<br><br>If we select an exercise we go to the next window.`
+  /// `It gives the option to end the training.<br><br>It shows the time we have been training, this helps to control the execution and rest times during the training.<br><br>It shows a diagram of our exercises with a selection box, which allows us to select the exercise we want to execute, this fixes problems such as busy machines, temporary lack of equipment and allows us to alter the order of the training without wasting time, the completed exercise check is not relevant when recording the training, it is simply a visual aid.<br><br>If we click on an exercise we go to the next window.`
   String get exercise_selection_description {
     return Intl.message(
-      'Gives the option to end the workout.<br><br>Shows the time we have been training, this helps to control the execution and rest times during the workout.<br><br>Shows a diagram of our exercises with a selection box, which allows us to select the exercise we want to execute, this fixes problems such as busy machines, momentary lack of equipment and allows us to alter the order of the workout without wasting time, since the predefined routines that force you to follow a specific order (the order being important for our training) are not very versatile and would make us waste too much time waiting for busy machines.<br><br>If we select an exercise we go to the next window.',
+      'It gives the option to end the training.<br><br>It shows the time we have been training, this helps to control the execution and rest times during the training.<br><br>It shows a diagram of our exercises with a selection box, which allows us to select the exercise we want to execute, this fixes problems such as busy machines, temporary lack of equipment and allows us to alter the order of the training without wasting time, the completed exercise check is not relevant when recording the training, it is simply a visual aid.<br><br>If we click on an exercise we go to the next window.',
       name: 'exercise_selection_description',
       desc: '',
       args: [],
@@ -1070,10 +1090,10 @@ class S {
     );
   }
 
-  /// `Allows you to view the image and description of the exercise.<br><br>Allows you to modify sets, repetitions and weights<br><br>After completing each set the user will have to mark it as done, and clicking that they have finished the exercise will return them to the training diagram in which the exercise check will have been marked and they will be able to choose the next exercise.`
+  /// `It gives the option to end the training.<br><br>Allows you to view the image and description of the exercise.<br><br>Allows you to modify notes, sets, repetitions and weights<br><br>After completing each set while training it is important that the user marks it as completed, otherwise it will not be recorded in the history, clicking on Finish exercise will return you to the exercise selection screen, in which the exercise check will have been marked and you can choose the next exercise.<br><br>When completing the training we will click on finish training from here or from the previous screen, it will ask us for confirmation of completion in case we have clicked on it accidentally, if we click on finish again it will ask us if we want to save the changes to the routine, if we say no it will not save the training in the history and if we say yes, apart from this it will also overwrite the values ​​​​of the saved routine.<br><br>When finished it returns to the main menu.`
   String get training_screen_description {
     return Intl.message(
-      'Allows you to view the image and description of the exercise.<br><br>Allows you to modify sets, repetitions and weights<br><br>After completing each set the user will have to mark it as done, and clicking that they have finished the exercise will return them to the training diagram in which the exercise check will have been marked and they will be able to choose the next exercise.',
+      'It gives the option to end the training.<br><br>Allows you to view the image and description of the exercise.<br><br>Allows you to modify notes, sets, repetitions and weights<br><br>After completing each set while training it is important that the user marks it as completed, otherwise it will not be recorded in the history, clicking on Finish exercise will return you to the exercise selection screen, in which the exercise check will have been marked and you can choose the next exercise.<br><br>When completing the training we will click on finish training from here or from the previous screen, it will ask us for confirmation of completion in case we have clicked on it accidentally, if we click on finish again it will ask us if we want to save the changes to the routine, if we say no it will not save the training in the history and if we say yes, apart from this it will also overwrite the values ​​​​of the saved routine.<br><br>When finished it returns to the main menu.',
       name: 'training_screen_description',
       desc: '',
       args: [],
@@ -1090,30 +1110,20 @@ class S {
     );
   }
 
-  /// `All data displayed is filtered by the month range which includes 1, 3, 6 and 12 months.<br><br>The toggle button allows you to toggle the radar chart data from absolute values ​​to percentages.<br><br>The radar chart shows the proportion of exercises per muscle group to observe imbalances.<br><br>The cards below show total values ​​in the date range.`
+  /// `All data displayed is filtered by the month range which includes 1, 3, 6 and 12 months.<br><br>The toggle display button allows you to alternate the radar chart data from absolute values ​​to percentages, the data used in both cases is the number of sets recorded for each exercise/muscle group.<br><br>The radar chart shows the proportion of exercises per muscle group to observe imbalances.<br><br>The cards below show total values ​​over the date range.`
   String get statistics_screen_description {
     return Intl.message(
-      'All data displayed is filtered by the month range which includes 1, 3, 6 and 12 months.<br><br>The toggle button allows you to toggle the radar chart data from absolute values ​​to percentages.<br><br>The radar chart shows the proportion of exercises per muscle group to observe imbalances.<br><br>The cards below show total values ​​in the date range.',
+      'All data displayed is filtered by the month range which includes 1, 3, 6 and 12 months.<br><br>The toggle display button allows you to alternate the radar chart data from absolute values ​​to percentages, the data used in both cases is the number of sets recorded for each exercise/muscle group.<br><br>The radar chart shows the proportion of exercises per muscle group to observe imbalances.<br><br>The cards below show total values ​​over the date range.',
       name: 'statistics_screen_description',
       desc: '',
       args: [],
     );
   }
 
-  /// `Edit profile data screen`
-  String get edit_profile_screen_title {
-    return Intl.message(
-      'Edit profile data screen',
-      name: 'edit_profile_screen_title',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Allows you to modify the user name but not their email.<br><br>To modify the password or delete the account, the current password will be required. If you do not enter it or it is incorrect, an error message will be displayed.<br><br>To delete the account, it will ask for confirmation and warn you of the loss of data that this entails.`
+  /// `It allows you to modify the user name but not their email.<br><br>To modify the password, delete the training history or delete the account, the current password will be required. If you do not enter it or it is not correct, an error message will be shown.<br><br>To delete the account, it will ask for confirmation and warn you of the loss of data that this entails.<br><br>If you logged in with Google, you will only be able to delete the history and your data related to TrainTrack, this will not delete your Google account.`
   String get edit_profile_screen_description {
     return Intl.message(
-      'Allows you to modify the user name but not their email.<br><br>To modify the password or delete the account, the current password will be required. If you do not enter it or it is incorrect, an error message will be displayed.<br><br>To delete the account, it will ask for confirmation and warn you of the loss of data that this entails.',
+      'It allows you to modify the user name but not their email.<br><br>To modify the password, delete the training history or delete the account, the current password will be required. If you do not enter it or it is not correct, an error message will be shown.<br><br>To delete the account, it will ask for confirmation and warn you of the loss of data that this entails.<br><br>If you logged in with Google, you will only be able to delete the history and your data related to TrainTrack, this will not delete your Google account.',
       name: 'edit_profile_screen_description',
       desc: '',
       args: [],
@@ -1345,6 +1355,46 @@ class S {
     return Intl.message(
       'There is no internet connection',
       name: 'no_connection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Explanation of Home`
+  String get home_explanation {
+    return Intl.message(
+      'Explanation of Home',
+      name: 'home_explanation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register training`
+  String get register_training {
+    return Intl.message(
+      'Register training',
+      name: 'register_training',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `History screen:`
+  String get history_screen_title {
+    return Intl.message(
+      'History screen:',
+      name: 'history_screen_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shows our training history from the last year sorted by date. If we click on any training session we can access all its data.`
+  String get history_screen_description {
+    return Intl.message(
+      'Shows our training history from the last year sorted by date. If we click on any training session we can access all its data.',
+      name: 'history_screen_description',
       desc: '',
       args: [],
     );

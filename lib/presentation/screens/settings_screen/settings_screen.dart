@@ -44,7 +44,7 @@ class SettingsScreen extends ConsumerWidget {
               Text(S.current.account,
                   style: Theme.of(context).textTheme.bodyLarge),
               ListTile(
-                leading: const Icon(Icons.person),
+                leading: const Icon(Icons.manage_accounts),
                 title: Text(S.current.edit_profile),
                 trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                 onTap: () {
@@ -98,7 +98,7 @@ class SettingsScreen extends ConsumerWidget {
               ),
               ListTile(
                 title: Text(S.current.manage_local_exercises),
-                leading: Icon(Icons.add),
+                leading: Icon(Icons.article),
                 trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                 onTap: () {
                   Navigator.push(
@@ -114,7 +114,7 @@ class SettingsScreen extends ConsumerWidget {
                   style: Theme.of(context).textTheme.bodyLarge),
               ListTile(
                 leading: const Icon(Icons.help),
-                title: Text(S.current.help),
+                title: Text(S.current.usage_guide),
                 trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                 onTap: () {
                   Navigator.push(

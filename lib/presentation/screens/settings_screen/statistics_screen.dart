@@ -243,7 +243,7 @@ class _StatisticsScreenState extends ConsumerState<StatisticsScreen> {
           Row(
             children: [
               _buildSummaryCard(
-                title: S.current.sets,
+                title: S.current.series,
                 value: totalSets,
                 icon: Icons.format_list_numbered,
               ),
