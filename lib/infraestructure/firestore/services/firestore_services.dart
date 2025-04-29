@@ -484,6 +484,7 @@ class FirestoreService {
           .collection('training_history')
           .where('training_date',
               isGreaterThanOrEqualTo: Timestamp.fromDate(cutoffDate))
+          .orderBy('training_date', descending: true)
           .get();
 
       final List<TrainingHistory> trainingHistoryList = await Future.wait(
@@ -497,6 +498,7 @@ class FirestoreService {
       throw Exception('Error fetching training history: $e');
     }
   }
+  
 }
 
 // class to handle the result of the operation

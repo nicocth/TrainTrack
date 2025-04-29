@@ -111,6 +111,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "empty_exercises_list": MessageLookupByLibrary.simpleMessage(
       "Please add at least one exercise",
     ),
+    "empty_history": MessageLookupByLibrary.simpleMessage(
+      "There is no training history",
+    ),
     "empty_password": MessageLookupByLibrary.simpleMessage(
       "Password is required",
     ),
@@ -149,6 +152,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "hint_alternative_text": MessageLookupByLibrary.simpleMessage(
       "Alternative number",
     ),
+    "history": MessageLookupByLibrary.simpleMessage("History"),
     "history_deleted": MessageLookupByLibrary.simpleMessage("History deleted"),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "home_description": MessageLookupByLibrary.simpleMessage(
@@ -174,11 +178,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "logout_failed": MessageLookupByLibrary.simpleMessage("Logout failed"),
     "manage_local_exercises": MessageLookupByLibrary.simpleMessage(
-      "Manage local exercises",
+      "Manage exercises",
     ),
     "mode": MessageLookupByLibrary.simpleMessage("Mode"),
     "month": MessageLookupByLibrary.simpleMessage("Month"),
     "months": MessageLookupByLibrary.simpleMessage("Months"),
+    "muscle_balance": MessageLookupByLibrary.simpleMessage("Muscle balance"),
     "my_trainings": MessageLookupByLibrary.simpleMessage("My trainings"),
     "new_password": MessageLookupByLibrary.simpleMessage("New password"),
     "nickname": MessageLookupByLibrary.simpleMessage("Nickname"),
@@ -238,7 +243,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "show_percentages": MessageLookupByLibrary.simpleMessage(
       "Show percentages",
     ),
-    "stadistics": MessageLookupByLibrary.simpleMessage("Statistics"),
     "start_training": MessageLookupByLibrary.simpleMessage("Start training"),
     "statistics": MessageLookupByLibrary.simpleMessage("Statistics"),
     "statistics_screen_description": MessageLookupByLibrary.simpleMessage(

@@ -101,7 +101,6 @@
     "delete_account": "Delete account",
     "delete_history": "Delete history",
     "edit_profile": "Edit profile",
-    "stadistics": "Statistics",
     "error_loading_data": "Error loading data",
     "month": "Month",
     "months": "Months",
@@ -140,7 +139,7 @@
     "save_exercise": "Save exercise",
     "show_local_exercises": "Show local exercises",
     "exercise_saved": "Exercise saved",
-    "manage_local_exercises": "Manage local exercises",
+    "manage_local_exercises": "Manage exercises",
     "exercise_deleted": "Exercise deleted",
     "local_exercises_management_title": "Exercises management",
     "no_local_exercises": "There are no local exercises saved",
@@ -148,5 +147,9 @@
     "storage_warning_short": "Important: Click to read",
     "storage_warning_message":"Local exercises are saved to your device's internal storage. If you change devices, uninstall the app, or clear the storage data, the exercises will no longer be available.",
     "warning": "Warning",
-    "understood": "Understood"
+    "understood": "Understood",
+    "muscle_balance": "Muscle balance",
+    "history": "History",
+    "empty_history": "There is no training history"
+
 }

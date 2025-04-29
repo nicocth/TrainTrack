@@ -8,6 +8,7 @@ import 'package:train_track/presentation/screens/settings_screen/edit_profile_sc
 import 'package:train_track/presentation/screens/settings_screen/help_screen.dart';
 import 'package:train_track/presentation/screens/settings_screen/local_exercises_management.dart';
 import 'package:train_track/presentation/screens/settings_screen/statistics_screen.dart';
+import 'package:train_track/presentation/screens/settings_screen/training_history_screen.dart';
 import 'package:train_track/presentation/widgets/shared/training_session_banner.dart';
 
 class SettingsScreen extends ConsumerWidget {
@@ -43,20 +44,8 @@ class SettingsScreen extends ConsumerWidget {
               Text(S.current.account,
                   style: Theme.of(context).textTheme.bodyLarge),
               ListTile(
-                leading: const Icon(Icons.show_chart),
-                title: Text(S.current.statistics),
-                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const StatisticsScreen()),
-                  );
-                },
-              ),
-              ListTile(
                 leading: const Icon(Icons.person),
-                title: Text(S.current.account),
+                title: Text(S.current.edit_profile),
                 trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                 onTap: () {
                   Navigator.push(
@@ -67,25 +56,55 @@ class SettingsScreen extends ConsumerWidget {
                 },
               ),
               SizedBox(height: 20),
+              Text(S.current.statistics,
+                  style: Theme.of(context).textTheme.bodyLarge),
+              ListTile(
+                leading: const Icon(Icons.show_chart),
+                title: Text(S.current.muscle_balance),
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const StatisticsScreen()),
+                  );
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.calendar_today),
+                title: Text(S.current.history),
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const TrainingHistoryScreen()),
+                  );
+                },
+              ),
+              SizedBox(height: 20),
               Text(S.current.customize,
                   style: Theme.of(context).textTheme.bodyLarge),
               ListTile(
                 title: Text(S.current.add_local_exercise),
                 leading: Icon(Icons.add),
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (_) => AddLocalExercise()),
+                    MaterialPageRoute(builder: (context) => AddLocalExercise()),
                   );
                 },
               ),
               ListTile(
                 title: Text(S.current.manage_local_exercises),
                 leading: Icon(Icons.add),
+                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (_) => LocalExercisesManagement()),
+                    MaterialPageRoute(
+                        builder: (context) => LocalExercisesManagement()),
                   );
                 },
               ),

@@ -53,19 +53,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "back_to_training": MessageLookupByLibrary.simpleMessage(
       "Volver al entrenamiento",
     ),
-    "biceps": MessageLookupByLibrary.simpleMessage("Biceps"),
+    "biceps": MessageLookupByLibrary.simpleMessage("Bíceps"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
     "confirm_delete": MessageLookupByLibrary.simpleMessage(
       "Confirmación de borrado",
     ),
     "confirm_delete_message_exercise": MessageLookupByLibrary.simpleMessage(
-      "¿Estas seguro de borrar el ejercicio?",
+      "¿Estás seguro de borrar el ejercicio?",
     ),
     "confirm_delete_message_training": MessageLookupByLibrary.simpleMessage(
-      "¿Estas seguro de borrar el entrenamiento?",
+      "¿Estás seguro de borrar el entrenamiento?",
     ),
     "confirm_finish_message_training": MessageLookupByLibrary.simpleMessage(
-      "¿Estas seguro de finalizar el entrenamiento?",
+      "¿Estás seguro de finalizar el entrenamiento?",
     ),
     "confirm_finish_training": MessageLookupByLibrary.simpleMessage(
       "Confirmación de finalización",
@@ -96,7 +96,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "delete": MessageLookupByLibrary.simpleMessage("Eliminar"),
     "delete_account": MessageLookupByLibrary.simpleMessage("Eliminar cuenta"),
     "delete_account_confirm": MessageLookupByLibrary.simpleMessage(
-      "¿Estás seguro de que deseas eliminar tu cuenta? Se eliminarán todos los datos asociados a ella.(entrenamientos, historial, etc...)",
+      "¿Estás seguro de que deseas eliminar tu cuenta? Se eliminarán todos los datos asociados a ella. (entrenamientos, historial, etc...)",
     ),
     "delete_history": MessageLookupByLibrary.simpleMessage(
       "Eliminar historial",
@@ -108,7 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "edit": MessageLookupByLibrary.simpleMessage("Editar"),
     "edit_profile": MessageLookupByLibrary.simpleMessage("Editar perfil"),
     "edit_profile_screen_description": MessageLookupByLibrary.simpleMessage(
-      "Permite modificar el nombre del usuario mas no su correo.<br><br>Para modificar la contraseña o eliminar la cuenta requerirá la contraseña actual, si no la introduces o no es correcta nos mostrara mensaje de error.<br><br>Para eliminar la cuenta pedirá confirmación y advertirá de la perdida de datos que conlleva.",
+      "Permite modificar el nombre del usuario mas no su correo.<br><br>Para modificar la contraseña o eliminar la cuenta requerirá la contraseña actual, si no la introduces o no es correcta nos mostrará mensaje de error.<br><br>Para eliminar la cuenta pedirá confirmación y advertirá de la perdida de datos que conlleva.",
     ),
     "edit_profile_screen_title": MessageLookupByLibrary.simpleMessage(
       "Pantalla para editar datos del perfil",
@@ -120,6 +120,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "empty_exercises_list": MessageLookupByLibrary.simpleMessage(
       "Por favor, añade al menos un ejercicio",
+    ),
+    "empty_history": MessageLookupByLibrary.simpleMessage(
+      "No hay historial de entrenamientos.",
     ),
     "empty_password": MessageLookupByLibrary.simpleMessage(
       "La contraseña es obligatoria",
@@ -167,6 +170,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "hint_alternative_text": MessageLookupByLibrary.simpleMessage(
       "Nº alternativa",
     ),
+    "history": MessageLookupByLibrary.simpleMessage("Historial"),
     "history_deleted": MessageLookupByLibrary.simpleMessage(
       "Historial eliminado",
     ),
@@ -200,11 +204,14 @@ class MessageLookup extends MessageLookupByLibrary {
       "Error al cerrar sesión",
     ),
     "manage_local_exercises": MessageLookupByLibrary.simpleMessage(
-      "Gestionar ejercicios locales",
+      "Gestionar ejercicios",
     ),
     "mode": MessageLookupByLibrary.simpleMessage("Modo"),
     "month": MessageLookupByLibrary.simpleMessage("mes"),
     "months": MessageLookupByLibrary.simpleMessage("meses"),
+    "muscle_balance": MessageLookupByLibrary.simpleMessage(
+      "Equilibrio muscular",
+    ),
     "my_trainings": MessageLookupByLibrary.simpleMessage("Mis entrenamientos"),
     "new_password": MessageLookupByLibrary.simpleMessage("Nueva contraseña"),
     "nickname": MessageLookupByLibrary.simpleMessage("Nombre de usuario"),
@@ -236,7 +243,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "reps": MessageLookupByLibrary.simpleMessage("0"),
     "reps_text": MessageLookupByLibrary.simpleMessage("Reps"),
     "request_timeout": MessageLookupByLibrary.simpleMessage(
-      "La peticion ha tardado demasiado tiempo revise su conexión",
+      "La petición ha tardado demasiado tiempo revise su conexión",
     ),
     "required_field": MessageLookupByLibrary.simpleMessage("Campo obligatorio"),
     "routine_title": MessageLookupByLibrary.simpleMessage(
@@ -266,19 +273,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "show_percentages": MessageLookupByLibrary.simpleMessage(
       "Mostrar porcentajes",
     ),
-    "stadistics": MessageLookupByLibrary.simpleMessage("Estadísticas"),
     "start_training": MessageLookupByLibrary.simpleMessage(
       "Iniciar entrenamiento",
     ),
-    "statistics": MessageLookupByLibrary.simpleMessage("Estadisticas"),
+    "statistics": MessageLookupByLibrary.simpleMessage("Estadísticas"),
     "statistics_screen_description": MessageLookupByLibrary.simpleMessage(
       "Todos los datos mostrados se ven filtrados por el rango de meses el cual incluye 1, 3 ,6 y 12 meses.<br><br>El botón de cambio de visualización permite alternar en la gráfica de radar los datos de valores absolutos a porcentajes.<br><br>La grafica de radar muestra la proporción de ejercicios por grupo muscular para poder observar descompensaciones.<br><br>Las tarjetas de abajo muestran valores totales en el rango de fechas.",
     ),
     "statistics_screen_title": MessageLookupByLibrary.simpleMessage(
-      "Pantalla de estadistica:",
+      "Pantalla de estadística:",
     ),
     "storage_warning_message": MessageLookupByLibrary.simpleMessage(
-      "Los ejercicios locales se guardan en el almacenamiento interno del dispositivo. Si cambias de dispositivo, desistalas la aplicación o borras los datos de almacenamiento los ejercicios no estarán disponibles.",
+      "Los ejercicios locales se guardan en el almacenamiento interno del dispositivo. Si cambias de dispositivo, desinstalas la aplicación o borras los datos de almacenamiento los ejercicios no estarán disponibles.",
     ),
     "storage_warning_short": MessageLookupByLibrary.simpleMessage(
       "Importante: pulse para leer.",

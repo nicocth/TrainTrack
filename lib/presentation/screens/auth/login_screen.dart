@@ -294,9 +294,6 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
   } else if (e.toString().contains("ApiException: 7") ||
              e.toString().contains("network_error")) {
     errorMessage = S.current.request_timeout;
-  } else {
-    // Aquí puedes loguear el error si quieres
-    debugPrint('Error al iniciar sesión: $e');
   }
 
   ScaffoldMessenger.of(context).showSnackBar(

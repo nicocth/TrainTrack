@@ -900,11 +900,6 @@ class S {
     );
   }
 
-  /// `Statistics`
-  String get stadistics {
-    return Intl.message('Statistics', name: 'stadistics', desc: '', args: []);
-  }
-
   /// `Error loading data`
   String get error_loading_data {
     return Intl.message(
@@ -1240,10 +1235,10 @@ class S {
     );
   }
 
-  /// `Manage local exercises`
+  /// `Manage exercises`
   String get manage_local_exercises {
     return Intl.message(
-      'Manage local exercises',
+      'Manage exercises',
       name: 'manage_local_exercises',
       desc: '',
       args: [],
@@ -1318,6 +1313,31 @@ class S {
   /// `Understood`
   String get understood {
     return Intl.message('Understood', name: 'understood', desc: '', args: []);
+  }
+
+  /// `Muscle balance`
+  String get muscle_balance {
+    return Intl.message(
+      'Muscle balance',
+      name: 'muscle_balance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `History`
+  String get history {
+    return Intl.message('History', name: 'history', desc: '', args: []);
+  }
+
+  /// `There is no training history`
+  String get empty_history {
+    return Intl.message(
+      'There is no training history',
+      name: 'empty_history',
+      desc: '',
+      args: [],
+    );
   }
 }
 
