@@ -268,11 +268,42 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
         MaterialPageRoute(builder: (context) => HomeScreen()),
         (route) => false,
       );
-    } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-            content: Text(S.current.login_failed), backgroundColor: Colors.red),
-      );
+} catch (e) {
+  String errorMessage = S.current.login_failed;
+
+  if (e is FirebaseAuthException) {
+    switch (e.code) {
+      case 'user-not-found':
+        errorMessage = S.current.user_not_found;
+        break;
+      case 'wrong-password':
+        errorMessage = S.current.wrong_password;
+        break;
+      case 'invalid-email':
+        errorMessage = S.current.invalid_email;
+        break;
+      case 'user-disabled':
+        errorMessage = S.current.user_disabled;
+        break;
+      case 'network-request-failed':
+        errorMessage = S.current.request_timeout;
+        break;
+      default:
+        errorMessage = S.current.login_failed;
     }
+  } else if (e.toString().contains("ApiException: 7") ||
+             e.toString().contains("network_error")) {
+    errorMessage = S.current.request_timeout;
+  } else {
+    // Aquí puedes loguear el error si quieres
+    debugPrint('Error al iniciar sesión: $e');
+  }
+
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(content: Text(errorMessage), backgroundColor: Colors.red),
+  );
+}
+
+
   }
 }
