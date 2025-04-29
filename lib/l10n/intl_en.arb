@@ -150,6 +150,6 @@
     "understood": "Understood",
     "muscle_balance": "Muscle balance",
     "history": "History",
-    "empty_history": "There is no training history"
-
+    "empty_history": "There is no training history",
+    "no_connection": "There is no internet connection"
 }

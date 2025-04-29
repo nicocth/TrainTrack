@@ -191,6 +191,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Nickname updated",
     ),
     "no": MessageLookupByLibrary.simpleMessage("No"),
+    "no_connection": MessageLookupByLibrary.simpleMessage(
+      "There is no internet connection",
+    ),
     "no_local_exercises": MessageLookupByLibrary.simpleMessage(
       "There are no local exercises saved",
     ),

@@ -150,5 +150,6 @@
     "understood": "Entendido",
     "muscle_balance": "Equilibrio muscular",
     "history": "Historial",
-    "empty_history": "No hay historial de entrenamientos."
+    "empty_history": "No hay historial de entrenamientos.",
+    "no_connection": "No hay conexión a Internet."
 }

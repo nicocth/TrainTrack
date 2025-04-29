@@ -219,6 +219,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Nombre de usuario actualizado",
     ),
     "no": MessageLookupByLibrary.simpleMessage("No"),
+    "no_connection": MessageLookupByLibrary.simpleMessage(
+      "No hay conexión a Internet.",
+    ),
     "no_local_exercises": MessageLookupByLibrary.simpleMessage(
       "No hay ejercicios locales guardados",
     ),
