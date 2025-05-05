@@ -162,6 +162,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "exercise_setail_title": MessageLookupByLibrary.simpleMessage("Ejecución"),
     "exercises": MessageLookupByLibrary.simpleMessage("Ejercicios"),
+    "exit_confirmation": MessageLookupByLibrary.simpleMessage(
+      "Si sales ahora perderás los cambios. ¿Deseas continuar?",
+    ),
     "fill_all_fields": MessageLookupByLibrary.simpleMessage(
       "Por favor, rellene todos los campos",
     ),
@@ -340,6 +343,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "triceps": MessageLookupByLibrary.simpleMessage("Triceps"),
     "uknown_error": MessageLookupByLibrary.simpleMessage("Error desconocido"),
     "understood": MessageLookupByLibrary.simpleMessage("Entendido"),
+    "unsaved_changes": MessageLookupByLibrary.simpleMessage(
+      "Cambios no guardados",
+    ),
     "update_nickname": MessageLookupByLibrary.simpleMessage(
       "Actualizar nombre de usuario",
     ),

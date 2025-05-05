@@ -20,82 +20,95 @@ class CreateTrainingScreen extends ConsumerWidget {
     final newTraining = ref.watch(createTrainingProvider);
     final newTrainingNotifier = ref.read(createTrainingProvider.notifier);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(trainingId != null
-            ? S.current.edit_routine
-            : S.current.create_routine),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.save),
-            onPressed: () => _saveTraining(context, ref),
-          ),
-        ],
-      ),
-      body: SingleChildScrollView(
-        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              // Training title
-              TextField(
-                controller: newTraining.titleController,
-                decoration: InputDecoration(labelText: S.current.routine_title),
-              ),
-
-              const SizedBox(height: 20), // Spacer
-
-              // ExerciseCard list
-              ReorderableListView(
-                shrinkWrap: true, // Allows the list to fit the content
-                physics:
-                    const NeverScrollableScrollPhysics(), // Avoid scroll conflicts
-                onReorder: (oldIndex, newIndex) {
-                  newTrainingNotifier.reorderExercise(oldIndex, newIndex);
-                },
-                children: [
-                  for (int index = 0;
-                      index < newTraining.customExercises.length;
-                      index++)
-                    ExerciseCard(
-                      key: ValueKey(newTraining.customExercises[index]),
-                      exerciseIndex: index,
-                      customExercise: newTraining.customExercises[index],
-                      alternativeController:
-                          newTraining.alternativeControllers[index],
-                      notesController: newTraining.notesControllers[index],
-                      repsControllers: newTraining.repsControllers[index],
-                      weightControllers: newTraining.weightControllers[index],
-                      onDelete: () {
-                        newTrainingNotifier.removeExercise(index);
-                      },
-                    ),
-                ],
-              ),
-
-              const SizedBox(height: 20),
-
-              // Button to add exercises
-              Center(
-                child: ElevatedButton.icon(
-                  icon: const Icon(Icons.add, color: Colors.white),
-                  label: Text(S.current.add_exercise),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const AddExerciseScreen()),
-                    );
-                  },
+return PopScope(
+  canPop: trainingId == null, // If it's not editing, just exit
+  onPopInvokedWithResult: (didPop, result) async {
+    if (!didPop && trainingId != null) {
+      final shouldExit = await _showExitConfirmationDialog(context);
+      if (shouldExit) {
+        ref.invalidate(createTrainingProvider);
+        if (context.mounted) Navigator.of(context).pop(); 
+      }
+    }
+  },
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(trainingId != null
+              ? S.current.edit_routine
+              : S.current.create_routine),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.save),
+              onPressed: () => _saveTraining(context, ref),
+            ),
+          ],
+        ),
+        body: SingleChildScrollView(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                // Training title
+                TextField(
+                  controller: newTraining.titleController,
+                  decoration:
+                      InputDecoration(labelText: S.current.routine_title),
                 ),
-              ),
-            ],
+
+                const SizedBox(height: 20), // Spacer
+
+                // ExerciseCard list
+                ReorderableListView(
+                  shrinkWrap: true, // Allows the list to fit the content
+                  physics:
+                      const NeverScrollableScrollPhysics(), // Avoid scroll conflicts
+                  onReorder: (oldIndex, newIndex) {
+                    newTrainingNotifier.reorderExercise(oldIndex, newIndex);
+                  },
+                  children: [
+                    for (int index = 0;
+                        index < newTraining.customExercises.length;
+                        index++)
+                      ExerciseCard(
+                        key: ValueKey(newTraining.customExercises[index]),
+                        exerciseIndex: index,
+                        customExercise: newTraining.customExercises[index],
+                        alternativeController:
+                            newTraining.alternativeControllers[index],
+                        notesController: newTraining.notesControllers[index],
+                        repsControllers: newTraining.repsControllers[index],
+                        weightControllers: newTraining.weightControllers[index],
+                        onDelete: () {
+                          newTrainingNotifier.removeExercise(index);
+                        },
+                      ),
+                  ],
+                ),
+
+                const SizedBox(height: 20),
+
+                // Button to add exercises
+                Center(
+                  child: ElevatedButton.icon(
+                    icon: const Icon(Icons.add, color: Colors.white),
+                    label: Text(S.current.add_exercise),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AddExerciseScreen()),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
+        bottomNavigationBar: const TrainingSessionBanner(),
       ),
-      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 
@@ -159,5 +172,26 @@ class CreateTrainingScreen extends ConsumerWidget {
         SnackBar(content: Text(S.current.request_timeout)),
       );
     }
+  }
+
+  Future<bool> _showExitConfirmationDialog(BuildContext context) async {
+    return await showDialog<bool>(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(S.current.unsaved_changes),
+            content: Text(S.current.exit_confirmation),
+            actions: [
+              TextButton(
+                child: Text(S.current.discard),
+                onPressed: () => Navigator.of(context).pop(true),
+              ),
+              TextButton(
+                child: Text(S.current.cancel),
+                onPressed: () => Navigator.of(context).pop(false),
+              ),
+            ],
+          ),
+        ) ??
+        false; // In case the dialog is closed without choosing an option, return false
   }
 }

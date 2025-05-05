@@ -1399,6 +1399,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Unsaved changes`
+  String get unsaved_changes {
+    return Intl.message(
+      'Unsaved changes',
+      name: 'unsaved_changes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you exit now, you will lose your changes. Do you wish to continue?`
+  String get exit_confirmation {
+    return Intl.message(
+      'If you exit now, you will lose your changes. Do you wish to continue?',
+      name: 'exit_confirmation',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

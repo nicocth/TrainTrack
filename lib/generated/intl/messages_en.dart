@@ -146,6 +146,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "exercise_setail_title": MessageLookupByLibrary.simpleMessage("Execution"),
     "exercises": MessageLookupByLibrary.simpleMessage("Exercises"),
+    "exit_confirmation": MessageLookupByLibrary.simpleMessage(
+      "If you exit now, you will lose your changes. Do you wish to continue?",
+    ),
     "fill_all_fields": MessageLookupByLibrary.simpleMessage(
       "Please fill all fields",
     ),
@@ -304,6 +307,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "triceps": MessageLookupByLibrary.simpleMessage("Triceps"),
     "uknown_error": MessageLookupByLibrary.simpleMessage("Uknown error"),
     "understood": MessageLookupByLibrary.simpleMessage("Understood"),
+    "unsaved_changes": MessageLookupByLibrary.simpleMessage("Unsaved changes"),
     "update_nickname": MessageLookupByLibrary.simpleMessage("Update nickname"),
     "update_password": MessageLookupByLibrary.simpleMessage("Update password"),
     "update_training_alert": MessageLookupByLibrary.simpleMessage(

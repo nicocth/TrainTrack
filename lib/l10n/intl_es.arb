@@ -116,7 +116,7 @@
     "add_exercise_title": "Añadimos los ejercicios que deseemos:",
     "add_exercise_description": "Selecciona ejercicios dentro de una gran librería, la cual tendrá filtros por categoría y buscador para facilitar la tarea. <br><br> También podrás pulsar en la imagen de los ejercicios para hacer zoom y tener una idea de cómo es el ejercicio. <br><br> Al pulsar sobre añadir seleccionados volveremos a la pantalla de crear entrenamiento",
     "create_training_description_2": "De los ejercicios seleccionados se definen los siguientes parámetros para cada uno:<br><br>    - Notas<br>    - Sets<br>    - Repeticiones<br>    - Pesos<br><br>Si se habilita la opción de alternativa en dos ejercicios consecutivos y se iguala el número que aparece (si no se modifica será 0) aparecerá posteriormente en los diagramas al mismo nivel.",
-    "exercise_detail_description":"Si se pulsa sobre los títulos de los ejercicios te llevará una ventana que te mostrará como ejecutarlos correctamente.",
+    "exercise_detail_description": "Si se pulsa sobre los títulos de los ejercicios te llevará una ventana que te mostrará como ejecutarlos correctamente.",
     "create_training_description_3": "El usuario podrá navegar por la aplicación sin perder la rutina creada siempre y cuando no edite otro entrenamiento.<br><br>Para finalizar el usuario pulsa el icono de guardar ubicado arriba a la derecha, guarda el entrenamiento creado y vuelve al menú principal. Si no tiene conexión y pasa más de 6 segundos, se le informa que revise su conexión y no avanza al menú principal para no perder la rutina creada.",
     "summary_title": "Pantalla de resumen:",
     "summary_description": "Muestra un resumen que comenzará con un gráfico que te expondrá cuantas veces has realizado ese entrenamiento en los últimos 3 meses, esto ayudará a elegir el grupo muscular o rutina antes de iniciar la sesión de entrenamiento. <br><br>Muestra un diagrama que nos permite ver los ejercicios y el orden de estos. <br><br>Si nos convence le daremos a iniciar y avanzaremos a la siguiente pantalla.",
@@ -156,5 +156,7 @@
     "home_explanation": "Explicación de Home",
     "register_training": "Registrar entrenamiento",
     "history_screen_title": "Pantalla de historial:",
-    "history_screen_description": "Muestra el historial de entrenamientos del último año ordenado por fecha, si se pulsa sobre cualquier entrenamiento podemos acceder a todos sus datos."
+    "history_screen_description": "Muestra el historial de entrenamientos del último año ordenado por fecha, si se pulsa sobre cualquier entrenamiento podemos acceder a todos sus datos.",
+    "unsaved_changes": "Cambios no guardados",
+    "exit_confirmation": "Si sales ahora perderás los cambios. ¿Deseas continuar?"
 }

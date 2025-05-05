@@ -146,7 +146,7 @@
     "no_local_exercises": "There are no local exercises saved",
     "image_required": "Image is required",
     "storage_warning_short": "Important: Click to read",
-    "storage_warning_message":"Local exercises are saved to your device's internal storage. If you change devices, uninstall the app, or clear the storage data, the exercises will no longer be available.",
+    "storage_warning_message": "Local exercises are saved to your device's internal storage. If you change devices, uninstall the app, or clear the storage data, the exercises will no longer be available.",
     "warning": "Warning",
     "understood": "Understood",
     "muscle_balance": "Muscle balance",
@@ -156,5 +156,7 @@
     "home_explanation": "Explanation of Home",
     "register_training": "Register training",
     "history_screen_title": "History screen:",
-    "history_screen_description": "Shows our training history from the last year sorted by date. If we click on any training session we can access all its data."
+    "history_screen_description": "Shows our training history from the last year sorted by date. If we click on any training session we can access all its data.",
+    "unsaved_changes": "Unsaved changes",
+    "exit_confirmation": "If you exit now, you will lose your changes. Do you wish to continue?"
 }
