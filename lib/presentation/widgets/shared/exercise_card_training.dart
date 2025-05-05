@@ -49,9 +49,6 @@ class ExerciseCardTraining extends ConsumerWidget {
             SizedBox(
               child: TextField(
                 controller: notesController,
-                onChanged: (value) {
-                  notesController.text = value;
-                },
                 decoration: InputDecoration(
                   labelText: S.current.notes,
                   border: OutlineInputBorder(),
