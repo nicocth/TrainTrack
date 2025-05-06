@@ -1419,6 +1419,31 @@ class S {
       args: [],
     );
   }
+
+  /// `Detailed mode`
+  String get detailed_mode {
+    return Intl.message(
+      'Detailed mode',
+      name: 'detailed_mode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Compact mode`
+  String get compact_mode {
+    return Intl.message(
+      'Compact mode',
+      name: 'compact_mode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message('Save', name: 'save', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -49,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "biceps": MessageLookupByLibrary.simpleMessage("Biceps"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "compact_mode": MessageLookupByLibrary.simpleMessage("Compact mode"),
     "confirm_delete": MessageLookupByLibrary.simpleMessage(
       "Deletion confirmation",
     ),
@@ -97,6 +98,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "delete_history_confirm": MessageLookupByLibrary.simpleMessage(
       "Are you sure you want to delete your training history? This action is irreversible.",
     ),
+    "detailed_mode": MessageLookupByLibrary.simpleMessage("Detailed mode"),
     "discard": MessageLookupByLibrary.simpleMessage("Discard"),
     "edit": MessageLookupByLibrary.simpleMessage("Edit"),
     "edit_profile": MessageLookupByLibrary.simpleMessage("Edit profile"),
@@ -242,6 +244,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "This field is required",
     ),
     "routine_title": MessageLookupByLibrary.simpleMessage("Routine title"),
+    "save": MessageLookupByLibrary.simpleMessage("Save"),
     "save_exercise": MessageLookupByLibrary.simpleMessage("Save exercise"),
     "save_training": MessageLookupByLibrary.simpleMessage("Save training"),
     "search_exercise": MessageLookupByLibrary.simpleMessage("Search exercise"),

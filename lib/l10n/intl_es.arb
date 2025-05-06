@@ -158,5 +158,8 @@
     "history_screen_title": "Pantalla de historial:",
     "history_screen_description": "Muestra el historial de entrenamientos del último año ordenado por fecha, si se pulsa sobre cualquier entrenamiento podemos acceder a todos sus datos.",
     "unsaved_changes": "Cambios no guardados",
-    "exit_confirmation": "Si sales ahora perderás los cambios. ¿Deseas continuar?"
+    "exit_confirmation": "Si sales ahora perderás los cambios. ¿Deseas continuar?",
+    "detailed_mode": "Modo detallado",
+    "compact_mode": "Modo compacto",
+    "save": "Guardar"
 }

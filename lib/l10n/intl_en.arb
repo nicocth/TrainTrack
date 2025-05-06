@@ -158,5 +158,8 @@
     "history_screen_title": "History screen:",
     "history_screen_description": "Shows our training history from the last year sorted by date. If we click on any training session we can access all its data.",
     "unsaved_changes": "Unsaved changes",
-    "exit_confirmation": "If you exit now, you will lose your changes. Do you wish to continue?"
+    "exit_confirmation": "If you exit now, you will lose your changes. Do you wish to continue?",
+    "detailed_mode": "Detailed mode",
+    "compact_mode": "Compact mode",
+    "save": "Save"
 }
