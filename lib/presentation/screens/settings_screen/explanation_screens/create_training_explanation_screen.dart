@@ -65,6 +65,15 @@ class CreateTrainingExplanationScreen extends StatelessWidget {
               ),
               // Explanation of creating training 3
               Html(data: S.current.create_training_description_3),
+
+              // Explanation of creating training 4
+              Center(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image.asset("assets/images/compact_mode_image.jpg"),
+                ),
+              ),
+              Html(data: S.current.create_training_description_4),
             ],
           ),
         ),

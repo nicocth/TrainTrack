@@ -85,7 +85,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "De los ejercicios seleccionados se definen los siguientes parámetros para cada uno:<br><br>    - Notas<br>    - Sets<br>    - Repeticiones<br>    - Pesos<br><br>Si se habilita la opción de alternativa en dos ejercicios consecutivos y se iguala el número que aparece (si no se modifica será 0) aparecerá posteriormente en los diagramas al mismo nivel.",
     ),
     "create_training_description_3": MessageLookupByLibrary.simpleMessage(
-      "El usuario podrá navegar por la aplicación sin perder la rutina creada siempre y cuando no edite otro entrenamiento.<br><br>Para finalizar el usuario pulsa el icono de guardar ubicado arriba a la derecha, guarda el entrenamiento creado y vuelve al menú principal. Si no tiene conexión y pasa más de 6 segundos, se le informa que revise su conexión y no avanza al menú principal para no perder la rutina creada.",
+      "El usuario podrá navegar por la aplicación sin perder la rutina creada sin guardar, siempre y cuando no edite otro entrenamiento.<br><br>El proceso de editar entrenamiento es idéntico con la diferencia que no podrás salir sin guardar los cambios, de lo contrario perderás los cambios no guardados.<br><br>Arriba a la derecha está disponible el modo de vista compacta, esto facilitará el reordenar los ejercicios, ya que en una rutina creada cada ejercicio puede tener una altura considerable y resultar tedioso arrastrarlos de uno en uno para reordenar.",
+    ),
+    "create_training_description_4": MessageLookupByLibrary.simpleMessage(
+      "Para finalizar el usuario pulsa el icono de guardar ubicado arriba a la derecha, guarda el entrenamiento creado y vuelve al menú principal. Si no tiene conexión y pasa más de 6 segundos, se le informa que revise su conexión y no avanza al menú principal para no perder la rutina generada.",
     ),
     "create_training_title": MessageLookupByLibrary.simpleMessage(
       "Crear nuevo entrenamiento:",

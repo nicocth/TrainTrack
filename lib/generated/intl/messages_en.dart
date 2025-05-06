@@ -77,7 +77,10 @@ class MessageLookup extends MessageLookupByLibrary {
       "Of the selected exercises, the following parameters are defined for each one:<br><br> - Notes<br> - Sets<br> - Repetitions<br> - Weights<br><br>If the alternative option is enabled in two consecutive exercises and the number that appears is equal (if it is not modified it will be 0) it will subsequently appear in the diagrams at the same level.",
     ),
     "create_training_description_3": MessageLookupByLibrary.simpleMessage(
-      "The user will be able to navigate through the application without losing the created routine as long as they do not edit another workout.<br><br>To finish, the user presses the save icon located at the top right, saves the created workout and returns to the main menu. If they are offline and more than 6 seconds pass, they will be informed to check their connection and will not advance to the main menu to avoid losing the created routine.",
+      "The user will be able to navigate through the application without losing the created routine without saving as long as they do not edit another workout.<br><br>The process of editing a workout is identical except that you will not be able to exit without saving changes, otherwise you will lose any unsaved changes.<br><br>The compact view mode is available at the top right. This will make it easier to reorder the exercises, since in a created routine each exercise can be quite tall and it can be tedious to drag them one by one to reorder them.",
+    ),
+    "create_training_description_4": MessageLookupByLibrary.simpleMessage(
+      "To finish, the user presses the save icon located at the top right, saves the created workout and returns to the main menu. If you are offline and more than 6 seconds pass, you are informed to check your connection and will not advance to the main menu so as not to lose the generated routine.",
     ),
     "create_training_title": MessageLookupByLibrary.simpleMessage(
       "Create training:",
