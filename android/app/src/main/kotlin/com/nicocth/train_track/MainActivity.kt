@@ -1,4 +1,4 @@
-package com.example.train_track
+package com.nicocth.train_track
 
 import io.flutter.embedding.android.FlutterActivity
 
