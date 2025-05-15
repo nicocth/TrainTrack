@@ -40,125 +40,127 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
           }
         }
       },
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            widget.trainingId != null
-                ? S.current.edit_routine
-                : S.current.create_routine,
-          ),
-          actions: <Widget>[
-            PopupMenuButton<String>(
-              icon: const Icon(Icons.more_vert),
-              onSelected: (value) {
-                switch (value) {
-                  case 'toggle_view':
-                    setState(() {
-                      isCompactMode = !isCompactMode;
-                    });
-                    break;
-                  case 'save':
-                    _saveTraining(context, ref);
-                    break;
-                }
-              },
-              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                PopupMenuItem<String>(
-                  value: 'toggle_view',
-                  child: ListTile(
-                    leading: Icon(
-                        isCompactMode ? Icons.article : Icons.view_list),
-                    title: Text(isCompactMode
-                        ? S.current.detailed_mode
-                        : S.current.compact_mode),
-                  ),
-                ),
-                PopupMenuItem<String>(
-                  value: 'save',
-                  child: ListTile(
-                    leading: Icon(Icons.save),
-                    title: Text(S.current.save),
-                  ),
-                ),
-              ],
+      child: SafeArea(
+        child: Scaffold(
+          appBar: AppBar(
+            title: Text(
+              widget.trainingId != null
+                  ? S.current.edit_routine
+                  : S.current.create_routine,
             ),
-          ],
-        ),
-        body: SingleChildScrollView(
-          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                // Training title
-                TextField(
-                  controller: newTraining.titleController,
-                  decoration:
-                      InputDecoration(labelText: S.current.routine_title),
-                ),
-
-                const SizedBox(height: 20), // Spacer
-
-                // ExerciseCard list
-                ReorderableListView(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  onReorder: (oldIndex, newIndex) {
-                    newTrainingNotifier.reorderExercise(oldIndex, newIndex);
-                  },
-                  children: List.generate(
-                    newTraining.customExercises.length,
-                    (index) {
-                      final exercise = newTraining.customExercises[index];
-                      return isCompactMode
-                          ? ListTile(
-                              key: ValueKey(
-                                  'compact-${exercise.exercise.id}$index'),
-                              title: Text(exercise.exercise.name),
-                              trailing: const Icon(Icons.drag_handle),
-                            )
-                          : ExerciseCard(
-                              key: ValueKey('${exercise.exercise.id}$index'),
-                              exerciseIndex: index,
-                              customExercise: exercise,
-                              alternativeController:
-                                  newTraining.alternativeControllers[index],
-                              notesController:
-                                  newTraining.notesControllers[index],
-                              repsControllers:
-                                  newTraining.repsControllers[index],
-                              weightControllers:
-                                  newTraining.weightControllers[index],
-                              onDelete: () {
-                                newTrainingNotifier.removeExercise(index);
-                              },
-                            );
-                    },
+            actions: <Widget>[
+              PopupMenuButton<String>(
+                icon: const Icon(Icons.more_vert),
+                onSelected: (value) {
+                  switch (value) {
+                    case 'toggle_view':
+                      setState(() {
+                        isCompactMode = !isCompactMode;
+                      });
+                      break;
+                    case 'save':
+                      _saveTraining(context, ref);
+                      break;
+                  }
+                },
+                itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+                  PopupMenuItem<String>(
+                    value: 'toggle_view',
+                    child: ListTile(
+                      leading:
+                          Icon(isCompactMode ? Icons.article : Icons.view_list),
+                      title: Text(isCompactMode
+                          ? S.current.detailed_mode
+                          : S.current.compact_mode),
+                    ),
                   ),
-                ),
-
-                const SizedBox(height: 20),
-
-                // Button to add exercises
-                Center(
-                  child: ElevatedButton.icon(
-                    icon: const Icon(Icons.add, color: Colors.white),
-                    label: Text(S.current.add_exercise),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const AddExerciseScreen()),
-                      );
-                    },
+                  PopupMenuItem<String>(
+                    value: 'save',
+                    child: ListTile(
+                      leading: Icon(Icons.save),
+                      title: Text(S.current.save),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
+            ],
+          ),
+          body: SingleChildScrollView(
+            keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  // Training title
+                  TextField(
+                    controller: newTraining.titleController,
+                    decoration:
+                        InputDecoration(labelText: S.current.routine_title),
+                  ),
+
+                  const SizedBox(height: 20), // Spacer
+
+                  // ExerciseCard list
+                  ReorderableListView(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    onReorder: (oldIndex, newIndex) {
+                      newTrainingNotifier.reorderExercise(oldIndex, newIndex);
+                    },
+                    children: List.generate(
+                      newTraining.customExercises.length,
+                      (index) {
+                        final exercise = newTraining.customExercises[index];
+                        return isCompactMode
+                            ? ListTile(
+                                key: ValueKey(
+                                    'compact-${exercise.exercise.id}$index'),
+                                title: Text(exercise.exercise.name),
+                                trailing: const Icon(Icons.drag_handle),
+                              )
+                            : ExerciseCard(
+                                key: ValueKey('${exercise.exercise.id}$index'),
+                                exerciseIndex: index,
+                                customExercise: exercise,
+                                alternativeController:
+                                    newTraining.alternativeControllers[index],
+                                notesController:
+                                    newTraining.notesControllers[index],
+                                repsControllers:
+                                    newTraining.repsControllers[index],
+                                weightControllers:
+                                    newTraining.weightControllers[index],
+                                onDelete: () {
+                                  newTrainingNotifier.removeExercise(index);
+                                },
+                              );
+                      },
+                    ),
+                  ),
+
+                  const SizedBox(height: 5),
+
+                  // Button to add exercises
+                  Center(
+                    child: ElevatedButton.icon(
+                      icon: const Icon(Icons.add, color: Colors.white),
+                      label: Text(S.current.add_exercise),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const AddExerciseScreen()),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
+          bottomNavigationBar: const TrainingSessionBanner(),
         ),
-        bottomNavigationBar: const TrainingSessionBanner(),
       ),
     );
   }

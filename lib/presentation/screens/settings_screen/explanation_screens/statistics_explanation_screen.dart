@@ -8,46 +8,48 @@ class StatisticsExplanationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(S.current.usage_guide)),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(25.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Explanation of statistics screen
-              Text(
-                S.current.statistics_screen_title,
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-              Center(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
-                  child: Image.asset("assets/images/statistics_screen.jpg"),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(title: Text(S.current.usage_guide)),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Explanation of statistics screen
+                Text(
+                  S.current.statistics_screen_title,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
-              ),
-              const SizedBox(height: 10),
-              Html(data: S.current.statistics_screen_description),
-              const SizedBox(height: 10),
-              // Explanation of statistics screen
-              Text(
-                S.current.history_screen_title,
-                style: Theme.of(context).textTheme.bodyLarge,
-              ),
-              Center(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
-                  child: Image.asset("assets/images/history_screen.jpg"),
+                Center(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: Image.asset("assets/images/statistics_screen.jpg"),
+                  ),
                 ),
-              ),
-              const SizedBox(height: 10),
-              Html(data: S.current.history_screen_description),
-            ],
+                const SizedBox(height: 10),
+                Html(data: S.current.statistics_screen_description),
+                const SizedBox(height: 10),
+                // Explanation of statistics screen
+                Text(
+                  S.current.history_screen_title,
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                Center(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: Image.asset("assets/images/history_screen.jpg"),
+                  ),
+                ),
+                const SizedBox(height: 10),
+                Html(data: S.current.history_screen_description),
+              ],
+            ),
           ),
         ),
+        bottomNavigationBar: const TrainingSessionBanner(),
       ),
-      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 }

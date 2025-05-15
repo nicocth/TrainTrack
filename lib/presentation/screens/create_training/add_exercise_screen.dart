@@ -44,98 +44,101 @@ class AddExerciseScreenState extends ConsumerState<AddExerciseScreen> {
   Widget build(BuildContext context) {
     final trainingNotifier = ref.read(createTrainingProvider.notifier);
 
-    return Scaffold(
-      appBar: AppBar(title: Text(S.current.add_exercise)),
-      body: Column(
-        children: [
-          // Search Bar
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextField(
-              decoration: InputDecoration(
-                labelText: S.current.search_exercise,
-                prefixIcon: Icon(Icons.search),
-                border: OutlineInputBorder(),
-              ),
-              onChanged: (value) {
-                setState(() {
-                  searchQuery = value;
-                  _filterExercises();
-                });
-              },
-            ),
-          ),
-
-          // Filter Dropdown
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: DropdownButton<MuscularGroup?>(
-              isExpanded: true,
-              value: selectedGroup,
-              hint: Text(S.current.select_muscular_group),
-              onChanged: (group) {
-                setState(() {
-                  selectedGroup = group;
-                  _filterExercises();
-                });
-              },
-              items: [
-                DropdownMenuItem(
-                  value: null,
-                  child: Text(S.current.all_muscular_groups),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(title: Text(S.current.add_exercise)),
+        body: Column(
+          children: [
+            // Search Bar
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  labelText: S.current.search_exercise,
+                  prefixIcon: Icon(Icons.search),
+                  border: OutlineInputBorder(),
                 ),
-                ...MuscularGroup.values.map((group) => DropdownMenuItem(
-                      value: group,
-                      // Custom class to translate the contents of MuscularGroup
-                      child: Text(MuscularGroupFormatter.translate(group)),
-                    )),
-              ],
+                onChanged: (value) {
+                  setState(() {
+                    searchQuery = value;
+                    _filterExercises();
+                  });
+                },
+              ),
             ),
-          ),
 
-          // Exercise List
-          Expanded(
-            child: ListView.builder(
-              itemCount: filteredExercises.length,
-              itemBuilder: (context, index) {
-                final exercise = filteredExercises[index];
-                final isSelected = selectedExercises.contains(exercise);
-                return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5.0),
-                  child: ListTile(
-                    leading: ZoomableImage(exercise: exercise),
-                    title: Text(exercise.name),
-                    trailing: Icon(
-                      isSelected ? Icons.check_circle : Icons.circle_outlined,
-                      color: isSelected ? Colors.green : null,
-                    ),
-                    onTap: () {
-                      setState(() {
-                        isSelected
-                            ? selectedExercises.remove(exercise)
-                            : selectedExercises.add(exercise);
-                      });
-                    },
+            // Filter Dropdown
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: DropdownButton<MuscularGroup?>(
+                isExpanded: true,
+                value: selectedGroup,
+                hint: Text(S.current.select_muscular_group),
+                onChanged: (group) {
+                  setState(() {
+                    selectedGroup = group;
+                    _filterExercises();
+                  });
+                },
+                items: [
+                  DropdownMenuItem(
+                    value: null,
+                    child: Text(S.current.all_muscular_groups),
                   ),
-                );
-              },
+                  ...MuscularGroup.values.map((group) => DropdownMenuItem(
+                        value: group,
+                        // Custom class to translate the contents of MuscularGroup
+                        child: Text(MuscularGroupFormatter.translate(group)),
+                      )),
+                ],
+              ),
             ),
-          ),
 
-          // Add Selected Button
-          Padding(
-            padding: const EdgeInsets.only(bottom: 15),
-            child: ElevatedButton(
-              onPressed: selectedExercises.isEmpty
-                  ? null
-                  : () {
-                      trainingNotifier.addExercises(selectedExercises.toList());
-                      Navigator.pop(context);
-                    },
-              child: Text(S.current.add_selected),
+            // Exercise List
+            Expanded(
+              child: ListView.builder(
+                itemCount: filteredExercises.length,
+                itemBuilder: (context, index) {
+                  final exercise = filteredExercises[index];
+                  final isSelected = selectedExercises.contains(exercise);
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 5.0),
+                    child: ListTile(
+                      leading: ZoomableImage(exercise: exercise),
+                      title: Text(exercise.name),
+                      trailing: Icon(
+                        isSelected ? Icons.check_circle : Icons.circle_outlined,
+                        color: isSelected ? Colors.green : null,
+                      ),
+                      onTap: () {
+                        setState(() {
+                          isSelected
+                              ? selectedExercises.remove(exercise)
+                              : selectedExercises.add(exercise);
+                        });
+                      },
+                    ),
+                  );
+                },
+              ),
             ),
-          ),
-        ],
+
+            // Add Selected Button
+            Padding(
+              padding: const EdgeInsets.all(5),
+              child: ElevatedButton(
+                onPressed: selectedExercises.isEmpty
+                    ? null
+                    : () {
+                        trainingNotifier
+                            .addExercises(selectedExercises.toList());
+                        Navigator.pop(context);
+                      },
+                child: Text(S.current.add_selected),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

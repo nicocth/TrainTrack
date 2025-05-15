@@ -68,7 +68,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirm_password": MessageLookupByLibrary.simpleMessage(
       "Confirm password",
     ),
-    "create_routine": MessageLookupByLibrary.simpleMessage("Create routine"),
+    "create_routine": MessageLookupByLibrary.simpleMessage("Create"),
     "create_training": MessageLookupByLibrary.simpleMessage("Create training"),
     "create_training_description_1": MessageLookupByLibrary.simpleMessage(
       "The title of the routine is mandatory, as is having at least one exercise; otherwise, an error will occur when saving.<br><br>When you click the add exercise button, you will go to the add exercises screen.",

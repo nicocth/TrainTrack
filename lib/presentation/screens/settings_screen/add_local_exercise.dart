@@ -34,100 +34,103 @@ class _AddLocalExerciseState extends State<AddLocalExercise> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(S.current.add_exercise)),
-      body: Padding(
-        padding: const EdgeInsets.all(32.0),
-        child: Form(
-          key: _formKey,
-          child: ListView(
-            children: [
-              //
-              // Warning Button
-              TextButton(
-                style: TextButton.styleFrom(
-                  backgroundColor: Colors.amber[100],
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    side: BorderSide(color: Colors.amber),
-                  ),
-                  padding: const EdgeInsets.all(12),
-                ),
-                onPressed: () => _showStorageWarning(context),
-                child: Row(
-                  children: [
-                    const Icon(Icons.warning_amber_rounded,
-                        color: Colors.orange),
-                    const SizedBox(width: 8),
-                    Text(
-                      S.current.storage_warning_short,
-                      style: const TextStyle(
-                        color: Colors.black87,
-                        fontWeight: FontWeight.bold,
-                      ),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(title: Text(S.current.add_exercise)),
+        body: Padding(
+          padding: const EdgeInsets.all(32.0),
+          child: Form(
+            key: _formKey,
+            child: ListView(
+              children: [
+                //
+                // Warning Button
+                TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.amber[100],
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                      side: BorderSide(color: Colors.amber),
                     ),
-                  ],
-                ),
-              ),
-
-              TextFormField(
-                controller: _nameController,
-                decoration: InputDecoration(labelText: S.current.exercise_name),
-                validator: (value) =>
-                    value!.isEmpty ? S.current.required_field : null,
-              ),
-              TextFormField(
-                controller: _descriptionController,
-                decoration:
-                    InputDecoration(labelText: S.current.exercise_setail_title),
-                minLines: 1,
-                maxLines: 6,
-              ),
-              const SizedBox(height: 10),
-              DropdownButtonFormField<MuscularGroup>(
-                value: _selectedGroup,
-                onChanged: (MuscularGroup? group) {
-                  setState(() {
-                    _selectedGroup = group;
-                  });
-                },
-                items: [
-                  DropdownMenuItem(
-                    value: null,
-                    child: Text(S.current.select_muscular_group),
+                    padding: const EdgeInsets.all(12),
                   ),
-                  ...MuscularGroup.values.map((MuscularGroup group) {
-                    return DropdownMenuItem(
-                      value: group,
-                      child: Text(MuscularGroupFormatter.translate(group)),
-                    );
-                  }),
-                ],
-                validator: (value) =>
-                    value == null ? S.current.select_muscular_group : null,
-              ),
-              const SizedBox(height: 10),
-              ElevatedButton(
-                onPressed: _pickImage,
-                child: Text(S.current.select_image),
-              ),
-              if (_imageFile != null)
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8),
-                  child: Image.file(_imageFile!, height: 100),
+                  onPressed: () => _showStorageWarning(context),
+                  child: Row(
+                    children: [
+                      const Icon(Icons.warning_amber_rounded,
+                          color: Colors.orange),
+                      const SizedBox(width: 8),
+                      Text(
+                        S.current.storage_warning_short,
+                        style: const TextStyle(
+                          color: Colors.black87,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              const SizedBox(height: 10),
-              ElevatedButton(
-                onPressed: () {
-                  _saveExercise(context);
-                },
-                child: Text(S.current.save_exercise),
-              ),
-            ],
+
+                TextFormField(
+                  controller: _nameController,
+                  decoration:
+                      InputDecoration(labelText: S.current.exercise_name),
+                  validator: (value) =>
+                      value!.isEmpty ? S.current.required_field : null,
+                ),
+                TextFormField(
+                  controller: _descriptionController,
+                  decoration: InputDecoration(
+                      labelText: S.current.exercise_setail_title),
+                  minLines: 1,
+                  maxLines: 6,
+                ),
+                const SizedBox(height: 10),
+                DropdownButtonFormField<MuscularGroup>(
+                  value: _selectedGroup,
+                  onChanged: (MuscularGroup? group) {
+                    setState(() {
+                      _selectedGroup = group;
+                    });
+                  },
+                  items: [
+                    DropdownMenuItem(
+                      value: null,
+                      child: Text(S.current.select_muscular_group),
+                    ),
+                    ...MuscularGroup.values.map((MuscularGroup group) {
+                      return DropdownMenuItem(
+                        value: group,
+                        child: Text(MuscularGroupFormatter.translate(group)),
+                      );
+                    }),
+                  ],
+                  validator: (value) =>
+                      value == null ? S.current.select_muscular_group : null,
+                ),
+                const SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: _pickImage,
+                  child: Text(S.current.select_image),
+                ),
+                if (_imageFile != null)
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    child: Image.file(_imageFile!, height: 100),
+                  ),
+                const SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    _saveExercise(context);
+                  },
+                  child: Text(S.current.save_exercise),
+                ),
+              ],
+            ),
           ),
         ),
+        bottomNavigationBar: const TrainingSessionBanner(),
       ),
-      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 

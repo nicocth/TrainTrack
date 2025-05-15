@@ -35,7 +35,8 @@ class ExerciseCard extends ConsumerWidget {
     final List<String> headers = [
       S.current.series,
       S.current.kg_text,
-      S.current.reps_text
+      S.current.reps_text,
+      ""
     ];
 
     return Card(
@@ -115,6 +116,7 @@ class ExerciseCard extends ConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: List.generate(
                     headers.length,
                     (index) => SizedBox(
@@ -126,8 +128,7 @@ class ExerciseCard extends ConsumerWidget {
                         ),
                       ),
                     ),
-                  ).expand((widget) => [widget, SizedBox(width: 50)]).toList()
-                    ..removeLast(),
+                  ),
                 ),
 
                 //Spacer
@@ -137,13 +138,12 @@ class ExerciseCard extends ConsumerWidget {
                 Column(
                   children: List.generate(customExercise.sets.length, (index) {
                     return Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         //Order
                         SizedBox(
                             width: 50,
                             child: Center(child: Text("${index + 1}"))),
-                        //Spacer
-                        const SizedBox(width: 50),
 
                         // Field for Kg
                         SizedBox(
@@ -157,9 +157,6 @@ class ExerciseCard extends ConsumerWidget {
                           ),
                         ),
 
-                        //Spacer
-                        SizedBox(width: 50),
-
                         //Field for Reps
                         SizedBox(
                           width: 50,
@@ -172,9 +169,6 @@ class ExerciseCard extends ConsumerWidget {
                             textAlign: TextAlign.center,
                           ),
                         ),
-
-                        //Spacer
-                        SizedBox(width: 5),
 
                         //Button delete
                         IconButton(

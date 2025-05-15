@@ -47,102 +47,104 @@ class _StatisticsScreenState extends ConsumerState<StatisticsScreen> {
         .toList();
     final maxValue = values.reduce((a, b) => a > b ? a : b);
 
-    return Scaffold(
-      appBar: AppBar(title: Text(S.current.statistics)),
-      body: isLoading
-          ? Center(child: CircularProgressIndicator())
-          : SingleChildScrollView(
-              child: Column(
-                children: [
-                  // Month selector
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: DropdownButton<int>(
-                      isExpanded: true,
-                      value: selectedMonths,
-                      items: [1, 3, 6, 12].map((int value) {
-                        return DropdownMenuItem<int>(
-                          value: value,
-                          child: Text(
-                            value == 1
-                                ? '$value ${S.current.month}'
-                                : '$value ${S.current.months}',
-                          ),
-                        );
-                      }).toList(),
-                      onChanged: (value) {
-                        if (value != null) {
-                          setState(() {
-                            selectedMonths = value;
-                            isLoading = true;
-                          });
-                          _getTrainingData(availableExercises).then((_) {
-                            setState(() => isLoading = false);
-                          });
-                        }
-                      },
-                    ),
-                  ),
-
-                  // Absolute/Percentage Change Button
-                  _buildToggleButton(),
-
-                  // Radar chart
-                  SizedBox(
-                    height: 340,
-                    child: Padding(
-                      padding: const EdgeInsets.all(40.0),
-                      child: RadarChart(
-                        RadarChartData(
-                          radarBorderData:
-                              BorderSide(color: Theme.of(context).dividerColor),
-                          dataSets: [
-                            RadarDataSet(
-                              dataEntries: _getDataEntries(),
-                              fillColor: Theme.of(context)
-                                  .primaryColor
-                                  .withValues(alpha: 0.3),
-                              borderColor: Theme.of(context).primaryColor,
-                              borderWidth: 2,
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(title: Text(S.current.statistics)),
+        body: isLoading
+            ? Center(child: CircularProgressIndicator())
+            : SingleChildScrollView(
+                child: Column(
+                  children: [
+                    // Month selector
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: DropdownButton<int>(
+                        isExpanded: true,
+                        value: selectedMonths,
+                        items: [1, 3, 6, 12].map((int value) {
+                          return DropdownMenuItem<int>(
+                            value: value,
+                            child: Text(
+                              value == 1
+                                  ? '$value ${S.current.month}'
+                                  : '$value ${S.current.months}',
                             ),
-                          ],
-                          radarBackgroundColor: Colors.transparent,
-                          titleTextStyle: TextStyle(
-                            color: Theme.of(context).textTheme.bodyLarge?.color,
-                            fontSize: 12,
-                          ),
-                          getTitle: (index, angle) {
-                            final group = MuscularGroup.values[index];
-                            final value = trainingCounts[group] ?? 0;
-                            final displayValue = showAbsoluteValues
-                                ? value.toString()
-                                : maxValue > 0
-                                    ? '${((value / maxValue) * 100).toStringAsFixed(0)}%'
-                                    : '0%';
+                          );
+                        }).toList(),
+                        onChanged: (value) {
+                          if (value != null) {
+                            setState(() {
+                              selectedMonths = value;
+                              isLoading = true;
+                            });
+                            _getTrainingData(availableExercises).then((_) {
+                              setState(() => isLoading = false);
+                            });
+                          }
+                        },
+                      ),
+                    ),
 
-                            return RadarChartTitle(
-                              text:
-                                  '${MuscularGroupFormatter.translate(group)}\n$displayValue',
-                              angle: angle,
-                            );
-                          },
-                          tickCount: 5,
-                          ticksTextStyle: TextStyle(
-                            color:
-                                Theme.of(context).textTheme.bodyMedium?.color,
-                            fontSize: 10,
+                    // Absolute/Percentage Change Button
+                    _buildToggleButton(),
+
+                    // Radar chart
+                    SizedBox(
+                      height: 340,
+                      child: Padding(
+                        padding: const EdgeInsets.all(40.0),
+                        child: RadarChart(
+                          RadarChartData(
+                            radarBorderData: BorderSide(
+                                color: Theme.of(context).dividerColor),
+                            dataSets: [
+                              RadarDataSet(
+                                dataEntries: _getDataEntries(),
+                                fillColor: Theme.of(context)
+                                    .primaryColor
+                                    .withValues(alpha: 0.3),
+                                borderColor: Theme.of(context).primaryColor,
+                                borderWidth: 2,
+                              ),
+                            ],
+                            radarBackgroundColor: Colors.transparent,
+                            titleTextStyle: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodyLarge?.color,
+                              fontSize: 12,
+                            ),
+                            getTitle: (index, angle) {
+                              final group = MuscularGroup.values[index];
+                              final value = trainingCounts[group] ?? 0;
+                              final displayValue = showAbsoluteValues
+                                  ? value.toString()
+                                  : maxValue > 0
+                                      ? '${((value / maxValue) * 100).toStringAsFixed(0)}%'
+                                      : '0%';
+
+                              return RadarChartTitle(
+                                text:
+                                    '${MuscularGroupFormatter.translate(group)}\n$displayValue',
+                                angle: angle,
+                              );
+                            },
+                            tickCount: 2,
+                            ticksTextStyle: TextStyle(
+                              color: Colors.transparent,
+                              fontSize: 0,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
 
-                  // Summary Cards
-                  _buildSummaryCards(),
-                ],
+                    // Summary Cards
+                    _buildSummaryCards(),
+                  ],
+                ),
               ),
-            ),
-      bottomNavigationBar: const TrainingSessionBanner(),
+        bottomNavigationBar: const TrainingSessionBanner(),
+      ),
     );
   }
 

@@ -28,48 +28,50 @@ class TrainingHistoryScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final trainingHistoryAsync = ref.watch(trainingHistoryProvider);
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(S.current.history),
-      ),
-      body: trainingHistoryAsync.when(
-        data: (historyList) {
-          if (historyList.isEmpty) {
-            return Center(child: Text(S.current.empty_history));
-          }
-          return ListView.builder(
-            itemCount: historyList.length,
-            itemBuilder: (context, index) {
-              final history = historyList[index];
-              final formattedDate =
-                  DateFormat('dd/MM/yyyy').format(history.trainingDate);
-              return ListTile(
-                title: Text(history.name),
-                subtitle: Text(formattedDate),
-                leading: const Icon(Icons.fitness_center),
-                trailing: const Icon(Icons.arrow_downward, size: 16),
-                onTap: () {
-                  showBottomSheetHistory(context, history);
-                },
-              );
-            },
-          );
-        },
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (error, _) {
-          String message = S.current.request_timeout;
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(S.current.history),
+        ),
+        body: trainingHistoryAsync.when(
+          data: (historyList) {
+            if (historyList.isEmpty) {
+              return Center(child: Text(S.current.empty_history));
+            }
+            return ListView.builder(
+              itemCount: historyList.length,
+              itemBuilder: (context, index) {
+                final history = historyList[index];
+                final formattedDate =
+                    DateFormat('dd/MM/yyyy').format(history.trainingDate);
+                return ListTile(
+                  title: Text(history.name),
+                  subtitle: Text(formattedDate),
+                  leading: const Icon(Icons.fitness_center),
+                  trailing: const Icon(Icons.arrow_downward, size: 16),
+                  onTap: () {
+                    showBottomSheetHistory(context, history);
+                  },
+                );
+              },
+            );
+          },
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (error, _) {
+            String message = S.current.request_timeout;
 
-          return Padding(
-            padding: const EdgeInsets.all(32.0),
-            child: Center(
-              child: Text(
-                message,
+            return Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: Center(
+                child: Text(
+                  message,
+                ),
               ),
-            ),
-          );
-        },
+            );
+          },
+        ),
+        bottomNavigationBar: const TrainingSessionBanner(),
       ),
-      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 

@@ -460,14 +460,9 @@ class S {
     );
   }
 
-  /// `Create routine`
+  /// `Create`
   String get create_routine {
-    return Intl.message(
-      'Create routine',
-      name: 'create_routine',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Create', name: 'create_routine', desc: '', args: []);
   }
 
   /// `Edit routine`

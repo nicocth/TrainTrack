@@ -8,26 +8,28 @@ class EditProfileExplanationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(S.current.usage_guide)),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(25.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Html(data: S.current.edit_profile_screen_description),
-              Center(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
-                  child: Image.asset("assets/images/edit_profile_screen.jpg"),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(title: Text(S.current.usage_guide)),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Html(data: S.current.edit_profile_screen_description),
+                Center(
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: Image.asset("assets/images/edit_profile_screen.jpg"),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
+        bottomNavigationBar: const TrainingSessionBanner(),
       ),
-      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 }

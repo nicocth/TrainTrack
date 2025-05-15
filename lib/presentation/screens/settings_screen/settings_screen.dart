@@ -30,118 +30,122 @@ class SettingsScreen extends ConsumerWidget {
         );
       }
     });
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(S.current.app_bar_settings),
-      ),
-      body: SingleChildScrollView(
-        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(S.current.account,
-                  style: Theme.of(context).textTheme.bodyLarge),
-              ListTile(
-                leading: const Icon(Icons.manage_accounts),
-                title: Text(S.current.edit_profile),
-                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const EditProfileScreen()),
-                  );
-                },
-              ),
-              SizedBox(height: 20),
-              Text(S.current.statistics,
-                  style: Theme.of(context).textTheme.bodyLarge),
-              ListTile(
-                leading: const Icon(Icons.show_chart),
-                title: Text(S.current.muscle_balance),
-                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const StatisticsScreen()),
-                  );
-                },
-              ),
-              ListTile(
-                leading: const Icon(Icons.calendar_today),
-                title: Text(S.current.history),
-                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const TrainingHistoryScreen()),
-                  );
-                },
-              ),
-              SizedBox(height: 20),
-              Text(S.current.customize,
-                  style: Theme.of(context).textTheme.bodyLarge),
-              ListTile(
-                title: Text(S.current.add_local_exercise),
-                leading: Icon(Icons.add),
-                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AddLocalExercise()),
-                  );
-                },
-              ),
-              ListTile(
-                title: Text(S.current.manage_local_exercises),
-                leading: Icon(Icons.article),
-                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => LocalExercisesManagement()),
-                  );
-                },
-              ),
-
-              SizedBox(height: 20),
-              Text(S.current.help,
-                  style: Theme.of(context).textTheme.bodyLarge),
-              ListTile(
-                leading: const Icon(Icons.help),
-                title: Text(S.current.usage_guide),
-                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const HelpScreen()),
-                  );
-                },
-              ),
-              SizedBox(height: 20),
-              // Logout button
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                  ),
-                  onPressed: () => _logout(context, ref),
-                  child: Text(S.current.logout),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(S.current.app_bar_settings),
+        ),
+        body: SingleChildScrollView(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(S.current.account,
+                    style: Theme.of(context).textTheme.bodyLarge),
+                ListTile(
+                  leading: const Icon(Icons.manage_accounts),
+                  title: Text(S.current.edit_profile),
+                  trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const EditProfileScreen()),
+                    );
+                  },
                 ),
-              ),
-            ],
+                SizedBox(height: 10),
+                Text(S.current.statistics,
+                    style: Theme.of(context).textTheme.bodyLarge),
+                ListTile(
+                  leading: const Icon(Icons.show_chart),
+                  title: Text(S.current.muscle_balance),
+                  trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const StatisticsScreen()),
+                    );
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.calendar_today),
+                  title: Text(S.current.history),
+                  trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const TrainingHistoryScreen()),
+                    );
+                  },
+                ),
+                SizedBox(height: 10),
+                Text(S.current.customize,
+                    style: Theme.of(context).textTheme.bodyLarge),
+                ListTile(
+                  title: Text(S.current.add_local_exercise),
+                  leading: Icon(Icons.add),
+                  trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AddLocalExercise()),
+                    );
+                  },
+                ),
+                ListTile(
+                  title: Text(S.current.manage_local_exercises),
+                  leading: Icon(Icons.article),
+                  trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => LocalExercisesManagement()),
+                    );
+                  },
+                ),
+
+                SizedBox(height: 10),
+                Text(S.current.help,
+                    style: Theme.of(context).textTheme.bodyLarge),
+                ListTile(
+                  leading: const Icon(Icons.help),
+                  title: Text(S.current.usage_guide),
+                  trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HelpScreen()),
+                    );
+                  },
+                ),
+                SizedBox(height: 10),
+                // Logout button
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(vertical: 16),
+                    ),
+                    onPressed: () => _logout(context, ref),
+                    child: Text(S.current.logout),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
+        bottomNavigationBar: const TrainingSessionBanner(),
       ),
-      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 

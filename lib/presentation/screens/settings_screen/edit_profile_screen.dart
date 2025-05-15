@@ -45,88 +45,92 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(S.current.edit_profile)),
-      body: SingleChildScrollView(
-        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-        child: Padding(
-          padding: const EdgeInsets.all(40.0),
-          child: Column(
-            children: [
-              TextField(
-                controller: _emailController,
-                decoration: InputDecoration(labelText: S.current.email),
-                enabled: false,
-              ),
-              // If the user is not a Google user, show the password fields
-              if (!_isGoogleUser) ...[
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(title: Text(S.current.edit_profile)),
+        body: SingleChildScrollView(
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+          child: Padding(
+            padding: const EdgeInsets.all(40.0),
+            child: Column(
+              children: [
                 TextField(
-                  controller: _nicknameController,
-                  decoration: InputDecoration(labelText: S.current.nickname),
-                ),
-              ] else ...[
-                TextField(
-                  controller: _nicknameController,
-                  decoration: InputDecoration(labelText: S.current.nickname),
+                  controller: _emailController,
+                  decoration: InputDecoration(labelText: S.current.email),
                   enabled: false,
                 ),
-              ],
+                // If the user is not a Google user, show the password fields
+                if (!_isGoogleUser) ...[
+                  TextField(
+                    controller: _nicknameController,
+                    decoration: InputDecoration(labelText: S.current.nickname),
+                  ),
+                ] else ...[
+                  TextField(
+                    controller: _nicknameController,
+                    decoration: InputDecoration(labelText: S.current.nickname),
+                    enabled: false,
+                  ),
+                ],
 
-              if (!_isGoogleUser) ...[
+                if (!_isGoogleUser) ...[
+                  SizedBox(height: 20),
+                  SizedBox(
+                    width: 240,
+                    child: ElevatedButton(
+                      onPressed: _updateProfile,
+                      child: Text(S.current.update_nickname),
+                    ),
+                  ),
+                  SizedBox(height: 30),
+                  TextField(
+                    controller: _currentPasswordController,
+                    decoration:
+                        InputDecoration(labelText: S.current.current_password),
+                    obscureText: true,
+                  ),
+                  TextField(
+                    controller: _newPasswordController,
+                    decoration:
+                        InputDecoration(labelText: S.current.new_password),
+                    obscureText: true,
+                  ),
+                  SizedBox(height: 20),
+                  SizedBox(
+                    width: 240,
+                    child: ElevatedButton(
+                      onPressed: _updatePassword,
+                      child: Text(S.current.update_password),
+                    ),
+                  ),
+                ],
                 SizedBox(height: 20),
+                // button to delete statistics
                 SizedBox(
                   width: 240,
                   child: ElevatedButton(
-                    onPressed: _updateProfile,
-                    child: Text(S.current.update_nickname),
+                    style:
+                        ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                    onPressed: _confirmDeleteHistory,
+                    child: Text(S.current.delete_history),
                   ),
                 ),
-                SizedBox(height: 30),
-                TextField(
-                  controller: _currentPasswordController,
-                  decoration:
-                      InputDecoration(labelText: S.current.current_password),
-                  obscureText: true,
-                ),
-                TextField(
-                  controller: _newPasswordController,
-                  decoration:
-                      InputDecoration(labelText: S.current.new_password),
-                  obscureText: true,
-                ),
                 SizedBox(height: 20),
                 SizedBox(
                   width: 240,
                   child: ElevatedButton(
-                    onPressed: _updatePassword,
-                    child: Text(S.current.update_password),
+                    style:
+                        ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                    onPressed: _confirmDeleteAccount,
+                    child: Text(S.current.delete_account),
                   ),
                 ),
               ],
-              SizedBox(height: 20),
-              // button to delete statistics
-              SizedBox(
-                width: 240,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                  onPressed: _confirmDeleteHistory,
-                  child: Text(S.current.delete_history),
-                ),
-              ),
-              SizedBox(height: 20),
-              SizedBox(
-                width: 240,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                  onPressed: _confirmDeleteAccount,
-                  child: Text(S.current.delete_account),
-                ),
-              ),
-            ],
+            ),
           ),
         ),
+        bottomNavigationBar: const TrainingSessionBanner(),
       ),
-      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 
