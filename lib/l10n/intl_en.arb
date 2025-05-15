@@ -1,4 +1,5 @@
 {
+    "traintrack": "TrainTrack",
     "login": "Login",
     "access_register": "Register now",
     "nickname": "Nickname",

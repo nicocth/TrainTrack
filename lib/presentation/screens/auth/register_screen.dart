@@ -8,7 +8,6 @@ import 'package:train_track/presentation/screens/auth/login_screen.dart';
 import 'package:train_track/infraestructure/auth_firebase/auth_provider.dart';
 import 'package:train_track/core/utils/validators.dart';
 
-
 class RegisterScreen extends ConsumerStatefulWidget {
   const RegisterScreen({super.key});
 
@@ -42,6 +41,7 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
     return Scaffold(
       body: Stack(
         children: [
+          // Background image
           Positioned.fill(
             child: Image.asset(
               'assets/images/background_login.jpeg',
@@ -49,15 +49,17 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
             ),
           ),
           Positioned(
+            // Gradient overlay
             top: 0,
             left: 0,
             right: 0,
             child: Container(
-              height: 180,
+              height: 160,
               color: Color.fromRGBO(0, 0, 0, 0.4),
               alignment: Alignment.center,
               child: Text(
-                'TrainTrack',
+                // App name
+                S.current.traintrack,
                 style: TextStyle(
                   fontSize: 60,
                   fontWeight: FontWeight.bold,
@@ -66,87 +68,98 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
                     Shadow(
                       offset: Offset(2, 2),
                       blurRadius: 3,
-                      color: Color.fromRGBO(0, 0, 0, 0.7),
+                      color: Color.fromRGBO(0, 0, 0, 0.5),
                     ),
                   ],
                 ),
               ),
             ),
           ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              padding: const EdgeInsets.all(40.0),
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(0, 0, 0, 0.8),
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(50),
-                  topRight: Radius.circular(50),
-                ),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TextField(
-                    controller: _emailController,
-                    decoration: InputDecoration(
-                      labelText: S.current.email,
-                    ),
-                  ),
-                  const SizedBox(height: 30),
-                  TextField(
-                    controller: _passwordController,
-                    obscureText: _obscurePassword,
-                    decoration: InputDecoration(
-                      labelText: S.current.password,
-                      prefixIcon: Icon(Icons.lock),
-                      suffixIcon: IconButton(
-                        icon: Icon(_obscurePassword
-                            ? Icons.visibility
-                            : Icons.visibility_off),
-                        onPressed: _togglePasswordVisibility,
+
+          // Form container
+          SafeArea(
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: SingleChildScrollView(
+                  child: 
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 20, horizontal: 40),
+                      decoration: BoxDecoration(
+                        color: Color.fromRGBO(0, 0, 0, 0.8),
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(50),
+                          topRight: Radius.circular(50),
+                        ),
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          TextField(
+                            controller: _emailController,
+                            decoration: InputDecoration(
+                              labelText: S.current.email,
+                            ),
+                          ),
+                          SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.02),
+                          TextField(
+                            controller: _passwordController,
+                            obscureText: _obscurePassword,
+                            decoration: InputDecoration(
+                              labelText: S.current.password,
+                              prefixIcon: Icon(Icons.lock),
+                              suffixIcon: IconButton(
+                                icon: Icon(_obscurePassword
+                                    ? Icons.visibility
+                                    : Icons.visibility_off),
+                                onPressed: _togglePasswordVisibility,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.02),
+                          TextField(
+                            controller: _confirmPasswordController,
+                            obscureText: _obscurePasswordConfirmation,
+                            decoration: InputDecoration(
+                              labelText: S.current.confirm_password,
+                              prefixIcon: Icon(Icons.lock),
+                              suffixIcon: IconButton(
+                                icon: Icon(_obscurePasswordConfirmation
+                                    ? Icons.visibility
+                                    : Icons.visibility_off),
+                                onPressed: _togglePasswordConfirmationVisibility,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.02),
+                          ElevatedButton(
+                            onPressed: () => register(context),
+                            child: Text(S.current.register),
+                          ),
+                          SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.02),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LoginScreen()),
+                              );
+                            },
+                            child: Text(
+                              S.current.already_have_account,
+                              style: const TextStyle(
+                                color: Colors.blue,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
-                  const SizedBox(height: 30),
-                  TextField(
-                    controller: _confirmPasswordController,
-                    obscureText: _obscurePasswordConfirmation,
-                    decoration: InputDecoration(
-                      labelText: S.current.confirm_password,
-                      prefixIcon: Icon(Icons.lock),
-                      suffixIcon: IconButton(
-                        icon: Icon(_obscurePasswordConfirmation
-                            ? Icons.visibility
-                            : Icons.visibility_off),
-                        onPressed: _togglePasswordConfirmationVisibility,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 30),
-                  ElevatedButton(
-                    onPressed: () => register(context),
-                    child: Text(S.current.register),
-                  ),
-                  const SizedBox(height: 20),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => LoginScreen()),
-                      );
-                    },
-                    child: Text(
-                      S.current.already_have_account,
-                      style: const TextStyle(
-                        color: Colors.blue,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
             ),
           ),
         ],
@@ -196,22 +209,26 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
     }
 
     try {
-      final user = await ref.read(authProvider.notifier).signUp(email, password);
+      final user =
+          await ref.read(authProvider.notifier).signUp(email, password);
 
       if (user == null) {
         throw FirebaseAuthException(code: 'user-creation-failed');
       }
 
-      final result = await FirestoreService().createUserInFirestore(email, user.uid);
+      final result =
+          await FirestoreService().createUserInFirestore(email, user.uid);
 
       //check if widget is mounted before displaying snackbar
       if (!context.mounted) return;
-      
+
       // check if creation db is failure
       if (result.isFailure) {
         ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(result.errorMessage ?? S.current.uknown_error), backgroundColor: Colors.red),
-      );
+          SnackBar(
+              content: Text(result.errorMessage ?? S.current.uknown_error),
+              backgroundColor: Colors.red),
+        );
         return;
       }
 
@@ -221,7 +238,6 @@ class RegisterScreenState extends ConsumerState<RegisterScreen> {
         MaterialPageRoute(builder: (context) => HomeScreen()),
         (route) => false,
       );
-      
     } catch (e) {
       String errorMessage = S.current.registration_failed;
       if (e is FirebaseAuthException) {

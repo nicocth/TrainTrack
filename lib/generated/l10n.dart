@@ -55,6 +55,11 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `TrainTrack`
+  String get traintrack {
+    return Intl.message('TrainTrack', name: 'traintrack', desc: '', args: []);
+  }
+
   /// `Login`
   String get login {
     return Intl.message('Login', name: 'login', desc: '', args: []);

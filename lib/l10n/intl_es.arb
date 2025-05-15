@@ -1,4 +1,5 @@
 {
+    "traintrack": "TrainTrack",
     "login": "Iniciar sesión",
     "access_register": "¿Aún no tienes una cuenta?",
     "nickname": "Nombre de usuario",

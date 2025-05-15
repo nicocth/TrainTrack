@@ -310,6 +310,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Registered and updated training",
     ),
     "trainings": MessageLookupByLibrary.simpleMessage("trainings"),
+    "traintrack": MessageLookupByLibrary.simpleMessage("TrainTrack"),
     "triceps": MessageLookupByLibrary.simpleMessage("Triceps"),
     "uknown_error": MessageLookupByLibrary.simpleMessage("Uknown error"),
     "understood": MessageLookupByLibrary.simpleMessage("Understood"),

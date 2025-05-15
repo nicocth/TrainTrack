@@ -43,11 +43,11 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
             left: 0,
             right: 0,
             child: Container(
-              height: 180,
+              height: 160,
               color: Color.fromRGBO(0, 0, 0, 0.4),
               alignment: Alignment.center,
               child: Text(
-                'TrainTrack',
+                S.current.traintrack,
                 style: TextStyle(
                   fontSize: 60,
                   fontWeight: FontWeight.bold,
@@ -56,110 +56,118 @@ class LoginScreenState extends ConsumerState<LoginScreen> {
                     Shadow(
                       offset: Offset(2, 2),
                       blurRadius: 3,
-                      color: Color.fromRGBO(0, 0, 0, 0.7),
+                      color: Color.fromRGBO(0, 0, 0, 0.5),
                     ),
                   ],
                 ),
               ),
             ),
           ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: Container(
-              padding: const EdgeInsets.all(40.0),
-              decoration: BoxDecoration(
-                color: Color.fromRGBO(0, 0, 0, 0.8),
-                borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(50),
-                  topRight: Radius.circular(50),
-                ),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  TextField(
-                    controller: _emailController,
-                    keyboardType: TextInputType.emailAddress,
-                    decoration: InputDecoration(
-                      labelText: S.current.email,
-                      prefixIcon: Icon(Icons.email),
+
+          // Form container
+          SafeArea(
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: SingleChildScrollView(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(vertical:20, horizontal: 40),
+                  decoration: BoxDecoration(
+                    color: Color.fromRGBO(0, 0, 0, 0.8),
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(50),
+                      topRight: Radius.circular(50),
                     ),
                   ),
-                  const SizedBox(height: 20),
-                  TextField(
-                    controller: _passwordController,
-                    obscureText: _obscurePassword,
-                    decoration: InputDecoration(
-                      labelText: S.current.password,
-                      prefixIcon: Icon(Icons.lock),
-                      suffixIcon: IconButton(
-                        icon: Icon(_obscurePassword
-                            ? Icons.visibility
-                            : Icons.visibility_off),
-                        onPressed: _togglePasswordVisibility,
-                      ),
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  ElevatedButton(
-                    onPressed: () => login(context),
-                    child: Text(S.current.login),
-                  ),
-                  const SizedBox(height: 10),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => RegisterScreen()),
-                      );
-                    },
-                    child: Text(
-                      S.current.access_register,
-                      style: const TextStyle(color: Colors.blue),
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                  Row(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Expanded(
-                        child: Divider(
-                          color: Colors.white54,
-                          thickness: 1,
+                      TextField(
+                        controller: _emailController,
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: InputDecoration(
+                          labelText: S.current.email,
+                          prefixIcon: Icon(Icons.email),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.02),
+                      TextField(
+                        controller: _passwordController,
+                        obscureText: _obscurePassword,
+                        decoration: InputDecoration(
+                          labelText: S.current.password,
+                          prefixIcon: Icon(Icons.lock),
+                          suffixIcon: IconButton(
+                            icon: Icon(_obscurePassword
+                                ? Icons.visibility
+                                : Icons.visibility_off),
+                            onPressed: _togglePasswordVisibility,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.02),
+                      ElevatedButton(
+                        onPressed: () => login(context),
+                        child: Text(S.current.login),
+                      ),
+                      const SizedBox(height: 10),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RegisterScreen()),
+                          );
+                        },
                         child: Text(
-                          S.current.or,
-                          style: TextStyle(color: Colors.white),
+                          S.current.access_register,
+                          style: const TextStyle(color: Colors.blue),
                         ),
                       ),
-                      Expanded(
-                        child: Divider(
-                          color: Colors.white54,
-                          thickness: 1,
+                      SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.01),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Divider(
+                              color: Colors.white54,
+                              thickness: 1,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                            child: Text(
+                              S.current.or,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                          Expanded(
+                            child: Divider(
+                              color: Colors.white54,
+                              thickness: 1,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.01),
+                      ElevatedButton.icon(
+                        icon: Image.asset(
+                          'assets/launcher_icon/google_logo.png',
+                          height: 24,
                         ),
+                        label: Text(S.current.login_with_google),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.black,
+                          elevation: 2,
+                        ),
+                        onPressed: () => loginWithGoogle(context),
                       ),
                     ],
                   ),
-                  SizedBox(height: 10),
-                  ElevatedButton.icon(
-                    icon: Image.asset(
-                      'assets/launcher_icon/google_logo.png',
-                      height: 24,
-                    ),
-                    label: Text(S.current.login_with_google),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      foregroundColor: Colors.black,
-                      elevation: 2,
-                    ),
-                    onPressed: () => loginWithGoogle(context),
-                  ),
-                ],
+                ),
               ),
             ),
           ),
