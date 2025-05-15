@@ -1,5 +1,4 @@
-# TrainTrack
-
+![TrainTrack](https://github.com/user-attachments/assets/9e8b7443-5e36-4cb4-813f-940974403a54)
 ## Descripción
 TrainTrack es un asistente de entrenamiento diseñado para personas que buscan una aplicación cómoda y ágil para planificar su propio entrenamiento. La aplicación ofrece una experiencia sin publicidad, con un límite amplio de ejercicios y una interfaz agradable.
 
@@ -11,6 +10,10 @@ Este proyecto será presentado como Trabajo de Fin de Grado (TFG) en Desarrollo 
 - Amplia capacidad para almacenar rutinas personalizadas.
 - Interfaz moderna y amigable para el usuario.
 - Integración con Firebase para autenticación y almacenamiento de datos.
+
+## Estado actual
+Actualmente, está publicada como Prueba cerrada, en el periodo estándar requerido por Google para asegurar la calidad de las aplicaciones, está siendo verificada por más de 25 testers, el feedback está siendo positivo y se están almacenando muchas posibles mejoras,
+al concluir este periodo será publicada en producción.
 
 ## Estructura del proyecto
 El proyecto sigue una arquitectura limpia pero reducida, utilizando **Flutter** para el desarrollo multiplataforma y **Firebase** para la gestión de usuarios y almacenamiento de datos.
