@@ -4,6 +4,7 @@ import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/presentation/providers/trainings_provider.dart';
 import 'package:train_track/presentation/screens/create_training/create_training_screen.dart';
 import 'package:train_track/presentation/screens/settings_screen/settings_screen.dart';
+import 'package:train_track/presentation/screens/settings_screen/training_history_screen.dart';
 import 'package:train_track/presentation/widgets/shared/training_card.dart';
 import 'package:train_track/presentation/widgets/shared/training_session_banner.dart';
 
@@ -31,6 +32,16 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         appBar: AppBar(
           title: Text(S.current.home),
           actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.calendar_today),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const TrainingHistoryScreen()),
+                );
+              },
+            ),
             IconButton(
                 icon: const Icon(Icons.settings),
                 onPressed: () {
