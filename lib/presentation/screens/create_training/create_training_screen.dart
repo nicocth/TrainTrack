@@ -49,39 +49,21 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
                   : S.current.create_routine,
             ),
             actions: <Widget>[
-              PopupMenuButton<String>(
-                icon: const Icon(Icons.more_vert),
-                onSelected: (value) {
-                  switch (value) {
-                    case 'toggle_view':
-                      setState(() {
-                        isCompactMode = !isCompactMode;
-                      });
-                      break;
-                    case 'save':
-                      _saveTraining(context, ref);
-                      break;
-                  }
+              IconButton(
+                icon: Icon(isCompactMode ? Icons.article : Icons.view_list),
+                tooltip: isCompactMode
+                    ? S.current.detailed_mode
+                    : S.current.compact_mode,
+                onPressed: () {
+                  setState(() {
+                    isCompactMode = !isCompactMode;
+                  });
                 },
-                itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                  PopupMenuItem<String>(
-                    value: 'toggle_view',
-                    child: ListTile(
-                      leading:
-                          Icon(isCompactMode ? Icons.article : Icons.view_list),
-                      title: Text(isCompactMode
-                          ? S.current.detailed_mode
-                          : S.current.compact_mode),
-                    ),
-                  ),
-                  PopupMenuItem<String>(
-                    value: 'save',
-                    child: ListTile(
-                      leading: Icon(Icons.save),
-                      title: Text(S.current.save),
-                    ),
-                  ),
-                ],
+              ),
+              IconButton(
+                icon: Icon(Icons.save),
+                tooltip: S.current.save,
+                onPressed: () => _saveTraining(context, ref),
               ),
             ],
           ),
