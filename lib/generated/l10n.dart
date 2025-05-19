@@ -655,10 +655,10 @@ class S {
     );
   }
 
-  /// `Alternative number`
+  /// `Alternative exercise`
   String get hint_alternative_text {
     return Intl.message(
-      'Alternative number',
+      'Alternative exercise',
       name: 'hint_alternative_text',
       desc: '',
       args: [],

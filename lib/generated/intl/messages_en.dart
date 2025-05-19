@@ -161,7 +161,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "finish_exercise": MessageLookupByLibrary.simpleMessage("Finish exercise"),
     "help": MessageLookupByLibrary.simpleMessage("Help"),
     "hint_alternative_text": MessageLookupByLibrary.simpleMessage(
-      "Alternative number",
+      "Alternative exercise",
     ),
     "history": MessageLookupByLibrary.simpleMessage("History"),
     "history_deleted": MessageLookupByLibrary.simpleMessage("History deleted"),

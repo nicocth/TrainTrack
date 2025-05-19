@@ -69,17 +69,9 @@ class ExerciseCard extends ConsumerWidget {
             Row(
               children: [
                 Expanded(
-                  child: TextField(
-                    controller: alternativeController,
-                    keyboardType: TextInputType.number,
-                    enabled: customExercise.isAlternative,
+                  child: Text(
+                    S.current.hint_alternative_text,
                     textAlign: TextAlign.end,
-                    decoration: InputDecoration(
-                      hintText: S.current.hint_alternative_text,
-                      border: InputBorder.none,
-                      enabledBorder: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                    ),
                   ),
                 ),
                 SizedBox(width: 5),
@@ -166,7 +158,7 @@ class ExerciseCard extends ConsumerWidget {
                             hintText: S.current.reps,
                             keyboardType: TextInputType.number,
                             inputFormatters: [IntegerTextInputFormatter()],
-                            textAlign: TextAlign.center,                           
+                            textAlign: TextAlign.center,
                           ),
                         ),
 

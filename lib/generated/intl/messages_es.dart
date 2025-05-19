@@ -179,7 +179,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "help": MessageLookupByLibrary.simpleMessage("Ayuda"),
     "hint_alternative_text": MessageLookupByLibrary.simpleMessage(
-      "Nº alternativa",
+      "Ejercicio alternativo",
     ),
     "history": MessageLookupByLibrary.simpleMessage("Historial"),
     "history_deleted": MessageLookupByLibrary.simpleMessage(
