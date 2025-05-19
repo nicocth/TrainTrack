@@ -23,12 +23,15 @@ class CreateTrainingScreen extends ConsumerStatefulWidget {
 class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
   bool isCompactMode = false;
   final FocusNode _dummyFocusNode = FocusNode();
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void dispose() {
     _dummyFocusNode.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     final newTraining = ref.watch(createTrainingProvider);
@@ -74,6 +77,7 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
             ],
           ),
           body: SingleChildScrollView(
+            controller: _scrollController,
             keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
@@ -132,15 +136,25 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
           ),
           floatingActionButton: FloatingActionButton(
             tooltip: S.current.add_exercise,
-            child: const Icon(Icons.add, color: Colors.white),        
-            onPressed: () {
+            child: const Icon(Icons.add, color: Colors.white),
+            onPressed: () async {
               FocusScope.of(context).requestFocus(_dummyFocusNode);
-              
-              Navigator.push(
+
+              await Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (context) => const AddExerciseScreen()),
               );
+              // After returning, animate scroll at the end
+              WidgetsBinding.instance.addPostFrameCallback((_) {
+                if (_scrollController.hasClients) {
+                  _scrollController.animateTo(
+                    _scrollController.position.maxScrollExtent,
+                    duration: const Duration(milliseconds: 300),
+                    curve: Curves.easeOut,
+                  );
+                }
+              });
             },
           ),
           bottomNavigationBar: const TrainingSessionBanner(),
