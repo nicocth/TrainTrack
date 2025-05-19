@@ -22,7 +22,13 @@ class CreateTrainingScreen extends ConsumerStatefulWidget {
 
 class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
   bool isCompactMode = false;
+  final FocusNode _dummyFocusNode = FocusNode();
 
+  @override
+  void dispose() {
+    _dummyFocusNode.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     final newTraining = ref.watch(createTrainingProvider);
@@ -128,6 +134,8 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
             tooltip: S.current.add_exercise,
             child: const Icon(Icons.add, color: Colors.white),        
             onPressed: () {
+              FocusScope.of(context).requestFocus(_dummyFocusNode);
+              
               Navigator.push(
                 context,
                 MaterialPageRoute(
