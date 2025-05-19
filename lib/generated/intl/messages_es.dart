@@ -245,6 +245,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_local_exercises": MessageLookupByLibrary.simpleMessage(
       "No hay ejercicios locales guardados",
     ),
+    "no_sets_completed_message": MessageLookupByLibrary.simpleMessage(
+      "No has completado ninguna serie. ¿Quieres finalizar el ejercicio igual?",
+    ),
     "notes": MessageLookupByLibrary.simpleMessage("Notas"),
     "number_value_error": MessageLookupByLibrary.simpleMessage(
       "Valor incorrecto, Introduzca un número",

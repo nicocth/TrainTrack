@@ -163,5 +163,6 @@
     "exit_confirmation": "If you exit now, you will lose your changes. Do you wish to continue?",
     "detailed_mode": "Detailed mode",
     "compact_mode": "Compact mode",
-    "save": "Save"
+    "save": "Save",
+    "no_sets_completed_message":"You haven't completed any sets. Do you want to finish the exercise anyway?"
 }

@@ -68,10 +68,45 @@ class TrainingScreen extends ConsumerWidget {
               Center(
                 child: ElevatedButton.icon(
                   label: Text(S.current.finish_exercise),
-                  onPressed: () {
-                    trainingSessionNotifier.markExerciseCompleted(
-                        trainingSession.selectedExerciseIndex!);
-                    Navigator.pop(context);
+                  onPressed: () async {
+                    final exerciseOrder =
+                        trainingSession.selectedExerciseIndex!;
+                    final completedSetsForExercise =
+                        trainingSession.completedSets.length > exerciseOrder
+                            ? trainingSession.completedSets[exerciseOrder]
+                            : <int>{};
+
+                    if (completedSetsForExercise.isEmpty) {
+                      final confirm = await showDialog<bool>(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          title: Text(S.current.warning),
+                          content: Text(S.current.no_sets_completed_message),
+                          actions: [
+                            TextButton(
+                              onPressed: () => Navigator.of(context).pop(true),
+                              child: Text(S.current.finish),
+                            ),
+                            TextButton(
+                              onPressed: () => Navigator.of(context).pop(false),
+                              child: Text(S.current.cancel),
+                            ),
+                          ],
+                        ),
+                      );
+
+                      if (confirm != true) {
+                        // If the user doesn't confirm, we do nothing
+                        return;
+                      }
+                    }
+
+                    // If there are completed sets or the user confirmed, we mark the exercise as completed and exit
+                    trainingSessionNotifier
+                        .markExerciseCompleted(exerciseOrder);
+                    if (context.mounted) {
+                      Navigator.pop(context);
+                    }
                   },
                 ),
               ),

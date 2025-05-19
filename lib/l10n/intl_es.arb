@@ -163,5 +163,6 @@
     "exit_confirmation": "Si sales ahora perderás los cambios. ¿Deseas continuar?",
     "detailed_mode": "Modo detallado",
     "compact_mode": "Modo compacto",
-    "save": "Guardar"
+    "save": "Guardar",
+    "no_sets_completed_message": "No has completado ninguna serie. ¿Quieres finalizar el ejercicio igual?"
 }

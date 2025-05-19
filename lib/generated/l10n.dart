@@ -1449,6 +1449,16 @@ class S {
   String get save {
     return Intl.message('Save', name: 'save', desc: '', args: []);
   }
+
+  /// `You haven't completed any sets. Do you want to finish the exercise anyway?`
+  String get no_sets_completed_message {
+    return Intl.message(
+      'You haven\'t completed any sets. Do you want to finish the exercise anyway?',
+      name: 'no_sets_completed_message',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
