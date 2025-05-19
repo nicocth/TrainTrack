@@ -465,14 +465,9 @@ class S {
     return Intl.message('Create', name: 'create_routine', desc: '', args: []);
   }
 
-  /// `Edit routine`
+  /// `Edit`
   String get edit_routine {
-    return Intl.message(
-      'Edit routine',
-      name: 'edit_routine',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Edit', name: 'edit_routine', desc: '', args: []);
   }
 
   /// `Delete`

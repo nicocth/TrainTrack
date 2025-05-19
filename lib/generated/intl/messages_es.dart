@@ -118,7 +118,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "edit_profile_screen_description": MessageLookupByLibrary.simpleMessage(
       "Permite modificar el nombre del usuario más no su correo.<br><br>Para modificar la contraseña, eliminar el historial de entrenamientos o eliminar la cuenta requerirá la contraseña actual, si no la introduces o no es correcta nos mostrará mensaje de error.<br><br>Para eliminar la cuenta pedirá confirmación y advertirá de la perdida de datos que conlleva.<br><br>Si iniciaste sesión con Google solo podrás eliminar el historial y tus datos relacionados con TrainTrack, esto no eliminará tu cuenta de Google.",
     ),
-    "edit_routine": MessageLookupByLibrary.simpleMessage("Editar rutina"),
+    "edit_routine": MessageLookupByLibrary.simpleMessage("Editar"),
     "email": MessageLookupByLibrary.simpleMessage("Correo electrónico"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "El correo electrónico ya está en uso",

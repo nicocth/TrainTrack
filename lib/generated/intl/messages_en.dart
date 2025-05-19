@@ -108,7 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "edit_profile_screen_description": MessageLookupByLibrary.simpleMessage(
       "It allows you to modify the user name but not their email.<br><br>To modify the password, delete the training history or delete the account, the current password will be required. If you do not enter it or it is not correct, an error message will be shown.<br><br>To delete the account, it will ask for confirmation and warn you of the loss of data that this entails.<br><br>If you logged in with Google, you will only be able to delete the history and your data related to TrainTrack, this will not delete your Google account.",
     ),
-    "edit_routine": MessageLookupByLibrary.simpleMessage("Edit routine"),
+    "edit_routine": MessageLookupByLibrary.simpleMessage("Edit"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "Email already in use",

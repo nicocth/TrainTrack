@@ -7,6 +7,7 @@ import 'package:train_track/domain/models/sets.dart';
 import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/presentation/providers/create_training_provider.dart';
 import 'package:train_track/presentation/widgets/shared/exercise_name.dart';
+import 'package:train_track/presentation/widgets/shared/focus_aware_text_field.dart';
 import 'package:train_track/presentation/widgets/shared/zoomable_image.dart';
 
 class ExerciseCard extends ConsumerWidget {
@@ -148,11 +149,11 @@ class ExerciseCard extends ConsumerWidget {
                         // Field for Kg
                         SizedBox(
                           width: 50,
-                          child: TextField(
+                          child: FocusAwareTextField(
                             controller: weightControllers[index],
+                            hintText: S.current.kg,
                             keyboardType: TextInputType.number,
                             inputFormatters: [DecimalTextInputFormatter()],
-                            decoration: InputDecoration(hintText: S.current.kg),
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -160,13 +161,12 @@ class ExerciseCard extends ConsumerWidget {
                         //Field for Reps
                         SizedBox(
                           width: 50,
-                          child: TextField(
+                          child: FocusAwareTextField(
                             controller: repsControllers[index],
+                            hintText: S.current.reps,
                             keyboardType: TextInputType.number,
                             inputFormatters: [IntegerTextInputFormatter()],
-                            decoration:
-                                InputDecoration(hintText: S.current.reps),
-                            textAlign: TextAlign.center,
+                            textAlign: TextAlign.center,                           
                           ),
                         ),
 
