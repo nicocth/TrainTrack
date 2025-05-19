@@ -120,26 +120,20 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
                       },
                     ),
                   ),
-
-                  const SizedBox(height: 5),
-
-                  // Button to add exercises
-                  Center(
-                    child: ElevatedButton.icon(
-                      icon: const Icon(Icons.add, color: Colors.white),
-                      label: Text(S.current.add_exercise),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const AddExerciseScreen()),
-                        );
-                      },
-                    ),
-                  ),
                 ],
               ),
             ),
+          ),
+          floatingActionButton: FloatingActionButton(
+            tooltip: S.current.add_exercise,
+            child: const Icon(Icons.add, color: Colors.white),        
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const AddExerciseScreen()),
+              );
+            },
           ),
           bottomNavigationBar: const TrainingSessionBanner(),
         ),
