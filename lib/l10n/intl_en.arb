@@ -161,6 +161,8 @@
     "history_screen_description": "Shows our training history from the last year sorted by date. If we click on any training session we can access all its data.",
     "unsaved_changes": "Unsaved changes",
     "exit_confirmation": "If you exit now, you will lose your changes. Do you wish to continue?",
+    "must_save_routine": "The routine will not be saved until you press the save button, but you can navigate the application without losing unsaved changes as long as you do not edit another routine or close the application.",
+    "confirm": "Confirm",
     "detailed_mode": "Detailed mode",
     "compact_mode": "Compact mode",
     "save": "Save",

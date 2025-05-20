@@ -56,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "biceps": MessageLookupByLibrary.simpleMessage("Bíceps"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
     "compact_mode": MessageLookupByLibrary.simpleMessage("Modo compacto"),
+    "confirm": MessageLookupByLibrary.simpleMessage("Confirmar"),
     "confirm_delete": MessageLookupByLibrary.simpleMessage(
       "Confirmación de borrado",
     ),
@@ -231,6 +232,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "months": MessageLookupByLibrary.simpleMessage("meses"),
     "muscle_balance": MessageLookupByLibrary.simpleMessage(
       "Equilibrio muscular",
+    ),
+    "must_save_routine": MessageLookupByLibrary.simpleMessage(
+      "La rutina no se guardará hasta que pulses el botón guardar, pero puedes navegar por la aplicación sin perder los cambios no guardados siempre y cuando no edites otra rutina o cierres la aplicación.",
     ),
     "my_trainings": MessageLookupByLibrary.simpleMessage("Mis entrenamientos"),
     "new_password": MessageLookupByLibrary.simpleMessage("Nueva contraseña"),

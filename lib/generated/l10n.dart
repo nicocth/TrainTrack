@@ -1425,6 +1425,21 @@ class S {
     );
   }
 
+  /// `The routine will not be saved until you press the save button, but you can navigate the application without losing unsaved changes as long as you do not edit another routine or close the application.`
+  String get must_save_routine {
+    return Intl.message(
+      'The routine will not be saved until you press the save button, but you can navigate the application without losing unsaved changes as long as you do not edit another routine or close the application.',
+      name: 'must_save_routine',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirm {
+    return Intl.message('Confirm', name: 'confirm', desc: '', args: []);
+  }
+
   /// `Detailed mode`
   String get detailed_mode {
     return Intl.message(

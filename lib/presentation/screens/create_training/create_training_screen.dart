@@ -38,13 +38,21 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
     final newTrainingNotifier = ref.read(createTrainingProvider.notifier);
 
     return PopScope(
-      canPop: widget.trainingId == null, // If it's not editing, just exit
+      canPop: false, 
       onPopInvokedWithResult: (didPop, result) async {
         if (!didPop && widget.trainingId != null) {
           // If it's editing and user tries to exit
-          final shouldExit = await _showExitConfirmationDialog(context);
+          final shouldExit = await _showExitConfirmationDialogEdit(context);
           if (shouldExit) {
             ref.invalidate(createTrainingProvider);
+            if (context.mounted) Navigator.of(context).pop();
+          }
+        }
+        if (!didPop && widget.trainingId == null) {
+          // If it's creating and user tries to exit
+          // ignore: use_build_context_synchronously
+          final shouldExit = await _showExitConfirmationDialogCreate(context);
+          if (shouldExit) {
             if (context.mounted) Navigator.of(context).pop();
           }
         }
@@ -225,7 +233,7 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
     }
   }
 
-  Future<bool> _showExitConfirmationDialog(BuildContext context) async {
+  Future<bool> _showExitConfirmationDialogEdit(BuildContext context) async {
     return await showDialog<bool>(
           context: context,
           builder: (context) => AlertDialog(
@@ -234,6 +242,27 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
             actions: [
               TextButton(
                 child: Text(S.current.discard),
+                onPressed: () => Navigator.of(context).pop(true),
+              ),
+              TextButton(
+                child: Text(S.current.cancel),
+                onPressed: () => Navigator.of(context).pop(false),
+              ),
+            ],
+          ),
+        ) ??
+        false; // In case the dialog is closed without choosing an option, return false
+  }
+
+    Future<bool> _showExitConfirmationDialogCreate(BuildContext context) async {
+    return await showDialog<bool>(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(S.current.unsaved_changes),
+            content: Text(S.current.must_save_routine),
+            actions: [
+              TextButton(
+                child: Text(S.current.confirm),
                 onPressed: () => Navigator.of(context).pop(true),
               ),
               TextButton(

@@ -50,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "biceps": MessageLookupByLibrary.simpleMessage("Biceps"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "compact_mode": MessageLookupByLibrary.simpleMessage("Compact mode"),
+    "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
     "confirm_delete": MessageLookupByLibrary.simpleMessage(
       "Deletion confirmation",
     ),
@@ -204,6 +205,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "month": MessageLookupByLibrary.simpleMessage("Month"),
     "months": MessageLookupByLibrary.simpleMessage("Months"),
     "muscle_balance": MessageLookupByLibrary.simpleMessage("Muscle balance"),
+    "must_save_routine": MessageLookupByLibrary.simpleMessage(
+      "The routine will not be saved until you press the save button, but you can navigate the application without losing unsaved changes as long as you do not edit another routine or close the application.",
+    ),
     "my_trainings": MessageLookupByLibrary.simpleMessage("My trainings"),
     "new_password": MessageLookupByLibrary.simpleMessage("New password"),
     "nickname": MessageLookupByLibrary.simpleMessage("Nickname"),

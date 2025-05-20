@@ -161,6 +161,8 @@
     "history_screen_description": "Muestra el historial de entrenamientos del último año ordenado por fecha, si se pulsa sobre cualquier entrenamiento podemos acceder a todos sus datos.",
     "unsaved_changes": "Cambios no guardados",
     "exit_confirmation": "Si sales ahora perderás los cambios. ¿Deseas continuar?",
+    "must_save_routine": "La rutina no se guardará hasta que pulses el botón guardar, pero puedes navegar por la aplicación sin perder los cambios no guardados siempre y cuando no edites otra rutina o cierres la aplicación.",
+    "confirm": "Confirmar",
     "detailed_mode": "Modo detallado",
     "compact_mode": "Modo compacto",
     "save": "Guardar",
