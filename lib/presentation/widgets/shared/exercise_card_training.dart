@@ -41,7 +41,7 @@ class ExerciseCardTraining extends ConsumerWidget {
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 8.0),
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.height * 0.02, vertical: MediaQuery.of(context).size.height * 0.015),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -71,7 +71,7 @@ class ExerciseCardTraining extends ConsumerWidget {
                     children: List.generate(
                       headers.length,
                       (index) => SizedBox(
-                        width: index == 0 ? 30 : 50,
+                        width: 50,
                         child: Center(
                           child: Text(
                             headers[index],
@@ -93,7 +93,7 @@ class ExerciseCardTraining extends ConsumerWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           SizedBox(
-                            width: 30,
+                            width: 50,
                             child: Checkbox(
                               value: isChecked,
                               onChanged: (value) {
@@ -130,12 +130,15 @@ class ExerciseCardTraining extends ConsumerWidget {
                               textAlign: TextAlign.center,
                             ),
                           ),
-                          IconButton(
-                            icon: const Icon(Icons.delete, color: Colors.red),
-                            onPressed: () {
-                              trainingSessionNotifier.removeSetFromExercise(
-                                  customExercise.order, index);
-                            },
+                          SizedBox(
+                            width: 50,
+                            child: IconButton(
+                              icon: const Icon(Icons.delete, color: Colors.red),
+                              onPressed: () {
+                                trainingSessionNotifier.removeSetFromExercise(
+                                    customExercise.order, index);
+                              },
+                            ),
                           ),
                         ],
                       ),

@@ -490,9 +490,9 @@ class S {
     return Intl.message('Notes', name: 'notes', desc: '', args: []);
   }
 
-  /// `Series`
+  /// `Set`
   String get series {
-    return Intl.message('Series', name: 'series', desc: '', args: []);
+    return Intl.message('Set', name: 'series', desc: '', args: []);
   }
 
   /// `Kg`

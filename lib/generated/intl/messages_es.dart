@@ -291,7 +291,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "select_muscular_group": MessageLookupByLibrary.simpleMessage(
       "Selecciona un grupo muscular",
     ),
-    "series": MessageLookupByLibrary.simpleMessage("Series"),
+    "series": MessageLookupByLibrary.simpleMessage("Serie"),
     "sets": MessageLookupByLibrary.simpleMessage("series"),
     "shoulders": MessageLookupByLibrary.simpleMessage("Hombros"),
     "show_absolute_values": MessageLookupByLibrary.simpleMessage(

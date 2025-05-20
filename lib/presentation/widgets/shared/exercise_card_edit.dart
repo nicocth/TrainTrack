@@ -43,7 +43,7 @@ class ExerciseCard extends ConsumerWidget {
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 8.0),
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.height * 0.02, vertical: MediaQuery.of(context).size.height * 0.015),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -113,7 +113,7 @@ class ExerciseCard extends ConsumerWidget {
                   children: List.generate(
                     headers.length,
                     (index) => SizedBox(
-                      width: 50,
+                      width: (index == headers.length - 1) ? 40 : 65,
                       child: Center(
                         child: Text(
                           headers[index],
@@ -135,12 +135,12 @@ class ExerciseCard extends ConsumerWidget {
                       children: [
                         //Order
                         SizedBox(
-                            width: 50,
+                            width: 65,
                             child: Center(child: Text("${index + 1}"))),
 
                         // Field for Kg
                         SizedBox(
-                          width: 50,
+                          width: 65,
                           child: FocusAwareTextField(
                             controller: weightControllers[index],
                             hintText: S.current.kg,
@@ -152,7 +152,7 @@ class ExerciseCard extends ConsumerWidget {
 
                         //Field for Reps
                         SizedBox(
-                          width: 50,
+                          width: 65,
                           child: FocusAwareTextField(
                             controller: repsControllers[index],
                             hintText: S.current.reps,
@@ -163,12 +163,15 @@ class ExerciseCard extends ConsumerWidget {
                         ),
 
                         //Button delete
-                        IconButton(
-                          icon: const Icon(Icons.delete, color: Colors.red),
-                          onPressed: () {
-                            createTrainingNotifier.removeSetFromExercise(
-                                exerciseIndex, index);
-                          },
+                        SizedBox(
+                          width: 40,
+                          child: IconButton(
+                            icon: const Icon(Icons.delete, color: Colors.red),
+                            onPressed: () {
+                              createTrainingNotifier.removeSetFromExercise(
+                                  exerciseIndex, index);
+                            },
+                          ),
                         ),
                       ],
                     );
