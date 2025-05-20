@@ -9,6 +9,7 @@ import 'package:train_track/core/utils/validators.dart';
 import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/infraestructure/firestore/services/firestore_services.dart';
 import 'package:train_track/presentation/screens/auth/login_screen.dart';
+import 'package:train_track/presentation/screens/settings_screen/training_history_screen.dart';
 import 'package:train_track/presentation/widgets/shared/training_session_banner.dart';
 
 class EditProfileScreen extends ConsumerStatefulWidget {
@@ -339,6 +340,9 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
       if (result.isSuccess) {
         // Clear the password field
         _currentPasswordController.clear();
+
+              // Invalidate the training history provider to refresh the data
+      ref.invalidate(trainingHistoryProvider);
 
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(

@@ -5,6 +5,7 @@ import 'package:train_track/generated/l10n.dart';
 import 'package:train_track/infraestructure/firestore/services/firestore_services.dart';
 import 'package:train_track/presentation/providers/training_session_provider.dart';
 import 'package:train_track/presentation/screens/home/home_screen.dart';
+import 'package:train_track/presentation/screens/settings_screen/training_history_screen.dart';
 
 class FinishTrainingSessionButton extends ConsumerWidget {
   const FinishTrainingSessionButton({super.key});
@@ -104,10 +105,17 @@ class FinishTrainingSessionButton extends ConsumerWidget {
                 : S.current.training_saved)),
       );
 
-      // Reset the training session and navigate to home
+      // Invalidate the training history provider to refresh the data
+      ref.invalidate(trainingHistoryProvider);
+
+
+      // Reset the training session and navigate to home by clearing the navigation stack.
       ref.read(trainingSessionProvider.notifier).resetSession();
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        (Route<dynamic> route) => false,
+      );
     } on TimeoutException {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(S.current.request_timeout)),
