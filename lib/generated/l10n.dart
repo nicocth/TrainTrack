@@ -955,10 +955,10 @@ class S {
     return Intl.message('Main screen:', name: 'home_title', desc: '', args: []);
   }
 
-  /// `Displays a list of custom workouts; if you don't have any yet, a message will appear inviting you to create your first workout. If the list is displayed correctly, you can edit, delete, or start a workout.<br><br>Gives the option to create a new workout.<br><br>Gives the option to navigate to the Settings screen.`
+  /// `Displays a list of custom workouts; if you don't have any yet, a message will appear inviting you to create your first workout. If the list is displayed correctly, you can edit, delete, or start a workout.<br><br>Gives the option to create a new workout. <br><br>Gives the option to navigate to the history screen.<br><br>Gives the option to navigate to the Settings screen.`
   String get home_description {
     return Intl.message(
-      'Displays a list of custom workouts; if you don\'t have any yet, a message will appear inviting you to create your first workout. If the list is displayed correctly, you can edit, delete, or start a workout.<br><br>Gives the option to create a new workout.<br><br>Gives the option to navigate to the Settings screen.',
+      'Displays a list of custom workouts; if you don\'t have any yet, a message will appear inviting you to create your first workout. If the list is displayed correctly, you can edit, delete, or start a workout.<br><br>Gives the option to create a new workout. <br><br>Gives the option to navigate to the history screen.<br><br>Gives the option to navigate to the Settings screen.',
       name: 'home_description',
       desc: '',
       args: [],
@@ -1005,10 +1005,10 @@ class S {
     );
   }
 
-  /// `Of the selected exercises, the following parameters are defined for each one:<br><br> - Notes<br> - Sets<br> - Repetitions<br> - Weights<br><br>If the alternative option is enabled in two consecutive exercises and the number that appears is equal (if it is not modified it will be 0) it will subsequently appear in the diagrams at the same level.`
+  /// `Of the selected exercises, the following parameters are defined for each one:<br><br> - Notes<br> - Sets<br> - Repetitions<br> - Weights<br><br>If the Alternative Exercise option is enabled in two consecutive exercises, it will appear later in the diagrams at the same level, to indicate that it is an exercise that can be replaced by another.`
   String get create_training_description_2 {
     return Intl.message(
-      'Of the selected exercises, the following parameters are defined for each one:<br><br> - Notes<br> - Sets<br> - Repetitions<br> - Weights<br><br>If the alternative option is enabled in two consecutive exercises and the number that appears is equal (if it is not modified it will be 0) it will subsequently appear in the diagrams at the same level.',
+      'Of the selected exercises, the following parameters are defined for each one:<br><br> - Notes<br> - Sets<br> - Repetitions<br> - Weights<br><br>If the Alternative Exercise option is enabled in two consecutive exercises, it will appear later in the diagrams at the same level, to indicate that it is an exercise that can be replaced by another.',
       name: 'create_training_description_2',
       desc: '',
       args: [],

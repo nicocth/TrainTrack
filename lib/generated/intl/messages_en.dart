@@ -75,7 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "The title of the routine is mandatory, as is having at least one exercise; otherwise, an error will occur when saving.<br><br>When you click the add exercise button, you will go to the add exercises screen.",
     ),
     "create_training_description_2": MessageLookupByLibrary.simpleMessage(
-      "Of the selected exercises, the following parameters are defined for each one:<br><br> - Notes<br> - Sets<br> - Repetitions<br> - Weights<br><br>If the alternative option is enabled in two consecutive exercises and the number that appears is equal (if it is not modified it will be 0) it will subsequently appear in the diagrams at the same level.",
+      "Of the selected exercises, the following parameters are defined for each one:<br><br> - Notes<br> - Sets<br> - Repetitions<br> - Weights<br><br>If the Alternative Exercise option is enabled in two consecutive exercises, it will appear later in the diagrams at the same level, to indicate that it is an exercise that can be replaced by another.",
     ),
     "create_training_description_3": MessageLookupByLibrary.simpleMessage(
       "The user will be able to navigate through the application without losing the created routine without saving as long as they do not edit another workout.<br><br>The process of editing a workout is identical except that you will not be able to exit without saving changes, otherwise you will lose any unsaved changes.<br><br>The compact view mode is available at the top right. This will make it easier to reorder the exercises, since in a created routine each exercise can be quite tall and it can be tedious to drag them one by one to reorder them.",
@@ -174,7 +174,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "home_description": MessageLookupByLibrary.simpleMessage(
-      "Displays a list of custom workouts; if you don\'t have any yet, a message will appear inviting you to create your first workout. If the list is displayed correctly, you can edit, delete, or start a workout.<br><br>Gives the option to create a new workout.<br><br>Gives the option to navigate to the Settings screen.",
+      "Displays a list of custom workouts; if you don\'t have any yet, a message will appear inviting you to create your first workout. If the list is displayed correctly, you can edit, delete, or start a workout.<br><br>Gives the option to create a new workout. <br><br>Gives the option to navigate to the history screen.<br><br>Gives the option to navigate to the Settings screen.",
     ),
     "home_explanation": MessageLookupByLibrary.simpleMessage(
       "Explanation of Home",

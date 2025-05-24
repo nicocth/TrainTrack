@@ -83,7 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "El título de la rutina es obligatorio al igual que tener mínimo un ejercicio de lo contrario dará error al guardar.<br><br>Al darle al botón de añadir ejercicio iremos a la pantalla de agregar ejercicios.",
     ),
     "create_training_description_2": MessageLookupByLibrary.simpleMessage(
-      "De los ejercicios seleccionados se definen los siguientes parámetros para cada uno:<br><br>    - Notas<br>    - Sets<br>    - Repeticiones<br>    - Pesos<br><br>Si se habilita la opción de alternativa en dos ejercicios consecutivos y se iguala el número que aparece (si no se modifica será 0) aparecerá posteriormente en los diagramas al mismo nivel.",
+      "De los ejercicios seleccionados se definen los siguientes parámetros para cada uno:<br><br>    - Notas<br>    - Sets<br>    - Repeticiones<br>    - Pesos<br><br>Si se habilita la opción de Ejercicio alternativo en dos ejercicios consecutivos aparecerá posteriormente en los diagramas al mismo nivel, para marcar que es un ejercicio que puede ser reemplazado por otro.",
     ),
     "create_training_description_3": MessageLookupByLibrary.simpleMessage(
       "El usuario podrá navegar por la aplicación sin perder la rutina creada sin guardar, siempre y cuando no edite otro entrenamiento.<br><br>El proceso de editar entrenamiento es idéntico con la diferencia que no podrás salir sin guardar los cambios, de lo contrario perderás los cambios no guardados.<br><br>Arriba a la derecha está disponible el modo de vista compacta, esto facilitará el reordenar los ejercicios, ya que en una rutina creada cada ejercicio puede tener una altura considerable y resultar tedioso arrastrarlos de uno en uno para reordenar.",
@@ -194,7 +194,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "home_description": MessageLookupByLibrary.simpleMessage(
-      "Muestra una lista de entrenamientos personalizados, si aún no tienes mostrará un mensaje invitándote a crear el primer entrenamiento. En caso de mostrarlos correctamente podrás editarlos, borrarlos o iniciar entrenamiento.<br><br>Da opción de crear nuevo entrenamiento. <br><br>Da opción de navegar a pantalla de configuración.",
+      "Muestra una lista de entrenamientos personalizados, si aún no tienes mostrará un mensaje invitándote a crear el primer entrenamiento. En caso de mostrarlos correctamente podrás editarlos, borrarlos o iniciar entrenamiento.<br><br>Da opción de crear nuevo entrenamiento. <br><br> Da opción de navegar a pantalla de historial. <br><br>Da opción de navegar a pantalla de configuración.",
     ),
     "home_explanation": MessageLookupByLibrary.simpleMessage(
       "Explicación de Home",
