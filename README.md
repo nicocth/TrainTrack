@@ -1,24 +1,72 @@
 ![TrainTrack](https://github.com/user-attachments/assets/9e8b7443-5e36-4cb4-813f-940974403a54)
-## Descripción
-TrainTrack es un asistente de entrenamiento diseñado para personas que buscan una aplicación cómoda y ágil para planificar su propio entrenamiento. La aplicación ofrece una experiencia sin publicidad, con un límite amplio de ejercicios y una interfaz agradable.
+# TrainTrack – Tu asistente de entrenamiento personalizado
+TrainTrack es una aplicación móvil desarrollada con Flutter y Firebase, pensada para ser el compañero ideal de quienes entrenan en el gimnasio. Está diseñada para ayudar a los usuarios a planificar, registrar y analizar su progreso físico de manera sencilla, eficiente y totalmente personalizada.
 
-Este proyecto será presentado como Trabajo de Fin de Grado (TFG) en Desarrollo de Aplicaciones Multiplataforma (DAM), pero el objetivo es continuar su desarrollo y mejora a largo plazo.
+## Objetivo del proyecto
+El propósito de TrainTrack es facilitar la creación y seguimiento de rutinas de entrenamiento, centralizar los datos del progreso del usuario (como marcas personales y sesiones pasadas), y ofrecer estadísticas visuales claras para motivar y orientar el rendimiento a lo largo del tiempo, todo ello sin publicidad y con un límite muy amplio para almacenar rutinas personalizadas.
 
-## Características principales
-- Planificación de entrenamientos de manera sencilla y eficiente.
-- Sin anuncios ni interrupciones.
-- Amplia capacidad para almacenar rutinas personalizadas.
-- Interfaz moderna y amigable para el usuario.
-- Rutinas e historial almacenados en la nube.
-- Estadísticas gráficas.
-- Añade tus propios ejercicios con nombre e imagen personalizada.
-- Integración con Firebase para autenticación y almacenamiento de datos.
+Este proyecto ha sido desarrollado como proyecto de fin de ciclo del grado superior en Desarrollo de Aplicaciones Multiplataforma (DAM), aplicando una arquitectura limpia y buenas prácticas modernas en desarrollo móvil.
 
 ## Estado actual
 ¡Ya la puedes encontrar en Play Store!, Actualmente está publicada en Producción, ya se han implementado múltiples mejoras sugeridas por los usuarios que ejercieron de beta testers y hay una lista de nuevas características que se seguirán añadiendo con el paso del tiempo.
 
+---
+
+## Tecnologías utilizadas
+
+- **Flutter** + **Dart** – Desarrollo móvil multiplataforma.
+- **Firebase**:
+  - Authentication
+  - Cloud Firestore
+  - Firebase Crashlytics
+- **Riverpod** – Gestión de estado moderna y escalable.
+- **Local Storage** – Para ejercicios personalizados.
+
 ## Estructura del proyecto
-El proyecto sigue una arquitectura limpia pero reducida, utilizando **Flutter** para el desarrollo multiplataforma y **Firebase** para la gestión de usuarios y almacenamiento de datos.
+
+Al registrarse, cada usuario tiene un documento dentro de la colección `usuarios` en Firestore. Este documento contiene subcolecciones organizadas así:
+
+- `rutinas`: Rutinas de entrenamiento creadas o asignadas.
+- `historial`: Registro de entrenamientos realizados.
+
+Los **ejercicios personalizados** se almacenan localmente.
+
+## Funcionalidades principales
+
+### Registro y autenticación
+- Registro e inicio de sesión con correo y contraseña.
+- Creación automática del documento base en Firestore al registrarse.
+
+### Gestión de rutinas y ejercicios
+- Crear rutinas personalizadas por días.
+- Consultar, editar y registrar entrenamientos.
+- Registro de series, repeticiones y pesos.
+
+### Ejercicios personalizados
+- Añadir ejercicios no incluidos por defecto.
+- Selección de imagen desde galería.
+- Guardado en almacenamiento local.
+
+### Estadísticas visuales
+- Gráfica heptagonal con número de entrenamientos por grupo muscular.
+- Filtro por mes para observar progresos.
+
+## Interfaz de usuario
+
+- UI moderna, minimalista e intuitiva.
+- Arquitectura desacoplada usando **Riverpod**.
+- Navegación dividida en secciones: Rutinas, Historial, Estadísticas y Perfil.
+
+## Arquitectura y buenas prácticas
+
+- Arquitectura limpia con separación por capas:
+  - Presentación
+  - Lógica de negocio
+  - Acceso a datos
+- Código modular, escalable y testeable.
+- Uso de `hooks` y proveedores para el estado.
+
+---
 
 ## Configuración del proyecto
 Al clonar este repositorio, hay dos archivos que **no están incluidos** por motivos de seguridad, ya que contienen claves API sensibles:
