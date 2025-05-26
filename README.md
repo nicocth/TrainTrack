@@ -9,11 +9,13 @@ Este proyecto será presentado como Trabajo de Fin de Grado (TFG) en Desarrollo 
 - Sin anuncios ni interrupciones.
 - Amplia capacidad para almacenar rutinas personalizadas.
 - Interfaz moderna y amigable para el usuario.
+- Rutinas e historial almacenados en la nube.
+- Estadísticas gráficas.
+- Añade tus propios ejercicios con nombre e imagen personalizada.
 - Integración con Firebase para autenticación y almacenamiento de datos.
 
 ## Estado actual
-Actualmente, está publicada como Prueba cerrada, en el periodo estándar requerido por Google para asegurar la calidad de las aplicaciones, está siendo verificada por más de 25 testers, el feedback está siendo positivo y se están almacenando muchas posibles mejoras,
-al concluir este periodo será publicada en producción.
+¡Ya la puedes encontrar en Play Store!, Actualmente está publicada en Producción, ya se han implementado múltiples mejoras sugeridas por los usuarios que ejercieron de beta testers y hay una lista de nuevas características que se seguirán añadiendo con el paso del tiempo.
 
 ## Estructura del proyecto
 El proyecto sigue una arquitectura limpia pero reducida, utilizando **Flutter** para el desarrollo multiplataforma y **Firebase** para la gestión de usuarios y almacenamiento de datos.
