@@ -1474,6 +1474,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Complete all sets`
+  String get complete_all_sets {
+    return Intl.message(
+      'Complete all sets',
+      name: 'complete_all_sets',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -41,7 +41,9 @@ class ExerciseCardTraining extends ConsumerWidget {
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 8.0),
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.height * 0.02, vertical: MediaQuery.of(context).size.height * 0.015),
+        padding: EdgeInsets.symmetric(
+            horizontal: MediaQuery.of(context).size.height * 0.02,
+            vertical: MediaQuery.of(context).size.height * 0.015),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -153,6 +155,14 @@ class ExerciseCardTraining extends ConsumerWidget {
               },
               icon: const Icon(Icons.add),
               label: Text(S.current.add_series),
+            ),
+            TextButton.icon(
+              onPressed: () {
+                trainingSessionNotifier
+                    .markAllSetsOfExerciseAsCompleted(customExercise.order);
+              },
+              icon: const Icon(Icons.check_circle_outline),
+              label: Text(S.current.complete_all_sets),
             ),
           ],
         ),

@@ -82,7 +82,7 @@ class TrainingSessionNotifier extends StateNotifier<TrainingSessionState> {
   void startSession(Training training) {
     // Reset the session before starting a new one
     resetSession();
-    
+
     // Sort the exercises by the 'order' property before starting the session
     final sortedExercises = List<CustomExercise>.from(training.exercises)
       ..sort((a, b) => a.order.compareTo(b.order));
@@ -162,6 +162,26 @@ class TrainingSessionNotifier extends StateNotifier<TrainingSessionState> {
     final updatedCompletedSets = List<Set<int>>.from(state.completedSets);
     updatedCompletedSets[exerciseOrder] =
         Set<int>.from(updatedCompletedSets[exerciseOrder])..remove(setIndex);
+
+    state = state.copyWith(completedSets: updatedCompletedSets);
+  }
+
+  void markAllSetsOfExerciseAsCompleted(int exerciseOrder) {
+    final training = state.training;
+    if (training == null) return;
+
+    // Get the actual index of the exercise within the training list
+    final exerciseIndex =
+        training.exercises.indexWhere((e) => e.order == exerciseOrder);
+    if (exerciseIndex == -1) return;
+
+    // Create a set with all the indices of the sets of that exercise
+    final exercise = training.exercises[exerciseIndex];
+    final allSetIndexes = {for (var i = 0; i < exercise.sets.length; i++) i};
+
+    // update complete sets
+    final updatedCompletedSets = List<Set<int>>.from(state.completedSets);
+    updatedCompletedSets[exerciseOrder] = allSetIndexes;
 
     state = state.copyWith(completedSets: updatedCompletedSets);
   }

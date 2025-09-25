@@ -166,5 +166,6 @@
     "detailed_mode": "Detailed mode",
     "compact_mode": "Compact mode",
     "save": "Save",
-    "no_sets_completed_message":"You haven't completed any sets. Do you want to finish the exercise anyway?"
+    "no_sets_completed_message":"You haven't completed any sets. Do you want to finish the exercise anyway?",
+    "complete_all_sets": "Complete all sets"
 }

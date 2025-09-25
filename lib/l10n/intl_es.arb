@@ -166,5 +166,6 @@
     "detailed_mode": "Modo detallado",
     "compact_mode": "Modo compacto",
     "save": "Guardar",
-    "no_sets_completed_message": "No has completado ninguna serie. ¿Quieres finalizar el ejercicio igual?"
+    "no_sets_completed_message": "No has completado ninguna serie. ¿Quieres finalizar el ejercicio igual?",
+    "complete_all_sets": "Completar todas las series"
 }

@@ -1365,6 +1365,13 @@
     "image": "assets/images/rueda_abdominal_sentado.jpg"
   },
   {
+    "id": "pullover_abdominal_mancuerna",
+    "name": "Pullover con mancuerna para abdomen",
+    "description": "Posición inicial: <br><br> Tumbado sobre los omóplatos descansando sobre un banco plano, el cuerpo extendido hacia fuera perpendicularmente al banco y los pies planos sobre el suelo y las rodillas flexionadas. Mantener una mancuerna con ambas manos. <br><br> Juntar las caderas al nivel del banco y comenzar sujetando la mancuerna hacia arriba sobre el pecho con los brazos extendidos. <br><br> Ejecución: <br><br> Con los codos ligeramente flexionados, bajar las mancuernas hacia atrás y por debajo de la cabeza hasta que sienta un estiramiento en los pectorales y parte superior del brazo. <br><br> Nos centraremos en contraer el abdominal sin llevar la mancuerna a la posición inicial. <br><br> Mantener la contracción durante un segundo y luego regresar lentamente a la posición de extensión.",
+    "muscular_group": "abdomen",
+    "image": "assets/images/pullover_mancuerna.jpg"
+  },
+  {
     "id": "encogimientos_maquina",
     "name": "Encogimientos en máquina",
     "description": "Ajustad la máquina según vuestro tipo de cuerpo. Haced una prueba sin peso para aseguraros que se adapta a vuestra estructura. <br><br> Sentaos bien encajados en la máquina, con los glúteos y espalda apretados firmemente contra el acolchado. <br><br> Colocad los pies segura y equilibradamente bajo los rodillos acolchados. <br><br> Agarrad las asas de la máquina para estabilizar la parte superior del cuerpo. <br><br> Mirad recto al frente y no apretéis la barbilla contra el pecho. <br><br> Sin trompicones, contraed los abdominales para tirar del torso hacia abajo tanto como podáis. <br><br> Permitid que la espalda baja se redondee mientras encogéis los abdominales. <br><br> Mantened la posición de contracción durante un segundo mientras exhaláis, asegurándoos de no apretar la barbilla contra el pecho.",

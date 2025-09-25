@@ -56,6 +56,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "biceps": MessageLookupByLibrary.simpleMessage("Bíceps"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancelar"),
     "compact_mode": MessageLookupByLibrary.simpleMessage("Modo compacto"),
+    "complete_all_sets": MessageLookupByLibrary.simpleMessage(
+      "Completar todas las series",
+    ),
     "confirm": MessageLookupByLibrary.simpleMessage("Confirmar"),
     "confirm_delete": MessageLookupByLibrary.simpleMessage(
       "Confirmación de borrado",
