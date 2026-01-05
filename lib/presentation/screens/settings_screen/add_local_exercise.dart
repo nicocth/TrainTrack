@@ -87,7 +87,7 @@ class _AddLocalExerciseState extends State<AddLocalExercise> {
                 ),
                 const SizedBox(height: 10),
                 DropdownButtonFormField<MuscularGroup>(
-                  value: _selectedGroup,
+                  initialValue: _selectedGroup,
                   onChanged: (MuscularGroup? group) {
                     setState(() {
                       _selectedGroup = group;
