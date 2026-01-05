@@ -2,49 +2,47 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-final authProvider = StateNotifierProvider<AuthNotifier, User?>((ref) {
+final authProvider =
+    StateNotifierProvider<AuthNotifier, AuthState>((ref) {
   return AuthNotifier();
 });
 
-class AuthNotifier extends StateNotifier<User?> {
-  AuthNotifier() : super(null) {
+
+class AuthNotifier extends StateNotifier<AuthState> {
+  AuthNotifier() : super(AuthState.loading()) {
     _init();
   }
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-Future<void> _init() async {
-  _auth.authStateChanges().listen((User? user) async {
-    if (user != null) {
-      try {
-        await user.reload(); // Ensures that the user's status is valid
-        state = _auth.currentUser;
-      } catch (e) {
-        await signOut(); // If there is an error, we close the session
-        state = null;
+  void _init() {
+    _auth.authStateChanges().listen((User? user) async {
+      if (user != null) {
+        try {
+          await user.reload();
+          state = AuthState.authenticated(_auth.currentUser!);
+        } catch (_) {
+          await signOut();
+          state = AuthState.unauthenticated();
+        }
+      } else {
+        state = AuthState.unauthenticated();
       }
-    } else {
-      state = null;
-    }
-  });
-}
-
-
+    });
+  }
 
   Future<void> signIn(String email, String password) async {
-    try {
-      await _auth.signInWithEmailAndPassword(email: email, password: password);
-    } catch (e) {
-      rethrow;
-    }
+    await _auth.signInWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
   }
 
   Future<User?> signInWithGoogle() async {
-    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    final googleUser = await GoogleSignIn().signIn();
     if (googleUser == null) return null;
 
-    final GoogleSignInAuthentication googleAuth =
-        await googleUser.authentication;
+    final googleAuth = await googleUser.authentication;
 
     final credential = GoogleAuthProvider.credential(
       accessToken: googleAuth.accessToken,
@@ -52,33 +50,43 @@ Future<void> _init() async {
     );
 
     final userCredential =
-        await FirebaseAuth.instance.signInWithCredential(credential);
+        await _auth.signInWithCredential(credential);
+
     return userCredential.user;
   }
 
   Future<User?> signUp(String email, String password) async {
-    try {
-      UserCredential userCredential =
-          await _auth.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
-      return userCredential.user; // Returns the registered user
-    } catch (e) {
-      rethrow;
-    }
+    final userCredential =
+        await _auth.createUserWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+    return userCredential.user;
   }
 
   Future<void> signOut() async {
-    try {
-      await _auth.signOut();
-    } catch (e) {
-      rethrow;
-    }
+    await _auth.signOut();
   }
 
-  // method to obtain the UID of the authenticated user
-  String? getUserId() {
-    return _auth.currentUser?.uid;
-  }
+  String? getUserId() => _auth.currentUser?.uid;
+}
+
+
+class AuthState {
+  final User? user;
+  final bool isLoading;
+
+  const AuthState({
+    required this.user,
+    required this.isLoading,
+  });
+
+  factory AuthState.loading() =>
+      const AuthState(user: null, isLoading: true);
+
+  factory AuthState.authenticated(User user) =>
+      AuthState(user: user, isLoading: false);
+
+  factory AuthState.unauthenticated() =>
+      const AuthState(user: null, isLoading: false);
 }

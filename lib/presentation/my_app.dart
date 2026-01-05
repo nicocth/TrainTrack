@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:train_track/config/theme/app_theme.dart';
 import 'package:train_track/generated/l10n.dart';
+import 'package:train_track/presentation/screens/auth/splash_screen.dart';
 import 'package:train_track/presentation/screens/home/home_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:train_track/presentation/screens/auth/login_screen.dart';
@@ -22,6 +23,7 @@ class MyApp extends ConsumerWidget {
         FocusManager.instance.primaryFocus?.unfocus();
       },
       child: MaterialApp(
+        key: ValueKey(authState.user?.uid),
         title: 'Train Track',
         debugShowCheckedModeBanner: false,
         theme: AppTheme().getTheme(),
@@ -36,7 +38,11 @@ class MyApp extends ConsumerWidget {
           Locale('en'), // English
         ],
         // Check if the user is authenticated to show the correct screen
-        home: authState == null ? const LoginScreen() :  const HomeScreen(),
+        home: authState.isLoading
+            ? const SplashScreen()
+            : authState.user == null
+                ? const LoginScreen()
+                : const HomeScreen(),
       ),
     );
   }
