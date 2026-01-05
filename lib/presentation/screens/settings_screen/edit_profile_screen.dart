@@ -46,10 +46,10 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(title: Text(S.current.edit_profile)),
-        body: SingleChildScrollView(
+    return Scaffold(
+      appBar: AppBar(title: Text(S.current.edit_profile)),
+      body: SafeArea(
+        child: SingleChildScrollView(
           keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           child: Padding(
             padding: const EdgeInsets.all(40.0),
@@ -73,7 +73,7 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
                     enabled: false,
                   ),
                 ],
-
+            
                 if (!_isGoogleUser) ...[
                   SizedBox(height: 20),
                   SizedBox(
@@ -130,8 +130,8 @@ class EditProfileScreenState extends ConsumerState<EditProfileScreen> {
             ),
           ),
         ),
-        bottomNavigationBar: const TrainingSessionBanner(),
       ),
+      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 

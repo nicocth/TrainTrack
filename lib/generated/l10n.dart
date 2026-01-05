@@ -1484,6 +1484,16 @@ class S {
       args: [],
     );
   }
+
+  /// `No training data available.`
+  String get no_training_data {
+    return Intl.message(
+      'No training data available.',
+      name: 'no_training_data',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -27,34 +27,34 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   Widget build(BuildContext context) {
     final trainingsState = ref.watch(trainingsProvider);
 
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(S.current.home),
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.calendar_today),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(S.current.home),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.calendar_today),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const TrainingHistoryScreen()),
+              );
+            },
+          ),
+          IconButton(
+              icon: const Icon(Icons.settings),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const TrainingHistoryScreen()),
+                    builder: (context) => const SettingsScreen(),
+                  ),
                 );
-              },
-            ),
-            IconButton(
-                icon: const Icon(Icons.settings),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SettingsScreen(),
-                    ),
-                  );
-                })
-          ],
-        ),
-        body: Column(
+              })
+        ],
+      ),
+      body: SafeArea(
+        child: Column(
           children: [
             // Add training button
             ListTile(
@@ -67,14 +67,14 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                     builder: (context) => const CreateTrainingScreen(),
                   ),
                 );
-
+            
                 // Only refresh if the new training is saved
                 if (result == true) {
                   ref.read(trainingsProvider.notifier).loadTrainings(ref);
                 }
               },
             ),
-
+            
             // List title
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -86,7 +86,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                 ),
               ),
             ),
-
+            
             // Trainings list
             Expanded(
               child: trainingsState.isLoading
@@ -101,7 +101,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
                               itemBuilder: (context, index) {
                                 final training =
                                     trainingsState.trainings[index];
-
+            
                                 return Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 6.0),

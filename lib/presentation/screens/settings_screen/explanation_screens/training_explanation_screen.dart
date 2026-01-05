@@ -8,10 +8,10 @@ class TrainingExplanationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(title: Text(S.current.usage_guide)),
-        body: SingleChildScrollView(
+    return Scaffold(
+      appBar: AppBar(title: Text(S.current.usage_guide)),
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(25.0),
             child: Column(
@@ -31,9 +31,9 @@ class TrainingExplanationScreen extends StatelessWidget {
                 const SizedBox(height: 10),
                 
                 Html(data: S.current.summary_description),
-
+            
                 const SizedBox(height: 10),
-
+            
                 // Explanation of exercise selection screen
                 Text(
                   S.current.exercise_selection_title,
@@ -47,9 +47,9 @@ class TrainingExplanationScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 Html(data: S.current.exercise_selection_description),
-
+            
                 const SizedBox(height: 10),
-
+            
                 // Explanation of training screen
                 Text(
                   S.current.training_screen_title,
@@ -67,8 +67,8 @@ class TrainingExplanationScreen extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: const TrainingSessionBanner(),
       ),
+      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 }

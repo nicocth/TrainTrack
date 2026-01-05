@@ -8,10 +8,10 @@ class HomeExplanationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(title: Text(S.current.usage_guide)),
-        body: SingleChildScrollView(
+    return Scaffold(
+      appBar: AppBar(title: Text(S.current.usage_guide)),
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(25.0),
             child: Column(
@@ -29,8 +29,8 @@ class HomeExplanationScreen extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: const TrainingSessionBanner(),
       ),
+      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 }

@@ -27,30 +27,37 @@ class _LocalExercisesManagementState extends State<LocalExercisesManagement> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(S.current.local_exercises_management_title,
-              style: TextStyle(fontSize: 25)),
-          actions: [
-            IconButton(
-              icon: const Icon(Icons.add),
-              onPressed: () async {
-                final result = await Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const AddLocalExercise()),
-                );
-
-                if (result == true) {
-                  _loadExercises();
-                }
-              },
-            ),
-          ],
-        ),
-        body: _exercises.isEmpty
-            ? Center(child: Text(S.current.no_local_exercises))
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(S.current.local_exercises_management_title,
+            style: TextStyle(fontSize: 25)),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.add),
+            onPressed: () async {
+              final result = await Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const AddLocalExercise()),
+              );
+    
+              if (result == true) {
+                _loadExercises();
+              }
+            },
+          ),
+        ],
+      ),
+      body: SafeArea(
+        child: _exercises.isEmpty
+            ? SingleChildScrollView(
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height * 0.8,
+                child: Center(
+                  child: Text(S.current.no_local_exercises)
+                )
+              )
+            )
             : ListView.builder(
                 itemCount: _exercises.length,
                 itemBuilder: (context, index) {
@@ -87,8 +94,8 @@ class _LocalExercisesManagementState extends State<LocalExercisesManagement> {
                   );
                 },
               ),
-        bottomNavigationBar: const TrainingSessionBanner(),
       ),
+      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 

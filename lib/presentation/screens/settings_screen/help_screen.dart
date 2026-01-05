@@ -13,12 +13,12 @@ class HelpScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(S.current.usage_guide),
-        ),
-        body: SingleChildScrollView(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(S.current.usage_guide),
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
           keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           child: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -97,8 +97,8 @@ class HelpScreen extends ConsumerWidget {
             ),
           ),
         ),
-        bottomNavigationBar: const TrainingSessionBanner(),
       ),
+      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 }

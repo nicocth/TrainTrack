@@ -10,6 +10,7 @@ class AppTheme {
           backgroundColor: Colors.black,
           foregroundColor: Colors.orange[800],
           surfaceTintColor: Colors.transparent,
+          elevation: 0,
           titleTextStyle: TextStyle(
             color: Colors.orange[800],
             fontSize: 35,

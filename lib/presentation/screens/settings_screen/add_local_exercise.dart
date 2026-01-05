@@ -34,10 +34,10 @@ class _AddLocalExerciseState extends State<AddLocalExercise> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(title: Text(S.current.add_exercise)),
-        body: Padding(
+    return Scaffold(
+      appBar: AppBar(title: Text(S.current.add_exercise)),
+      body: SafeArea(
+        child: Padding(
           padding: const EdgeInsets.all(32.0),
           child: Form(
             key: _formKey,
@@ -70,7 +70,7 @@ class _AddLocalExerciseState extends State<AddLocalExercise> {
                     ],
                   ),
                 ),
-
+            
                 TextFormField(
                   controller: _nameController,
                   decoration:
@@ -129,8 +129,8 @@ class _AddLocalExerciseState extends State<AddLocalExercise> {
             ),
           ),
         ),
-        bottomNavigationBar: const TrainingSessionBanner(),
       ),
+      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 

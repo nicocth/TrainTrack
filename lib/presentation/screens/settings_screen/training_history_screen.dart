@@ -28,12 +28,12 @@ class TrainingHistoryScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final trainingHistoryAsync = ref.watch(trainingHistoryProvider);
 
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(S.current.history),
-        ),
-        body: trainingHistoryAsync.when(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(S.current.history),
+      ),
+      body: SafeArea(
+        child: trainingHistoryAsync.when(
           data: (historyList) {
             if (historyList.isEmpty) {
               return Center(child: Text(S.current.empty_history));
@@ -59,7 +59,7 @@ class TrainingHistoryScreen extends ConsumerWidget {
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (error, _) {
             String message = S.current.request_timeout;
-
+            
             return Padding(
               padding: const EdgeInsets.all(32.0),
               child: Center(
@@ -70,8 +70,8 @@ class TrainingHistoryScreen extends ConsumerWidget {
             );
           },
         ),
-        bottomNavigationBar: const TrainingSessionBanner(),
       ),
+      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 

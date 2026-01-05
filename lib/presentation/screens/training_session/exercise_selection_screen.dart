@@ -28,19 +28,21 @@ class ExerciseSelectionScreen extends ConsumerWidget {
               child: FinishTrainingSessionButton()),
         ],
       ),
-      body: Column(
-        children: [
-          // Instructions
-          Container(
-            alignment: Alignment.centerLeft,
-            padding: const EdgeInsets.all(15),
-            child: Text(S.current.select_exercise,
-                style: Theme.of(context).textTheme.bodyLarge),
-          ),
-
-          // Exercise list
-          TrainingDiagram(training: training, selectableExerciseBox: true)
-        ],
+      body: SafeArea(
+        child: Column(
+          children: [
+            // Instructions
+            Container(
+              alignment: Alignment.centerLeft,
+              padding: const EdgeInsets.all(15),
+              child: Text(S.current.select_exercise,
+                  style: Theme.of(context).textTheme.bodyLarge),
+            ),
+        
+            // Exercise list
+            TrainingDiagram(training: training, selectableExerciseBox: true)
+          ],
+        ),
       ),
     );
   }

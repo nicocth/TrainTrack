@@ -57,34 +57,34 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
           }
         }
       },
-      child: SafeArea(
-        child: Scaffold(
-          appBar: AppBar(
-            title: Text(
-              widget.trainingId != null
-                  ? S.current.edit_routine
-                  : S.current.create_routine,
-            ),
-            actions: <Widget>[
-              IconButton(
-                icon: Icon(isCompactMode ? Icons.article : Icons.view_list),
-                tooltip: isCompactMode
-                    ? S.current.detailed_mode
-                    : S.current.compact_mode,
-                onPressed: () {
-                  setState(() {
-                    isCompactMode = !isCompactMode;
-                  });
-                },
-              ),
-              IconButton(
-                icon: Icon(Icons.save),
-                tooltip: S.current.save,
-                onPressed: () => _saveTraining(context, ref),
-              ),
-            ],
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            widget.trainingId != null
+                ? S.current.edit_routine
+                : S.current.create_routine,
           ),
-          body: SingleChildScrollView(
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(isCompactMode ? Icons.article : Icons.view_list),
+              tooltip: isCompactMode
+                  ? S.current.detailed_mode
+                  : S.current.compact_mode,
+              onPressed: () {
+                setState(() {
+                  isCompactMode = !isCompactMode;
+                });
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.save),
+              tooltip: S.current.save,
+              onPressed: () => _saveTraining(context, ref),
+            ),
+          ],
+        ),
+        body: SafeArea(
+          child: SingleChildScrollView(
             controller: _scrollController,
             keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
             child: Padding(
@@ -98,9 +98,9 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
                     decoration:
                         InputDecoration(labelText: S.current.routine_title),
                   ),
-
+                
                   const SizedBox(height: 20), // Spacer
-
+                
                   // ExerciseCard list
                   ReorderableListView(
                     shrinkWrap: true,
@@ -142,31 +142,31 @@ class _CreateTrainingScreenState extends ConsumerState<CreateTrainingScreen> {
               ),
             ),
           ),
-          floatingActionButton: FloatingActionButton(
-            tooltip: S.current.add_exercise,
-            child: const Icon(Icons.add, color: Colors.white),
-            onPressed: () async {
-              FocusScope.of(context).requestFocus(_dummyFocusNode);
-
-              await Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const AddExerciseScreen()),
-              );
-              // After returning, animate scroll at the end
-              WidgetsBinding.instance.addPostFrameCallback((_) {
-                if (_scrollController.hasClients) {
-                  _scrollController.animateTo(
-                    _scrollController.position.maxScrollExtent,
-                    duration: const Duration(milliseconds: 300),
-                    curve: Curves.easeOut,
-                  );
-                }
-              });
-            },
-          ),
-          bottomNavigationBar: const TrainingSessionBanner(),
         ),
+        floatingActionButton: FloatingActionButton(
+          tooltip: S.current.add_exercise,
+          child: const Icon(Icons.add, color: Colors.white),
+          onPressed: () async {
+            FocusScope.of(context).requestFocus(_dummyFocusNode);
+      
+            await Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const AddExerciseScreen()),
+            );
+            // After returning, animate scroll at the end
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              if (_scrollController.hasClients) {
+                _scrollController.animateTo(
+                  _scrollController.position.maxScrollExtent,
+                  duration: const Duration(milliseconds: 300),
+                  curve: Curves.easeOut,
+                );
+              }
+            });
+          },
+        ),
+        bottomNavigationBar: const TrainingSessionBanner(),
       ),
     );
   }

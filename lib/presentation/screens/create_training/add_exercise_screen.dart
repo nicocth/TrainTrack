@@ -44,10 +44,10 @@ class AddExerciseScreenState extends ConsumerState<AddExerciseScreen> {
   Widget build(BuildContext context) {
     final trainingNotifier = ref.read(createTrainingProvider.notifier);
 
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(title: Text(S.current.add_exercise)),
-        body: Column(
+    return Scaffold(
+      appBar: AppBar(title: Text(S.current.add_exercise)),
+      body: SafeArea(
+        child: Column(
           children: [
             // Search Bar
             Padding(
@@ -66,7 +66,7 @@ class AddExerciseScreenState extends ConsumerState<AddExerciseScreen> {
                 },
               ),
             ),
-
+            
             // Filter Dropdown
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -93,7 +93,7 @@ class AddExerciseScreenState extends ConsumerState<AddExerciseScreen> {
                 ],
               ),
             ),
-
+            
             // Exercise List
             Expanded(
               child: ListView.builder(
@@ -122,7 +122,7 @@ class AddExerciseScreenState extends ConsumerState<AddExerciseScreen> {
                 },
               ),
             ),
-
+            
             // Add Selected Button
             Padding(
               padding: const EdgeInsets.all(5),

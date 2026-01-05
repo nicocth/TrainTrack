@@ -15,24 +15,24 @@ class TrainingSummaryScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(S.current.summary),
-          actions: <Widget>[
-            IconButton(
-                icon: const Icon(Icons.settings),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SettingsScreen(),
-                    ),
-                  );
-                })
-          ],
-        ),
-        body: Column(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(S.current.summary),
+        actions: <Widget>[
+          IconButton(
+              icon: const Icon(Icons.settings),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SettingsScreen(),
+                  ),
+                );
+              })
+        ],
+      ),
+      body: SafeArea(
+        child: Column(
           children: [
             // Training name
             Padding(
@@ -48,7 +48,7 @@ class TrainingSummaryScreen extends ConsumerWidget {
                 ],
               ),
             ),
-
+            
             // Exercise list title
             Container(
               alignment: Alignment.centerLeft,
@@ -58,10 +58,10 @@ class TrainingSummaryScreen extends ConsumerWidget {
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
             ),
-
+            
             // Exercise list
             TrainingDiagram(training: training, exerciseBox: true),
-
+            
             // Button to start training session
             Padding(
               padding:

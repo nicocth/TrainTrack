@@ -30,12 +30,12 @@ class SettingsScreen extends ConsumerWidget {
         );
       }
     });
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(S.current.app_bar_settings),
-        ),
-        body: SingleChildScrollView(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(S.current.app_bar_settings),
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
           keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
           child: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -110,7 +110,7 @@ class SettingsScreen extends ConsumerWidget {
                     );
                   },
                 ),
-
+            
                 SizedBox(height: 10),
                 Text(S.current.help,
                     style: Theme.of(context).textTheme.bodyLarge),
@@ -144,8 +144,8 @@ class SettingsScreen extends ConsumerWidget {
             ),
           ),
         ),
-        bottomNavigationBar: const TrainingSessionBanner(),
       ),
+      bottomNavigationBar: const TrainingSessionBanner(),
     );
   }
 
