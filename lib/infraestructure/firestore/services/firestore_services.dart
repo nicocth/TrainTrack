@@ -498,7 +498,146 @@ class FirestoreService {
       throw Exception('Error fetching training history: $e');
     }
   }
-  
+
+  Future<Result> finishTrainingTransaction(
+    WidgetRef ref, {
+    required bool updateRoutine,
+  }) async {
+    final authNotifier = ref.read(authProvider.notifier);
+    final userId = authNotifier.getUserId();
+
+    final trainingSession = ref.read(trainingSessionProvider);
+    final training = trainingSession.training;
+
+    if (training == null) {
+      return Result.failure('There is no active training.');
+    }
+
+    try {
+      await _firestore.runTransaction((transaction) async {
+        /* ─────────────────────────────
+        * 1️⃣ ACTUALIZAR RUTINA (OPCIONAL)
+        * ───────────────────────────── */
+        if (updateRoutine) {
+          final trainingRef = _firestore
+              .collection('users')
+              .doc(userId)
+              .collection('trainings')
+              .doc(training.id);
+
+          transaction.update(trainingRef, {
+            'title': training.name,
+            'date_updated': Timestamp.now(),
+          });
+
+          final exercisesRef = trainingRef.collection('exercises');
+          final existingExercises = await exercisesRef.get();
+
+          // 🔥 borrar ejercicios anteriores
+          for (final doc in existingExercises.docs) {
+            transaction.delete(doc.reference);
+          }
+
+          // ordenar ejercicios
+          final sortedExercises = List.of(training.exercises)
+            ..sort((a, b) => a.order.compareTo(b.order));
+
+          for (int i = 0; i < sortedExercises.length; i++) {
+            final exercise = sortedExercises[i];
+
+            final exerciseRef = exercisesRef.doc();
+
+            final exerciseData = {
+              'exercise': exercise.exercise.id,
+              'order': exercise.order,
+              'name': exercise.exercise.name,
+              'is_alternative': exercise.isAlternative,
+              'notes': trainingSession.notesControllers[i].text,
+              'sets': List.generate(exercise.sets.length, (j) {
+                return {
+                  'weight': double.tryParse(
+                          trainingSession.weightControllers[i][j].text) ??
+                      0.0,
+                  'reps': int.tryParse(
+                          trainingSession.repsControllers[i][j].text) ??
+                      0,
+                };
+              }),
+            };
+
+            if (exercise.isAlternative) {
+              exerciseData['alternative'] = exercise.alternative ?? 0;
+            }
+
+            transaction.set(exerciseRef, exerciseData);
+          }
+        }
+
+       /* ─────────────────────────────
+        * 2️⃣ GUARDAR HISTORIAL (ATÓMICO)
+        * ───────────────────────────── */
+
+        final historyRef = _firestore
+            .collection('users')
+            .doc(userId)
+            .collection('training_history')
+            .doc();
+
+        transaction.set(historyRef, {
+          'title': training.name,
+          'training_date': Timestamp.now(),
+        });
+
+        // Sort the exercises by the 'order' property
+        final sortedExercises = List.of(training.exercises)
+          ..sort((a, b) => a.order.compareTo(b.order));
+
+        for (int i = 0; i < training.exercises.length; i++) {
+          //The exercises will be saved in the order of the order property
+          final customExercise = sortedExercises[i];
+
+          //Only exercises that have sets marked as complete will be saved.
+          final completedSets = trainingSession.completedSets[i];
+          final hasCompletedSets = completedSets.isNotEmpty;
+          if (hasCompletedSets) {
+            // Filter only completed sets
+            final setsData = completedSets.map((j) {
+              return {
+                'weight': double.tryParse(
+                        trainingSession.weightControllers[i][j].text) ??
+                    0.0,
+                'reps':
+                    int.tryParse(trainingSession.repsControllers[i][j].text) ??
+                        0,
+              };
+            }).toList();
+
+            final exerciseData = {
+              'exercise': customExercise.exercise.id,
+              'order': customExercise.order,
+              'name': customExercise.exercise.name,
+              'is_alternative': customExercise.isAlternative,
+              'notes': trainingSession.notesControllers[i].text,
+              'sets': setsData
+            };
+
+            // Only if isAlternative is true will we get alternative
+            if (customExercise.isAlternative) {
+              exerciseData['alternative'] = customExercise.alternative ?? 0;
+            }
+
+            final exerciseRef = historyRef.collection('exercises').doc();
+
+            transaction.set(exerciseRef, exerciseData);
+          }
+        }
+      });
+
+      return Result.success();
+    } catch (e) {
+      return Result.failure('Transaction failed: $e');
+    }
+  }
 }
 
 // class to handle the result of the operation

@@ -64,59 +64,56 @@ class FinishTrainingSessionButton extends ConsumerWidget {
     );
   }
 
-  Future<void> _finishTraining(BuildContext context, WidgetRef ref,
-      {required bool updateRoutine}) async {
+  Future<void> _finishTraining(
+    BuildContext context,
+    WidgetRef ref, 
+    {required bool updateRoutine}
+  ) async {
     try {
-      final FirestoreService firestoreService = FirestoreService();
-      final trainingSession = ref.watch(trainingSessionProvider);
-      final trainingId = trainingSession.training!.id;
+      final firestoreService = FirestoreService();
 
-      // If the user wants, the training is updated
-      if (updateRoutine) {
-        final result = await firestoreService
-            .updateTrainingFromTrainingSession(ref, trainingId)
-            .timeout(Duration(seconds: 6), onTimeout: () {
-          throw TimeoutException(S.current.request_timeout);
-        });
-
-        if (!context.mounted) return;
-
-        if (result.isFailure) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(S.current.error_saving_routine)),
+      final result = await firestoreService
+          .finishTrainingTransaction(
+            ref,
+            updateRoutine: updateRoutine,
+          )
+          .timeout(
+            const Duration(seconds: 6),
+            onTimeout: () =>
+                throw TimeoutException(S.current.request_timeout),
           );
-          return;
-        }
-      }
-
-      //save the training to history
-      await firestoreService
-          .saveTrainingToHistory(ref)
-          .timeout(Duration(seconds: 6), onTimeout: () {
-        throw TimeoutException(S.current.request_timeout);
-      });
 
       if (!context.mounted) return;
 
+      if (result.isFailure) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(S.current.error_saving_routine)),
+        );
+        return;
+      }
+
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-            content: Text(updateRoutine
+          content: Text(
+            updateRoutine
                 ? S.current.training_updated_saved
-                : S.current.training_saved)),
+                : S.current.training_saved,
+          ),
+        ),
       );
 
-      // Invalidate the training history provider to refresh the data
+      // Refrescar historial
       ref.invalidate(trainingHistoryProvider);
 
-
-      // Reset the training session and navigate to home by clearing the navigation stack.
+      // Resetear sesión y volver a Home
       ref.read(trainingSessionProvider.notifier).resetSession();
       Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
-        (Route<dynamic> route) => false,
+        MaterialPageRoute(builder: (_) => const HomeScreen()),
+        (route) => false,
       );
     } on TimeoutException {
+      if (!context.mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(S.current.request_timeout)),
       );

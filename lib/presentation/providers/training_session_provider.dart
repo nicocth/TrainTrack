@@ -15,7 +15,7 @@ class TrainingSessionState {
   final int? selectedExerciseIndex;
   // Set of exercises that have been completed
   final Set<int> completedExercises;
-  final List<Set<int>> completedSets;
+  final List<List<int>> completedSets;
   // Controllers are created ordered by the order property and this order is maintained when sets are added or removed.
   final List<TextEditingController> notesControllers;
   final List<List<TextEditingController>> repsControllers;
@@ -41,7 +41,7 @@ class TrainingSessionState {
     bool? isRunning,
     int? selectedExerciseIndex,
     Set<int>? completedExercises,
-    List<Set<int>>? completedSets,
+    List<List<int>>? completedSets,
     List<TextEditingController>? notesControllers,
     List<List<TextEditingController>>? repsControllers,
     List<List<TextEditingController>>? weightControllers,
@@ -96,7 +96,7 @@ class TrainingSessionNotifier extends StateNotifier<TrainingSessionState> {
       startTime: DateTime.now(),
       seconds: 0,
       isRunning: true,
-      completedSets: List.generate(sortedExercises.length, (_) => {}),
+      completedSets: List.generate(sortedExercises.length, (_) => []),
     );
     startTimer();
   }
@@ -151,36 +151,51 @@ class TrainingSessionNotifier extends StateNotifier<TrainingSessionState> {
   }
 
   void markSetAsCompleted(int exerciseOrder, int setIndex) {
-    final updatedCompletedSets = List<Set<int>>.from(state.completedSets);
-    updatedCompletedSets[exerciseOrder] =
-        Set<int>.from(updatedCompletedSets[exerciseOrder])..add(setIndex);
+    final updatedCompletedSets =
+        List<List<int>>.from(state.completedSets);
+
+    final current = List<int>.from(updatedCompletedSets[exerciseOrder]);
+
+    if (!current.contains(setIndex)) {
+      current.add(setIndex);
+      current.sort();
+    }
+
+    updatedCompletedSets[exerciseOrder] = current;
 
     state = state.copyWith(completedSets: updatedCompletedSets);
   }
+
 
   void markSetAsNotCompleted(int exerciseOrder, int setIndex) {
-    final updatedCompletedSets = List<Set<int>>.from(state.completedSets);
-    updatedCompletedSets[exerciseOrder] =
-        Set<int>.from(updatedCompletedSets[exerciseOrder])..remove(setIndex);
+    final updatedCompletedSets =
+        List<List<int>>.from(state.completedSets);
+
+    final current = List<int>.from(updatedCompletedSets[exerciseOrder])
+      ..remove(setIndex);
+
+    updatedCompletedSets[exerciseOrder] = current;
 
     state = state.copyWith(completedSets: updatedCompletedSets);
   }
+
 
   void markAllSetsOfExerciseAsCompleted(int exerciseOrder) {
     final training = state.training;
     if (training == null) return;
 
-    // Get the actual index of the exercise within the training list
     final exerciseIndex =
         training.exercises.indexWhere((e) => e.order == exerciseOrder);
     if (exerciseIndex == -1) return;
 
-    // Create a set with all the indices of the sets of that exercise
     final exercise = training.exercises[exerciseIndex];
-    final allSetIndexes = {for (var i = 0; i < exercise.sets.length; i++) i};
 
-    // update complete sets
-    final updatedCompletedSets = List<Set<int>>.from(state.completedSets);
+    final allSetIndexes =
+        List<int>.generate(exercise.sets.length, (i) => i);
+
+    final updatedCompletedSets =
+        List<List<int>>.from(state.completedSets);
+
     updatedCompletedSets[exerciseOrder] = allSetIndexes;
 
     state = state.copyWith(completedSets: updatedCompletedSets);
