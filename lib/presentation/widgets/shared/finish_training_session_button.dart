@@ -102,10 +102,10 @@ class FinishTrainingSessionButton extends ConsumerWidget {
         ),
       );
 
-      // Refrescar historial
+      // Invalidate the training history provider to refresh the data
       ref.invalidate(trainingHistoryProvider);
 
-      // Resetear sesión y volver a Home
+      // Reset the training session and navigate to home by clearing the navigation stack.
       ref.read(trainingSessionProvider.notifier).resetSession();
       Navigator.pushAndRemoveUntil(
         context,

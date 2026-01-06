@@ -9,12 +9,12 @@ import 'package:flutter/services.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // 🔹 Activa edge-to-edge (requisito Play Console / Android 15)
+  // Enable edge-to-edge mode
   SystemChrome.setEnabledSystemUIMode(
     SystemUiMode.edgeToEdge,
   );
 
-  //Tema de la barra de estado
+  // Theme of status bar and navigation bar
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,

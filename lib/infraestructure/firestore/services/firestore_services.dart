@@ -515,9 +515,6 @@ class FirestoreService {
 
     try {
       await _firestore.runTransaction((transaction) async {
-        /* ─────────────────────────────
-        * 1️⃣ ACTUALIZAR RUTINA (OPCIONAL)
-        * ───────────────────────────── */
         if (updateRoutine) {
           final trainingRef = _firestore
               .collection('users')
@@ -533,12 +530,11 @@ class FirestoreService {
           final exercisesRef = trainingRef.collection('exercises');
           final existingExercises = await exercisesRef.get();
 
-          // 🔥 borrar ejercicios anteriores
+          // Delete previous exercises
           for (final doc in existingExercises.docs) {
             transaction.delete(doc.reference);
           }
 
-          // ordenar ejercicios
           final sortedExercises = List.of(training.exercises)
             ..sort((a, b) => a.order.compareTo(b.order));
 
@@ -573,10 +569,7 @@ class FirestoreService {
           }
         }
 
-       /* ─────────────────────────────
-        * 2️⃣ GUARDAR HISTORIAL (ATÓMICO)
-        * ───────────────────────────── */
-
+        //Save training to history
         final historyRef = _firestore
             .collection('users')
             .doc(userId)
